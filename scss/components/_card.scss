@@ -17,7 +17,8 @@
     > footer {
       margin-right: calc(var(#{$✨}block-spacing-horizontal) * -1);
       margin-left: calc(var(#{$✨}block-spacing-horizontal) * -1);
-      padding: calc(var(#{$✨}spacing) * 0.66) var(#{$✨}block-spacing-horizontal);
+      padding: calc(var(#{$✨}spacing) * 0.66)
+        var(#{$✨}block-spacing-horizontal);
       background-color: var(#{$✨}card-sectioning-background-color);
     }
 

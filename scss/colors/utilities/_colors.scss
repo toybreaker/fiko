@@ -18,7 +18,10 @@
         // Loop through colors
         @each $shade, $color-value in $colors {
           // Main color
-          @if $shade == "main" and map.get(settings.$palette, "enable-main-color") {
+          @if $shade ==
+            "main" and
+            map.get(settings.$palette, "enable-main-color")
+          {
             @if $enable-css-vars {
               $color-value: var(--#{$css-var-family-name});
             } @else {

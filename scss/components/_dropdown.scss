@@ -55,7 +55,8 @@
         var(#{$✨}border-width) *
         2
     );
-    padding: var(#{$✨}form-element-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
+    padding: var(#{$✨}form-element-spacing-vertical)
+      var(#{$✨}form-element-spacing-horizontal);
     border: var(#{$✨}border-width) solid var(#{$✨}form-element-border-color);
     border-radius: var(#{$✨}border-radius);
     background-color: var(#{$✨}form-element-background-color);
@@ -65,8 +66,9 @@
     user-select: none;
 
     @if $enable-transitions {
-      transition: background-color var(#{$✨}transition), border-color var(#{$✨}transition),
-        color var(#{$✨}transition), box-shadow var(#{$✨}transition);
+      transition: background-color var(#{$✨}transition),
+        border-color var(#{$✨}transition), color var(#{$✨}transition),
+        box-shadow var(#{$✨}transition);
     }
 
     &:active,
@@ -76,7 +78,11 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}form-element-focus-color);
+      box-shadow: 0
+        0
+        0
+        var(#{$✨}outline-width)
+        var(#{$✨}form-element-focus-color);
     }
 
     // Reset focus visible from accordion component
@@ -86,15 +92,25 @@
 
     // Aria-invalid
     &[aria-invalid="false"] {
-      #{$✨}form-element-border-color: var(#{$✨}form-element-valid-border-color);
-      #{$✨}form-element-active-border-color: var(#{$✨}form-element-valid-focus-color);
+      #{$✨}form-element-border-color: var(
+        #{$✨}form-element-valid-border-color
+      );
+      #{$✨}form-element-active-border-color: var(
+        #{$✨}form-element-valid-focus-color
+      );
       #{$✨}form-element-focus-color: var(#{$✨}form-element-valid-focus-color);
     }
 
     &[aria-invalid="true"] {
-      #{$✨}form-element-border-color: var(#{$✨}form-element-invalid-border-color);
-      #{$✨}form-element-active-border-color: var(#{$✨}form-element-invalid-focus-color);
-      #{$✨}form-element-focus-color: var(#{$✨}form-element-invalid-focus-color);
+      #{$✨}form-element-border-color: var(
+        #{$✨}form-element-invalid-border-color
+      );
+      #{$✨}form-element-active-border-color: var(
+        #{$✨}form-element-invalid-focus-color
+      );
+      #{$✨}form-element-focus-color: var(
+        #{$✨}form-element-invalid-focus-color
+      );
     }
   }
 
@@ -106,8 +122,13 @@
 
     summary:not([role]) {
       // Override height
-      height: calc((1rem * var(#{$✨}line-height)) + (var(#{$✨}nav-link-spacing-vertical) * 2));
-      padding: calc(var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2))
+      height: calc(
+        (1rem * var(#{$✨}line-height)) +
+          (var(#{$✨}nav-link-spacing-vertical) * 2)
+      );
+      padding: calc(
+          var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2)
+        )
         var(#{$✨}nav-link-spacing-horizontal);
 
       &:focus-visible {

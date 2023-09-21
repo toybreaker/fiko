@@ -1,7 +1,10 @@
 @use "sass:map";
 @use "../settings" as *;
 
-@if map.get($modules, "utilities/reduce-motion") and enable-transitions and enable-important {
+@if map.get($modules, "utilities/reduce-motion") and
+  enable-transitions and
+  enable-important
+{
   /**
    * Reduce Motion Features
    */

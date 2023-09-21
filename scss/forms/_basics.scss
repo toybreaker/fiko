@@ -155,7 +155,8 @@
   select,
   textarea {
     appearance: none;
-    padding: var(#{$✨}form-element-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
+    padding: var(#{$✨}form-element-spacing-vertical)
+      var(#{$✨}form-element-spacing-horizontal);
   }
 
   // Commons styles
@@ -175,8 +176,9 @@
     font-weight: var(#{$✨}font-weight);
 
     @if $enable-transitions {
-      transition: background-color var(#{$✨}transition), border-color var(#{$✨}transition),
-        color var(#{$✨}transition), box-shadow var(#{$✨}transition);
+      transition: background-color var(#{$✨}transition),
+        border-color var(#{$✨}transition), color var(#{$✨}transition),
+        box-shadow var(#{$✨}transition);
     }
   }
 
@@ -196,7 +198,13 @@
   }
 
   // Active & Focus
-  input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]),
+  input:not(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [role="switch"],
+      [readonly]
+    ),
   :where(select, textarea) {
     &:is(:active, :focus) {
       #{$✨}border-color: var(#{$✨}form-element-active-border-color);
@@ -214,7 +222,11 @@
     ),
   :where(select, textarea) {
     &:focus {
-      #{$✨}box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}form-element-focus-color);
+      #{$✨}box-shadow: 0
+        0
+        0
+        var(#{$✨}outline-width)
+        var(#{$✨}form-element-focus-color);
     }
   }
 
@@ -224,7 +236,11 @@
   textarea[disabled],
   label[aria-disabled="true"],
   :where(fieldset[disabled])
-    :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
+    :is(
+      input:not([type="submit"], [type="button"], [type="reset"]),
+      select,
+      textarea
+    ) {
     #{$✨}background-color: var(#{$✨}form-element-disabled-background-color);
     #{$✨}border-color: var(#{$✨}form-element-disabled-border-color);
     opacity: var(#{$✨}form-element-disabled-opacity);
@@ -249,15 +265,25 @@
       ) {
       &[aria-invalid] {
         @if $enable-important {
-          padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem) !important;
+          padding-right: calc(
+            var(#{$✨}form-element-spacing-horizontal) + 1.5rem
+          ) !important;
           padding-left: var(#{$✨}form-element-spacing-horizontal);
-          padding-inline-start: var(#{$✨}form-element-spacing-horizontal) !important;
-          padding-inline-end: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem) !important;
+          padding-inline-start: var(
+            #{$✨}form-element-spacing-horizontal
+          ) !important;
+          padding-inline-end: calc(
+            var(#{$✨}form-element-spacing-horizontal) + 1.5rem
+          ) !important;
         } @else {
-          padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
+          padding-right: calc(
+            var(#{$✨}form-element-spacing-horizontal) + 1.5rem
+          );
           padding-left: var(#{$✨}form-element-spacing-horizontal);
           padding-inline-start: var(#{$✨}form-element-spacing-horizontal);
-          padding-inline-end: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
+          padding-inline-end: calc(
+            var(#{$✨}form-element-spacing-horizontal) + 1.5rem
+          );
         }
         background-position: center right 0.75rem;
         background-size: 1rem auto;
@@ -278,7 +304,9 @@
 
       &:is(:active, :focus) {
         @if $enable-important {
-          #{$✨}border-color: var(#{$✨}form-element-valid-active-border-color) !important;
+          #{$✨}border-color: var(
+            #{$✨}form-element-valid-active-border-color
+          ) !important;
 
           &:not([type="checkbox"], [type="radio"]) {
             #{$✨}box-shadow: 0
@@ -306,7 +334,9 @@
 
       &:is(:active, :focus) {
         @if $enable-important {
-          #{$✨}border-color: var(#{$✨}form-element-invalid-active-border-color) !important;
+          #{$✨}border-color: var(
+            #{$✨}form-element-invalid-active-border-color
+          ) !important;
 
           &:not([type="checkbox"], [type="radio"]) {
             #{$✨}box-shadow: 0
@@ -316,7 +346,9 @@
               var(#{$✨}form-element-invalid-focus-color) !important;
           }
         } @else {
-          #{$✨}border-color: var(#{$✨}form-element-invalid-active-border-color);
+          #{$✨}border-color: var(
+            #{$✨}form-element-invalid-active-border-color
+          );
 
           &:not([type="checkbox"], [type="radio"]) {
             #{$✨}box-shadow: 0
@@ -369,7 +401,9 @@
       padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
       padding-left: var(#{$✨}form-element-spacing-horizontal);
       padding-inline-start: var(#{$✨}form-element-spacing-horizontal);
-      padding-inline-end: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
+      padding-inline-end: calc(
+        var(#{$✨}form-element-spacing-horizontal) + 1.5rem
+      );
       background-image: var(#{$✨}icon-chevron);
       background-position: center right 0.75rem;
       background-size: 1rem auto;

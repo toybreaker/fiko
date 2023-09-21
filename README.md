@@ -1,5 +1,3 @@
-
-
 <p align="center">
  FIKO CSS is a minimalist and lightweight starter kit that uses semantic HTML, making every HTML tag responsive and elegant by default.
 </p>
@@ -57,9 +55,9 @@ Then just write pure HTML, and it should look great:
 
 # RESET CSS ON STEROIDS Limitations
 
-FIKO can be used without custom CSS for quick or small projects. 
+FIKO can be used without custom CSS for quick or small projects.
 
-However, it’s designed as a starting point, like a “reset CSS on steroids”. 
+However, it’s designed as a starting point, like a “reset CSS on steroids”.
 
 As FIKO does not integrate any helpers or utilities `.classes`, this minimal CSS framework requires SCSS or CSS knowledge to build large projects.
 

@@ -4,7 +4,10 @@
 @use "utils";
 
 $enable-css-vars: map.get(settings.$utilities, "css-vars");
-$background-color-property-name: map.get(settings.$properties, "background-color");
+$background-color-property-name: map.get(
+  settings.$properties,
+  "background-color"
+);
 $color-property-name: map.get(settings.$properties, "color");
 $css-var-color-prefix: #{settings.$css-var-prefix}#{$color-property-name};
 
@@ -37,7 +40,10 @@ $css-var-color-prefix: #{settings.$css-var-prefix}#{$color-property-name};
         // Loop through colors
         @each $shade, $color-value in $colors {
           // Main color
-          @if $shade == "main" and map.get(settings.$palette, "enable-main-color") {
+          @if $shade ==
+            "main" and
+            map.get(settings.$palette, "enable-main-color")
+          {
             $value: $color-value;
             @if $enable-css-vars {
               $value: var(--#{$css-var-family-name});

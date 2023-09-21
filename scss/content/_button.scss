@@ -42,7 +42,8 @@
     #{$✨}border-color: var(#{$✨}primary-border);
     #{$✨}color: var(#{$✨}primary-inverse);
     #{$✨}box-shadow: var(#{$✨}button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-    padding: var(#{$✨}form-element-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
+    padding: var(#{$✨}form-element-spacing-vertical)
+      var(#{$✨}form-element-spacing-horizontal);
     border: var(#{$✨}border-width) solid var(#{$✨}border-color);
     border-radius: var(#{$✨}border-radius);
     outline: none;
@@ -58,19 +59,26 @@
     user-select: none;
 
     @if $enable-transitions {
-      transition: background-color var(#{$✨}transition), border-color var(#{$✨}transition),
-        color var(#{$✨}transition), box-shadow var(#{$✨}transition);
+      transition: background-color var(#{$✨}transition),
+        border-color var(#{$✨}transition), color var(#{$✨}transition),
+        box-shadow var(#{$✨}transition);
     }
 
     &:is([aria-current], :hover, :active, :focus) {
       #{$✨}background-color: var(#{$✨}primary-hover-background);
       #{$✨}border-color: var(#{$✨}primary-hover-border);
-      #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+      #{$✨}box-shadow: var(
+        #{$✨}button-hover-box-shadow,
+        0 0 0 rgba(0, 0, 0, 0)
+      );
       #{$✨}color: var(#{$✨}primary-inverse);
     }
 
     &:focus {
-      #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+      #{$✨}box-shadow: var(
+          #{$✨}button-hover-box-shadow,
+          0 0 0 rgba(0, 0, 0, 0)
+        ),
         0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
     }
   }
@@ -99,7 +107,10 @@
       }
 
       &:focus {
-        #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+        #{$✨}box-shadow: var(
+            #{$✨}button-hover-box-shadow,
+            0 0 0 rgba(0, 0, 0, 0)
+          ),
           0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
       }
     }
@@ -117,7 +128,10 @@
       }
 
       &:focus {
-        #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+        #{$✨}box-shadow: var(
+            #{$✨}button-hover-box-shadow,
+            0 0 0 rgba(0, 0, 0, 0)
+          ),
           0 0 0 var(#{$✨}outline-width) var(#{$✨}contrast-focus);
       }
     }
@@ -136,7 +150,12 @@
     }
 
     // Outline (secondary)
-    :is(button, [type="submit"], [type="button"], [role="button"]).outline.secondary,
+    :is(
+        button,
+        [type="submit"],
+        [type="button"],
+        [role="button"]
+      ).outline.secondary,
     [type="reset"].outline {
       #{$✨}color: var(#{$✨}secondary);
       #{$✨}border-color: currentColor;
@@ -147,7 +166,12 @@
     }
 
     // Outline (contrast)
-    :is(button, [type="submit"], [type="button"], [role="button"]).outline.contrast {
+    :is(
+        button,
+        [type="submit"],
+        [type="button"],
+        [role="button"]
+      ).outline.contrast {
       #{$✨}color: var(#{$✨}contrast);
 
       &:is([aria-current], :hover, :active, :focus) {
@@ -169,16 +193,31 @@
       }
 
       &:focus {
-        #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+        #{$✨}box-shadow: var(
+            #{$✨}button-hover-box-shadow,
+            0 0 0 rgba(0, 0, 0, 0)
+          ),
           0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
       }
     }
   }
 
   // Button [disabled]
-  :where(button, [type="submit"], [type="reset"], [type="button"], [role="button"])[disabled],
+  :where(
+      button,
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [role="button"]
+    )[disabled],
   :where(fieldset[disabled])
-    :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]) {
+    :is(
+      button,
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [role="button"]
+    ) {
     opacity: 0.5;
     pointer-events: none;
   }

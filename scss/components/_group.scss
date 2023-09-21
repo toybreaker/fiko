@@ -82,7 +82,12 @@
 
     @supports selector(:has(*)) {
       // Group box shadow when a button is focused
-      &:has(button:focus, [type="submit"]:focus, [type="button"]:focus, [role="button"]:focus) {
+      &:has(
+          button:focus,
+          [type="submit"]:focus,
+          [type="button"]:focus,
+          [role="button"]:focus
+        ) {
         #{$✨}group-box-shadow: var(#{$✨}group-box-shadow-focus-with-button);
       }
 
@@ -95,7 +100,8 @@
         [type="submit"],
         [type="button"],
         [role="button"] {
-          #{$✨}button-box-shadow: 0 0 0 var(#{$✨}border-width) var(#{$✨}primary-border);
+          #{$✨}button-box-shadow: 0 0 0 var(#{$✨}border-width)
+            var(#{$✨}primary-border);
           #{$✨}button-hover-box-shadow: 0 0 0 var(#{$✨}border-width)
             var(#{$✨}primary-hover-border);
         }

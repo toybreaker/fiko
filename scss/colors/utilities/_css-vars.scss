@@ -18,7 +18,10 @@
           // Loop through colors
           @each $shade, $color-value in $colors {
             // Main color
-            @if $shade == "main" and map.get(settings.$palette, "enable-main-color") {
+            @if $shade ==
+              "main" and
+              map.get(settings.$palette, "enable-main-color")
+            {
               --#{$css-var-family-name}: #{utils.display-color($color-value)};
             }
 
@@ -27,7 +30,9 @@
               index(map.get(settings.$palette, "shades"), $shade) and
               map.get(settings.$palette, "enable-shades")
             {
-              --#{$css-var-family-name}-#{$shade}: #{utils.display-color($color-value)};
+              --#{$css-var-family-name}-#{$shade}: #{utils.display-color(
+                  $color-value
+                )};
             }
           }
         }

@@ -8,7 +8,13 @@
 
   // :not() are needed to add Specificity and avoid !important on padding
   input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
-    &:is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+    &:is(
+        [type="date"],
+        [type="datetime-local"],
+        [type="month"],
+        [type="time"],
+        [type="week"]
+      ) {
       #{$✨}icon-position: 0.75rem;
       #{$✨}icon-width: 1rem;
       padding-right: calc(var(#{$✨}icon-width) + var(#{$✨}icon-position));
@@ -53,7 +59,13 @@
   }
 
   [dir="rtl"]
-    :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+    :is(
+      [type="date"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="time"],
+      [type="week"]
+    ) {
     text-align: right;
   }
 }

@@ -10,12 +10,12 @@
 
   :root {
     // Typography
-    #{$✨}font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-      "Noto Color Emoji";
-    #{$✨}font-family-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-      var(#{$✨}font-family-emoji);
-    #{$✨}font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-      "Liberation Mono", monospace, var(#{$✨}font-family-emoji);
+    #{$✨}font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+    #{$✨}font-family-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica,
+      Arial, sans-serif, var(#{$✨}font-family-emoji);
+    #{$✨}font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+      Consolas, "Liberation Mono", monospace, var(#{$✨}font-family-emoji);
     #{$✨}font-family: var(#{$✨}font-family-sans-serif);
     #{$✨}line-height: 1.5;
     #{$✨}font-weight: 400;
@@ -65,7 +65,8 @@
     }
 
     // Spacings for form elements and button
-    @if map.get($modules, "content/button") or map.get($modules, "forms/basic") {
+    @if map.get($modules, "content/button") or map.get($modules, "forms/basic")
+    {
       #{$✨}form-element-spacing-vertical: 0.75rem;
       #{$✨}form-element-spacing-horizontal: 1rem;
     }
@@ -83,7 +84,11 @@
         0
         var(#{$✨}outline-width)
         var(#{$✨}primary-focus);
-      #{$✨}group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(#{$✨}form-element-border-color);
+      #{$✨}group-box-shadow-focus-with-input: 0
+        0
+        0
+        0.0625rem
+        var(#{$✨}form-element-border-color);
     }
 
     // Modal (<dialog>)
@@ -116,7 +121,9 @@
 
     // Chevron icons
     // Change the icon color to white for accordion and dropdown buttons
-    @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
+    @if map.get($modules, "components/accordion") or
+      map.get($modules, "components/dropdown")
+    {
       details {
         summary {
           $selector: '&[role="button"]';
@@ -171,7 +178,9 @@
   // Responsives spacings
   @if $enable-responsive-spacings {
     // Landmarks and section
-    @if map.get($modules, "layout/landmarks") or map.get($modules, "layout/section") {
+    @if map.get($modules, "layout/landmarks") or
+      map.get($modules, "layout/section")
+    {
       #{$semantic-root-element} > header,
       #{$semantic-root-element} > main,
       #{$semantic-root-element} > footer,
@@ -192,7 +201,9 @@
                 $multiplier: 4.5;
               }
 
-              #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * $multiplier);
+              #{$✨}block-spacing-vertical: calc(
+                var(#{$✨}spacing) * $multiplier
+              );
             }
           }
         }
@@ -218,7 +229,9 @@
                 $multiplier: 2.25;
               }
 
-              #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * $multiplier);
+              #{$✨}block-spacing-horizontal: calc(
+                var(#{$✨}spacing) * $multiplier
+              );
             }
           }
         }

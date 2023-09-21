@@ -44,13 +44,15 @@
     li {
       display: inline-block;
       margin: 0;
-      padding: var(#{$✨}nav-element-spacing-vertical) var(#{$✨}nav-element-spacing-horizontal);
+      padding: var(#{$✨}nav-element-spacing-vertical)
+        var(#{$✨}nav-element-spacing-horizontal);
 
       :where(a, [role="link"]) {
         display: inline-block;
         margin: calc(var(#{$✨}nav-link-spacing-vertical) * -1)
           calc(var(#{$✨}nav-link-spacing-horizontal) * -1);
-        padding: var(#{$✨}nav-link-spacing-vertical) var(#{$✨}nav-link-spacing-horizontal);
+        padding: var(#{$✨}nav-link-spacing-vertical)
+          var(#{$✨}nav-link-spacing-horizontal);
         border-radius: var(#{$✨}border-radius);
 
         &:not(:hover) {
@@ -61,13 +63,20 @@
       // Minimal support for buttons and forms elements
       button,
       [role="button"],
-      input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
+      input:not(
+          [type="checkbox"],
+          [type="radio"],
+          [type="range"],
+          [type="file"]
+        ),
       select {
         height: auto;
         margin-right: inherit;
         margin-bottom: 0;
         margin-left: inherit;
-        padding: calc(var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2))
+        padding: calc(
+            var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2)
+          )
           var(#{$✨}nav-link-spacing-horizontal);
       }
     }
@@ -86,7 +95,9 @@
           &::after {
             position: absolute;
             width: calc(var(#{$✨}nav-link-spacing-horizontal) * 2);
-            margin-inline-start: calc(var(#{$✨}nav-link-spacing-horizontal) / 2);
+            margin-inline-start: calc(
+              var(#{$✨}nav-link-spacing-horizontal) / 2
+            );
             content: var(#{$✨}nav-breadcrumb-divider);
             color: var(#{$✨}muted-color);
             text-align: center;

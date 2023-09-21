@@ -1,0 +1,65 @@
+@use "sass:map";
+@use "../../settings" as pico-settings;
+
+// Prefix for CSS variables
+$css-var-prefix: pico-settings.$css-var-prefix !default;
+$css-class-prefix: pico-settings.$css-var-prefix !default;
+
+// Palette
+$palette: () !default;
+$palette: map.merge(
+  (
+    // Color families
+    "color-families": (lime),
+    // Shades
+    "shades": (0, 200, 400, 600, 800, 999),
+    // Export main color for each family
+    "enable-main-color": true,
+
+    // Export shades for each family
+    "enable-shades": false,
+
+    // Export black and white
+    "enable-black-and-white": true,
+
+    // Light color used for dark backgrounds
+    "light-color": #fff,
+
+    // Dark color used for light backgrounds
+    "dark-color": #000,
+
+    // Export as HEX, RGB or HSL values
+    "export-as": "hsl" // hex | rgb | hsl
+  ),
+  $palette
+);
+
+// Properties names used for CSS variables and classes
+// Useful if you want to shorten the names
+$properties: () !default;
+$properties: map.merge(
+  (
+    "color": "col",
+    "background-color": "bg",
+  ),
+  $properties
+);
+
+// Utilities to export
+$utilities: () !default;
+$utilities: map.merge(
+  (
+    // CSS Vars
+    "css-vars": false,
+
+    // Colors utility classes
+    "colors": true,
+
+    // Background color utility classes
+    "background-colors": true,
+
+    // Color value for background color utility classes
+    "color-for-background-colors": true
+  ),
+  $utilities
+);

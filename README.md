@@ -1,4 +1,4 @@
-FIKO 🐸 CSS FRAMEWORK.
+# FIKO 🐸 CSS FRAMEWORK.
 
 🐸 GREAT STYLES WITH JUST ONE CSS FILE
 🐸 RESPONSIVE EVERYTHING
@@ -7,24 +7,24 @@ FIKO 🐸 CSS FRAMEWORK.
 🐸 CLASSLESS OPTION.
 
 
-# 🫵 DOCS | GET STARTED 🫵
+## 🫵 DEVELOP 🫵
 
-### 🫵 1. First, live in the future!
+### 1. First, live in the future!
 
 ```shell
 pnpm upgrade
 ```
 
-### 🫵 2. After install, the recurring command B
+### 2. After install, the recurring command B
 
 ```shell
 pnpm run B
 ``````
 
 
-### 🫵 USAGE
+## 🫵 JUST USE IT 🫵
 
-[Download FIKO](https://github.com/junglesta/fiko/fiko.zip) and link `/css/fiko.min.css` in the `<head>` of your website.
+[Download FIKO](https://github.com/TOYBREAKER/fiko/fiko.zip) and link `/css/fiko.min.css` in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/fiko.css" />

@@ -1,8 +1,8 @@
 {
   "name": "@toybreaker/fiko",
-  "version_TLDR": "AUTO STYLE SEMANTIC HTML | BASE CLASSLESS 2023 CSS TEMPLATE",
+  "version_TLDR": "AUTO STYLE SEMANTIC HTML | BASE CLASSLESS CSS TEMPLATE",
   "version_name": "🐸",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "css/fiko.min.css",
@@ -10,10 +10,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/junglesta/fiko.git"
+    "url": "https://github.com/toybreaker/fiko.git"
   },
   "publishConfig": {
-    "tag": "next"
+    "tag": "latest"
   },
   "keywords": [
     "css",
@@ -61,8 +61,5 @@
     "last 2 major versions",
     "not dead",
     "not ie > 0"
-  ],
-  "dependencies": {
-    "user": "^0.0.0"
-  }
+  ]
 }

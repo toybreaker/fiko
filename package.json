@@ -2,7 +2,7 @@
   "name": "@junglesta/fiko",
   "version_TLDR": "AUTO STYLE SEMANTIC HTML | BASE CLASSLESS 2023 CSS TEMPLATE",
   "version_name": "🐸",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "css/fiko.min.css",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/junglesta/fiko.git"
+    "url": "https://github.com/junglesta/fiko.git"
   },
   "publishConfig": {
     "tag": "next"

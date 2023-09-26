@@ -61,20 +61,20 @@ pnpm install @junglesta/fiko
 
 ```shell
 import 'fiko' from 'path/to/fiko.css'
-import 'fikofinetuning' from 'path/to/fikofinetuning.css'
+import 'my_custom_style' from 'path/to/my_custom_style.css'
 ```
 
 
 
 # CLASSLESS VERSION
 
-FIKO provides a `.classless` version ([example](https://FIKOcss.com/examples/classless)).
+FIKO provides a `fiko.classless.css` version
 
 In this version, `header`, `main` and `footer` act as containers.
 
-Use the default `.classless` version if you need centered viewports:
+Use this version if you need centered viewports:
 
-Or use the `.fluid.classless` version if you need a fluid container:
+Or use the `fiko.fluid.classless.css` version if you need a fluid container:
 
 Then just write pure HTML, and it should look great:
 

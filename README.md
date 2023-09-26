@@ -1,28 +1,13 @@
+FIKO 🐸 CSS FRAMEWORK.
 
----
-# FIKO 🐸 MINIMAL CSS FRAMEWORK.
-
-**A Template Starter-Kit written in modern css and scss. <br> It uses semantic HTML.<br> Makes every HTML tag responsive and elegant by default. <br> FIKOclassless needs no classes. <br> JUST SEMANTIC HTML: header, footer, main, section, label, blockquote, summary, detail...**
-
-
-🐸 GREAT STYLES WITH JUST ONE CSS FILE, FIKO! no frills.
-
-🐸 RESPONSIVE EVERYTHING, FIKO! Adaptive spacings and typography on all devices.
-
-🐸 LIGHT OR DARK MODE, FIKO! automatically enabled.
-
-🐸 SEMANTIC HTML AUTO STYLING, FIKO! Let's use simple native HTML tags as much as possible. Less than 10 .classes are used in `fiko.css`!
-
-🐸 CLASSLESS TEMPLATE. Get the smaller, simple:
-`fiko.classless.css` And add your own classes:
-- in your components
-- in your `project.css`
-- in your `CSS LAYER`
+🐸 GREAT STYLES WITH JUST ONE CSS FILE
+🐸 RESPONSIVE EVERYTHING
+🐸 LIGHT OR DARK MODE
+🐸 USES THE SEMANTICS OF NATIVE HTML TAGS.
+🐸 CLASSLESS OPTION.
 
 
----
-
-## 🫵 DOCS | GET STARTED 🫵
+# 🫵 DOCS | GET STARTED 🫵
 
 ### 🫵 1. First, live in the future!
 
@@ -45,10 +30,10 @@ pnpm run B
 <link rel="stylesheet" href="css/fiko.css" />
 ```
 
-#### Install with pnpm
+#### Install with pnpm (or npm)
 
 ```shell
-pnpm install @junglesta/fiko
+pnpm install @toybreaker/fiko
 ```
 
 #### Import it in your component
@@ -78,7 +63,7 @@ FIKO is designed and tested for the latest stable Chrome, Firefox, Edge, and Saf
 
 ### COPYRIGHT AND LICENSE
 
-Licensed under the [MIT License](https://github.com/junglesta/fiko/blob/master/LICENSE.md).
+Licensed under the [MIT License](https://github.com/toybreaker/fiko/blob/master/LICENSE.md).
 
 THIS SLIM STARTER WAS DEVELOP TO SCRATCH MY OWN NEEDS AND IT'S INSPIRED BY TODAY CLASSLESS CSS FRAMEWORK SUCH AS [PICOCSS](https://github.com/picocss/pico),[WATER](https://github.com/kognise/water.css), [CSSBED](https://www.cssbed.com/), BY [TOYBREAKER](https://github.com/toybreaker/)
 

@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../settings" as *;
 
-@if map.get($modules, "utilities/accessibility") {
+@if map.get($modules, "utils/accessibility") {
   /**
    * Accessibility & User interaction
    */

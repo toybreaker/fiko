@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../settings" as *;
 
-@if map.get($modules, "content/miscs") {
+@if map.get($modules, "components/mix") {
   /**
    * Miscs
    */

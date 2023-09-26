@@ -45,7 +45,7 @@
     #{$✨}spacing: 1rem;
 
     // Spacings for typography elements
-    @if map.get($modules, "content/typography") {
+    @if map.get($modules, "components/typography") {
       #{$✨}typography-spacing-vertical: 1rem;
     }
 
@@ -65,7 +65,8 @@
     }
 
     // Spacings for form elements and button
-    @if map.get($modules, "content/button") or map.get($modules, "forms/basic")
+    @if map.get($modules, "components/button") or
+      map.get($modules, "forms/basic")
     {
       #{$✨}form-element-spacing-vertical: 0.75rem;
       #{$✨}form-element-spacing-horizontal: 1rem;
@@ -262,7 +263,7 @@
   }
 
   // Link
-  @if map.get($modules, "content/link") {
+  @if map.get($modules, "components/link") {
     a {
       #{$✨}text-decoration: underline;
 
@@ -277,7 +278,7 @@
   }
 
   // Typography
-  @if map.get($modules, "content/typography") {
+  @if map.get($modules, "components/typography") {
     // Small
     small {
       #{$✨}font-size: 0.875em;
@@ -330,7 +331,7 @@
   }
 
   // Table
-  @if map.get($modules, "content/table") {
+  @if map.get($modules, "components/table") {
     thead,
     tfoot {
       th,
@@ -342,7 +343,7 @@
   }
 
   // Code
-  @if map.get($modules, "content/code") {
+  @if map.get($modules, "components/code") {
     pre,
     code,
     kbd,

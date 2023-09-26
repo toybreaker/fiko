@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../settings" as *;
 
-@if map.get($modules, "content/embedded") {
+@if map.get($modules, "components/embedded") {
   /**
    * Embedded content
    */

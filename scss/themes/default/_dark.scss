@@ -58,7 +58,7 @@
   #{$✨}box-shadow: box-shadow.shadow($black);
 
   // Typography
-  @if map.get($modules, "content/typography") {
+  @if map.get($modules, "components/typography") {
     // Headings colors
     #{$✨}h1-color: #{$lime};
     #{$✨}h2-color: #{$lime};
@@ -81,7 +81,7 @@
   }
 
   // Button
-  @if map.get($modules, "content/button") {
+  @if map.get($modules, "components/button") {
     // To disable box-shadow, remove the var or set to '0 0 0 rgba(0, 0, 0, 0)'
     // Don't use, 'none, 'false, 'null', '0', etc.
     #{$✨}button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -89,13 +89,13 @@
   }
 
   // Table
-  @if map.get($modules, "content/table") {
+  @if map.get($modules, "components/table") {
     #{$✨}table-border-color: var(#{$✨}muted-border-color);
     #{$✨}table-row-stripped-background-color: #{rgba($lime, 0.0375)};
   }
 
   // Code
-  @if map.get($modules, "content/code") {
+  @if map.get($modules, "components/code") {
     #{$✨}code-background-color: #{mix($lime, $lime, 75%)};
     #{$✨}code-color: #{$lime};
     #{$✨}code-kbd-background-color: var(#{$✨}color);

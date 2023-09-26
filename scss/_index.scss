@@ -15,13 +15,13 @@
 //@use "layout/scroller"; // figure
 
 // Content
-@use "content/link"; // a, role="link"
-@use "content/typography"; // headings, p, ul, blockquote, ...
-//@use "content/embedded"; // audio, canvas, iframe, img, svg, video
-@use "content/button"; // button, role="button", type="button", type="submit" ...
-@use "content/table"; // table, tr, td, ...
-//@use "content/code"; // pre, code, ...
-//@use "content/miscs"; // hr, template, [hidden], dialog, canvas
+@use "components/link"; // a, role="link"
+@use "components/typography"; // headings, p, ul, blockquote, ...
+//@use "components/embedded"; // audio, canvas, iframe, img, svg, video
+@use "components/button"; // button, role="button", type="button", type="submit" ...
+@use "components/table"; // table, tr, td, ...
+//@use "components/code"; // pre, code, ...
+//@use "components/mix"; // hr, template, [hidden], dialog, canvas
 
 // Forms
 //@use "forms/basics"; // input, select, textarea, label, fieldset, legend
@@ -44,5 +44,5 @@
 //@use "components/tooltip"; // data-tooltip
 
 // Utilities
-@use "utilities/accessibility"; // -ms-touch-action, aria-*
-@use "utilities/reduce-motion"; // prefers-reduced-motion
+@use "utils/accessibility"; // -ms-touch-action, aria-*
+@use "utils/reduce-motion"; // prefers-reduced-motion

@@ -4,7 +4,7 @@
 // ––––––––––––––––––––
 
 // Prefix for CSS variables
-$css-var-prefix: "00" !default;
+$css-var-prefix: "" !default;
 
 // Define the root element used to target <header>, <main>, <footer>
 // with $enable-semantic-container and $enable-responsive-spacings
@@ -102,13 +102,13 @@ $modules: map.merge(
     //"layout/grid": true,
     //"layout/scroller": true,
     // Content
-    "content/link": true,
-    "content/typography": true,
-    //"content/embedded": true,
-    "content/button": true,
-    "content/table": true,
-    //"content/code": true,
-    "content/miscs": true,
+    "components/link": true,
+    "components/typography": true,
+    //"components/embedded": true,
+    "components/button": true,
+    "components/table": true,
+    //"components/code": true,
+    "components/mix": true,
 
     // Forms
     // "forms/basics": true,
@@ -129,8 +129,8 @@ $modules: map.merge(
     // "components/progress": true,
     // "components/tooltip": true,
     // Utilities
-    "utilities/accessibility": true,
-    "utilities/reduce-motion": true
+    "utils/accessibility": true,
+    "utils/reduce-motion": true
   ),
   $modules
 );

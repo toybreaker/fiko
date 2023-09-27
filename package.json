@@ -1,8 +1,8 @@
 {
-  "name": "@toybreaker/fiko",
+  "name": "fiko",
   "version_TLDR": "AUTO STYLE SEMANTIC HTML | BASE CLASSLESS CSS TEMPLATE",
   "version_name": "🐸",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "css/fiko.min.css",

@@ -2,11 +2,11 @@
   "name": "fiko",
   "version_TLDR": "AUTO STYLE SEMANTIC HTML | BASE CLASSLESS CSS TEMPLATE",
   "version_name": "🐸",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "css/fiko.min.css",
-  "homepage": "https://f.rokma.rocks",
+  "homepage": "https://fiko.rokma.rocks",
   "license": "MIT",
   "repository": {
     "type": "git",

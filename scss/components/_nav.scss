@@ -34,10 +34,11 @@
       list-style: none;
 
       &:first-of-type {
-        margin-left: calc(var(#{$✨}nav-element-spacing-horizontal) * -1);
+        margin-left: calc(var(#{$✨}spacing-horizontal) * -1);
       }
+
       &:last-of-type {
-        margin-right: calc(var(#{$✨}nav-element-spacing-horizontal) * -1);
+        margin-right: calc(var(#{$✨}spacing-horizontal) * -1);
       }
     }
 
@@ -45,7 +46,7 @@
       display: inline-block;
       margin: 0;
       padding: var(#{$✨}nav-element-spacing-vertical)
-        var(#{$✨}nav-element-spacing-horizontal);
+        var(#{$✨}spacing-horizontal);
 
       :where(a, [role="link"]) {
         display: inline-block;
@@ -127,7 +128,7 @@
 
     li {
       padding: calc(var(#{$✨}nav-element-spacing-vertical) * 0.5)
-        var(#{$✨}nav-element-spacing-horizontal);
+        var(#{$✨}spacing-horizontal);
 
       a {
         display: block;

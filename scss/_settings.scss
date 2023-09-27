@@ -11,7 +11,7 @@ $css-var-prefix: "" !default;
 $semantic-root-element: "body" !default;
 
 // Enable <header>, <main>, <footer> inside $semantic-root-element as containers
-$enable-semantic-container: false !default;
+$enable-semantic-container: true !default;
 
 // Enable a centred viewport for <header>, <main>, <footer> inside $semantic-root-element
 // Fluid layout if disabled
@@ -99,15 +99,15 @@ $modules: map.merge(
     "layout/landmarks": true,
     "layout/container": true,
     "layout/section": true,
-    //"layout/grid": true,
-    //"layout/scroller": true,
+    "layout/grid": true,
+    "layout/scroller": true,
     // Content
     "components/link": true,
     "components/typography": true,
     "components/button": true,
     "components/table": true,
     "components/mix": true,
-    //"components/code": true,
+    "components/code": true,
     //"components/embedded": true,
     // Forms
     // "forms/basics": true,
@@ -121,7 +121,7 @@ $modules: map.merge(
     "components/accordion": true,
     "components/card": true,
     "components/nav": true,
-    //"components/dropdown": true,
+    // "components/dropdown": true,
     // "components/group": true,
     // "components/loading": true,
     // "components/modal": true,

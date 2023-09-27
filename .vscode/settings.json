@@ -1,0 +1,72 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.fontFamily": "'Jetbrains Mono', 'ProductSans', Monaco, 'Courier New', monospace, jetb",
+  "prettier.bracketSameLine": true,
+  "window.zoomLevel": 1,
+  "editor.fontSize": 17,
+  "editor.tabSize": 2,
+  "editor.stickyScroll.enabled": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.wordWrap": "wordWrapColumn",
+  "workbench.editor.wrapTabs": true,
+  "html-css-class-completion.enableEmmetSupport": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.useInlineCompletions": true,
+  "emmet.includeLanguages": {
+    "astro": "html",
+    "sh": "bash",
+    "html": "true",
+    "json": "true",
+    "yaml": "true",
+    "svg": "true",
+    "css": "true",
+    "scss": "true"
+  },
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "html.format.indentInnerHtml": true,
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "json.format.keepLines": false,
+  "prettier.documentSelectors": [
+    "**/*.astro",
+    "**/*.svg",
+    "**/*.mdx",
+    "**/*.md",
+    "**/*.svg",
+    "**/*.json",
+    "**/*.yml"
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnPaste": true,
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    }
+  },
+  "files.associations": {
+    "*.mdx": "markdown"
+  },
+  "colorize.include": [
+    "**/*.astro",
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less"
+  ],
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "astro.trace.server": "verbose",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

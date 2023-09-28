@@ -8,17 +8,16 @@
 
   article {
     margin-bottom: var(#{$✨}spacing);
-    padding: var(#{$✨}spacing) var(#{$✨}block-spacing-horizontal);
+    padding: var(#{$✨}spacing) var(#{$✨}block-spacing);
     border-radius: var(#{$✨}border-radius);
     background: var(#{$✨}card-background-color);
     box-shadow: var(#{$✨}card-box-shadow);
 
     > header,
     > footer {
-      margin-right: calc(var(#{$✨}block-spacing-horizontal) * -1);
-      margin-left: calc(var(#{$✨}block-spacing-horizontal) * -1);
-      padding: calc(var(#{$✨}spacing) * 0.66)
-        var(#{$✨}block-spacing-horizontal);
+      margin-right: calc(var(#{$✨}block-spacing) * -1);
+      margin-left: calc(var(#{$✨}block-spacing) * -1);
+      padding: calc(var(#{$✨}spacing) * 0.66) var(#{$✨}block-spacing);
       background-color: var(#{$✨}card-sectioning-background-color);
     }
 

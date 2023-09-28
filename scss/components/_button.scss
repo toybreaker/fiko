@@ -39,17 +39,16 @@
   [type="file"]::file-selector-button,
   [role="button"] {
     #{$✨}background-color: var(#{$✨}primary-background);
-    #{$✨}border-color: var(#{$✨}primary-border);
-    #{$✨}color: var(#{$✨}primary-inverse);
-    #{$✨}box-shadow: var(#{$✨}button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-    padding: var(#{$✨}form-element-spacing-vertical)
-      var(#{$✨}form-element-spacing-horizontal);
+    #{$✨}border-color: var(#{$✨}primary);
+    #{$✨}color: var(#{$✨}primary);
+    //#{$✨}box-shadow: var(#{$✨}button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    padding: var(#{$✨}spacing) var(#{$✨}spacing);
     border: var(#{$✨}border-width) solid var(#{$✨}border-color);
     border-radius: var(#{$✨}border-radius);
     outline: none;
     background-color: var(#{$✨}background-color);
-    box-shadow: var(#{$✨}box-shadow);
-    color: var(#{$✨}color);
+    //box-shadow: var(#{$✨}box-shadow);
+    //color: var(#{$✨}color);
     font-weight: var(#{$✨}font-weight);
     font-size: 1rem;
     line-height: var(#{$✨}line-height);
@@ -60,8 +59,8 @@
 
     @if $enable-transitions {
       transition: background-color var(#{$✨}transition),
-        border-color var(#{$✨}transition), color var(#{$✨}transition),
-        box-shadow var(#{$✨}transition);
+        border-color var(#{$✨}transition), color var(#{$✨}transition);
+      //box-shadow var(#{$✨}transition);
     }
 
     &:is([aria-current], :hover, :active, :focus) {

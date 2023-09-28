@@ -34,13 +34,14 @@
         width: 100%;
         margin-right: auto;
         margin-left: auto;
-        padding: var(#{$✨}spacing) var(#{$✨}block-spacing-horizontal);
+        padding: var(#{$✨}spacing) var(#{$✨}block-spacing);
 
         @if $enable-viewport {
           @each $key, $values in $breakpoints {
             @if $values {
               @media (min-width: map.get($values, "breakpoint")) {
                 max-width: map.get($values, "viewport");
+
                 @if $first-breakpoint {
                   $first-breakpoint: false;
                   padding-right: 0;

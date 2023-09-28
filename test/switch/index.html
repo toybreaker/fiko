@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta name="version" content="0.2.3" />
+  <meta name="version" content="0.0.5" />
   <meta charset="UTF-8" />
   <meta name="description" content="FIKO is small modern css framework" />
   <meta name="viewport" content="width=device-width" />
@@ -8,13 +8,13 @@
   <meta name="application-name" content="FIKO CSS" />
 
   <title>FIKO CSS</title>
-  <link id="stylesheet" rel="stylesheet" href="css/fiko.css" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link id="stylesheet" rel="stylesheet" href="../../css/fiko.css" />
   <link rel='canonical' href=https://fiko.rokma.rocks />
 
   <body>
     <header>
       <h1>FIKO</h1>
+      <small> Think Fiko as a Xeroxed Pico</small>
       <p>
         fiko.css is a small css framework with dark and light mode. It also
         gives you classless and fluid variations. A starter to keep your
@@ -27,15 +27,26 @@
         </ul>
         <ul>
           <li>
-            <button onclick="changeStylesheet('css/fiko.css')">FIKO</button>
+            <button
+              role="button"
+              onclick="changeStylesheet('../../css/fiko.css')"
+            >
+              FIKO
+            </button>
           </li>
           <li>
-            <button onclick="changeStylesheet('css/fiko.classless.css')">
+            <button
+              role="button"
+              onclick="changeStylesheet('../../css/fiko.classless.css')"
+            >
               CLASSLESS
             </button>
           </li>
           <li>
-            <button onclick="changeStylesheet('css/fiko.fluid.classless.css')">
+            <button
+              role="button"
+              onclick="changeStylesheet('../../css/fiko.fluid.classless.css')"
+            >
               FLUID
             </button>
           </li>

@@ -57,7 +57,8 @@
     }
   },
   "files.associations": {
-    "*.mdx": "markdown"
+    "*.mdx": "markdown",
+    "*.md": "markdown"
   },
   "colorize.include": [
     "**/*.astro",

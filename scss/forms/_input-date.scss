@@ -52,7 +52,7 @@
       [type="month"],
       [type="time"],
       [type="week"] {
-        padding-right: var(#{$✨}form-element-spacing-horizontal) !important;
+        padding-right: var(#{$✨}spacing) !important;
         background-image: none !important;
       }
     }

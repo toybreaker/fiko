@@ -118,7 +118,7 @@
   input:not([type="checkbox"], [type="radio"], [type="range"]) {
     height: calc(
       (1rem * var(#{$✨}line-height)) +
-        (var(#{$✨}form-element-spacing-vertical) * 2) +
+        (var(#{$✨}spacing) * 2) +
         (var(#{$✨}border-width) * 2)
     );
   }
@@ -155,8 +155,7 @@
   select,
   textarea {
     appearance: none;
-    padding: var(#{$✨}form-element-spacing-vertical)
-      var(#{$✨}form-element-spacing-horizontal);
+    padding: var(#{$✨}spacing) var(#{$✨}spacing);
   }
 
   // Commons styles
@@ -265,26 +264,17 @@
       ) {
       &[aria-invalid] {
         @if $enable-important {
-          padding-right: calc(
-            var(#{$✨}form-element-spacing-horizontal) + 1.5rem
-          ) !important;
-          padding-left: var(#{$✨}form-element-spacing-horizontal);
-          padding-inline-start: var(
-            #{$✨}form-element-spacing-horizontal
-          ) !important;
-          padding-inline-end: calc(
-            var(#{$✨}form-element-spacing-horizontal) + 1.5rem
-          ) !important;
+          padding-right: calc(var(#{$✨}spacing) + 1.5rem) !important;
+          padding-left: var(#{$✨}spacing);
+          padding-inline-start: var(#{$✨}spacing) !important;
+          padding-inline-end: calc(var(#{$✨}spacing) + 1.5rem) !important;
         } @else {
-          padding-right: calc(
-            var(#{$✨}form-element-spacing-horizontal) + 1.5rem
-          );
-          padding-left: var(#{$✨}form-element-spacing-horizontal);
-          padding-inline-start: var(#{$✨}form-element-spacing-horizontal);
-          padding-inline-end: calc(
-            var(#{$✨}form-element-spacing-horizontal) + 1.5rem
-          );
+          padding-right: calc(var(#{$✨}spacing) + 1.5rem);
+          padding-left: var(#{$✨}spacing);
+          padding-inline-start: var(#{$✨}spacing);
+          padding-inline-end: calc(var(#{$✨}spacing) + 1.5rem);
         }
+
         background-position: center right 0.75rem;
         background-size: 1rem auto;
         background-repeat: no-repeat;
@@ -398,12 +388,10 @@
     }
 
     &:not([multiple], [size]) {
-      padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
-      padding-left: var(#{$✨}form-element-spacing-horizontal);
-      padding-inline-start: var(#{$✨}form-element-spacing-horizontal);
-      padding-inline-end: calc(
-        var(#{$✨}form-element-spacing-horizontal) + 1.5rem
-      );
+      padding-right: calc(var(#{$✨}spacing) + 1.5rem);
+      padding-left: var(#{$✨}spacing);
+      padding-inline-start: var(#{$✨}spacing);
+      padding-inline-end: calc(var(#{$✨}spacing) + 1.5rem);
       background-image: var(#{$✨}icon-chevron);
       background-position: center right 0.75rem;
       background-size: 1rem auto;
@@ -436,7 +424,7 @@
       @if $enable-important {
         #{$✨}icon-height: calc(
           (1rem * var(#{$✨}line-height)) +
-            (var(#{$✨}form-element-spacing-vertical) * 2) +
+            (var(#{$✨}spacing) * 2) +
             (var(#{$✨}border-width) * 2)
         );
         background-position: top right 0.75rem !important;
@@ -444,6 +432,7 @@
       }
     }
   }
+
   @if map.get($modules, "layout/grid") and $enable-classes {
     $helper-previous-tags: $helper-previous-tags + ", .grid";
   }
@@ -456,11 +445,13 @@
       margin-bottom: var(#{$✨}spacing);
       color: var(#{$✨}muted-color);
     }
+
     &[aria-invalid="false"] {
       + small {
         color: var(#{$✨}ins-color);
       }
     }
+
     &[aria-invalid="true"] {
       + small {
         color: var(#{$✨}del-color);

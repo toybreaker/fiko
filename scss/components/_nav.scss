@@ -34,26 +34,23 @@
       list-style: none;
 
       &:first-of-type {
-        margin-left: calc(var(#{$✨}spacing-horizontal) * -1);
+        margin-left: calc(var(#{$✨}spacing) * -1);
       }
 
       &:last-of-type {
-        margin-right: calc(var(#{$✨}spacing-horizontal) * -1);
+        margin-right: calc(var(#{$✨}spacing) * -1);
       }
     }
 
     li {
       display: inline-block;
       margin: 0;
-      padding: var(#{$✨}nav-element-spacing-vertical)
-        var(#{$✨}spacing-horizontal);
+      padding: var(#{$✨}spacing) var(#{$✨}spacing);
 
       :where(a, [role="link"]) {
         display: inline-block;
-        margin: calc(var(#{$✨}nav-link-spacing-vertical) * -1)
-          calc(var(#{$✨}nav-link-spacing-horizontal) * -1);
-        padding: var(#{$✨}nav-link-spacing-vertical)
-          var(#{$✨}nav-link-spacing-horizontal);
+        margin: calc(var(#{$✨}spacing) * -1) calc(var(#{$✨}spacing) * -1);
+        padding: var(#{$✨}spacing) var(#{$✨}spacing);
         border-radius: var(#{$✨}border-radius);
 
         &:not(:hover) {
@@ -75,10 +72,8 @@
         margin-right: inherit;
         margin-bottom: 0;
         margin-left: inherit;
-        padding: calc(
-            var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2)
-          )
-          var(#{$✨}nav-link-spacing-horizontal);
+        padding: calc(var(#{$✨}spacing) - (var(#{$✨}border-width) * 2))
+          var(#{$✨}nav-link-spacing);
       }
     }
 
@@ -89,16 +84,14 @@
 
       & ul li {
         &:not(:first-child) {
-          margin-inline-start: var(#{$✨}nav-link-spacing-horizontal);
+          margin-inline-start: var(#{$✨}nav-link-spacing);
         }
 
         &:not(:last-child) {
           &::after {
             position: absolute;
-            width: calc(var(#{$✨}nav-link-spacing-horizontal) * 2);
-            margin-inline-start: calc(
-              var(#{$✨}nav-link-spacing-horizontal) / 2
-            );
+            width: calc(var(#{$✨}nav-link-spacing) * 2);
+            margin-inline-start: calc(var(#{$✨}nav-link-spacing) / 2);
             content: var(#{$✨}nav-breadcrumb-divider);
             color: var(#{$✨}muted-color);
             text-align: center;
@@ -127,8 +120,7 @@
     }
 
     li {
-      padding: calc(var(#{$✨}nav-element-spacing-vertical) * 0.5)
-        var(#{$✨}spacing-horizontal);
+      padding: calc(var(#{$✨}spacing) * 0.5) var(#{$✨}spacing);
 
       a {
         display: block;

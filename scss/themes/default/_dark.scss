@@ -6,10 +6,9 @@
 
 // Default: Dark theme
 @mixin theme {
-  #{$✨}background-color: #{mix($lime, $lime)};
-
+  #{$✨}background-color: #000000;
   // Text color
-  #{$✨}color: #{$lime};
+  #{$✨}color: white;
 
   // Text selection color
   #{$✨}text-selection-color: #{rgba($lime, 0.1875)};
@@ -20,15 +19,15 @@
 
   // Primary colors
   #{$✨}primary: #{$lime};
-  #{$✨}primary-background: #{$lime};
-  #{$✨}primary-border: var(#{$✨}primary-background);
+  #{$✨}primary-background: black;
+  #{$✨}primary-border: #{rgba($black, 0.375)};
   #{$✨}primary-underline: #{rgba($lime, 0.5)};
   #{$✨}primary-hover: #{$lime};
   #{$✨}primary-hover-background: #{$lime};
   #{$✨}primary-hover-border: var(#{$✨}primary-hover-background);
   #{$✨}primary-hover-underline: var(#{$✨}primary-hover);
   #{$✨}primary-focus: #{rgba($lime, 0.375)};
-  #{$✨}primary-inverse: #{$white};
+  #{$✨}primary-inverse: #{$black};
 
   // Secondary colors
   #{$✨}secondary: #{$lime};
@@ -40,7 +39,7 @@
   #{$✨}secondary-hover-border: var(#{$✨}secondary-hover-background);
   #{$✨}secondary-hover-underline: var(#{$✨}secondary-hover);
   #{$✨}secondary-focus: #{rgba($lime, 0.25)};
-  #{$✨}secondary-inverse: #{$white};
+  #{$✨}secondary-inverse: #{$black};
 
   // Contrast colors
   #{$✨}contrast: #{$lime};
@@ -84,8 +83,8 @@
   @if map.get($modules, "components/button") {
     // To disable box-shadow, remove the var or set to '0 0 0 rgba(0, 0, 0, 0)'
     // Don't use, 'none, 'false, 'null', '0', etc.
-    #{$✨}button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    #{$✨}button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    // #{$✨}button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    // #{$✨}button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
 
   // Table
@@ -96,8 +95,8 @@
 
   // Code
   @if map.get($modules, "components/code") {
-    #{$✨}code-background-color: #{mix($lime, $lime, 75%)};
-    #{$✨}code-color: #{$lime};
+    #{$✨}code-background-color: black;
+    #{$✨}code-color: white;
     #{$✨}code-kbd-background-color: var(#{$✨}color);
     #{$✨}code-kbd-color: var(#{$✨}background-color);
   }

@@ -6,29 +6,29 @@
 
 // Default: Light theme
 @mixin theme {
-  #{$✨}background-color: #{$white};
+  #{$✨}background-color: rgba(255, 255, 255, 1);
 
   // Text color
-  #{$✨}color: #{$lime};
+  #{$✨}color: rgba(0, 0, 0, 1);
 
   // Text selection color
-  #{$✨}text-selection-color: #{rgba($lime, 0.25)};
+  #{$✨}text-selection-color: rgba(0, 0, 0, 0.5);
 
   // Muted colors
-  #{$✨}muted-color: #{$lime};
-  #{$✨}muted-border-color: #{mix($lime, $white)};
+  #{$✨}muted-color: rgba(0, 0, 0, 0.5);
+  #{$✨}muted-border-color: rgba(0, 0, 0, 0.5);
 
   // Primary colors
   #{$✨}primary: #{$lime};
-  #{$✨}primary-background: #{$lime};
-  #{$✨}primary-border: var(#{$✨}primary-background);
-  #{$✨}primary-underline: #{rgba($lime, 0.5)};
-  #{$✨}primary-hover: #{$lime};
-  #{$✨}primary-hover-background: #{$lime};
-  #{$✨}primary-hover-border: var(#{$✨}primary-hover-background);
-  #{$✨}primary-hover-underline: var(#{$✨}primary-hover);
+  #{$✨}primary-background: white;
+  #{$✨}primary-border: rgba(0, 0, 0, 0.5);
+  #{$✨}primary-underline: rgba(0, 0, 0, 0.5);
+  #{$✨}primary-hover: rgba(0, 0, 0, 0.5);
+  #{$✨}primary-hover-background: rgba(255, 255, 255, 0.5);
+  #{$✨}primary-hover-border: rgba(0, 0, 0, 0.5);
+  #{$✨}primary-hover-underline: rgba(0, 0, 0, 0.5);
   #{$✨}primary-focus: #{rgba($lime, 0.5)};
-  #{$✨}primary-inverse: #{$white};
+  #{$✨}primary-inverse: #{$black};
 
   // Secondary colors
   #{$✨}secondary: #{$lime};
@@ -40,7 +40,7 @@
   #{$✨}secondary-hover-border: var(#{$✨}secondary-hover-background);
   #{$✨}secondary-hover-underline: var(#{$✨}secondary-hover);
   #{$✨}secondary-focus: #{rgba($lime, 0.25)};
-  #{$✨}secondary-inverse: #{$white};
+  #{$✨}secondary-inverse: #{$black};
 
   // Contrast colors
   #{$✨}contrast: #{$lime};
@@ -96,8 +96,8 @@
 
   // Code
   @if map.get($modules, "components/code") {
-    #{$✨}code-background-color: #{mix($white, $white, 75%)};
-    #{$✨}code-color: #{$lime};
+    #{$✨}code-background-color: white;
+    #{$✨}code-color: black;
     #{$✨}code-kbd-background-color: var(#{$✨}color);
     #{$✨}code-kbd-color: var(#{$✨}background-color);
   }

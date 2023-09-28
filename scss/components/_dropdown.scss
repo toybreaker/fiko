@@ -50,13 +50,12 @@
     height: calc(
       1rem *
         var(#{$✨}line-height) +
-        var(#{$✨}form-element-spacing-vertical) *
+        var(#{$✨}spacing) *
         2 +
         var(#{$✨}border-width) *
         2
     );
-    padding: var(#{$✨}form-element-spacing-vertical)
-      var(#{$✨}form-element-spacing-horizontal);
+    padding: var(#{$✨}spacing) var(#{$✨}spacing);
     border: var(#{$✨}border-width) solid var(#{$✨}form-element-border-color);
     border-radius: var(#{$✨}border-radius);
     background-color: var(#{$✨}form-element-background-color);
@@ -118,18 +117,13 @@
   // ––––––––––––––––––––
   nav details.dropdown {
     display: inline;
-    margin: calc(var(#{$✨}nav-element-spacing-vertical) * -1) 0;
+    margin: calc(var(#{$✨}spacing) * -1) 0;
 
     summary:not([role]) {
       // Override height
-      height: calc(
-        (1rem * var(#{$✨}line-height)) +
-          (var(#{$✨}nav-link-spacing-vertical) * 2)
-      );
-      padding: calc(
-          var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2)
-        )
-        var(#{$✨}nav-link-spacing-horizontal);
+      height: calc((1rem * var(#{$✨}line-height)) + (var(#{$✨}spacing) * 2));
+      padding: calc(var(#{$✨}spacing) - (var(#{$✨}border-width) * 2))
+        var(#{$✨}spacing);
 
       &:focus-visible {
         box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
@@ -153,13 +147,13 @@
     border: var(#{$✨}border-width) solid var(#{$✨}dropdown-border-color);
     border-radius: var(#{$✨}border-radius);
     background-color: var(#{$✨}dropdown-background-color);
-    box-shadow: var(#{$✨}dropdown-box-shadow);
+    //box-shadow: var(#{$✨}dropdown-box-shadow);
     color: var(#{$✨}dropdown-color);
     white-space: nowrap;
     opacity: 0;
 
     @if $enable-transitions {
-      transition: opacity var(--pico-transition), transform 0s ease-in-out 1s;
+      transition: opacity var(--fiko-transition), transform 0.3s ease-in-out 1s;
     }
 
     &[dir="rtl"] {
@@ -170,24 +164,21 @@
     li {
       width: 100%;
       margin-bottom: 0;
-      padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5)
-        var(#{$✨}form-element-spacing-horizontal);
+      padding: calc(var(#{$✨}spacing) * 0.5) var(#{$✨}spacing);
       list-style: none;
 
       &:first-of-type {
-        margin-top: calc(var(#{$✨}form-element-spacing-vertical) * 0.5);
+        margin-top: calc(var(#{$✨}spacing) * 0.5);
       }
 
       &:last-of-type {
-        margin-bottom: calc(var(#{$✨}form-element-spacing-vertical) * 0.5);
+        margin-bottom: calc(var(#{$✨}spacing) * 0.5);
       }
 
       a {
         display: block;
-        margin: calc(var(#{$✨}form-element-spacing-vertical) * -0.5)
-          calc(var(#{$✨}form-element-spacing-horizontal) * -1);
-        padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5)
-          var(#{$✨}form-element-spacing-horizontal);
+        margin: calc(var(#{$✨}spacing) * -0.5) calc(var(#{$✨}spacing) * -1);
+        padding: calc(var(#{$✨}spacing) * 0.5) var(#{$✨}spacing);
         overflow: hidden;
         border-radius: 0;
         color: var(#{$✨}dropdown-color);
@@ -230,7 +221,7 @@
       opacity: 1;
 
       @if $enable-transitions {
-        transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
+        transition: opacity var(--fiko-transition), transform 0s ease-in-out 0s;
       }
     }
   }
@@ -251,6 +242,7 @@
       cursor: default;
     }
   }
+
   // Label
   // ––––––––––––––––––––
   label > details.dropdown {

@@ -9,9 +9,7 @@
   // :not() are needed to add Specificity and avoid !important on padding
   input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     &[type="search"] {
-      padding-inline-start: calc(
-        var(#{$✨}form-element-spacing-horizontal) + 1.75rem
-      );
+      padding-inline-start: calc(var(#{$✨}spacing) + 1.75rem);
       background-image: var(#{$✨}icon-search);
       background-position: center left 1.125rem;
       background-size: 1rem auto;
@@ -19,14 +17,11 @@
 
       &[aria-invalid] {
         @if $enable-important {
-          padding-inline-start: calc(
-            var(#{$✨}form-element-spacing-horizontal) + 1.75rem
-          ) !important;
+          padding-inline-start: calc(var(#{$✨}spacing) + 1.75rem) !important;
         } @else {
-          padding-inline-start: calc(
-            var(#{$✨}form-element-spacing-horizontal) + 1.75rem
-          );
+          padding-inline-start: calc(var(#{$✨}spacing) + 1.75rem);
         }
+
         background-position: center left 1.125rem, center right 0.75rem;
       }
 

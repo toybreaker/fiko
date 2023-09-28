@@ -2,7 +2,7 @@
   "name": "fiko",
   "version_TLDR": "AUTO STYLE SEMANTIC HTML | BASE CLASSLESS CSS TEMPLATE",
   "version_name": "🐸",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "css/fiko.min.css",
@@ -29,6 +29,7 @@
   "scripts": {
     "B": "run-s build",
     "build": "run-s start lint \"build:*\" done --silent",
+    "build0": "sass --style expanded --no-source-map scss/:css/",
     "dev": "nodemon -q --watch scss/ --ext scss --exec 'run-s build'",
     "lint": "run-s \"lint:*\" --silent",
     "lint:prettier": "prettier --write --loglevel silent 'scss/**/*.scss'",

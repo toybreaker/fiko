@@ -9,10 +9,12 @@ YO, this in full-on work in progress. v0.2.5
 🐸 LIGHT OR DARK MODE
 🐸 USES THE SEMANTICS OF NATIVE HTML TAGS.
 🐸 CLASSLESS OPTION.
+🐸 26k the full `fiko.min.css` version.
+🐸 24k the `fiko.classless.min.css` `fiko.fluid.classless.min.css` versions.
 
 ## USE IT 🫵
 
-[Download FIKO](https://github.com/TOYBREAKER/fiko/fiko.zip) and link `/css/fiko.min.css` in the `<head>` of your website.
+[Download FIKO](https://github.com/TOYBREAKER/fiko/fiko.zip) and link `/css/fiko.min.css` ( or any other version... ) in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/fiko.css" />

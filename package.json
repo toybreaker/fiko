@@ -1,8 +1,8 @@
 {
   "name": "fiko",
-  "version_TLDR": "SEMANTIC HTML AUT-STYLING| BASE & CLASSLESS CSS TEMPLATE",
+  "version_TLDR": "3 SEMANTIC AUTO-STYLING CSS TEMPLATES. CLASSLESS, FLUID",
   "version_name": "🐸",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "css/fiko.min.css",
@@ -26,11 +26,11 @@
     "semantic"
   ],
   "scripts": {
-    "B": "npm-run-all -s. build",
-    "build": "npm-run-all -s. start lint \"build:*\" done --silent",
+    "B": "npm-run-all build",
+    "build": "npm-run-all start lint \"build:*\" done",
     "build0": "sass --style expanded --no-source-map scss/:css/",
-    "dev": "nodemon -q --watch scss/ --ext scss --exec 'npm-run-all -s. build'",
-    "lint": "npm-run-all -s. \"lint:*\" --silent",
+    "dev": "nodemon -q --watch scss/ --ext scss --exec 'npm-run-all build'",
+    "lint": "npm-run-all  \"lint:*\"",
     "lint:prettier": "prettier --write --loglevel silent 'scss/**/*.scss'",
     "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
     "build:css": "sass --load-path=node_modules/@picocss/colors/scss --style expanded --source-map --embed-sources --no-error-css scss/:css/",

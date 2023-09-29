@@ -2,7 +2,7 @@
   "name": "fiko",
   "version_TLDR": "3 SEMANTIC AUTO-STYLING CSS TEMPLATES. CLASSLESS, FLUID",
   "version_name": "🐸",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "css/fiko.min.css",

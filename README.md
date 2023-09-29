@@ -1,4 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/68612997-fe61-4776-80d5-9edd46c5a331/deploy-status)](https://app.netlify.com/sites/fikocss/deploys)
+
 # FIKO 🐸 CSS FRAMEWORK.
+
+YO, this in full-on work in progress. v0.2.5
 
 🐸 GREAT STYLES WITH JUST ONE CSS FILE
 🐸 RESPONSIVE EVERYTHING

@@ -2,7 +2,7 @@
   "name": "fiko",
   "version_TLDR": "AUTO STYLE SEMANTIC HTML | BASE CLASSLESS CSS TEMPLATE",
   "version_name": "🐸",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "css/fiko.min.css",
@@ -18,7 +18,6 @@
   "keywords": [
     "css",
     "css-framework",
-    "scss-framework",
     "dark-mode",
     "dark-theme",
     "lightweight",
@@ -37,12 +36,12 @@
     "build:css": "sass --load-path=node_modules/@picocss/colors/scss --style expanded --source-map --embed-sources --no-error-css scss/:css/",
     "build:autoprefix": "postcss --config css --replace css/*.css !css/*.min.css",
     "build:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
-    "prelint": "echo '[@junglesta/fiko] 🐸 Lint'",
-    "prebuild:css": "echo '[@junglesta/fiko] 🐸 Compile'",
-    "prebuild:autoprefix": "echo '[@junglesta/fiko] 🐸 Autoprefix'",
-    "prebuild:minify": "echo '[@junglesta/fiko] 🐸 Minify'",
-    "start": "echo '\\033[96m[@junglesta/fiko] 🐸 Start\\033[0m'",
-    "done": "echo '\\033[32m[@junglesta/fiko] 🐸 Done\\033[0m'"
+    "prelint": "echo '[fiko] 🐸 Lint'",
+    "prebuild:css": "echo '[fiko] 🐸 Compile'",
+    "prebuild:autoprefix": "echo '[fiko] 🐸 Autoprefix'",
+    "prebuild:minify": "echo '[fiko] 🐸 Minify'",
+    "start": "echo '\\033[96m[fiko] 🐸 Start\\033[0m'",
+    "done": "echo '\\033[32m[fiko] 🐸 Done\\033[0m'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

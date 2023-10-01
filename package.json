@@ -2,7 +2,7 @@
   "name": "fiko",
   "version_TLDR": "3 SEMANTIC AUTO-STYLING CSS TEMPLATES. CLASSLESS, FLUID",
   "version_name": "🐸",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "css/fiko.min.css",
@@ -26,7 +26,7 @@
     "semantic"
   ],
   "scripts": {
-    "B": "npm-run-all build",
+    "F": "npm-run-all build",
     "build": "npm-run-all start lint \"build:*\" done",
     "build0": "sass --style expanded --no-source-map scss/:css/",
     "dev": "nodemon -q --watch scss/ --ext scss --exec 'npm-run-all build'",

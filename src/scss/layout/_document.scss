@@ -1,0 +1,57 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "layout/document") {
+  /**
+   * Document
+   * Content-box & Responsive typography
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Add border box sizing in all browsers (opinionated)
+  // 2. Backgrounds do not repeat by default (opinionated)
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box; // 1
+    background-repeat: no-repeat; // 2
+  }
+
+  // 1. Add text decoration inheritance in all browsers (opinionated)
+  // 2. Add vertical alignment inheritance in all browsers (opinionated)
+  ::before,
+  ::after {
+    text-decoration: inherit; // 1
+    vertical-align: inherit; // 2
+  }
+
+  // 1. Use the default cursor in all browsers (opinionated)
+  // 2. Change the line height in all browsers (opinionated)
+  // 3. Breaks words to prevent overflow in all browsers (opinionated)
+  // 4. Use a 4-space tab width in all browsers (opinionated)
+  // 5. Remove the grey highlight on links in iOS (opinionated)
+  // 6. Prevent adjustments of font size after orientation changes in iOS
+  :where(:root) {
+    -webkit-tap-highlight-color: transparent; // 5
+    -webkit-text-size-adjust: 100%; // 6
+    text-size-adjust: 100%; // 6
+    background-color: var(#{$✨}background-color);
+    color: var(#{$✨}color);
+    font-weight: var(#{$✨}font-weight);
+    font-size: var(#{$✨}font-size);
+    line-height: var(#{$✨}line-height); // 2
+    font-family: var(#{$✨}font-family);
+    text-underline-offset: var(#{$✨}text-underline-offset);
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word; // 3
+    cursor: default; // 1
+    tab-size: 4; // 4
+  }
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9kb2N1bWVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6Il9kb2N1bWVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQHVzZSBcInNhc3M6bWFwXCI7XG5AdXNlIFwiLi4vc2V0dGluZ3NcIiBhcyAqO1xuXG5AaWYgbWFwLmdldCgkbW9kdWxlcywgXCJsYXlvdXQvZG9jdW1lbnRcIikge1xuICAvKipcbiAgICogRG9jdW1lbnRcbiAgICogQ29udGVudC1ib3ggJiBSZXNwb25zaXZlIHR5cG9ncmFwaHlcbiAgICovXG5cbiAgLy8gUmVib290IGJhc2VkIG9uIDpcbiAgLy8gLSBub3JtYWxpemUuY3NzIHY4LjAuMSB8IE1JVCBMaWNlbnNlIHwgZ2l0aHViLmNvbS9uZWNvbGFzL25vcm1hbGl6ZS5jc3NcbiAgLy8gLSBzYW5pdGl6ZS5jc3MgdjEzLjAuMCB8IENDMCAxLjAgVW5pdmVyc2FsIHwgZ2l0aHViLmNvbS9jc3N0b29scy9zYW5pdGl6ZS5jc3NcbiAgLy8g4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCT4oCTXG5cbiAgLy8gMS4gQWRkIGJvcmRlciBib3ggc2l6aW5nIGluIGFsbCBicm93c2VycyAob3BpbmlvbmF0ZWQpXG4gIC8vIDIuIEJhY2tncm91bmRzIGRvIG5vdCByZXBlYXQgYnkgZGVmYXVsdCAob3BpbmlvbmF0ZWQpXG4gICosXG4gICo6OmJlZm9yZSxcbiAgKjo6YWZ0ZXIge1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7IC8vIDFcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0OyAvLyAyXG4gIH1cblxuICAvLyAxLiBBZGQgdGV4dCBkZWNvcmF0aW9uIGluaGVyaXRhbmNlIGluIGFsbCBicm93c2VycyAob3BpbmlvbmF0ZWQpXG4gIC8vIDIuIEFkZCB2ZXJ0aWNhbCBhbGlnbm1lbnQgaW5oZXJpdGFuY2UgaW4gYWxsIGJyb3dzZXJzIChvcGluaW9uYXRlZClcbiAgOjpiZWZvcmUsXG4gIDo6YWZ0ZXIge1xuICAgIHRleHQtZGVjb3JhdGlvbjogaW5oZXJpdDsgLy8gMVxuICAgIHZlcnRpY2FsLWFsaWduOiBpbmhlcml0OyAvLyAyXG4gIH1cblxuICAvLyAxLiBVc2UgdGhlIGRlZmF1bHQgY3Vyc29yIGluIGFsbCBicm93c2VycyAob3BpbmlvbmF0ZWQpXG4gIC8vIDIuIENoYW5nZSB0aGUgbGluZSBoZWlnaHQgaW4gYWxsIGJyb3dzZXJzIChvcGluaW9uYXRlZClcbiAgLy8gMy4gQnJlYWtzIHdvcmRzIHRvIHByZXZlbnQgb3ZlcmZsb3cgaW4gYWxsIGJyb3dzZXJzIChvcGluaW9uYXRlZClcbiAgLy8gNC4gVXNlIGEgNC1zcGFjZSB0YWIgd2lkdGggaW4gYWxsIGJyb3dzZXJzIChvcGluaW9uYXRlZClcbiAgLy8gNS4gUmVtb3ZlIHRoZSBncmV5IGhpZ2hsaWdodCBvbiBsaW5rcyBpbiBpT1MgKG9waW5pb25hdGVkKVxuICAvLyA2LiBQcmV2ZW50IGFkanVzdG1lbnRzIG9mIGZvbnQgc2l6ZSBhZnRlciBvcmllbnRhdGlvbiBjaGFuZ2VzIGluIGlPU1xuICA6d2hlcmUoOnJvb3QpIHtcbiAgICAtd2Via2l0LXRhcC1oaWdobGlnaHQtY29sb3I6IHRyYW5zcGFyZW50OyAvLyA1XG4gICAgLXdlYmtpdC10ZXh0LXNpemUtYWRqdXN0OiAxMDAlOyAvLyA2XG4gICAgdGV4dC1zaXplLWFkanVzdDogMTAwJTsgLy8gNlxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigjeyTinKh9YmFja2dyb3VuZC1jb2xvcik7XG4gICAgY29sb3I6IHZhcigjeyTinKh9Y29sb3IpO1xuICAgIGZvbnQtd2VpZ2h0OiB2YXIoI3sk4pyofWZvbnQtd2VpZ2h0KTtcbiAgICBmb250LXNpemU6IHZhcigjeyTinKh9Zm9udC1zaXplKTtcbiAgICBsaW5lLWhlaWdodDogdmFyKCN7JOKcqH1saW5lLWhlaWdodCk7IC8vIDJcbiAgICBmb250LWZhbWlseTogdmFyKCN7JOKcqH1mb250LWZhbWlseSk7XG4gICAgdGV4dC11bmRlcmxpbmUtb2Zmc2V0OiB2YXIoI3sk4pyofXRleHQtdW5kZXJsaW5lLW9mZnNldCk7XG4gICAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplTGVnaWJpbGl0eTtcbiAgICBvdmVyZmxvdy13cmFwOiBicmVhay13b3JkOyAvLyAzXG4gICAgY3Vyc29yOiBkZWZhdWx0OyAvLyAxXG4gICAgdGFiLXNpemU6IDQ7IC8vIDRcbiAgfVxufVxuXG4iXX0= */

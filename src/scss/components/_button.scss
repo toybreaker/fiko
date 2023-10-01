@@ -1,0 +1,226 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/button") {
+  /**
+   * Button
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Change the font styles in all browsers
+  // 2. Remove the margin on controls in Safari
+  // 3. Show the overflow in Edge
+  button {
+    margin: 0; // 2
+    overflow: visible; // 3
+    font-family: inherit; // 1
+    text-transform: none; // 1
+  }
+
+  // Correct the inability to style buttons in iOS and Safari
+  button,
+  [type="submit"],
+  [type="reset"],
+  [type="button"] {
+    -webkit-appearance: button;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+
+  button,
+  [type="submit"],
+  [type="reset"],
+  [type="button"],
+  [type="file"]::file-selector-button,
+  [role="button"] {
+    #{$✨}background-color: var(#{$✨}primary-background);
+    #{$✨}border-color: var(#{$✨}primary);
+    #{$✨}color: var(#{$✨}primary);
+    //#{$✨}box-shadow: var(#{$✨}button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    padding: var(#{$✨}spacing) var(#{$✨}spacing);
+    border: var(#{$✨}border-width) solid var(#{$✨}border-color);
+    border-radius: var(#{$✨}border-radius);
+    outline: none;
+    background-color: var(#{$✨}background-color);
+    //box-shadow: var(#{$✨}box-shadow);
+    //color: var(#{$✨}color);
+    font-weight: var(#{$✨}font-weight);
+    font-size: 1rem;
+    line-height: var(#{$✨}line-height);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+
+    @if $enable-transitions {
+      transition: background-color var(#{$✨}transition),
+        border-color var(#{$✨}transition), color var(#{$✨}transition);
+      //box-shadow var(#{$✨}transition);
+    }
+
+    &:is([aria-current], :hover, :active, :focus) {
+      #{$✨}background-color: var(#{$✨}primary-hover-background);
+      #{$✨}border-color: var(#{$✨}primary-hover-border);
+      #{$✨}box-shadow: var(
+        #{$✨}button-hover-box-shadow,
+        0 0 0 rgba(0, 0, 0, 0)
+      );
+      #{$✨}color: var(#{$✨}primary-inverse);
+    }
+
+    &:focus {
+      #{$✨}box-shadow: var(
+          #{$✨}button-hover-box-shadow,
+          0 0 0 rgba(0, 0, 0, 0)
+        ),
+        0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
+    }
+  }
+
+  [type="submit"],
+  [type="reset"],
+  [type="button"] {
+    margin-bottom: var(#{$✨}spacing);
+  }
+
+  // .secondary, .contrast & .outline
+  @if $enable-classes {
+    // Secondary
+    :is(button, [type="submit"], [type="button"], [role="button"]).secondary,
+    [type="reset"],
+    [type="file"]::file-selector-button {
+      #{$✨}background-color: var(#{$✨}secondary-background);
+      #{$✨}border-color: var(#{$✨}secondary-border);
+      #{$✨}color: var(#{$✨}secondary-inverse);
+      cursor: pointer;
+
+      &:is([aria-current], :hover, :active, :focus) {
+        #{$✨}background-color: var(#{$✨}secondary-hover-background);
+        #{$✨}border-color: var(#{$✨}secondary-hover-border);
+        #{$✨}color: var(#{$✨}secondary-inverse);
+      }
+
+      &:focus {
+        #{$✨}box-shadow: var(
+            #{$✨}button-hover-box-shadow,
+            0 0 0 rgba(0, 0, 0, 0)
+          ),
+          0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
+      }
+    }
+
+    // Contrast
+    :is(button, [type="submit"], [type="button"], [role="button"]).contrast {
+      #{$✨}background-color: var(#{$✨}contrast-background);
+      #{$✨}border-color: var(#{$✨}contrast-border);
+      #{$✨}color: var(#{$✨}contrast-inverse);
+
+      &:is([aria-current], :hover, :active, :focus) {
+        #{$✨}background-color: var(#{$✨}contrast-hover-background);
+        #{$✨}border-color: var(#{$✨}contrast-hover-border);
+        #{$✨}color: var(#{$✨}contrast-inverse);
+      }
+
+      &:focus {
+        #{$✨}box-shadow: var(
+            #{$✨}button-hover-box-shadow,
+            0 0 0 rgba(0, 0, 0, 0)
+          ),
+          0 0 0 var(#{$✨}outline-width) var(#{$✨}contrast-focus);
+      }
+    }
+
+    // Outline (primary)
+    :is(button, [type="submit"], [type="button"], [role="button"]).outline,
+    [type="reset"].outline {
+      #{$✨}background-color: transparent;
+      #{$✨}color: var(#{$✨}primary);
+      #{$✨}border-color: currentColor;
+
+      &:is([aria-current], :hover, :active, :focus) {
+        #{$✨}background-color: transparent;
+        #{$✨}color: var(#{$✨}primary-hover);
+      }
+    }
+
+    // Outline (secondary)
+    :is(
+        button,
+        [type="submit"],
+        [type="button"],
+        [role="button"]
+      ).outline.secondary,
+    [type="reset"].outline {
+      #{$✨}color: var(#{$✨}secondary);
+      #{$✨}border-color: currentColor;
+
+      &:is([aria-current], :hover, :active, :focus) {
+        #{$✨}color: var(#{$✨}secondary-hover);
+      }
+    }
+
+    // Outline (contrast)
+    :is(
+        button,
+        [type="submit"],
+        [type="button"],
+        [role="button"]
+      ).outline.contrast {
+      #{$✨}color: var(#{$✨}contrast);
+
+      &:is([aria-current], :hover, :active, :focus) {
+        #{$✨}color: var(#{$✨}contrast-hover);
+      }
+    }
+  } @else {
+    // Secondary button without .class
+    [type="reset"],
+    [type="file"]::file-selector-button {
+      #{$✨}background-color: var(#{$✨}secondary);
+      #{$✨}border-color: var(#{$✨}secondary);
+      #{$✨}color: var(#{$✨}secondary-inverse);
+      cursor: pointer;
+
+      &:is([aria-current], :hover, :active, :focus) {
+        #{$✨}background-color: var(#{$✨}secondary-hover);
+        #{$✨}border-color: var(#{$✨}secondary-hover);
+      }
+
+      &:focus {
+        #{$✨}box-shadow: var(
+            #{$✨}button-hover-box-shadow,
+            0 0 0 rgba(0, 0, 0, 0)
+          ),
+          0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
+      }
+    }
+  }
+
+  // Button [disabled]
+  :where(
+      button,
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [role="button"]
+    )[disabled],
+  :where(fieldset[disabled])
+    :is(
+      button,
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [role="button"]
+    ) {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9idXR0b24uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJfYnV0dG9uLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAdXNlIFwic2FzczptYXBcIjtcbkB1c2UgXCIuLi9zZXR0aW5nc1wiIGFzICo7XG5cbkBpZiBtYXAuZ2V0KCRtb2R1bGVzLCBcImNvbXBvbmVudHMvYnV0dG9uXCIpIHtcbiAgLyoqXG4gICAqIEJ1dHRvblxuICAgKi9cblxuICAvLyBSZWJvb3QgYmFzZWQgb24gOlxuICAvLyAtIG5vcm1hbGl6ZS5jc3MgdjguMC4xIHwgTUlUIExpY2Vuc2UgfCBnaXRodWIuY29tL25lY29sYXMvbm9ybWFsaXplLmNzc1xuICAvLyAtIHNhbml0aXplLmNzcyB2MTMuMC4wIHwgQ0MwIDEuMCBVbml2ZXJzYWwgfCBnaXRodWIuY29tL2Nzc3Rvb2xzL3Nhbml0aXplLmNzc1xuICAvLyDigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJNcblxuICAvLyAxLiBDaGFuZ2UgdGhlIGZvbnQgc3R5bGVzIGluIGFsbCBicm93c2Vyc1xuICAvLyAyLiBSZW1vdmUgdGhlIG1hcmdpbiBvbiBjb250cm9scyBpbiBTYWZhcmlcbiAgLy8gMy4gU2hvdyB0aGUgb3ZlcmZsb3cgaW4gRWRnZVxuICBidXR0b24ge1xuICAgIG1hcmdpbjogMDsgLy8gMlxuICAgIG92ZXJmbG93OiB2aXNpYmxlOyAvLyAzXG4gICAgZm9udC1mYW1pbHk6IGluaGVyaXQ7IC8vIDFcbiAgICB0ZXh0LXRyYW5zZm9ybTogbm9uZTsgLy8gMVxuICB9XG5cbiAgLy8gQ29ycmVjdCB0aGUgaW5hYmlsaXR5IHRvIHN0eWxlIGJ1dHRvbnMgaW4gaU9TIGFuZCBTYWZhcmlcbiAgYnV0dG9uLFxuICBbdHlwZT1cInN1Ym1pdFwiXSxcbiAgW3R5cGU9XCJyZXNldFwiXSxcbiAgW3R5cGU9XCJidXR0b25cIl0ge1xuICAgIC13ZWJraXQtYXBwZWFyYW5jZTogYnV0dG9uO1xuICB9XG5cbiAgLy8gUGljb1xuICAvLyDigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJNcblxuICBidXR0b24sXG4gIFt0eXBlPVwic3VibWl0XCJdLFxuICBbdHlwZT1cInJlc2V0XCJdLFxuICBbdHlwZT1cImJ1dHRvblwiXSxcbiAgW3R5cGU9XCJmaWxlXCJdOjpmaWxlLXNlbGVjdG9yLWJ1dHRvbixcbiAgW3JvbGU9XCJidXR0b25cIl0ge1xuICAgICN7JOKcqH1iYWNrZ3JvdW5kLWNvbG9yOiB2YXIoI3sk4pyofXByaW1hcnktYmFja2dyb3VuZCk7XG4gICAgI3sk4pyofWJvcmRlci1jb2xvcjogdmFyKCN7JOKcqH1wcmltYXJ5KTtcbiAgICAjeyTinKh9Y29sb3I6IHZhcigjeyTinKh9cHJpbWFyeSk7XG4gICAgLy8jeyTinKh9Ym94LXNoYWRvdzogdmFyKCN7JOKcqH1idXR0b24tYm94LXNoYWRvdywgMCAwIDAgcmdiYSgwLCAwLCAwLCAwKSk7XG4gICAgcGFkZGluZzogdmFyKCN7JOKcqH1zcGFjaW5nKSB2YXIoI3sk4pyofXNwYWNpbmcpO1xuICAgIGJvcmRlcjogdmFyKCN7JOKcqH1ib3JkZXItd2lkdGgpIHNvbGlkIHZhcigjeyTinKh9Ym9yZGVyLWNvbG9yKTtcbiAgICBib3JkZXItcmFkaXVzOiB2YXIoI3sk4pyofWJvcmRlci1yYWRpdXMpO1xuICAgIG91dGxpbmU6IG5vbmU7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKCN7JOKcqH1iYWNrZ3JvdW5kLWNvbG9yKTtcbiAgICAvL2JveC1zaGFkb3c6IHZhcigjeyTinKh9Ym94LXNoYWRvdyk7XG4gICAgLy9jb2xvcjogdmFyKCN7JOKcqH1jb2xvcik7XG4gICAgZm9udC13ZWlnaHQ6IHZhcigjeyTinKh9Zm9udC13ZWlnaHQpO1xuICAgIGZvbnQtc2l6ZTogMXJlbTtcbiAgICBsaW5lLWhlaWdodDogdmFyKCN7JOKcqH1saW5lLWhlaWdodCk7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgdXNlci1zZWxlY3Q6IG5vbmU7XG5cbiAgICBAaWYgJGVuYWJsZS10cmFuc2l0aW9ucyB7XG4gICAgICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIHZhcigjeyTinKh9dHJhbnNpdGlvbiksXG4gICAgICAgIGJvcmRlci1jb2xvciB2YXIoI3sk4pyofXRyYW5zaXRpb24pLCBjb2xvciB2YXIoI3sk4pyofXRyYW5zaXRpb24pO1xuICAgICAgLy9ib3gtc2hhZG93IHZhcigjeyTinKh9dHJhbnNpdGlvbik7XG4gICAgfVxuXG4gICAgJjppcyhbYXJpYS1jdXJyZW50XSwgOmhvdmVyLCA6YWN0aXZlLCA6Zm9jdXMpIHtcbiAgICAgICN7JOKcqH1iYWNrZ3JvdW5kLWNvbG9yOiB2YXIoI3sk4pyofXByaW1hcnktaG92ZXItYmFja2dyb3VuZCk7XG4gICAgICAjeyTinKh9Ym9yZGVyLWNvbG9yOiB2YXIoI3sk4pyofXByaW1hcnktaG92ZXItYm9yZGVyKTtcbiAgICAgICN7JOKcqH1ib3gtc2hhZG93OiB2YXIoXG4gICAgICAgICN7JOKcqH1idXR0b24taG92ZXItYm94LXNoYWRvdyxcbiAgICAgICAgMCAwIDAgcmdiYSgwLCAwLCAwLCAwKVxuICAgICAgKTtcbiAgICAgICN7JOKcqH1jb2xvcjogdmFyKCN7JOKcqH1wcmltYXJ5LWludmVyc2UpO1xuICAgIH1cblxuICAgICY6Zm9jdXMge1xuICAgICAgI3sk4pyofWJveC1zaGFkb3c6IHZhcihcbiAgICAgICAgICAjeyTinKh9YnV0dG9uLWhvdmVyLWJveC1zaGFkb3csXG4gICAgICAgICAgMCAwIDAgcmdiYSgwLCAwLCAwLCAwKVxuICAgICAgICApLFxuICAgICAgICAwIDAgMCB2YXIoI3sk4pyofW91dGxpbmUtd2lkdGgpIHZhcigjeyTinKh9cHJpbWFyeS1mb2N1cyk7XG4gICAgfVxuICB9XG5cbiAgW3R5cGU9XCJzdWJtaXRcIl0sXG4gIFt0eXBlPVwicmVzZXRcIl0sXG4gIFt0eXBlPVwiYnV0dG9uXCJdIHtcbiAgICBtYXJnaW4tYm90dG9tOiB2YXIoI3sk4pyofXNwYWNpbmcpO1xuICB9XG5cbiAgLy8gLnNlY29uZGFyeSwgLmNvbnRyYXN0ICYgLm91dGxpbmVcbiAgQGlmICRlbmFibGUtY2xhc3NlcyB7XG4gICAgLy8gU2Vjb25kYXJ5XG4gICAgOmlzKGJ1dHRvbiwgW3R5cGU9XCJzdWJtaXRcIl0sIFt0eXBlPVwiYnV0dG9uXCJdLCBbcm9sZT1cImJ1dHRvblwiXSkuc2Vjb25kYXJ5LFxuICAgIFt0eXBlPVwicmVzZXRcIl0sXG4gICAgW3R5cGU9XCJmaWxlXCJdOjpmaWxlLXNlbGVjdG9yLWJ1dHRvbiB7XG4gICAgICAjeyTinKh9YmFja2dyb3VuZC1jb2xvcjogdmFyKCN7JOKcqH1zZWNvbmRhcnktYmFja2dyb3VuZCk7XG4gICAgICAjeyTinKh9Ym9yZGVyLWNvbG9yOiB2YXIoI3sk4pyofXNlY29uZGFyeS1ib3JkZXIpO1xuICAgICAgI3sk4pyofWNvbG9yOiB2YXIoI3sk4pyofXNlY29uZGFyeS1pbnZlcnNlKTtcbiAgICAgIGN1cnNvcjogcG9pbnRlcjtcblxuICAgICAgJjppcyhbYXJpYS1jdXJyZW50XSwgOmhvdmVyLCA6YWN0aXZlLCA6Zm9jdXMpIHtcbiAgICAgICAgI3sk4pyofWJhY2tncm91bmQtY29sb3I6IHZhcigjeyTinKh9c2Vjb25kYXJ5LWhvdmVyLWJhY2tncm91bmQpO1xuICAgICAgICAjeyTinKh9Ym9yZGVyLWNvbG9yOiB2YXIoI3sk4pyofXNlY29uZGFyeS1ob3Zlci1ib3JkZXIpO1xuICAgICAgICAjeyTinKh9Y29sb3I6IHZhcigjeyTinKh9c2Vjb25kYXJ5LWludmVyc2UpO1xuICAgICAgfVxuXG4gICAgICAmOmZvY3VzIHtcbiAgICAgICAgI3sk4pyofWJveC1zaGFkb3c6IHZhcihcbiAgICAgICAgICAgICN7JOKcqH1idXR0b24taG92ZXItYm94LXNoYWRvdyxcbiAgICAgICAgICAgIDAgMCAwIHJnYmEoMCwgMCwgMCwgMClcbiAgICAgICAgICApLFxuICAgICAgICAgIDAgMCAwIHZhcigjeyTinKh9b3V0bGluZS13aWR0aCkgdmFyKCN7JOKcqH1zZWNvbmRhcnktZm9jdXMpO1xuICAgICAgfVxuICAgIH1cblxuICAgIC8vIENvbnRyYXN0XG4gICAgOmlzKGJ1dHRvbiwgW3R5cGU9XCJzdWJtaXRcIl0sIFt0eXBlPVwiYnV0dG9uXCJdLCBbcm9sZT1cImJ1dHRvblwiXSkuY29udHJhc3Qge1xuICAgICAgI3sk4pyofWJhY2tncm91bmQtY29sb3I6IHZhcigjeyTinKh9Y29udHJhc3QtYmFja2dyb3VuZCk7XG4gICAgICAjeyTinKh9Ym9yZGVyLWNvbG9yOiB2YXIoI3sk4pyofWNvbnRyYXN0LWJvcmRlcik7XG4gICAgICAjeyTinKh9Y29sb3I6IHZhcigjeyTinKh9Y29udHJhc3QtaW52ZXJzZSk7XG5cbiAgICAgICY6aXMoW2FyaWEtY3VycmVudF0sIDpob3ZlciwgOmFjdGl2ZSwgOmZvY3VzKSB7XG4gICAgICAgICN7JOKcqH1iYWNrZ3JvdW5kLWNvbG9yOiB2YXIoI3sk4pyofWNvbnRyYXN0LWhvdmVyLWJhY2tncm91bmQpO1xuICAgICAgICAjeyTinKh9Ym9yZGVyLWNvbG9yOiB2YXIoI3sk4pyofWNvbnRyYXN0LWhvdmVyLWJvcmRlcik7XG4gICAgICAgICN7JOKcqH1jb2xvcjogdmFyKCN7JOKcqH1jb250cmFzdC1pbnZlcnNlKTtcbiAgICAgIH1cblxuICAgICAgJjpmb2N1cyB7XG4gICAgICAgICN7JOKcqH1ib3gtc2hhZG93OiB2YXIoXG4gICAgICAgICAgICAjeyTinKh9YnV0dG9uLWhvdmVyLWJveC1zaGFkb3csXG4gICAgICAgICAgICAwIDAgMCByZ2JhKDAsIDAsIDAsIDApXG4gICAgICAgICAgKSxcbiAgICAgICAgICAwIDAgMCB2YXIoI3sk4pyofW91dGxpbmUtd2lkdGgpIHZhcigjeyTinKh9Y29udHJhc3QtZm9jdXMpO1xuICAgICAgfVxuICAgIH1cblxuICAgIC8vIE91dGxpbmUgKHByaW1hcnkpXG4gICAgOmlzKGJ1dHRvbiwgW3R5cGU9XCJzdWJtaXRcIl0sIFt0eXBlPVwiYnV0dG9uXCJdLCBbcm9sZT1cImJ1dHRvblwiXSkub3V0bGluZSxcbiAgICBbdHlwZT1cInJlc2V0XCJdLm91dGxpbmUge1xuICAgICAgI3sk4pyofWJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgI3sk4pyofWNvbG9yOiB2YXIoI3sk4pyofXByaW1hcnkpO1xuICAgICAgI3sk4pyofWJvcmRlci1jb2xvcjogY3VycmVudENvbG9yO1xuXG4gICAgICAmOmlzKFthcmlhLWN1cnJlbnRdLCA6aG92ZXIsIDphY3RpdmUsIDpmb2N1cykge1xuICAgICAgICAjeyTinKh9YmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgICN7JOKcqH1jb2xvcjogdmFyKCN7JOKcqH1wcmltYXJ5LWhvdmVyKTtcbiAgICAgIH1cbiAgICB9XG5cbiAgICAvLyBPdXRsaW5lIChzZWNvbmRhcnkpXG4gICAgOmlzKFxuICAgICAgICBidXR0b24sXG4gICAgICAgIFt0eXBlPVwic3VibWl0XCJdLFxuICAgICAgICBbdHlwZT1cImJ1dHRvblwiXSxcbiAgICAgICAgW3JvbGU9XCJidXR0b25cIl1cbiAgICAgICkub3V0bGluZS5zZWNvbmRhcnksXG4gICAgW3R5cGU9XCJyZXNldFwiXS5vdXRsaW5lIHtcbiAgICAgICN7JOKcqH1jb2xvcjogdmFyKCN7JOKcqH1zZWNvbmRhcnkpO1xuICAgICAgI3sk4pyofWJvcmRlci1jb2xvcjogY3VycmVudENvbG9yO1xuXG4gICAgICAmOmlzKFthcmlhLWN1cnJlbnRdLCA6aG92ZXIsIDphY3RpdmUsIDpmb2N1cykge1xuICAgICAgICAjeyTinKh9Y29sb3I6IHZhcigjeyTinKh9c2Vjb25kYXJ5LWhvdmVyKTtcbiAgICAgIH1cbiAgICB9XG5cbiAgICAvLyBPdXRsaW5lIChjb250cmFzdClcbiAgICA6aXMoXG4gICAgICAgIGJ1dHRvbixcbiAgICAgICAgW3R5cGU9XCJzdWJtaXRcIl0sXG4gICAgICAgIFt0eXBlPVwiYnV0dG9uXCJdLFxuICAgICAgICBbcm9sZT1cImJ1dHRvblwiXVxuICAgICAgKS5vdXRsaW5lLmNvbnRyYXN0IHtcbiAgICAgICN7JOKcqH1jb2xvcjogdmFyKCN7JOKcqH1jb250cmFzdCk7XG5cbiAgICAgICY6aXMoW2FyaWEtY3VycmVudF0sIDpob3ZlciwgOmFjdGl2ZSwgOmZvY3VzKSB7XG4gICAgICAgICN7JOKcqH1jb2xvcjogdmFyKCN7JOKcqH1jb250cmFzdC1ob3Zlcik7XG4gICAgICB9XG4gICAgfVxuICB9IEBlbHNlIHtcbiAgICAvLyBTZWNvbmRhcnkgYnV0dG9uIHdpdGhvdXQgLmNsYXNzXG4gICAgW3R5cGU9XCJyZXNldFwiXSxcbiAgICBbdHlwZT1cImZpbGVcIl06OmZpbGUtc2VsZWN0b3ItYnV0dG9uIHtcbiAgICAgICN7JOKcqH1iYWNrZ3JvdW5kLWNvbG9yOiB2YXIoI3sk4pyofXNlY29uZGFyeSk7XG4gICAgICAjeyTinKh9Ym9yZGVyLWNvbG9yOiB2YXIoI3sk4pyofXNlY29uZGFyeSk7XG4gICAgICAjeyTinKh9Y29sb3I6IHZhcigjeyTinKh9c2Vjb25kYXJ5LWludmVyc2UpO1xuICAgICAgY3Vyc29yOiBwb2ludGVyO1xuXG4gICAgICAmOmlzKFthcmlhLWN1cnJlbnRdLCA6aG92ZXIsIDphY3RpdmUsIDpmb2N1cykge1xuICAgICAgICAjeyTinKh9YmFja2dyb3VuZC1jb2xvcjogdmFyKCN7JOKcqH1zZWNvbmRhcnktaG92ZXIpO1xuICAgICAgICAjeyTinKh9Ym9yZGVyLWNvbG9yOiB2YXIoI3sk4pyofXNlY29uZGFyeS1ob3Zlcik7XG4gICAgICB9XG5cbiAgICAgICY6Zm9jdXMge1xuICAgICAgICAjeyTinKh9Ym94LXNoYWRvdzogdmFyKFxuICAgICAgICAgICAgI3sk4pyofWJ1dHRvbi1ob3Zlci1ib3gtc2hhZG93LFxuICAgICAgICAgICAgMCAwIDAgcmdiYSgwLCAwLCAwLCAwKVxuICAgICAgICAgICksXG4gICAgICAgICAgMCAwIDAgdmFyKCN7JOKcqH1vdXRsaW5lLXdpZHRoKSB2YXIoI3sk4pyofXNlY29uZGFyeS1mb2N1cyk7XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgLy8gQnV0dG9uIFtkaXNhYmxlZF1cbiAgOndoZXJlKFxuICAgICAgYnV0dG9uLFxuICAgICAgW3R5cGU9XCJzdWJtaXRcIl0sXG4gICAgICBbdHlwZT1cInJlc2V0XCJdLFxuICAgICAgW3R5cGU9XCJidXR0b25cIl0sXG4gICAgICBbcm9sZT1cImJ1dHRvblwiXVxuICAgIClbZGlzYWJsZWRdLFxuICA6d2hlcmUoZmllbGRzZXRbZGlzYWJsZWRdKVxuICAgIDppcyhcbiAgICAgIGJ1dHRvbixcbiAgICAgIFt0eXBlPVwic3VibWl0XCJdLFxuICAgICAgW3R5cGU9XCJidXR0b25cIl0sXG4gICAgICBbdHlwZT1cInJlc2V0XCJdLFxuICAgICAgW3JvbGU9XCJidXR0b25cIl1cbiAgICApIHtcbiAgICBvcGFjaXR5OiAwLjU7XG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gIH1cbn1cblxuIl19 */

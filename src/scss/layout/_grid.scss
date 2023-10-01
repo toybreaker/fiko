@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "layout/grid") and $enable-classes {
+  /**
+   * Grid
+   * Minimal grid system with auto-layout columns
+   */
+
+  .grid {
+    grid-column-gap: var(#{$✨}grid-column-gap);
+    grid-row-gap: var(#{$✨}grid-row-gap);
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+
+    @if map.get($breakpoints, "md") {
+      @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
+        grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+      }
+    }
+
+    & > * {
+      min-width: 0; // HACK for childs in overflow
+    }
+  }
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9ncmlkLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoiX2dyaWQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkB1c2UgXCJzYXNzOm1hcFwiO1xuQHVzZSBcIi4uL3NldHRpbmdzXCIgYXMgKjtcblxuQGlmIG1hcC5nZXQoJG1vZHVsZXMsIFwibGF5b3V0L2dyaWRcIikgYW5kICRlbmFibGUtY2xhc3NlcyB7XG4gIC8qKlxuICAgKiBHcmlkXG4gICAqIE1pbmltYWwgZ3JpZCBzeXN0ZW0gd2l0aCBhdXRvLWxheW91dCBjb2x1bW5zXG4gICAqL1xuXG4gIC5ncmlkIHtcbiAgICBncmlkLWNvbHVtbi1nYXA6IHZhcigjeyTinKh9Z3JpZC1jb2x1bW4tZ2FwKTtcbiAgICBncmlkLXJvdy1nYXA6IHZhcigjeyTinKh9Z3JpZC1yb3ctZ2FwKTtcbiAgICBkaXNwbGF5OiBncmlkO1xuICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogMWZyO1xuICAgIG1hcmdpbjogMDtcblxuICAgIEBpZiBtYXAuZ2V0KCRicmVha3BvaW50cywgXCJtZFwiKSB7XG4gICAgICBAbWVkaWEgKG1pbi13aWR0aDogbWFwLmdldChtYXAuZ2V0KCRicmVha3BvaW50cywgXCJtZFwiKSwgXCJicmVha3BvaW50XCIpKSB7XG4gICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KGF1dG8tZml0LCBtaW5tYXgoMCUsIDFmcikpO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAqIHtcbiAgICAgIG1pbi13aWR0aDogMDsgLy8gSEFDSyBmb3IgY2hpbGRzIGluIG92ZXJmbG93XG4gICAgfVxuICB9XG59XG5cbiJdfQ== */

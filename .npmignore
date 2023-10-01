@@ -1,6 +1,9 @@
-node_modules/
-scss/
-dist/
-!css/
+# publish only
+!package/
+
+# omit
+node_modules
 src/
 test/
+.vscode
+.vscode/

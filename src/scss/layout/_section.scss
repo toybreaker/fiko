@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "layout/section") {
+  /**
+   * Section
+   */
+
+  section {
+    margin-bottom: var(#{$✨}spacing);
+  }
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9zZWN0aW9uLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoiX3NlY3Rpb24uc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkB1c2UgXCJzYXNzOm1hcFwiO1xuQHVzZSBcIi4uL3NldHRpbmdzXCIgYXMgKjtcblxuQGlmIG1hcC5nZXQoJG1vZHVsZXMsIFwibGF5b3V0L3NlY3Rpb25cIikge1xuICAvKipcbiAgICogU2VjdGlvblxuICAgKi9cblxuICBzZWN0aW9uIHtcbiAgICBtYXJnaW4tYm90dG9tOiB2YXIoI3sk4pyofXNwYWNpbmcpO1xuICB9XG59XG5cbiJdfQ== */

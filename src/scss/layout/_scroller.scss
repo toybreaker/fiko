@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "layout/scroller") {
+  /**
+   * Horizontal scroller (<figure>)
+   */
+
+  // Wrapper to make allow any content to be scrolled horizontally
+  figure {
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+
+    figcaption {
+      padding: calc(var(#{$✨}spacing) * 0.5) 0;
+      color: var(#{$✨}muted-color);
+    }
+  }
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9zY3JvbGxlci5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6Il9zY3JvbGxlci5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQHVzZSBcInNhc3M6bWFwXCI7XG5AdXNlIFwiLi4vc2V0dGluZ3NcIiBhcyAqO1xuXG5AaWYgbWFwLmdldCgkbW9kdWxlcywgXCJsYXlvdXQvc2Nyb2xsZXJcIikge1xuICAvKipcbiAgICogSG9yaXpvbnRhbCBzY3JvbGxlciAoPGZpZ3VyZT4pXG4gICAqL1xuXG4gIC8vIFdyYXBwZXIgdG8gbWFrZSBhbGxvdyBhbnkgY29udGVudCB0byBiZSBzY3JvbGxlZCBob3Jpem9udGFsbHlcbiAgZmlndXJlIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBtYXJnaW46IDA7XG4gICAgcGFkZGluZzogMDtcbiAgICBvdmVyZmxvdy14OiBhdXRvO1xuXG4gICAgZmlnY2FwdGlvbiB7XG4gICAgICBwYWRkaW5nOiBjYWxjKHZhcigjeyTinKh9c3BhY2luZykgKiAwLjUpIDA7XG4gICAgICBjb2xvcjogdmFyKCN7JOKcqH1tdXRlZC1jb2xvcik7XG4gICAgfVxuICB9XG59XG5cbiJdfQ== */

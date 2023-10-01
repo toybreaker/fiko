@@ -1,0 +1,105 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/progress") {
+  /**
+   * Progress
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Add the correct display in Edge 18- and IE
+  // 2. Add the correct vertical alignment in Chrome, Edge, and Firefox
+  progress {
+    display: inline-block; // 1
+    vertical-align: baseline; // 2
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+
+  progress {
+    // Reset the default appearance
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    // Styles
+    display: inline-block;
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    margin-bottom: calc(var(#{$✨}spacing) * 0.5);
+    overflow: hidden;
+
+    // Remove Firefox and Opera border
+    border: 0;
+    border-radius: var(#{$✨}border-radius);
+    background-color: var(#{$✨}progress-background-color);
+
+    // IE10 uses `color` to set the bar background-color
+    color: var(#{$✨}progress-color);
+
+    &::-webkit-progress-bar {
+      border-radius: var(#{$✨}border-radius);
+      background: none;
+    }
+
+    &[value]::-webkit-progress-value {
+      background-color: var(#{$✨}progress-color);
+
+      @if $enable-transitions {
+        transition: inline-size var(#{$✨}transition);
+      }
+    }
+
+    &::-moz-progress-bar {
+      background-color: var(#{$✨}progress-color);
+    }
+
+    // Indeterminate state
+    @media (prefers-reduced-motion: no-preference) {
+      &:indeterminate {
+        background: var(#{$✨}progress-background-color)
+          linear-gradient(
+            to right,
+            var(#{$✨}progress-color) 30%,
+            var(#{$✨}progress-background-color) 30%
+          )
+          top left / 150% 150% no-repeat;
+        animation: progress-indeterminate 1s linear infinite;
+
+        &[value]::-webkit-progress-value {
+          background-color: transparent;
+        }
+
+        &::-moz-progress-bar {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    @media (prefers-reduced-motion: no-preference) {
+      progress:indeterminate {
+        animation-direction: reverse;
+      }
+    }
+  }
+
+  @keyframes progress-indeterminate {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9wcm9ncmVzcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6Il9wcm9ncmVzcy5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQHVzZSBcInNhc3M6bWFwXCI7XG5AdXNlIFwiLi4vc2V0dGluZ3NcIiBhcyAqO1xuXG5AaWYgbWFwLmdldCgkbW9kdWxlcywgXCJjb21wb25lbnRzL3Byb2dyZXNzXCIpIHtcbiAgLyoqXG4gICAqIFByb2dyZXNzXG4gICAqL1xuXG4gIC8vIFJlYm9vdCBiYXNlZCBvbiA6XG4gIC8vIC0gbm9ybWFsaXplLmNzcyB2OC4wLjEgfCBNSVQgTGljZW5zZSB8IGdpdGh1Yi5jb20vbmVjb2xhcy9ub3JtYWxpemUuY3NzXG4gIC8vIC0gc2FuaXRpemUuY3NzIHYxMy4wLjAgfCBDQzAgMS4wIFVuaXZlcnNhbCB8IGdpdGh1Yi5jb20vY3NzdG9vbHMvc2FuaXRpemUuY3NzXG4gIC8vIOKAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk1xuXG4gIC8vIDEuIEFkZCB0aGUgY29ycmVjdCBkaXNwbGF5IGluIEVkZ2UgMTgtIGFuZCBJRVxuICAvLyAyLiBBZGQgdGhlIGNvcnJlY3QgdmVydGljYWwgYWxpZ25tZW50IGluIENocm9tZSwgRWRnZSwgYW5kIEZpcmVmb3hcbiAgcHJvZ3Jlc3Mge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgLy8gMVxuICAgIHZlcnRpY2FsLWFsaWduOiBiYXNlbGluZTsgLy8gMlxuICB9XG5cbiAgLy8gUGljb1xuICAvLyDigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJNcblxuICBwcm9ncmVzcyB7XG4gICAgLy8gUmVzZXQgdGhlIGRlZmF1bHQgYXBwZWFyYW5jZVxuICAgIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcbiAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XG5cbiAgICAvLyBTdHlsZXNcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgYXBwZWFyYW5jZTogbm9uZTtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDAuNXJlbTtcbiAgICBtYXJnaW4tYm90dG9tOiBjYWxjKHZhcigjeyTinKh9c3BhY2luZykgKiAwLjUpO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAvLyBSZW1vdmUgRmlyZWZveCBhbmQgT3BlcmEgYm9yZGVyXG4gICAgYm9yZGVyOiAwO1xuICAgIGJvcmRlci1yYWRpdXM6IHZhcigjeyTinKh9Ym9yZGVyLXJhZGl1cyk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKCN7JOKcqH1wcm9ncmVzcy1iYWNrZ3JvdW5kLWNvbG9yKTtcblxuICAgIC8vIElFMTAgdXNlcyBgY29sb3JgIHRvIHNldCB0aGUgYmFyIGJhY2tncm91bmQtY29sb3JcbiAgICBjb2xvcjogdmFyKCN7JOKcqH1wcm9ncmVzcy1jb2xvcik7XG5cbiAgICAmOjotd2Via2l0LXByb2dyZXNzLWJhciB7XG4gICAgICBib3JkZXItcmFkaXVzOiB2YXIoI3sk4pyofWJvcmRlci1yYWRpdXMpO1xuICAgICAgYmFja2dyb3VuZDogbm9uZTtcbiAgICB9XG5cbiAgICAmW3ZhbHVlXTo6LXdlYmtpdC1wcm9ncmVzcy12YWx1ZSB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoI3sk4pyofXByb2dyZXNzLWNvbG9yKTtcblxuICAgICAgQGlmICRlbmFibGUtdHJhbnNpdGlvbnMge1xuICAgICAgICB0cmFuc2l0aW9uOiBpbmxpbmUtc2l6ZSB2YXIoI3sk4pyofXRyYW5zaXRpb24pO1xuICAgICAgfVxuICAgIH1cblxuICAgICY6Oi1tb3otcHJvZ3Jlc3MtYmFyIHtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigjeyTinKh9cHJvZ3Jlc3MtY29sb3IpO1xuICAgIH1cblxuICAgIC8vIEluZGV0ZXJtaW5hdGUgc3RhdGVcbiAgICBAbWVkaWEgKHByZWZlcnMtcmVkdWNlZC1tb3Rpb246IG5vLXByZWZlcmVuY2UpIHtcbiAgICAgICY6aW5kZXRlcm1pbmF0ZSB7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigjeyTinKh9cHJvZ3Jlc3MtYmFja2dyb3VuZC1jb2xvcilcbiAgICAgICAgICBsaW5lYXItZ3JhZGllbnQoXG4gICAgICAgICAgICB0byByaWdodCxcbiAgICAgICAgICAgIHZhcigjeyTinKh9cHJvZ3Jlc3MtY29sb3IpIDMwJSxcbiAgICAgICAgICAgIHZhcigjeyTinKh9cHJvZ3Jlc3MtYmFja2dyb3VuZC1jb2xvcikgMzAlXG4gICAgICAgICAgKVxuICAgICAgICAgIHRvcCBsZWZ0IC8gMTUwJSAxNTAlIG5vLXJlcGVhdDtcbiAgICAgICAgYW5pbWF0aW9uOiBwcm9ncmVzcy1pbmRldGVybWluYXRlIDFzIGxpbmVhciBpbmZpbml0ZTtcblxuICAgICAgICAmW3ZhbHVlXTo6LXdlYmtpdC1wcm9ncmVzcy12YWx1ZSB7XG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgIH1cblxuICAgICAgICAmOjotbW96LXByb2dyZXNzLWJhciB7XG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cblxuICBbZGlyPVwicnRsXCJdIHtcbiAgICBAbWVkaWEgKHByZWZlcnMtcmVkdWNlZC1tb3Rpb246IG5vLXByZWZlcmVuY2UpIHtcbiAgICAgIHByb2dyZXNzOmluZGV0ZXJtaW5hdGUge1xuICAgICAgICBhbmltYXRpb24tZGlyZWN0aW9uOiByZXZlcnNlO1xuICAgICAgfVxuICAgIH1cbiAgfVxuXG4gIEBrZXlmcmFtZXMgcHJvZ3Jlc3MtaW5kZXRlcm1pbmF0ZSB7XG4gICAgMCUge1xuICAgICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMjAwJSAwO1xuICAgIH1cblxuICAgIDEwMCUge1xuICAgICAgYmFja2dyb3VuZC1wb3NpdGlvbjogLTIwMCUgMDtcbiAgICB9XG4gIH1cbn1cblxuIl19 */

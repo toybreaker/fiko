@@ -1,0 +1,65 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "layout/landmarks") {
+  /**
+   * Landmarks
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Remove the margin in all browsers (opinionated)
+  body {
+    width: 100%;
+    margin: 0; // 1
+  }
+
+  // Render the `main` element consistently in IE
+  main {
+    display: block;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+  #{$semantic-root-element} {
+    > header,
+    > main,
+    > footer {
+      // <header>, <main>, <footer> as containers
+      @if $enable-semantic-container {
+        $first-breakpoint: true;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: var(#{$✨}spacing) var(#{$✨}block-spacing);
+
+        @if $enable-viewport {
+          @each $key, $values in $breakpoints {
+            @if $values {
+              @media (min-width: map.get($values, "breakpoint")) {
+                max-width: map.get($values, "viewport");
+
+                @if $first-breakpoint {
+                  $first-breakpoint: false;
+                  padding-right: 0;
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Regular vertical spacings for <header>, <main>, <footer>
+      @else {
+        padding: var(#{$✨}spacing) 0;
+      }
+    }
+  }
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9sYW5kbWFya3Muc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJfbGFuZG1hcmtzLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAdXNlIFwic2FzczptYXBcIjtcbkB1c2UgXCIuLi9zZXR0aW5nc1wiIGFzICo7XG5cbkBpZiBtYXAuZ2V0KCRtb2R1bGVzLCBcImxheW91dC9sYW5kbWFya3NcIikge1xuICAvKipcbiAgICogTGFuZG1hcmtzXG4gICAqL1xuXG4gIC8vIFJlYm9vdCBiYXNlZCBvbiA6XG4gIC8vIC0gbm9ybWFsaXplLmNzcyB2OC4wLjEgfCBNSVQgTGljZW5zZSB8IGdpdGh1Yi5jb20vbmVjb2xhcy9ub3JtYWxpemUuY3NzXG4gIC8vIC0gc2FuaXRpemUuY3NzIHYxMy4wLjAgfCBDQzAgMS4wIFVuaXZlcnNhbCB8IGdpdGh1Yi5jb20vY3NzdG9vbHMvc2FuaXRpemUuY3NzXG4gIC8vIOKAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk1xuXG4gIC8vIDEuIFJlbW92ZSB0aGUgbWFyZ2luIGluIGFsbCBicm93c2VycyAob3BpbmlvbmF0ZWQpXG4gIGJvZHkge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIG1hcmdpbjogMDsgLy8gMVxuICB9XG5cbiAgLy8gUmVuZGVyIHRoZSBgbWFpbmAgZWxlbWVudCBjb25zaXN0ZW50bHkgaW4gSUVcbiAgbWFpbiB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gIH1cblxuICAvLyBQaWNvXG4gIC8vIOKAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk+KAk1xuICAjeyRzZW1hbnRpYy1yb290LWVsZW1lbnR9IHtcbiAgICA+IGhlYWRlcixcbiAgICA+IG1haW4sXG4gICAgPiBmb290ZXIge1xuICAgICAgLy8gPGhlYWRlcj4sIDxtYWluPiwgPGZvb3Rlcj4gYXMgY29udGFpbmVyc1xuICAgICAgQGlmICRlbmFibGUtc2VtYW50aWMtY29udGFpbmVyIHtcbiAgICAgICAgJGZpcnN0LWJyZWFrcG9pbnQ6IHRydWU7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBtYXJnaW4tcmlnaHQ6IGF1dG87XG4gICAgICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xuICAgICAgICBwYWRkaW5nOiB2YXIoI3sk4pyofXNwYWNpbmcpIHZhcigjeyTinKh9YmxvY2stc3BhY2luZyk7XG5cbiAgICAgICAgQGlmICRlbmFibGUtdmlld3BvcnQge1xuICAgICAgICAgIEBlYWNoICRrZXksICR2YWx1ZXMgaW4gJGJyZWFrcG9pbnRzIHtcbiAgICAgICAgICAgIEBpZiAkdmFsdWVzIHtcbiAgICAgICAgICAgICAgQG1lZGlhIChtaW4td2lkdGg6IG1hcC5nZXQoJHZhbHVlcywgXCJicmVha3BvaW50XCIpKSB7XG4gICAgICAgICAgICAgICAgbWF4LXdpZHRoOiBtYXAuZ2V0KCR2YWx1ZXMsIFwidmlld3BvcnRcIik7XG5cbiAgICAgICAgICAgICAgICBAaWYgJGZpcnN0LWJyZWFrcG9pbnQge1xuICAgICAgICAgICAgICAgICAgJGZpcnN0LWJyZWFrcG9pbnQ6IGZhbHNlO1xuICAgICAgICAgICAgICAgICAgcGFkZGluZy1yaWdodDogMDtcbiAgICAgICAgICAgICAgICAgIHBhZGRpbmctbGVmdDogMDtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gUmVndWxhciB2ZXJ0aWNhbCBzcGFjaW5ncyBmb3IgPGhlYWRlcj4sIDxtYWluPiwgPGZvb3Rlcj5cbiAgICAgIEBlbHNlIHtcbiAgICAgICAgcGFkZGluZzogdmFyKCN7JOKcqH1zcGFjaW5nKSAwO1xuICAgICAgfVxuICAgIH1cbiAgfVxufVxuXG4iXX0= */

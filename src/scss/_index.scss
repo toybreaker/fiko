@@ -24,13 +24,13 @@
 @use "components/mix"; // hr, template, [hidden], dialog, canvas
 
 // Forms
-//@use "forms/basics"; // input, select, textarea, label, fieldset, legend
-//@use "forms/checkbox-radio-switch"; // type="checkbox", type="radio", role="switch"
-//@use "forms/input-color"; // type="color"
-//@use "forms/input-date"; // type="date", type="datetime-local", type="month", type="time", type="week"
-//@use "forms/input-file"; // type="file"
-//@use "forms/input-range"; // type="range"
-//@use "forms/input-search"; // type="search"
+@use "forms/basics"; // input, select, textarea, label, fieldset, legend
+@use "forms/checkbox-radio-switch"; // type="checkbox", type="radio", role="switch"
+@use "forms/input-color"; // type="color"
+@use "forms/input-date"; // type="date", type="datetime-local", type="month", type="time", type="week"
+@use "forms/input-file"; // type="file"
+@use "forms/input-range"; // type="range"
+@use "forms/input-search"; // type="search"
 
 // Components
 @use "components/accordion"; // details, summary
@@ -38,10 +38,10 @@
 @use "components/group"; // role="group"
 @use "components/nav"; // nav
 //@use "components/dropdown"; // details.dropdown
-//@use "components/loading"; // aria-busy=true
-//@use "components/modal"; // dialog
-//@use "components/progress"; // progress
-//@use "components/tooltip"; // data-tooltip
+@use "components/loading"; // aria-busy=true
+@use "components/modal"; // dialog
+@use "components/progress"; // progress
+@use "components/tooltip"; // data-tooltip
 
 // Utilities
 @use "utils/accessibility"; // -ms-touch-action, aria-*

@@ -1,67 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="modal-is-open modal-is-opening modal-is-closing"></html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FIKO | pico</title>
+    <title>FIKO • pico + custom</title>
     <meta name="description" content="Pico basic template" />
 
-    <link rel="canonical" href="https://fiko.rokma.rocks/test/pico/" />
-    <link rel="stylesheet" href="css/pico.css" />
+    <link rel="canonical" href="https://fiko.rokma.rocks/pico/" />
 
-    <!-- <link rel="stylesheet" href="css/custom.css" /> -->
+    <link rel="stylesheet" href="css/pico.css" />
+    <link id="stylesheet" rel="stylesheet" href="../fiko/custom.css" />
   </head>
   <body>
     <header class="container">
-      <div class="grid">
-        <a class="primary outline" href="../">FIKO</a>
-        <a class="secondary" href="../">FIKO</a>
-        <a class="secondary outline" href="#">PICO</a>
-        <a role="button" class="primary outline" href="../">FIKO</a>
-        <a role="button" class="secondary" href="../">FIKO</a>
-        <a role="button" class="secondary outline" href="#">PICO</a>
-      </div>
-
-      <hgroup>
-        <h1>Pico.css v2.0.0-alpha1 Basic Template | 231001</h1>
-        <a role="button" class="primary outline" href="../">FIKO</a>
-        <a role="button" class="primary outline" href="#">PICO</a>
-      </hgroup>
-      1
-      <nav>
-        <ul>
-          <li>
-            <details role="list">
-              <summary aria-haspopup="listbox" role="button" class="secondary">
-                Theme
-              </summary>
-              <ul role="listbox">
-                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
-                <li><a href="#" data-theme-switcher="light">Light</a></li>
-                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details role="list">
-              <summary aria-haspopup="listbox">Examples (v1)</summary>
-              <ul role="listbox">
-                <li><a href="../">HOME</a></li>
-                <li><a href="#">Right-to-left</a></li>
-                <li><a href="#">Classless</a></li>
-                <li><a href="#">Basic template</a></li>
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Google Amp</a></li>
-                <li><a href="#">Sign in</a></li>
-                <li><a href="#">Bootstrap grid</a></li>
-              </ul>
-            </details>
-          </li>
-        </ul>
+      <nav class="container inverse">
+        <div>
+          <h1>PICO <small>v2.0.0-alpha1 | BASE</small></h1>
+          <a role="button" class="primary outline" href="../">FIKO 🐸</a>
+          <a role="button" class="primary outline disabled" href="#">PICO</a>
+        </div>
+        <hr />
       </nav>
     </header>
 
     <main class="container">
+      <hgroup>
+        <h1>pico.css PICO | BASE</h1>
+        <h2>pico.css PICO | BASE<h2>
+        <h3>pico.css PICO | BASE<h3>
+        <h4>pico.css PICO | BASE<h4>
+        <h5>pico.css PICO | BASE<h5>
+        <h6>pico.css PICO | BASE<h6>
+      </hgroup>
+
       <section id="preview">
         <h2>Preview</h2>
         <p>
@@ -471,13 +442,25 @@
     </main>
 
     <footer class="container">
-      <small
-        >Built with <a href="https://picocss.com">Pico</a>•
-        <a
-          href="https://github.com/picocss/examples/blob/master/v1-basic-template/"
-          >Source code</a
-        ></small
-      >
+      <card>
+        <small>
+          <a
+            target="_blank"
+            title="Go to picocss.com"
+            href="https://picocss.com"
+            >This is Pico</a>
+          •
+          <a
+            href="https://github.com/picocss/examples/blob/master/v1-basic-template/"
+            >here the Source code</a>
+        </small>
+          <footer>
+          <a
+            role="link"
+            href="https://github.com/picocss/examples/blob/master/v1-basic-template/"
+            ><< back to FIKO 🐸</a>
+        </footer>
+      </card>
     </footer>
 
     <dialog id="modal-example">
@@ -489,11 +472,16 @@
           data-target="modal-example"
           onclick="toggleModal(event)"
         ></a>
-        <h3>Confirm your action !</h3>
-        <p>
-          Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
-          finibus pellentesque. Nullam finibus risus non semper euismod.
-        </p>
+        <details role="list">
+            <summary aria-haspopup="listbox" role="button" class="secondary">
+              Theme
+            </summary>
+            <ul role="listbox">
+              <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+              <li><a href="#" data-theme-switcher="light">Light</a></li>
+              <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+            </ul>
+          </details>
         <footer>
           <a
             href="#cancel"
@@ -501,20 +489,19 @@
             class="secondary"
             data-target="modal-example"
             onclick="toggleModal(event)"
-            >Cancel</a
+            >BACK</a
           ><a
             href="#confirm"
             role="button"
             data-target="modal-example"
             onclick="toggleModal(event)"
-            >Confirm</a
+            >DONE</a
           >
         </footer>
       </article>
     </dialog>
 
-    <!-- <script src="js/minimal-theme-switcher.js"></script>
-
-    <script src="js/modal.js"></script> -->
+    <script src="js/minimal-theme-switcher.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>

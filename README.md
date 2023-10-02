@@ -2,29 +2,27 @@
 
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
 
-### STAY SANE! LOW CODE VERBOSITY, just few classes with `var(--magic)`, VERY FIKO!
+## YO it's version 0.3.3 | WORK IN PROGRESS, DON'T USE IT YET! Did tell you!
 
-> **"YO, THIS IN FULL-ON WORK IN PROGRESS. I'm telling 🫵 you!"**
+### STAY SANE | Low code verbosity, just few classes with `var(--magic)`
 
-VERSION: 0.2.11
-
-TEST: [FIKO 🐸 CSS test](https://fiko.rokma.rocks/test/)
+#### VERY FIKO 🐸! [Test](https://fiko.rokma.rocks/test/)
 
 - 🐸 GREAT STYLES WITH JUST ONE CSS FILE
 - 🐸 RESPONSIVE EVERYTHING
 - 🐸 LIGHT OR DARK MODE
 - 🐸 USES THE SEMANTICS OF NATIVE HTML TAGS.
 - 🐸 CLASSLESS OPTION.
-- 🐸 FULL `fiko.min.css` version. 11 CLASSES. 26kb.
-- 🐸 CLASSLESS `fiko.classless.min.css`. ZERO CLASSES. 24kB.
-- 🐸 FLUID `fiko.fluid.classless.min.css` FULL-VIEWPORT, ZERO CLASSES versions. 24kB.
+- 🐸 FULL `fiko.css` version. 11 CLASSES. 26kb.
+- 🐸 CLASSLESS `fiko.classless.css`. ZERO CLASSES. 24kB.
+- 🐸 FLUID `fiko.fluid.classless.css` FULL-VIEWPORT, ZERO CLASSES. 24kB.
 
 # 🫵 USE IT
 
-[Download FIKO](https://github.com/TOYBREAKER/fiko/fiko.zip) and link `/css/fiko.min.css` ( or any other version... ) in the `<head>` of your website.
+[Download FIKO](https://github.com/TOYBREAKER/fiko/fiko.zip) and link `/fiko.css` ( or any other version... ) in the `<head>` of your website.
 
 ```html
-<link rel="stylesheet" href="css/fiko.min.css" />
+<link rel="stylesheet" href="fiko.css" />
 ```
 
 ### Install with pnpm (or npm)
@@ -38,7 +36,7 @@ pnpm i fiko
 ## Usage: **Astro**
 
 ```astro
-import 'alku/alku.css';
+import 'fiko.css';
 ```
 
 ## Usage: **HTML**

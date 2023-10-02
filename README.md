@@ -48,7 +48,32 @@ import 'fiko' from 'path/to/fiko.css'
 import 'my_custom_style' from 'path/to/my_custom_style.css'
 ```
 
+---
+
 # 🫵 DEVELOP CLI STUFF
+
+---
+
+## FRONTEND
+
+Run a simple Python server on lh:3000.
+(You'll need to install Python for your sys first!)
+
+```shell
+# 🐲 DRY RECURRING START
+echo '|';
+echo 'cd src/web/';
+cd src/web/;
+echo '|';
+echo '🐲 now i am here:';
+CWD=$(pwd -P)
+echo $CWD
+echo '|';
+echo 'cd serve';
+serve
+```
+
+## PACKAGE
 
 ```shell
 # Start by LIVING IN THE FUTURE:

@@ -2,9 +2,9 @@
 
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
 
-## YO it's version 0.3.3 | WORK IN PROGRESS, DON'T USE IT YET! Did tell you!
+## YO it's only v0.3.4 | W.I.P., DON'T USE IT YET! Did tell you!
 
-### STAY SANE | Low code verbosity, just few classes with `var(--magic)`
+### STAY SANE | Low Code Verbosity, just few Classes with `var(--magic)`
 
 #### VERY FIKO 🐸! [Test](https://fiko.rokma.rocks/test/)
 

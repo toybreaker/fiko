@@ -1,6 +1,0 @@
-// FIKO classless version
-@use "index" with (
-  $enable-semantic-container: true,
-  $enable-viewport: false,
-  $enable-classes: false
-);

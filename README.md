@@ -2,11 +2,14 @@
 
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
 
-## YO it's only v0.3.4 | W.I.P., DON'T USE IT YET! Did tell you!
+## YO IT'S ONLY VERSION 0.3.7
+
+W.I.P., DON'T USE IT YET!
+Did tell you!
 
 ### STAY SANE | Low Code Verbosity, just few Classes with `var(--magic)`
 
-#### VERY FIKO 🐸! [Test](https://fiko.rokma.rocks/test/)
+#### VERY 🐸 FIKO! [Test here](https://fiko.rokma.rocks/)
 
 - 🐸 GREAT STYLES WITH JUST ONE CSS FILE
 - 🐸 RESPONSIVE EVERYTHING
@@ -92,6 +95,12 @@ pnpm run F
 pnpm run dev
 ```
 
+or with bash shortcut:
+
+```shell
+prc
+```
+
 ## LINT
 
 ```shell
@@ -110,7 +119,7 @@ cat package.json
 
 ```shell
 # FIKO ASTRO START, PASTE this one:
-pnpm create astro@latest && pnpm astro add fiko
+pnpm create astro@latest && pnpm add fiko
 ```
 
 ## OPEN FIKO NPM PAGE
@@ -127,6 +136,8 @@ pnpm repo
 npm astro add fiko
 ```
 
+.
+
 ## NPM CAVEAT
 
 Sometimes you need to solve dep's issues. This helps a lot, many times:
@@ -141,21 +152,48 @@ instead of hoisting package installs in node_modules,
 installs packages in the same manner that they are depended on.
 NOTE: This may cause very deep directory structures and duplicate package installs as there is no de-duplicating.
 
+.
+
 # WHY THREE VERSIONS?
 
 > **_To cater to 3 different kinds of STARTER TEMPLATE needs._**
 
-## CLASSLESS
+## FIKO `fiko.css`
 
-`fiko.classless.css`
+Full zero config DX. Import it from NPM. Link it in yor framework. Boom. Done!
+
+> **_Use this version when you write your own classes_**
+
+**FIKO is compiled with this settings:**
+
+- enable-semantic-container: true
+
+## CLASSLESS `fiko.classless.css`
+
 No helpers nor utilities, FIKO classless still provides: `header`,`main`, `footer` behaving as DYNAMICALLY-SPACED containers, i.e.: have horizontal spacing, and max width on `.container`.
 
-> **_Use this version if you need centred viewports_**
+> **_Use this version when you write your own classes_**
 
-## FLUID
+**FIKO CLASSLESS is compiled with this settings:**
 
-Or use the `fiko.fluid.classless.css` version.
-When you need a fluid, FULL-VIEWPORT container. No max width on `.container` here. FULL-ON AT ALL TIMES!
+When :
+
+- enable-semantic-container: true
+- enable-classes: false
+
+## FLUID `fiko.fluid.css`
+
+No max width on `.container` here. FULL-ON AT ALL TIMES!
+
+> **_Use this version when you need a fluid, FULL-VIEWPORT container._**
+
+**FIKO FLUID is compiled with this settings:**
+
+- enable-semantic-container: true
+- enable-viewport: false
+- enable-classes: false
+
+.
 
 # LIMITATIONS
 
@@ -170,7 +208,3 @@ FIKO is designed and tested for the latest stable Chrome, Firefox, Edge, and Saf
 Licensed under the [MIT License](https://github.com/toybreaker/fiko/blob/master/LICENSE.md).
 
 THIS SLIM STARTER WAS DEVELOP TO SCRATCH MY OWN NEEDS AND IT'S INSPIRED BY TODAY CLASSLESS CSS FRAMEWORK SUCH AS [PICOCSS](https://github.com/picocss/pico),[WATER](https://github.com/kognise/water.css), [CSSBED](https://www.cssbed.com/), BY [TOYBREAKER](https://github.com/toybreaker/)
-
-```
-
-```

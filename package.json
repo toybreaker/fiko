@@ -1,7 +1,8 @@
 {
   "name": "fiko",
+  "type": "module",
   "version_name": "🐸",
-  "version": "0.3.4",
+  "version": "0.3.7",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "package/fiko.css",
@@ -15,6 +16,7 @@
     "tag": "latest"
   },
   "keywords": [
+    "normalise",
     "css",
     "classless",
     "css-framework",
@@ -27,6 +29,8 @@
   ],
   "scripts": {
     "F": "npm-run-all build",
+    "FF": "npm-run-all buildcss",
+    "check": "npm-run-all buildcss",
     "build": "npm-run-all start lint \"build:*\" done",
     "buildcss": "sass --style expanded --no-source-map ./src/scss/:./dist/package/",
     "dev": "nodemon -q --watch scss/ --ext scss --exec 'npm-run-all build'",
@@ -61,5 +65,8 @@
     "last 2 major versions",
     "not dead",
     "not ie > 0"
-  ]
+  ],
+  "dependencies": {
+    "fiko": "^0.3.5"
+  }
 }

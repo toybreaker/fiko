@@ -1,2 +1,10 @@
 # NPM RULES HERE | PUBLISH ONLY:
 !dist/package/
+dist/web
+lab
+src
+.vscode
+*.css.map
+Icon
+.prettierrc
+.gitattributes

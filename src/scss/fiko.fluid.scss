@@ -1,4 +1,6 @@
 // FIKO | FLUID version
-@use "index"with ($enable-semantic-container: true,
+@use "index" with (
+  $enable-semantic-container: true,
   $enable-viewport: false,
-  $enable-classes: false);
+  $enable-classes: false
+);

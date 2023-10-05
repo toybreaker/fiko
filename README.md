@@ -2,10 +2,11 @@
 
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
 
-## YO IT'S ONLY VERSION 0.3.7
+## YO 🫵 IT'S ONLY VERSION 0.3.9, IT'S W.I.P.
 
-W.I.P., DON'T USE IT YET!
-Did tell you!
+## DON'T 🫵 USE IT YET! Did tell you!
+
+465 weekly downloads? 🫵 It doesn't even work yet!
 
 ### STAY SANE | Low Code Verbosity, just few Classes with `var(--magic)`
 

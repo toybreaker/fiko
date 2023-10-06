@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "package/fiko.css",
@@ -55,15 +55,12 @@
     "postcss-cli": "^10.1.0",
     "postcss-scss": "^4.0.9",
     "prettier": "^2.8.8",
-    "sass": "^1.68.0"
+    "sass": "^1.69.0"
   },
   "browserslist": [
     ">= 0.5%",
     "last 2 major versions",
     "not dead",
     "not ie > 0"
-  ],
-  "dependencies": {
-    "fiko": "^0.3.5"
-  }
+  ]
 }

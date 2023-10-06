@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  fiko:
-    specifier: ^0.3.9
-    version: 0.3.9
-
 devDependencies:
   autoprefixer:
     specifier: ^10.4.16
@@ -434,10 +429,6 @@ packages:
     dependencies:
       reusify: 1.0.4
     dev: true
-
-  /fiko@0.3.9:
-    resolution: {integrity: sha512-zjv6sjujeTRjyYdaOKbQIfm/fXFa9XVV659WFijC6WelZ0JH7Zwntr7v3Hb4nzxoDhmwV+xn5sjQTrbpgtxa8Q==}
-    dev: false
 
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}

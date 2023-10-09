@@ -24,10 +24,28 @@
 
   html {
     font-size: 100%;
-    /* 1rem = 16px (browser default) */
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  ::-webkit-file-upload-button {
+    /* Correct the inability to style clickable types in iOS and Safari. */
+    -webkit-appearance: button;
+    /* Change font properties to `inherit` in Safari. */
+    font: inherit;
+  }
+
+  /* remove the gray background on active links in IE 10. */
+  pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
   }
 
 
+
+  a {
+    background-color: transparent;
+  }
 }
 
 /* ========== Root Declarations ========== */

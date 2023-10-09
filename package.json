@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "package/fiko.css",
@@ -28,35 +28,18 @@
     "fluid"
   ],
   "scripts": {
-    "F": "npm-run-all build",
-    "FF": "npm-run-all buildcss",
-    "check": "npm-run-all buildcss",
-    "build": "npm-run-all start lint \"build:*\" done",
-    "buildcss": "sass --style expanded --no-source-map ./src/scss/:./dist/package/",
-    "dev": "nodemon -q --watch scss/ --ext scss --exec 'npm-run-all build'",
-    "lint": "npm-run-all  \"lint:*\"",
-    "lint:prettier": "prettier --write --loglevel silent './src/scss/**/*.scss'",
-    "lint:sort-scss": "postcss --config scss ./src/scss/**/*.scss --replace",
-    "build:css": "sass --load-path=@toybreaker/fiko/src/scss --style expanded --source-map --embed-sources --no-error-css ./src/scss/:./dist/package/",
-    "build:cssWEB": "sass --load-path=@toybreaker/fiko/src/scss --style expanded --source-map --embed-sources --no-error-css ./src/scss/:./dist/web/css/",
-    "prelint": "echo '[fiko] 🐸 LINT'",
-    "prebuild:css": "echo '[fiko] 🐸 COMPILE'",
-    "prebuild:minify": "echo '[fiko] 🐸 MINIFY'",
+    "complile": "echo '[fiko] 🐸 COMPILE'",
+    "minify": "echo '[fiko] 🐸 MINIFY'",
     "start": "echo '\\033[96m[fiko] 🐸 Start\\033[0m'",
     "done": "echo '\\033[32m[fiko] 🐸 Done\\033[0m'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "caniuse-lite": "1.0.30001481",
-    "clean-css-cli": "^5.6.2",
-    "css-declaration-sorter": "^6.4.1",
-    "nodemon": "^3.0.1",
+    "modern-normalize": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0",
-    "postcss-scss": "^4.0.9",
     "prettier": "^2.8.8",
-    "sass": "^1.69.0"
+    "vite": "^4.4.11"
   },
   "browserslist": [
     ">= 0.5%",

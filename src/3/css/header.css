@@ -1,8 +1,0 @@
-/* Header styles */
-header {
-  background-color: var(--colors[var(--color-mode)].bg);
-  color: var(--colors[var(--color-mode)].text);
-  padding: var(--spacing);
-  /* Universal spacing value */
-  text-align: center;
-}

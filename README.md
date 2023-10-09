@@ -2,22 +2,19 @@
 
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
 
-## YO 🫵 IT'S ONLY VERSION 0.3.10, IT'S W.I.P.
-
-## DON'T 🫵 USE IT YET! Did tell you!
+## YO 🫵 IT'S ONLY v0.5.0, HEAVY W.I.P. DON'T 🫵 USE IT YET! Did tell you!
 
 ### STAY SANE | Low Code Verbosity, just few Classes with `var(--magic)`
 
 #### VERY 🐸 FIKO! [Test here](https://fiko.rokma.rocks/)
 
-- 🐸 GREAT STYLES WITH JUST ONE CSS FILE
-- 🐸 RESPONSIVE EVERYTHING
-- 🐸 LIGHT OR DARK MODE
-- 🐸 USES THE SEMANTICS OF NATIVE HTML TAGS.
-- 🐸 CLASSLESS OPTION.
-- 🐸 FULL `fiko.css` version. 11 CLASSES. 26kb.
-- 🐸 CLASSLESS `fiko.classless.css`. ZERO CLASSES. 24kB.
-- 🐸 FLUID `fiko.fluid.classless.css` FULL-VIEWPORT, ZERO CLASSES. 24kB.
+- 🐸 GREAT STYLES WITH JUST ONE CSS FILE.
+- 🐸 RESPONSIVE EVERYTHING.
+- 🐸 VARIABLE EVERYTHING.
+- 🐸 LIGHT OR DARK MODE.
+- 🐸 USES NATIVE HTML.
+- 🐸 LAYERS.
+- 🐸 MODERN NORMALISE.
 
 # 🫵 USE IT
 
@@ -25,6 +22,38 @@
 
 ```html
 <link rel="stylesheet" href="fiko.css" />
+```
+
+## Install
+
+```
+$ npm install modern-normalize
+```
+
+###### Download
+
+- [Normal](https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css)
+- [Minified](https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.min.css)
+
+###### CDN
+
+- [jsdelivr](https://www.jsdelivr.com/package/npm/modern-normalize)
+- [unpkg](https://unpkg.com/modern-normalize)
+- [cdnjs](https://cdnjs.com/libraries/modern-normalize)
+
+## Usage
+
+```css
+@import "node_modules/fiko/fiko.css";
+```
+
+or
+
+```html
+<link
+  rel="stylesheet"
+  href="node_modules/modern-normalize/modern-normalize.css"
+/>
 ```
 
 ### Install with pnpm (or npm)

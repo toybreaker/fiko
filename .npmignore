@@ -1,10 +1,12 @@
 # NPM RULES HERE | PUBLISH ONLY:
-!dist/package/
+!package/
 dist/web
-lab
-src
+_lab
 .vscode
-*.css.map
 Icon
 .prettierrc
 .gitattributes
+
+# maybe needed, for now no .maps
+*.css.map
+

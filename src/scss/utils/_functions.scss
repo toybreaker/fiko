@@ -1,9 +1,0 @@
-// Display color as RGB
-@function display-rgb($color) {
-  @return unquote(
-    "rgb(" + red($color) + ", " + green($color) + ", " + blue($color) + ")"
-  );
-}
-
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9mdW5jdGlvbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJfZnVuY3Rpb25zLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBEaXNwbGF5IGNvbG9yIGFzIFJHQlxuQGZ1bmN0aW9uIGRpc3BsYXktcmdiKCRjb2xvcikge1xuICBAcmV0dXJuIHVucXVvdGUoXG4gICAgXCJyZ2IoXCIgKyByZWQoJGNvbG9yKSArIFwiLCBcIiArIGdyZWVuKCRjb2xvcikgKyBcIiwgXCIgKyBibHVlKCRjb2xvcikgKyBcIilcIlxuICApO1xufVxuXG4iXX0= */

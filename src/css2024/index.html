@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stilo.css" />
+    <title>2024 Classless CSS Framework Demo</title>
+  </head>
+  <body class="toggle-wrapper">
+    <!-- JS Toggle Button for Dark/Light Mode -->
+    <!-- <button onclick="toggleTheme()">Toggle Dark/Light Mode</button> -->
+
+    <!-- PURECSS Toggle Button for Dark/Light Mode -->
+    <!-- <input type="checkbox" id="theme-toggle" class="toggle-container" />
+    <label for="theme-toggle">Toggle Dark/Light Mode</label> -->
+
+    <!-- JS Toggle Button for Dark/Light Mode -->
+    <input
+      type="checkbox"
+      id="theme-toggle"
+      class="toggle-container"
+      onchange="toggleTheme()"
+    />
+    <label for="theme-toggle">Toggle Dark/Light Mode</label>
+
+    <!-- Header -->
+    <header class="container">
+      <h1>Classless CSS Framework</h1>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- Section -->
+      <section>
+        <h1>Welcome to Classless CSS Framework</h1>
+        <p>
+          This is a paragraph. Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit.
+        </p>
+
+        <!-- Accordion -->
+        <details>
+          <summary>Accordion Title</summary>
+          <p>Accordion content goes here.</p>
+        </details>
+
+        <!-- Card -->
+        <div class="card">
+          <h2>Card Title</h2>
+          <img src="image.jpg" alt="Image description" />
+          <p>Card content goes here. Lorem ipsum dolor sit amet.</p>
+          <a href="#" class="card-button">Call to Action</a>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="container">&copy; 2024 Classless CSS Framework.</footer>
+
+    <!-- Vanilla JS for Toggle & User Preference Detection -->
+    <script>
+      function toggleTheme() {
+        const currentTheme = document.body.getAttribute("data-theme");
+        if (currentTheme === "dark") {
+          document.body.setAttribute("data-theme", "light");
+        } else {
+          document.body.setAttribute("data-theme", "dark");
+        }
+      }
+
+      // Detect user's preference and set the data-theme attribute
+      function setUserPreference() {
+        const userPrefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (userPrefersDark) {
+          document.body.setAttribute("data-theme", "dark");
+        } else {
+          document.body.setAttribute("data-theme", "light");
+        }
+      }
+
+      setUserPreference(); // Initially set the user preference
+
+      // Update on preference change (like when using DevTools to change it)
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addListener(setUserPreference);
+    </script>
+  </body>
+</html>

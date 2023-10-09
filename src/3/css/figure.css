@@ -1,0 +1,15 @@
+/**
+ * Horizontal scroller (<figure>)
+ */
+figure {
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+
+  figcaption {
+    padding: var(--spacing) 0;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,46 @@
+@import url('reset.css') layer(layer0);
+@import url('reset.css') layer(layer1);
+@import url('reset.css') layer(layer2);
+@import url('accordion.css') layer(layer3);
+
+
+
+/* root.css: Contains global :root declarations */
+:root {
+  /* Color Variables */
+  --color-text-light: #fff;
+  /* Light mode text color */
+  --color-bg-light: #000;
+  /* Light mode background color */
+  --color-text-dark: #000;
+  /* Dark mode text color */
+  --color-bg-dark: #fff;
+  /* Dark mode background color */
+
+  /* Universal Spacing (Margin and Padding) */
+  --spacing: 0.5rem;
+  /* Universal spacing value for margin and padding */
+
+  /* Default Text and Background Colors */
+  --color-text: var(--color-text-light);
+  /* Default text color */
+  --color-bg: var(--color-bg-light);
+  /* Default background color */
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: var(--color-text-dark);
+    --color-bg: var(--color-bg-dark);
+  }
+}
+
+/* Light Mode (Default) */
+@media (prefers-color-scheme: light),
+(prefers-color-scheme: no-preference) {
+  :root {
+    --color-text: var(--color-text-light);
+    --color-bg: var(--color-bg-light);
+  }
+}

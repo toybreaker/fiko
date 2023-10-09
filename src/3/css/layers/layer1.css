@@ -1,0 +1,158 @@
+/* Layer1: Your Classless CSS Framework on Top of Layer0 */
+
+/* Color Variables */
+:root {
+  --colors: {
+    light: {
+      text: #fff,
+        /* Light mode text color */
+        bg: #000,
+        /* Light mode background color */
+    }
+
+    ,
+    dark: {
+      text: #000,
+        /* Dark mode text color */
+        bg: #fff,
+        /* Dark mode background color */
+    }
+
+    ,
+  }
+
+  ;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: dark;
+  }
+}
+
+/* Light Mode (Default) */
+@media (prefers-color-scheme: light),
+(prefers-color-scheme: no-preference) {
+  :root {
+    --color-mode: light;
+  }
+}
+
+/* Universal Spacing (Margin and Padding) */
+:root {
+  --spacing: 0.5rem;
+  /* Universal spacing value for margin and padding */
+}
+
+
+
+/* Footer */
+footer {
+  background-color: var(--colors[var(--color-mode)].bg);
+  color: var(--colors[var(--color-mode)].text);
+  padding: var(--spacing);
+  /* Universal spacing value */
+  text-align: center;
+}
+
+/* Main */
+main {
+  padding: var(--spacing);
+  /* Universal spacing value */
+  margin: 0 10vw;
+  /* 10% of viewport width on each side */
+  font-size: calc(var(--body-font-size, 1rem) + (var(--vw-size, 1) - 1) * 2rem);
+  /* Exponential font size */
+}
+
+/* Section */
+section {
+  margin-bottom: var(--spacing);
+  /* Universal spacing value */
+  padding: var(--spacing);
+  /* Universal spacing value */
+  background-color: var(--colors[var(--color-mode)].text);
+  /* Inverted color */
+  border: 1px solid var(--colors[var(--color-mode)].bg);
+  /* Inverted color */
+  box-shadow: 0 0 5px var(--colors[var(--color-mode)].bg);
+  /* Hard and opaque box shadow */
+}
+
+/* Navigation */
+nav {
+  background-color: var(--colors[var(--color-mode)].bg);
+  color: var(--colors[var(--color-mode)].text);
+  padding: calc(var(--spacing) / 2) 0;
+
+  /* Universal spacing value */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline;
+    margin-right: var(--spacing);
+    /* Universal spacing value */
+  }
+}
+
+/* Links */
+a {
+  color: var(--colors[var(--color-mode)].text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Small Element */
+small {
+  font-size: var(--small-font-size, 0.85rem);
+  /* Use a CSS variable for small font size */
+}
+
+/* Form Element */
+form {
+  /* Style for form and its sub-elements goes here */
+  margin: 0;
+  padding: 0;
+}
+
+/* Accordion */
+details {
+  border: 1px solid var(--colors[var(--color-mode)].bg);
+  /* Border for the accordion container */
+  margin: var(--spacing) 0;
+  /* Universal spacing value */
+  padding: 0;
+  background-color: var(--colors[var(--color-mode)].bg);
+  /* Background color for the accordion container */
+
+  /* Nested Styles for Accordion */
+  summary {
+    font-weight: bold;
+    /* Style the summary text as bold */
+    cursor: pointer;
+    /* Add a pointer cursor to indicate interactivity */
+    padding: var(--spacing);
+    /* Universal spacing value */
+    background-color: var(--colors[var(--color-mode)].text);
+    /* Background color for the summary element */
+    color: var(--colors[var(--color-mode)].bg);
+    /* Text color for the summary element */
+    outline: none;
+    /* Remove focus outline */
+  }
+
+  /* Hide the default triangle marker */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* End of Layer1 */

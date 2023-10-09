@@ -1,0 +1,68 @@
+/* Accordion styles */
+details {
+  border: 1px solid var(--colors[var(--color-mode)].bg);
+  /* Border for the accordion container */
+  margin: var(--spacing) 0;
+  /* Universal spacing value */
+  padding: 0;
+  background-color: var(--colors[var(--color-mode)].bg);
+  /* Background color for the accordion container */
+
+  /* Nested Styles for Accordion */
+  summary {
+    font-weight: bold;
+    /* Style the summary text as bold */
+    cursor: pointer;
+    /* Add a pointer cursor to indicate interactivity */
+    padding: var(--spacing);
+    /* Universal spacing value */
+    background-color: var(--colors[var(--color-mode)].text);
+    /* Background color for the summary element */
+    color: var(--colors[var(--color-mode)].bg);
+    /* Text color for the summary element */
+    outline: none;
+    /* Remove focus outline */
+    position: relative;
+    /* Add position relative for marker positioning */
+  }
+
+  /* Hide the default triangle marker */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Marker for open state */
+  summary::after {
+    content: '▶';
+    /* Default marker as a right-pointing arrow */
+    position: absolute;
+    top: 50%;
+    right: var(--spacing);
+    /* Adjust the marker's right position */
+    transform: translateY(-50%);
+    transition: transform 0.2s;
+    /* Add a smooth transition for rotation */
+  }
+
+  /* Rotate the marker on open */
+  details[open] summary::after {
+    transform: translateY(-50%) rotate(90deg);
+    /* Rotate the marker 90 degrees on open */
+  }
+
+  /* Children elements transition */
+  >* {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    /* Add a smooth slide-in transition */
+  }
+
+  /* Slide in the children elements on open */
+  details[open]>* {
+    max-height: 1000px;
+    /* Adjust to a value larger than the expected content height */
+    transition: max-height 0.5s ease-in-out;
+    /* Add a smooth slide-in transition */
+  }
+}

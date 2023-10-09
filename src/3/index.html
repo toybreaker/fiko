@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/light-dark-toggle.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layers/layer0.css">
+    <link rel="stylesheet" href="css/layers/layer1.css">
+    <link rel="stylesheet" href="css/layers/layer2.css">
+    <link rel="stylesheet" href="css/layers/layer3.css">
+    <title>FIKO | CSS Layer Test</title>
+</head>
+<body>
+  <header>
+      <h1>Header h1</h1>
+      <hr />
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">
+            <button>About</button>
+          </a>
+        </li>
+          <li>
+            <a href="#">
+              <button>Services</button>
+            </a>
+          </li>
+        </ul>
+        <!-- Light/Dark Mode Toggle -->
+        <label class="switch">
+          <input type="checkbox" id="mode-toggle" />
+          <span class="slider"></span>
+        </label>
+      </nav>
+    </header>
+
+    <main class="container">
+      <hr />
+      <small>main.container small </small>
+      <hr />
+      <section>
+        <h2>main.container section h2</h2>
+        <p>main.container section p.</p>
+      </section>
+
+      <hr />
+      <!-- Small Element -->
+      <small>`<small>`</small>
+
+      <hr />
+      <!-- Figure Element -->
+      <figure>
+        <img src="image.jpg" alt="main.container figure img alt" />
+        <figcaption>main.container figure figcaption</figcaption>
+      </figure>
+
+      <hr class="hr" />
+
+      <!-- Form Element -->
+      <p>FORM:</p>
+      <form>
+        <label for="name">main.container form label for name</label>
+        <input type="text" id="name" name="name" />
+        <br />
+        <label for="email">main.container form label for email</label>
+        <input type="email" id="email" name="email" />
+        <br />
+        <button type="submit">main.container form button type submit</button>
+      </form>
+
+      <hr />
+
+
+
+      <small>small</small>
+      <a href="#">Testing Hover, Active, Visited, Focus Styles</a>
+    </main>
+    <hr />
+
+    <footer>
+      <p>Footer</p>
+
+      <hr />
+
+      <details open>
+        <summary>Accordion Title</summary>
+        <p>This is the Accordion content.</p>
+        <small>Accordion: closed(default) open like this: `<details open>`</small>
+      </details>
+
+      <hr />
+
+      <details open>
+        <summary>Accordion Title</summary>
+        <p>This is the Accordion content.</p>
+        <small>Accordion: closed(default) open like this: `<details open>`</small>
+      </details>
+
+      <hr />
+      <div>
+        last footer div with a `small` and `a` elements:
+      <!-- Testing Hover, Active, Visited, Focus Styles -->
+      <small>Testing Hover, Active, Visited, Focus Styles</small>
+      <a href="#">Hover, Active, Visited, Focus Styles</a>
+    </div>
+    </footer>
+  </body>
+</html>

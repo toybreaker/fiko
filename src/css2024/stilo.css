@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/*!
+ * FIKO 🐸 v0.5.0 (https://fiko.rokma.rocks)
+ * 2024 CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
+ * MIT License | https: //github.com/toybreaker/fiko
+ * Copyright 2023 Toybreaker - Licensed under MIT
+ */
+
+
+/* ========== Layer Order Declaration ========== */
+@layer base, root, toggle, containers, components;
+
+/* ========== Base Layer ========== */
+@layer base {
+
+  /* Basic Resets and Root Variables */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 100%;
+    /* 1rem = 16px (browser default) */
+  }
+
+
+}
+
+/* ========== Root Declarations ========== */
+@layer root {
+  :root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --light-mode: var(--color-white);
+    --dark-mode: var(--color-black);
+    --font-size: clamp(20px, 1.25rem, 30px);
+
+    --font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, var(--font-family-emoji);
+
+    --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--font-family-emoji);
+
+    --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  }
+
+  body {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+  }
+
+  /* Initial styles assuming light theme */
+  body[data-theme="light"] {
+    --current-bg: var(--light-mode);
+    --current-text: var(--color-black);
+    background-color: var(--current-bg);
+    color: var(--current-text);
+  }
+
+  /* When data-theme is set to dark */
+  body[data-theme="dark"] {
+    --current-bg: var(--dark-mode);
+    --current-text: var(--color-white);
+    background-color: var(--current-bg);
+    color: var(--current-text);
+  }
+}
+
+/* ========== Toggle Layer ========== */
+@layer toggle {
+  .toggle-container {
+    display: none;
+    /* hide checkbox */
+  }
+
+  label[for="theme-toggle"] {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--current-text);
+    color: var(--current-bg);
+    border: 1px solid var(--current-text);
+  }
+}
+
+/* ========== Container Elements Layer ========== */
+@layer containers {
+
+  /* ... [container styles, unchanged from your last provided version] ... */
+  header,
+  nav,
+  section,
+  footer {
+    background-color: var(--current-bg);
+    color: var(--current-text);
+  }
+
+  nav,
+  header,
+  footer {
+    padding: 1rem 2rem;
+  }
+
+  .container {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}
+
+/* ========== Contained Elements Layer ========== */
+@layer components {
+
+  /* ... [component styles, unchanged from your last provided version] ... */
+  /* Accordion */
+  details {
+    border: 1px solid var(--text-color);
+  }
+
+  summary {
+    cursor: pointer;
+    padding: 1rem;
+  }
+
+  details[open] summary::before {
+    content: '-';
+  }
+
+  /* Headings, P, Span */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span {
+    padding: 1rem 0;
+  }
+
+  /* List */
+  ul,
+  ol {
+    list-style-type: none;
+  }
+
+  li {
+    padding: 0.5rem 0;
+  }
+
+  /* Card */
+  .card {
+    border: 1px solid var(--text-color);
+    padding: 1rem;
+  }
+
+  .card img {
+    max-width: 100%;
+  }
+
+  .card-button {
+    display: block;
+    margin-top: 1rem;
+  }
+}

@@ -207,3 +207,40 @@ FIKO is designed and tested for the latest stable Chrome, Firefox, Edge, and Saf
 Licensed under the [MIT License](https://github.com/toybreaker/fiko/blob/master/LICENSE.md).
 
 THIS SLIM STARTER WAS DEVELOP TO SCRATCH MY OWN NEEDS AND IT'S INSPIRED BY TODAY CLASSLESS CSS FRAMEWORK SUCH AS [PICOCSS](https://github.com/picocss/pico),[WATER](https://github.com/kognise/water.css), [CSSBED](https://www.cssbed.com/), BY [TOYBREAKER](https://github.com/toybreaker/)
+
+## CHANGELOG
+
+### v0.5.0 CSS2023
+
+Restart from ZERO. Css Only. 2023 Platform. Use it, Zod-dam-it!
+Find all in `src/css2024`` folder.
+
+### v0.4.1 DEAD END
+
+TLDR Too Long Don't Read.
+WHAT IT MEANS TO FAIL QUICK AND MANY TIMES.
+Dont fix a broken house, make a new from zero. Faster.
+While loving and still using Piko, this FIKO project has a new goal a new 2023 platform to use, and is better solved with a fresh start.
+SCSS i love but i gotta move on baby, there are new ways out there.
+CSS 2023 with layers, container queries, nesting, subgrid is all new fun now.
+Been here since the start of it YOL
+Faster, Cleaner, Leaner Better.
+CSS2023
+
+### v0.5.0
+
+new structure:
+
+```
+css/
+  |- layers/
+  |  |- layer0.css
+  |  |- layer1.css
+  |  |- layer2.css
+  |  |- layer3.css
+  |- root.css
+  |- reset.css
+  |- light-dark-toggle.css
+  |- main.css
+  |- index.html
+```

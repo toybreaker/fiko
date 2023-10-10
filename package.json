@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "package/fiko.css",
@@ -28,10 +28,7 @@
     "fluid"
   ],
   "scripts": {
-    "complile": "echo '[fiko] 🐸 COMPILE'",
-    "minify": "echo '[fiko] 🐸 MINIFY'",
-    "start": "echo '\\033[96m[fiko] 🐸 Start\\033[0m'",
-    "done": "echo '\\033[32m[fiko] 🐸 Done\\033[0m'"
+    "dev": "echo 'fiko.css comes ready to swim, no build steps. 🐸 Done!'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

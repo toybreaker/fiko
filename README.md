@@ -2,19 +2,20 @@
 
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
 
-## YO 🫵 IT'S ONLY v0.5.0, HEAVY W.I.P. DON'T 🫵 USE IT YET! Did tell you!
+## Yo 🫵 It's v0.5.0, W.I.P. Don't use it yet. Did tell you!
 
-### STAY SANE | Low Code Verbosity, just few Classes with `var(--magic)`
+### STAY SANE | Low Code Verbosity.
 
 #### VERY 🐸 FIKO! [Test here](https://fiko.rokma.rocks/)
 
-- 🐸 GREAT STYLES WITH JUST ONE CSS FILE.
-- 🐸 RESPONSIVE EVERYTHING.
-- 🐸 VARIABLE EVERYTHING.
-- 🐸 LIGHT OR DARK MODE.
-- 🐸 USES NATIVE HTML.
-- 🐸 LAYERS.
-- 🐸 MODERN NORMALISE.
+🐸 GREAT STYLES WITH JUST ONE CSS FILE.
+🐸 RESPONSIVE EVERYTHING.
+🐸 VARIABLE EVERYTHING.
+🐸 LIGHT OR DARK MODE.
+🐸 USES NATIVE HTML.
+🐸 LAYERS.
+🐸 MODERN NORMALISE.
+🐸 Low Code Verbosity.
 
 # 🫵 USE IT
 
@@ -26,20 +27,13 @@
 
 ## Install
 
-```
-$ npm install modern-normalize
+```shell
+pnpm i fiko
 ```
 
 ###### Download
 
-- [Normal](https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css)
-- [Minified](https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.min.css)
-
-###### CDN
-
-- [jsdelivr](https://www.jsdelivr.com/package/npm/modern-normalize)
-- [unpkg](https://unpkg.com/modern-normalize)
-- [cdnjs](https://cdnjs.com/libraries/modern-normalize)
+Get it raw from Github [fiko.css](https://raw.githubusercontent.com/toybreaker/fiko/main/package/fiko.css)
 
 ## Usage
 
@@ -50,19 +44,8 @@ $ npm install modern-normalize
 or
 
 ```html
-<link
-  rel="stylesheet"
-  href="node_modules/modern-normalize/modern-normalize.css"
-/>
+<link rel="stylesheet" href="node_modules/fiko/package/fiko.css" />
 ```
-
-### Install with pnpm (or npm)
-
-```shell
-pnpm i fiko
-```
-
----
 
 ## Usage: **Astro**
 
@@ -72,26 +55,59 @@ import 'fiko.css';
 
 ## Usage: **HTML**
 
+Put your custom styles on top of fiko, make sure to not use `!important` in your css cos it might break things.
+
 ```shell
 import 'fiko' from 'path/to/fiko.css'
 import 'my_custom_style' from 'path/to/my_custom_style.css'
 ```
 
+## Usage: **CUSTOM CSS ON TOP OF FIKO**
+
+When you write your `my_custom_style.css` you can leverage the existing fiko layers, just mind the Layer Order Declaration.
+
+```css
+@layer base, root, toggle, containers, components;
+```
+
+The goal here is to reduce specificity born problems, by isolating rules.
+Refer the code comments right inside `fiko.css` to decide where to put your rules. I'd say you probably go something like this:
+
+```css
+@layer components {
+  .my_custom_style {
+    color: green;
+  }
+  .my_custom_header {
+    font-size: 4ch;
+    font-weight: 100;
+  }
+}
+```
+
+# 🫵 DEVELOP
+
 ---
 
-# 🫵 DEVELOP CLI STUFF
+## OPEN FIKO NPM PAGE
+
+```shell
+# Open fiko NPM page in the default browser:
+pnpm repo
+```
 
 ---
 
-## FRONTEND
+## FRONTEND DEMO PAGE
 
-Run a simple Python server on lh:3000.
-(You'll need to install Python for your sys first!)
+Fiko comes with a demo page, useful to test when dev.
+
+Run a simple Python server on lh:3000. (Install Python for your sys first!)
 
 ```shell
 # 🐲 DRY RECURRING START
 echo '|';
-echo 'cd dist/web/';
+echo 'cd package/';
 cd dist/web/;
 echo '|';
 echo '🐲 now i am here:';
@@ -109,33 +125,6 @@ serve
 pnpm upgrade
 ```
 
-## BUILD
-
-```shell
-# BUILD.
-pnpm run F
-```
-
-## DEV
-
-```shell
-# DEV:
-pnpm run dev
-```
-
-or with bash shortcut:
-
-```shell
-prc
-```
-
-## LINT
-
-```shell
-# LINT:
-pnpm run lint
-```
-
 ## SEE INCLUDED SCRIPTS
 
 ```shell
@@ -148,13 +137,6 @@ cat package.json
 ```shell
 # FIKO ASTRO START, PASTE this one:
 pnpm create astro@latest && pnpm add fiko
-```
-
-## OPEN FIKO NPM PAGE
-
-```shell
-# Open fiko NPM page in the default browser:
-pnpm repo
 ```
 
 ## ADD TO EXISTING PROJECT
@@ -235,41 +217,23 @@ FIKO is designed and tested for the latest stable Chrome, Firefox, Edge, and Saf
 
 Licensed under the [MIT License](https://github.com/toybreaker/fiko/blob/master/LICENSE.md).
 
-THIS SLIM STARTER WAS DEVELOP TO SCRATCH MY OWN NEEDS AND IT'S INSPIRED BY TODAY CLASSLESS CSS FRAMEWORK SUCH AS [PICOCSS](https://github.com/picocss/pico),[WATER](https://github.com/kognise/water.css), [CSSBED](https://www.cssbed.com/), BY [TOYBREAKER](https://github.com/toybreaker/)
+This slim starter was develop to scratch my own needs and it's inspired by today classless css framework such as [PICOCSS](https://github.com/picocss/pico),[WATER](https://github.com/kognise/water.css), [CSSBED](https://www.cssbed.com/), by [TOYBREAKER](https://github.com/toybreaker/)
 
 ## CHANGELOG
 
-### v0.5.0 CSS2023
+### v0.5.0
 
-Restart from ZERO. Css Only. 2023 Platform. Use it, Zod-dam-it!
-Find all in `src/css2024`` folder.
+Restart from ZERO.
+Css Only. With variables, nesting, layers, dvh, dvw, oklch, etc..
+2023 Platform. Let's Use it, Zod-damm-it!
+New slim structure:
+
+```
+package/
+  |- fiko.css
+  |- index.html
+```
 
 ### v0.4.1 DEAD END
 
-TLDR Too Long Don't Read.
-WHAT IT MEANS TO FAIL QUICK AND MANY TIMES.
-Dont fix a broken house, make a new from zero. Faster.
-While loving and still using Piko, this FIKO project has a new goal a new 2023 platform to use, and is better solved with a fresh start.
-SCSS i love but i gotta move on baby, there are new ways out there.
-CSS 2023 with layers, container queries, nesting, subgrid is all new fun now.
-Been here since the start of it YOL
-Faster, Cleaner, Leaner Better.
-CSS2023
-
-### v0.5.0
-
-new structure:
-
-```
-css/
-  |- layers/
-  |  |- layer0.css
-  |  |- layer1.css
-  |  |- layer2.css
-  |  |- layer3.css
-  |- root.css
-  |- reset.css
-  |- light-dark-toggle.css
-  |- main.css
-  |- index.html
-```
+Dont fix a broken house, It's faster to make a new one. Crucible moment. SCSS I love you but we gotta move on baby, there are new ways out there. New vehicle, fresh start.

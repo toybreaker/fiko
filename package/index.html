@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO TEST v0.5.3</title>
+    <title>FIKO TEST v0.5.4</title>
+    <!-- <style>
+      @layer root {
+        :root {
+          --color-darkblue: darkblue;
+          --dark-mode: var(--color-darkblue);
+        }
+      }
+    </style> -->
   </head>
   <body class="toggle-wrapper">
     <!-- JS Toggle Button for Dark/Light Mode -->
@@ -18,12 +26,12 @@
 
     <!-- Header -->
     <header class="container">
-      <h1>h1 | Classless CSS Framework</h1>
-      <h2>h2 | Classless CSS Framework</h2>
-      <h3>h3 | Classless CSS Framework</h3>
-      <h4>Classless CSS Framework</h4>
-      <h5>Classless CSS Framework</h5>
-      <h6>Classless CSS Framework</h6>
+      <h1>h1 | FIKO Css</h1>
+      <h2>h2 | FIKO Css</h2>
+      <h3>h3 | FIKO Css</h3>
+      <h4>FIKO CSS Framework</h4>
+      <h5>FIKO CSS Framework</h5>
+      <h6>FIKO CSS Framework</h6>
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
@@ -50,7 +58,7 @@
 
       <!-- Section -->
       <section class="container">
-        <h1>Welcome to Classless CSS Framework</h1>
+        <h1>Welcome to FIKO CSS Framework</h1>
         <p>
           This is a paragraph. Lorem ipsum dolor sit, amet consectetur
           adipisicing elit.
@@ -62,20 +70,33 @@
           <p>Accordion content goes here.</p>
         </details>
 
-        <!-- Card -->
-        <div class="card">
-          <h2>Card Title</h2>
-          <img
-            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com"
-          />
-          <p>Card content goes here. Lorem ipsum dolor sit amet.</p>
-          <a href="#" class="card-button">Call to Action</a>
-        </div>
+        <!-- Accordion -->
+        <details open>
+          <summary>Accordion Title</summary>
+          <p>Accordion content goes here.</p>
+        </details>
       </section>
+
+      <!-- Card -->
+      <div class="card">
+        <h2 class="container">Card Title</h2>
+        <img
+          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+          alt="rokma.com"
+        />
+        <p class="container">
+          Card content goes here. Lorem ipsum dolor sit amet.
+        </p>
+        <a href="#" class="card-button">
+          <button>Call to Action</button>
+        </a>
+      </div>
     </main>
     <!-- Footer -->
-    <footer class="container">&copy; 2024 Classless CSS Framework.</footer>
+    <footer>
+      <hr />
+      <p class="container">&copy; FIKO CSS</p>
+    </footer>
 
     <!-- Vanilla JS for Toggle & User Preference Detection -->
     <script>

@@ -8,7 +8,7 @@ Full zero config DX. Import it from NPM. Link it in yor framework. Boom. Done!
 
 > **_You write your own classes_**
 
-## Yo 🫵 It's v0.5.3, W.I.P. Don't use it yet. Did tell you!
+## Yo 🫵 It's v0.5.4, W.I.P. Don't use it yet. Did tell you!
 
 ### STAY SANE! Low Code Verbosity. VERY 🐸 FIKO! [Demo Test here](https://fiko.rokma.rocks/)
 
@@ -115,10 +115,25 @@ or, if you want to change just one color of the 4 can go like this:
 ```css
 @layer root {
   :root {
-    --light-mode: var(--color-white);
-    --dark-mode: var(--color-black);
+    --dark-mode: var(--color-darkblue);
   }
 }
+```
+
+or define it just for one page, and just the dark color, like this:
+
+```html
+<head>
+  ...
+  <style>
+    @layer root {
+      :root {
+        --color-darkblue: darkblue;
+        --dark-mode: var(--color-darkblue);
+      }
+    }
+  </style>
+</head>
 ```
 
 ## Use [Check colour contrast](https://colourcontrast.cc/) | [Devs here!](https://github.com/Pushedskydiver/Colour-Contrast-Checker)

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO TEST v0.5.5</title>
+    <title>FIKO TEST v0.5.6</title>
     <!-- <style>
       @layer root {
         :root {
@@ -82,32 +82,38 @@
 
         <!-- Accordion -->
         <details>
-          <summary role="button">Accordion Title</summary>
+          <summary>Closed Accordion Title</summary>
+          <p>Accordion content goes here.</p>
+        </details>
+
+        <details>
+          <summary>Other Closed Accordion</summary>
           <p>Accordion content goes here.</p>
         </details>
 
         <!-- Accordion -->
         <details open>
-          <summary role="button">Accordion Title</summary>
-          <p>Accordion content goes here.</p>
+          <summary>Open Accordion Title</summary>
+          <p>Accordion can be open by default. Use `details open`</p>
         </details>
       </section>
 
-      <!-- Card -->
-      <div class="card">
-        <h2 class="container">Card Title</h2>
+      <!-- Article Card -->
+      <article>
+        <h2 class="container">Article Card Title</h2>
         <img
           src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
           alt="rokma.com"
         />
         <p class="container">
-          Card content goes here. Lorem ipsum dolor sit amet.
+          Article content goes here. Lorem ipsum dolor sit amet.
         </p>
         <a href="#" class="card-button">
           <button>Call to Action</button>
         </a>
-      </div>
+      </article>
     </main>
+
     <!-- Footer -->
     <footer>
       <hr />

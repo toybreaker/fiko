@@ -2,15 +2,8 @@
 
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
 
-.
-
-Full zero config DX. Import it from NPM. Link it in yor framework. Boom. Done!
-
-> **_You write your own classes_**
-
-## Yo 🫵 It's v0.5.4, W.I.P. Don't use it yet. Did tell you!
-
-### STAY SANE! Low Code Verbosity. VERY 🐸 FIKO! [Demo Test here](https://fiko.rokma.rocks/)
+Zero config DX. Import it from NPM. Link it in your framework. Boom. Done!
+Fiko is a contained, (almost) classless, layered, modern (late2023), dynamically sized responsiveness CSS starter framework.
 
 🐸 GREAT STYLES WITH JUST ONE CSS FILE.
 🐸 RESPONSIVE EVERYTHING.
@@ -19,9 +12,19 @@ Full zero config DX. Import it from NPM. Link it in yor framework. Boom. Done!
 🐸 USES NATIVE HTML.
 🐸 LAYERS.
 🐸 MODERN NORMALISE.
-🐸 Low Code Verbosity.
+🐸 STAY SANE! Low Code Verbosity.
+
+> **_You write your own classes_**
+
+[Demo Test here](https://fiko.rokma.rocks/)
+
+VERY 🐸 FIKO!
 
 # 🫵 USE IT
+
+## Yo 🫵 It's v0.5.5, W.I.P. Don't use it yet. Did tell you!
+
+It can be used in many ways.
 
 ## Usage: **Install**
 
@@ -68,6 +71,15 @@ Put your custom styles on top of fiko, make sure to not use `!important` in your
 ```shell
 import 'fiko' from 'path/to/fiko.css'
 import 'my_custom_style' from 'path/to/my_custom_style.css'
+```
+
+Or probably also as show here:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://raw.githubusercontent.com/toybreaker/fiko/main/package/fiko.css"
+/>
 ```
 
 Most use case will need some custom, brand related styles...
@@ -136,6 +148,16 @@ or define it just for one page, and just the dark color, like this:
 </head>
 ```
 
+Generally if you are unsure just put them into un an unnamed, anonymous layer:
+
+```css
+@layer {
+  p {
+    margin: 0;
+  }
+}
+```
+
 ## Use [Check colour contrast](https://colourcontrast.cc/) | [Devs here!](https://github.com/Pushedskydiver/Colour-Contrast-Checker)
 
 .
@@ -199,7 +221,7 @@ npm astro add fiko
 Sometimes you need to solve dep's issues. This helps a lot, many times:
 
 ```shell
-pnpm install --install-strategy=nested`
+pnpm install --install-strategy=nested
 ```
 
 `--install-strategy=nested`,

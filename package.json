@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "package/fiko.css",
@@ -25,7 +25,10 @@
     "minimal",
     "native-html",
     "semantic",
-    "fluid"
+    "fluid",
+    "layers",
+    "css-variables",
+    "customisable"
   ],
   "scripts": {
     "dev": "echo 'fiko.css comes ready to swim, no build steps. 🐸 Done!'"

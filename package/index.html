@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO TEST v0.5.4</title>
+    <title>FIKO TEST v0.5.5</title>
     <!-- <style>
       @layer root {
         :root {
@@ -16,13 +16,23 @@
   </head>
   <body class="toggle-wrapper">
     <!-- JS Toggle Button for Dark/Light Mode -->
-    <input
+    <!-- <input
       type="checkbox"
       id="theme-toggle"
       class="toggle-container"
       onchange="toggleTheme()"
     />
-    <label for="theme-toggle">Toggle Dark/Light Mode</label>
+    <label for="theme-toggle">Toggle Dark/Light Mode</label> -->
+
+    <button class="contrast switcher" aria-label="Turn off dark mode">
+      <input
+        type="checkbox"
+        id="theme-toggle"
+        class="toggle-container"
+        onchange="toggleTheme()"
+      />
+      <label for="theme-toggle"><i>Turn on dark mode</i></label>
+    </button>
 
     <!-- Header -->
     <header class="container">
@@ -32,6 +42,12 @@
       <h4>FIKO CSS Framework</h4>
       <h5>FIKO CSS Framework</h5>
       <h6>FIKO CSS Framework</h6>
+      <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        For 50 years, WWF has been protecting the future of nature. The world's
+        leading conservation organization, WWF works in 100 countries and is
+        supported by 1.2 million members in the United States and close to 5
+        million globally.
+      </blockquote>
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
@@ -66,13 +82,13 @@
 
         <!-- Accordion -->
         <details>
-          <summary>Accordion Title</summary>
+          <summary role="button">Accordion Title</summary>
           <p>Accordion content goes here.</p>
         </details>
 
         <!-- Accordion -->
         <details open>
-          <summary>Accordion Title</summary>
+          <summary role="button">Accordion Title</summary>
           <p>Accordion content goes here.</p>
         </details>
       </section>

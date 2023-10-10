@@ -2,11 +2,15 @@
 
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
 
-## Yo 🫵 It's v0.5.0, W.I.P. Don't use it yet. Did tell you!
+.
 
-### STAY SANE | Low Code Verbosity.
+Full zero config DX. Import it from NPM. Link it in yor framework. Boom. Done!
 
-#### VERY 🐸 FIKO! [Test here](https://fiko.rokma.rocks/)
+> **_You write your own classes_**
+
+## Yo 🫵 It's v0.5.3, W.I.P. Don't use it yet. Did tell you!
+
+### STAY SANE! Low Code Verbosity. VERY 🐸 FIKO! [Demo Test here](https://fiko.rokma.rocks/)
 
 🐸 GREAT STYLES WITH JUST ONE CSS FILE.
 🐸 RESPONSIVE EVERYTHING.
@@ -19,39 +23,43 @@
 
 # 🫵 USE IT
 
-[Download FIKO](https://github.com/TOYBREAKER/fiko/fiko.zip) and link `/fiko.css` ( or any other version... ) in the `<head>` of your website.
-
-```html
-<link rel="stylesheet" href="fiko.css" />
-```
-
-## Install
+## Usage: **Install**
 
 ```shell
 pnpm i fiko
 ```
 
-###### Download
-
-Get it raw from Github [fiko.css](https://raw.githubusercontent.com/toybreaker/fiko/main/package/fiko.css)
-
-## Usage
+## Usage: **Import**
 
 ```css
 @import "node_modules/fiko/fiko.css";
 ```
 
-or
+then:
 
 ```html
 <link rel="stylesheet" href="node_modules/fiko/package/fiko.css" />
 ```
+
+Or
+
+## Usage: **Download**
+
+[Download FIKO](https://github.com/TOYBREAKER/fiko/fiko.zip) and link `/fiko.css` it in the `<head>` of your website.
+
+```html
+<link rel="stylesheet" href="fiko.css" />
+```
+
+Or
 
 ## Usage: **Astro**
 
 ```astro
 import 'fiko.css';
 ```
+
+Or
 
 ## Usage: **HTML**
 
@@ -62,43 +70,66 @@ import 'fiko' from 'path/to/fiko.css'
 import 'my_custom_style' from 'path/to/my_custom_style.css'
 ```
 
+Most use case will need some custom, brand related styles...
+
 ## Usage: **CUSTOM CSS ON TOP OF FIKO**
 
-When you write your `my_custom_style.css` you can leverage the existing fiko layers, just mind the Layer Order Declaration.
+Write your `my_custom_style.css` you can leverage the existing `fiko layers`, just mind the order`.
 
 ```css
+/* ||| Layer Order Declaration ||| */
 @layer base, root, toggle, containers, components;
 ```
 
+### WHY?
+
 The goal here is to reduce specificity born problems, by isolating rules.
-Refer the code comments right inside `fiko.css` to decide where to put your rules. I'd say you probably go something like this:
+Refer to the code comments right inside `fiko.css` to decide where to put your rules. I'd say you probably go something like this:
 
 ```css
 @layer components {
-  .my_custom_style {
+  .button {
     color: green;
   }
-  .my_custom_header {
+  .call-to-action {
     font-size: 4ch;
     font-weight: 100;
+    border: 1px solid pink;
   }
 }
 ```
 
-# 🫵 DEVELOP
+or
 
----
-
-## OPEN FIKO NPM PAGE
-
-```shell
-# Open fiko NPM page in the default browser:
-pnpm repo
+```css
+@layer root {
+  :root {
+    --color-white: #7fffd4;
+    --color-black: #222222;
+  }
+}
 ```
 
----
+or, if you want to change just one color of the 4 can go like this:
 
-## FRONTEND DEMO PAGE
+```css
+@layer root {
+  :root {
+    --light-mode: var(--color-white);
+    --dark-mode: var(--color-black);
+  }
+}
+```
+
+## Use [Check colour contrast](https://colourcontrast.cc/) | [Devs here!](https://github.com/Pushedskydiver/Colour-Contrast-Checker)
+
+.
+
+# 🫵 DEVELOP
+
+.
+
+## FRONTEND [DEMO PAGE](https://fiko.rokma.rocks)
 
 Fiko comes with a demo page, useful to test when dev.
 
@@ -118,7 +149,7 @@ echo 'serve';
 serve
 ```
 
-## PACKAGE
+## UPGRADE
 
 ```shell
 # Start by LIVING IN THE FUTURE:
@@ -157,51 +188,10 @@ pnpm install --install-strategy=nested`
 ```
 
 `--install-strategy=nested`,
-formerly `legacy-bundling`,
+Formerly `legacy-bundling`,
 instead of hoisting package installs in node_modules,
 installs packages in the same manner that they are depended on.
 NOTE: This may cause very deep directory structures and duplicate package installs as there is no de-duplicating.
-
-.
-
-# WHY THREE VERSIONS?
-
-> **_To cater to 3 different kinds of STARTER TEMPLATE needs._**
-
-## FIKO `fiko.css`
-
-Full zero config DX. Import it from NPM. Link it in yor framework. Boom. Done!
-
-> **_Use this version when you write your own classes_**
-
-**FIKO is compiled with this settings:**
-
-- enable-semantic-container: true
-
-## CLASSLESS `fiko.classless.css`
-
-No helpers nor utilities, FIKO classless still provides: `header`,`main`, `footer` behaving as DYNAMICALLY-SPACED containers, i.e.: have horizontal spacing, and max width on `.container`.
-
-> **_Use this version when you write your own classes_**
-
-**FIKO CLASSLESS is compiled with this settings:**
-
-When :
-
-- enable-semantic-container: true
-- enable-classes: false
-
-## FLUID `fiko.fluid.css`
-
-No max width on `.container` here. FULL-ON AT ALL TIMES!
-
-> **_Use this version when you need a fluid, FULL-VIEWPORT container._**
-
-**FIKO FLUID is compiled with this settings:**
-
-- enable-semantic-container: true
-- enable-viewport: false
-- enable-classes: false
 
 .
 
@@ -219,7 +209,13 @@ Licensed under the [MIT License](https://github.com/toybreaker/fiko/blob/master/
 
 This slim starter was develop to scratch my own needs and it's inspired by today classless css framework such as [PICOCSS](https://github.com/picocss/pico),[WATER](https://github.com/kognise/water.css), [CSSBED](https://www.cssbed.com/), by [TOYBREAKER](https://github.com/toybreaker/)
 
-## CHANGELOG
+.
+
+# CHANGELOG
+
+### v0.5.3
+
+Nothing significant yet, just cleaner. Responsive padding setup.
 
 ### v0.5.0
 

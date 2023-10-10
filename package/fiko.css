@@ -1,16 +1,16 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.5.0 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.5.3 (https://fiko.rokma.rocks)
  * 2024 CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
  */
 
 
-/* ========== Layer Order Declaration ========== */
+/* ||| Layer Order Declaration ||| */
 @layer base, root, toggle, containers, components;
 
-/* ========== Base Layer ========== */
+/* ||| Base Layer ||| */
 @layer base {
 
   /* Basic Resets and Root Variables */
@@ -48,7 +48,7 @@
   }
 }
 
-/* ========== Root Declarations ========== */
+/* ||| Root Declarations ||| */
 @layer root {
   :root {
     --color-white: #ffffff;
@@ -56,6 +56,9 @@
     --light-mode: var(--color-white);
     --dark-mode: var(--color-black);
     --font-size: clamp(20px, 1.25rem, 30px);
+    --paddingLR: 3dvw;
+    --paddingTB: 3dvh;
+    --border-size: 1px;
 
     --font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, var(--font-family-emoji);
 
@@ -87,7 +90,7 @@
   }
 }
 
-/* ========== Toggle Layer ========== */
+/* ||| Toggle Layer ||| */
 @layer toggle {
   .toggle-container {
     display: none;
@@ -104,10 +107,9 @@
   }
 }
 
-/* ========== Container Elements Layer ========== */
+/* ||| Container Elements Layer ||| */
 @layer containers {
 
-  /* ... [container styles, unchanged from your last provided version] ... */
   header,
   nav,
   section,
@@ -119,27 +121,31 @@
   nav,
   header,
   footer {
-    padding: 1rem 2rem;
+    padding: var(--paddingTB) var(--paddingLR);
   }
 
   .container {
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: calc(var(--paddingLR) * 3);
+    margin-right: calc(var(--paddingLR) * 3);
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 
-/* ========== Contained Elements Layer ========== */
+/* ||| Contained Elements Layer ||| */
 @layer components {
 
   /* ... [component styles, unchanged from your last provided version] ... */
   /* Accordion */
   details {
-    border: 1px solid var(--text-color);
+    border: var(--border-size) solid var(--text-color);
   }
 
   summary {
     cursor: pointer;
-    padding: 1rem;
+    padding: var(--paddingTB) var(--paddingLR);
   }
 
   details[open] summary::before {
@@ -155,7 +161,7 @@
   h6,
   p,
   span {
-    padding: 1rem 0;
+    padding: var(--paddingTB) 0;
   }
 
   /* List */
@@ -165,21 +171,21 @@
   }
 
   li {
-    padding: 0.5rem 0;
+    padding: calc(var(--paddingTB)/2) 0;
   }
 
   /* Card */
   .card {
     border: 1px solid var(--text-color);
-    padding: 1rem;
+    padding: var(--paddingTB) var(--paddingLR);
   }
 
   .card img {
     max-width: 100%;
   }
 
-  .card-button {
+  .card button {
     display: block;
-    margin-top: 1rem;
+    margin-top: var(--paddingTB) var(--paddingLR);
   }
 }

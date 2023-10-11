@@ -1,4 +1,11 @@
 {
-  "recommendations": [],
+  "recommendations": [
+    "zignd.html-css-class-completion",
+    "ecmel.vscode-html-css",
+    "pranaygp.vscode-css-peek",
+    "csstools.postcss",
+    "esbenp.prettier-vscode",
+    "kevscript.vscolors"
+  ],
   "unwantedRecommendations": []
 }

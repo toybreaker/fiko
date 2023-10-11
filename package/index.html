@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO TEST v0.5.6</title>
+    <title>FIKO TEST v0.5.7</title>
     <!-- <style>
       @layer root {
         :root {
@@ -16,39 +16,22 @@
   </head>
   <body class="toggle-wrapper">
     <!-- JS Toggle Button for Dark/Light Mode -->
-    <!-- <input
-      type="checkbox"
-      id="theme-toggle"
-      class="toggle-container"
-      onchange="toggleTheme()"
-    />
-    <label for="theme-toggle">Toggle Dark/Light Mode</label> -->
-
-    <button class="contrast switcher" aria-label="Turn off dark mode">
+    <button class="contrast switcher" aria-label="Toggle light | dark mode">
       <input
         type="checkbox"
         id="theme-toggle"
         class="toggle-container"
         onchange="toggleTheme()"
       />
-      <label for="theme-toggle"><i>Turn on dark mode</i></label>
+      <label for="theme-toggle"><i>Swith color mode</i></label>
     </button>
 
     <!-- Header -->
-    <header class="container">
-      <h1>h1 | FIKO Css</h1>
-      <h2>h2 | FIKO Css</h2>
-      <h3>h3 | FIKO Css</h3>
-      <h4>FIKO CSS Framework</h4>
-      <h5>FIKO CSS Framework</h5>
-      <h6>FIKO CSS Framework</h6>
-      <blockquote cite="http://www.worldwildlife.org/who/index.html">
-        For 50 years, WWF has been protecting the future of nature. The world's
-        leading conservation organization, WWF works in 100 countries and is
-        supported by 1.2 million members in the United States and close to 5
-        million globally.
-      </blockquote>
+    <header class="invert">
+      <h1>Welcome to FIKO CSS Framework</h1>
+
       <nav>
+        <h2>This is a nav, and i am an `h2`.</h2>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -58,11 +41,32 @@
     </header>
 
     <main>
+      <hr />
+
       <div class="container">
+        <h1>h1 | FIKO Css</h1>
+        <h2>h2 | FIKO Css</h2>
+        <h3>h3 | FIKO Css</h3>
+        <h4>FIKO CSS Framework</h4>
+        <h5>FIKO CSS Framework</h5>
+        <h6>FIKO CSS Framework</h6>
+        <hr />
+        <blockquote cite="http://www.worldwildlife.org/who/index.html">
+          For 50 years, WWF has been protecting the future of nature. The
+          world's leading conservation organization, WWF works in 100 countries
+          and is supported by 1.2 million members in the United States and close
+          to 5 million globally.
+        </blockquote>
+        <hr />
+
         <h2>Full-bleed layouts</h2>
         <p>
-          Full-bleed layouts, as the following image while this title is
-          contained using class `.container` to its div.
+          Note that this title is contained using class `.container` to its div,
+          so it has horizontal spacing.
+        </p>
+        <p>
+          Without the `.container` class by default Fiko renders element with a
+          full-bleed layouts, no horizontal spacing, as the following image.
         </p>
       </div>
 
@@ -75,10 +79,6 @@
       <!-- Section -->
       <section class="container">
         <h1>Welcome to FIKO CSS Framework</h1>
-        <p>
-          This is a paragraph. Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit.
-        </p>
 
         <!-- Accordion -->
         <details>
@@ -96,11 +96,19 @@
           <summary>Open Accordion Title</summary>
           <p>Accordion can be open by default. Use `details open`</p>
         </details>
+
+        <p>
+          This is a paragraph. Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit.
+        </p>
       </section>
 
-      <!-- Article Card -->
+      <hr />
+
+      <!-- Article | Card -->
+
       <article>
-        <h2 class="container">Article Card Title</h2>
+        <h2 class="container">Article | Card Title</h2>
         <img
           src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
           alt="rokma.com"
@@ -112,12 +120,49 @@
           <button>Call to Action</button>
         </a>
       </article>
-    </main>
 
+      <article>
+        <h2 class="container">Article | Card Title</h2>
+        <img
+          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+          alt="rokma.com"
+        />
+        <p class="container">
+          Article content goes here. Lorem ipsum dolor sit amet.
+        </p>
+        <a href="#" class="card-button">
+          <button>Call to Action</button>
+        </a>
+      </article>
+
+      <article>
+        <h2 class="container">Article | Card Title</h2>
+        <img
+          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+          alt="rokma.com"
+        />
+        <p class="container">
+          Article content goes here. Lorem ipsum dolor sit amet.
+        </p>
+        <a href="#" class="card-button">
+          <button>Call to Action</button>
+        </a>
+      </article>
+
+      <h2 class="container">Figure | Horizontal Scroll</h2>
+
+      <!-- Figure  -->
+      <figure>
+        <img
+          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+          alt="rokma.com"
+        />
+      </figure>
+    </main>
+    <hr />
     <!-- Footer -->
-    <footer>
-      <hr />
-      <p class="container">&copy; FIKO CSS</p>
+    <footer class="invert">
+      <p class="container">&copy;2023 FIKO CSS</p>
     </footer>
 
     <!-- Vanilla JS for Toggle & User Preference Detection -->

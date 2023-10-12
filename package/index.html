@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO TEST v0.5.7</title>
+    <title>FIKO TEST v0.5.8</title>
     <!-- <style>
       @layer root {
         :root {
@@ -28,35 +28,36 @@
 
     <!-- Header -->
     <header class="invert">
-      <h1>Welcome to FIKO CSS Framework</h1>
-
       <nav>
-        <h2>This is a nav, and i am an `h2`.</h2>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><h1>FIKO.CSS</h1></li>
+        </ul>
+        <ul>
+          <li><a class="contrast" href="#">Link</a></li>
+          <li><a class="outline" href="#">Link</a></li>
+          <li><a class="outline" href="#" role="button">Button</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <hr />
-
       <div class="container">
-        <h1>h1 | FIKO Css</h1>
-        <h2>h2 | FIKO Css</h2>
-        <h3>h3 | FIKO Css</h3>
-        <h4>FIKO CSS Framework</h4>
-        <h5>FIKO CSS Framework</h5>
-        <h6>FIKO CSS Framework</h6>
+        <h1>h1 | FIKO.CSS</h1>
+        <h2>h2 | FIKO.CSS</h2>
+        <h3>h3 | FIKO.CSS</h3>
+        <h4>h4 | FIKO.CSS Framework</h4>
+        <h5>h4 | FIKO.CSS Framework</h5>
+        <h6>h6 | FIKO.CSS Framework</h6>
+
         <hr />
+
         <blockquote cite="http://www.worldwildlife.org/who/index.html">
           For 50 years, WWF has been protecting the future of nature. The
           world's leading conservation organization, WWF works in 100 countries
           and is supported by 1.2 million members in the United States and close
           to 5 million globally.
         </blockquote>
+
         <hr />
 
         <h2>Full-bleed layouts</h2>
@@ -78,7 +79,7 @@
 
       <!-- Section -->
       <section class="container">
-        <h1>Welcome to FIKO CSS Framework</h1>
+        <h1>Welcome to FIKO.CSS Framework</h1>
 
         <!-- Accordion -->
         <details>
@@ -96,19 +97,46 @@
           <summary>Open Accordion Title</summary>
           <p>Accordion can be open by default. Use `details open`</p>
         </details>
+      </section>
 
+      <section class="container">
+        <h2>Paragraph & Blockquote</h2>
         <p>
           This is a paragraph. Lorem ipsum dolor sit, amet consectetur
           adipisicing elit.
         </p>
+        <blockquote>
+          This is a paragraph. Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit.
+        </blockquote>
       </section>
 
       <hr />
 
       <!-- Article | Card -->
 
-      <article>
-        <h2 class="container">Article | Card Title</h2>
+      <hgroup>
+        <h2>Article</h2>
+        <h3>
+          <code>article</code>
+          <small>renders as a card</small>
+        </h3>
+      </hgroup>
+
+      <article class="border">
+        <h2 class="container">Article Card</h2>
+        <img
+          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+          alt="rokma.com"
+        />
+        <p class="container">This article has a <code>.border</code> class.</p>
+        <a href="#" class="card-button">
+          <button>Call to Action</button>
+        </a>
+      </article>
+
+      <article class="border">
+        <h2 class="container">Article <small>Title</small></h2>
         <img
           src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
           alt="rokma.com"
@@ -122,7 +150,7 @@
       </article>
 
       <article>
-        <h2 class="container">Article | Card Title</h2>
+        <h2 class="container">No border article</h2>
         <img
           src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
           alt="rokma.com"
@@ -136,33 +164,107 @@
       </article>
 
       <article>
-        <h2 class="container">Article | Card Title</h2>
-        <img
-          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-          alt="rokma.com"
-        />
+        <h2 class="container">Text article</h2>
         <p class="container">
-          Article content goes here. Lorem ipsum dolor sit amet.
+          Article content goes here. Ipsum dolor sit amet. Lorem dolor sit amet.
+          Lorem ipsum sit amet. Lorem ipsum dolor amet.
         </p>
         <a href="#" class="card-button">
           <button>Call to Action</button>
         </a>
       </article>
 
-      <h2 class="container">Figure | Horizontal Scroll</h2>
+      <hr />
+
+      <hgroup class="container">
+        <h2>Grid</h2>
+        <h3>
+          <code>.grid</code>
+          <small>enables a minimal grid system with auto-layout columns.</small>
+        </h3>
+      </hgroup>
+
+      <div class="container grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+      </div>
+
+      <hr />
+
+      <hgroup class="container">
+        <h2>Figure</h2>
+        <h3>
+          <code>figure</code>
+          <small>horizontal Scroll.</small>
+        </h3>
+      </hgroup>
 
       <!-- Figure  -->
       <figure>
-        <img
-          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-          alt="rokma.com"
-        />
+        <table role="grid">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+              <th scope="col">Heading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="col">#</th>
+              <td scope="col">Total</td>
+              <td scope="col">Total</td>
+              <td scope="col">Total</td>
+              <td scope="col">Total</td>
+              <td scope="col">Total</td>
+            </tr>
+          </tfoot>
+        </table>
       </figure>
+
+      <section class="container">
+        <p>
+          <br /><br /><br />
+          <small><em>Space intentionally left blank</em></small>
+          <br /><br /><br /><br /><br /><br />
+        </p>
+      </section>
     </main>
-    <hr />
+
     <!-- Footer -->
     <footer class="invert">
-      <p class="container">&copy;2023 FIKO CSS</p>
+      <p class="container">&copy;2023 FIKO.CSS</p>
     </footer>
 
     <!-- Vanilla JS for Toggle & User Preference Detection -->

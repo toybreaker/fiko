@@ -18,7 +18,7 @@ Fiko is a contained, (almost) classless, layered, modern (late2023), dynamically
 
 # 🫵 USE IT
 
-## Yo 🫵 W.I.P. Its's only v0.5.10, Don't use it yet. Did tell you!
+## Yo 🫵 W.I.P. Its's only v0.5.11, Don't use it yet. Did tell you!
 
 It can be used in many ways.
 
@@ -31,7 +31,7 @@ pnpm i fiko
 ## Usage: **Import**
 
 ```css
-@import "node_modules/fiko/fiko.css";
+@import 'node_modules/fiko/fiko.css';
 ```
 
 then:
@@ -74,8 +74,7 @@ Or probably also as show here:
 ```html
 <link
   rel="stylesheet"
-  href="https://raw.githubusercontent.com/toybreaker/fiko/main/package/fiko.css"
-/>
+  href="https://raw.githubusercontent.com/toybreaker/fiko/main/package/fiko.css" />
 ```
 
 Most use case will need some custom, brand related styles...

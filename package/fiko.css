@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.5.10 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.5.11 (https://fiko.rokma.rocks)
  * 2024 CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -186,11 +186,13 @@
 /* 🐲 Root Declarations */
 @layer root {
   :root {
-    /* COLOURS */
-    --color-white: rgba(255, 255, 255, 1);
-    --color-black: rgba(0, 0, 0, 1);
+    /* COLOURS FOR LIGHT/DARK MODES */
+    --transparency: 1;
+    --color-white: rgba(255, 255, 255, var(--transparency));
+    --color-black: rgba(0, 0, 0, var(--transparency));
 
-    /* COLOUR'S MODES */
+    /* COLOURS CONSTANT FOR BOTH LIGHT AND DARK MODES */
+    /* Some elements need constant colours, whatever the user color mode is. */
     --color-light: var(--color-white);
     --color-dark: var(--color-black);
   }
@@ -1109,7 +1111,7 @@
 @layer classes {
   article.border {
     border: 1px solid var(--currentTXT);
-    border-radius: var(--radius); 
+    border-radius: var(--radius);
   }
 
   .container {

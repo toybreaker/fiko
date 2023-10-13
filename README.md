@@ -18,7 +18,7 @@ Fiko is a contained, (almost) classless, layered, modern (late2023), dynamically
 
 # 🫵 USE IT
 
-## Yo 🫵 W.I.P. Its's only v0.5.8, Don't use it yet. Did tell you!
+## Yo 🫵 W.I.P. Its's only v0.5.9, Don't use it yet. Did tell you!
 
 It can be used in many ways.
 
@@ -165,22 +165,23 @@ Generally if you are unsure just put them into un an unnamed, anonymous layer:
 ## FRONTEND [DEMO PAGE](https://fiko.rokma.rocks)
 
 Fiko comes with a demo page, useful to test when dev.
-
-Run a simple Python server on lh:3000. (Install Python for your sys first!)
+Run Browsersync (Install Browsersync for your sys first!)
 
 ```shell
 # 🐲 DRY RECURRING START
 echo '|';
 echo 'cd package/';
-cd dist/web/;
+cd pakage;
 echo '|';
 echo '🐲 now i am here:';
 CWD=$(pwd -P)
 echo $CWD
 echo '|';
-echo 'serve';
-serve
+echo 'browser-sync start -s';
+browser-sync start -s -f index.html
 ```
+
+[this will go into package.json eventually!]
 
 ## UPGRADE
 

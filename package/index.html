@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO TEST v0.5.8</title>
+    <title>FIKO 0.5.9</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favico_dark.svg" />
     <!-- <style>
       @layer root {
         :root {
@@ -13,63 +15,88 @@
         }
       }
     </style> -->
+
+    <!-- brosersync not browserthink! DEV SCRIPT -->
+    <script id="__bs_script__">
+      //<![CDATA[
+      document.write(
+        "<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.7'><\/script>".replace(
+          "HOST",
+          location.hostname
+        )
+      );
+      //]]>
+    </script>
   </head>
   <body class="toggle-wrapper">
     <!-- JS Toggle Button for Dark/Light Mode -->
-    <button class="contrast switcher" aria-label="Toggle light | dark mode">
-      <input
-        type="checkbox"
-        id="theme-toggle"
-        class="toggle-container"
-        onchange="toggleTheme()"
-      />
-      <label for="theme-toggle"><i>Swith color mode</i></label>
-    </button>
 
     <!-- Header -->
     <header class="invert">
       <nav>
         <ul>
-          <li><h1>FIKO.CSS</h1></li>
+          <li>
+            <h1>FIKO</h1>
+          </li>
         </ul>
         <ul>
-          <li><a class="contrast" href="#">Link</a></li>
-          <li><a class="outline" href="#">Link</a></li>
-          <li><a class="outline" href="#" role="button">Button</a></li>
+          <li><a class="contrast" href="#">Modern</a></li>
+          <li><a class="outline" href="#">Css</a></li>
+          <li><a class="outline" href="#">Framework</a></li>
         </ul>
       </nav>
+      <div class="switcher" aria-label="Toggle light | dark mode">
+        <input
+          type="checkbox"
+          id="toggle-theme"
+          class="toggle-container"
+          onchange="toggleTheme()"
+        />
+        <label for="toggle-theme"><i>Swith color mode</i></label>
+      </div>
     </header>
 
     <main>
-      <div class="container">
-        <h1>h1 | FIKO.CSS</h1>
-        <h2>h2 | FIKO.CSS</h2>
-        <h3>h3 | FIKO.CSS</h3>
-        <h4>h4 | FIKO.CSS Framework</h4>
-        <h5>h4 | FIKO.CSS Framework</h5>
-        <h6>h6 | FIKO.CSS Framework</h6>
+      <section class="container">
+        <hgroup class="container">
+          <h2>Headings</h2>
+          <small>Looks like this:</small>
+        </hgroup>
+
+        <hgroup>
+          <h1>h1 FIKO CSS</h1>
+          <h2>h2 FIKO CSS</h2>
+          <h3>h3 FIKO CSS</h3>
+          <h4>h4 FIKO CSS</h4>
+          <h5>h4 FIKO CSS Framework</h5>
+          <h6>h6 FIKO CSS Framework</h6>
+        </hgroup>
+      </section>
+
+      <hr />
+
+      <section class="container">
+        <hgroup class="container">
+          <h2>Horizontal rule</h2>
+          <small>hr has some small vertical spacing!</small>
+        </hgroup>
 
         <hr />
-
-        <blockquote cite="http://www.worldwildlife.org/who/index.html">
-          For 50 years, WWF has been protecting the future of nature. The
-          world's leading conservation organization, WWF works in 100 countries
-          and is supported by 1.2 million members in the United States and close
-          to 5 million globally.
-        </blockquote>
-
         <hr />
+        <hr />
+      </section>
 
-        <h2>Full-bleed layouts</h2>
-        <p>
-          Note that this title is contained using class `.container` to its div,
-          so it has horizontal spacing.
-        </p>
-        <p>
-          Without the `.container` class by default Fiko renders element with a
-          full-bleed layouts, no horizontal spacing, as the following image.
-        </p>
-      </div>
+      <hr />
+
+      <section>
+        <hgroup class="container">
+          <h2>Full-bleed layouts</h2>
+          <small
+            >Without the `.container` class, elements have no horizontal
+            spacing, as the following image:</small
+          >
+        </hgroup>
+      </section>
 
       <!-- Full-bleed -->
       <img
@@ -77,189 +104,278 @@
         alt="rokma.com"
       />
 
-      <!-- Section -->
-      <section class="container">
-        <h1>Welcome to FIKO.CSS Framework</h1>
-
-        <!-- Accordion -->
-        <details>
-          <summary>Closed Accordion Title</summary>
-          <p>Accordion content goes here.</p>
-        </details>
-
-        <details>
-          <summary>Other Closed Accordion</summary>
-          <p>Accordion content goes here.</p>
-        </details>
-
-        <!-- Accordion -->
-        <details open>
-          <summary>Open Accordion Title</summary>
-          <p>Accordion can be open by default. Use `details open`</p>
-        </details>
-      </section>
-
-      <section class="container">
-        <h2>Paragraph & Blockquote</h2>
-        <p>
-          This is a paragraph. Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit.
-        </p>
-        <blockquote>
-          This is a paragraph. Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit.
-        </blockquote>
-      </section>
-
       <hr />
 
-      <!-- Article | Card -->
+      <div class="container" role="document">
+        <!-- Section -->
 
-      <hgroup>
-        <h2>Article</h2>
-        <h3>
-          <code>article</code>
-          <small>renders as a card</small>
-        </h3>
-      </hgroup>
+        <section>
+          <hgroup class="container">
+            <h2>Accordion</h2>
+            <small>Opunanclose as woman legs.</small>
+          </hgroup>
 
-      <article class="border">
-        <h2 class="container">Article Card</h2>
-        <img
-          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-          alt="rokma.com"
-        />
-        <p class="container">This article has a <code>.border</code> class.</p>
-        <a href="#" class="card-button">
-          <button>Call to Action</button>
-        </a>
-      </article>
+          <!-- Accordion -->
+          <details>
+            <summary>Closed Accordion Title</summary>
+            <p>Accordion content goes here.</p>
+          </details>
 
-      <article class="border">
-        <h2 class="container">Article <small>Title</small></h2>
-        <img
-          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-          alt="rokma.com"
-        />
-        <p class="container">
-          Article content goes here. Lorem ipsum dolor sit amet.
-        </p>
-        <a href="#" class="card-button">
-          <button>Call to Action</button>
-        </a>
-      </article>
+          <details>
+            <summary>Other Closed Accordion</summary>
+            <p>Accordion content goes here.</p>
+          </details>
 
-      <article>
-        <h2 class="container">No border article</h2>
-        <img
-          src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-          alt="rokma.com"
-        />
-        <p class="container">
-          Article content goes here. Lorem ipsum dolor sit amet.
-        </p>
-        <a href="#" class="card-button">
-          <button>Call to Action</button>
-        </a>
-      </article>
+          <!-- Accordion -->
+          <details open>
+            <summary>Open Accordion Title</summary>
+            <p>Accordion can be open by default. Use `details open`</p>
+          </details>
+        </section>
 
-      <article>
-        <h2 class="container">Text article</h2>
-        <p class="container">
-          Article content goes here. Ipsum dolor sit amet. Lorem dolor sit amet.
-          Lorem ipsum sit amet. Lorem ipsum dolor amet.
-        </p>
-        <a href="#" class="card-button">
-          <button>Call to Action</button>
-        </a>
-      </article>
+        <hr />
 
-      <hr />
+        <section>
+          <hgroup class="container">
+            <h2>Paragraph</h2>
+            <small>Has some bottom padding:</small>
+          </hgroup>
+          <p>
+            This is a paragraph full of lorem ipsum dolor sit, amet consectetur
+            adipisicing elit.
+          </p>
+          <p>New paragraph. Amet consectetur adipisicing elit.</p>
+        </section>
 
-      <hgroup class="container">
-        <h2>Grid</h2>
-        <h3>
-          <code>.grid</code>
-          <small>enables a minimal grid system with auto-layout columns.</small>
-        </h3>
-      </hgroup>
+        <hr />
 
-      <div class="container grid">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
+        <section>
+          <hgroup class="container">
+            <h2>Blockquote</h2>
+            <small>Renders as this:</small>
+          </hgroup>
+          <blockquote class="container" cite="https://fiko.rokma.rocks">
+            This is a blockquote. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit.
+          </blockquote>
+
+          <small class="container">One more:</small>
+
+          <blockquote
+            class="container"
+            cite="http://www.worldwildlife.org/who/index.html"
+          >
+            For 50 years, WWF has been protecting the future of nature. The
+            world's leading conservation organization, WWF works in 100
+            countries and is supported by 1.2 million members in the United
+            States and close to 5 million globally.
+          </blockquote>
+        </section>
+
+        <hr />
+
+        <!-- Article | Card -->
+
+        <hgroup class="container">
+          <h2>Article</h2>
+          <small>Renders as a card</small>
+        </hgroup>
+
+        <article class="border">
+          <h2 class="">Article Card</h2>
+          <img
+            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+            alt="rokma.com"
+          />
+          <p class="container">
+            This article has a <code>.border</code> class.
+          </p>
+          <a href="#" class="card-button">
+            <button>Call to Action</button>
+          </a>
+        </article>
+
+        <article class="border">
+          <h2 class="container">Article <small>Title</small></h2>
+          <img
+            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+            alt="rokma.com"
+          />
+          <p class="container">
+            Article content goes here. Lorem ipsum dolor sit amet.
+          </p>
+          <a href="#" class="card-button">
+            <button>Call to Action</button>
+          </a>
+        </article>
+
+        <article>
+          <h2 class="container">No border article</h2>
+          <img
+            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+            alt="rokma.com"
+          />
+          <p class="container">
+            Article content goes here. Lorem ipsum dolor sit amet.
+          </p>
+          <a href="#" class="card-button">
+            <button>Call to Action</button>
+          </a>
+        </article>
+
+        <article>
+          <h2 class="container">Text article</h2>
+          <p class="container">
+            Article content goes here. Ipsum dolor sit amet. Lorem dolor sit
+            amet. Lorem ipsum sit amet. Lorem ipsum dolor amet.
+          </p>
+          <a href="#" class="card-button">
+            <button>Call to Action</button>
+          </a>
+        </article>
+
+        <hr />
+
+        <section>
+          <hgroup class="container">
+            <h2>Grid</h2>
+            <small
+              >The class='grid' gives a minimal grid system with auto-layout
+              columns.</small
+            >
+            <small
+              >The class="border" is added here to show grid elements:</small
+            >
+          </hgroup>
+
+          <div class="grid">
+            <div>
+              <article class="border">
+                <header>header 1</header>
+                body 1
+                <footer>footer 1</footer>
+              </article>
+            </div>
+            <div>
+              <article class="border">
+                <header>header 2</header>
+                body 2
+                <footer>footer 2</footer>
+              </article>
+            </div>
+            <div>
+              <article class="border">
+                <header>header 3</header>
+                body 3
+                <footer>footer 3</footer>
+              </article>
+            </div>
+            <div>
+              <article class="border">
+                <header>header 4</header>
+                body 4
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <section>
+          <hgroup class="container">
+            <h2>Figure<code></code></h2>
+            <small>Use it when in need for Horizontal Scroll.</small>
+            <small>It can contain anything, here it wraps a table:</small>
+            <br />
+            <br />
+          </hgroup>
+
+          <!-- Figure  -->
+          <figure>
+            <table role="grid">
+              <thead>
+                <tr>
+                  <th scope="col">1</th>
+                  <th scope="col">2</th>
+                  <th scope="col">3</th>
+                  <th scope="col">4</th>
+                  <th scope="col">5</th>
+                  <th scope="col">6</th>
+                  <th scope="col">7</th>
+                  <th scope="col">8</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Cell</th>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                </tr>
+                <tr>
+                  <th scope="row">Cell</th>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                </tr>
+                <tr>
+                  <th scope="row">Cell</th>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                  <td>Cell</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="col">Total&nbsp;</th>
+                  <td scope="col">Total&nbsp;</td>
+                  <td scope="col">Total&nbsp;</td>
+                  <td scope="col">Total&nbsp;</td>
+                  <td scope="col">Total&nbsp;</td>
+                  <td scope="col">Total&nbsp;</td>
+                  <td scope="col">Total&nbsp;</td>
+                  <td scope="col">Total&nbsp;</td>
+                  <td scope="col">Total&nbsp;</td>
+                </tr>
+              </tfoot>
+            </table>
+          </figure>
+
+          <small>Here it wraps a image:</small>
+          <figure>
+            <img
+              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+              alt="rokma.com"
+            />
+            <figcaption>fiko.rokma.rocks</figcaption>
+          </figure>
+        </section>
+
+        <hr />
+
+        <section class="container">
+          <p>
+            <br /><br /><br />
+            <small><em>Space intentionally left blank</em></small>
+            <br /><br /><br /><br /><br /><br />
+          </p>
+        </section>
       </div>
-
-      <hr />
-
-      <hgroup class="container">
-        <h2>Figure</h2>
-        <h3>
-          <code>figure</code>
-          <small>horizontal Scroll.</small>
-        </h3>
-      </hgroup>
-
-      <!-- Figure  -->
-      <figure>
-        <table role="grid">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Heading</th>
-              <th scope="col">Heading</th>
-              <th scope="col">Heading</th>
-              <th scope="col">Heading</th>
-              <th scope="col">Heading</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td>Cell</td>
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td>Cell</td>
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td>Cell</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <th scope="col">#</th>
-              <td scope="col">Total</td>
-              <td scope="col">Total</td>
-              <td scope="col">Total</td>
-              <td scope="col">Total</td>
-              <td scope="col">Total</td>
-            </tr>
-          </tfoot>
-        </table>
-      </figure>
-
-      <section class="container">
-        <p>
-          <br /><br /><br />
-          <small><em>Space intentionally left blank</em></small>
-          <br /><br /><br /><br /><br /><br />
-        </p>
-      </section>
     </main>
 
     <!-- Footer -->

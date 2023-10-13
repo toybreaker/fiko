@@ -6,10 +6,10 @@
  * Copyright 2023 Toybreaker - Licensed under MIT
  */
 
-/* ||| Layer Order Declaration ||| */
-@layer reset, root, toggle, containers, components, classes;
+/* 🐲 Layer Order Declaration */
+@layer reset, root, base, toggle, containers, components, classes;
 
-/* ||| Base Layer ||| */
+/* 🐲 Reset Layer */
 @layer reset {
   /* The New CSS Reset */
   *:where(
@@ -91,15 +91,15 @@
   }
 
   /* fix the feature of 'hidden' attribute.
-   display:revert; revert to element instead of attribute */
+  display:revert; revert to element instead of attribute */
   :where([hidden]) {
     display: none;
   }
 
   /* revert for bug in Chromium browsers
-   - fix for the content editable attribute will work properly.
-   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
-  :where([contenteditable]:not([contenteditable="false"])) {
+  - fix for the content editable attribute will work properly.
+  - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+  :where([contenteditable]:not([contenteditable='false'])) {
     -moz-user-modify: read-write;
     -webkit-user-modify: read-write;
     overflow-wrap: break-word;
@@ -108,7 +108,7 @@
   }
 
   /* apply back the draggable feature - exist only in Chromium and Safari */
-  :where([draggable="true"]) {
+  :where([draggable='true']) {
     -webkit-user-drag: element;
   }
 
@@ -123,7 +123,7 @@
     -webkit-text-size-adjust: 100%;
 
     > * {
-    font-size: unset;
+      font-size: unset;
     }
   }
 
@@ -156,10 +156,10 @@
   }
 
   button,
-  [role="button"],
-  input[type="button"],
-  input[type="reset"],
-  input[type="submit"] {
+  [role='button'],
+  input[type='button'],
+  input[type='reset'],
+  input[type='submit'] {
     --background-color: var(--currentBG);
     --border-color: var(--currentTXT);
     --color: var(--currentTXT);
@@ -183,32 +183,30 @@
   }
 }
 
-/* ||| Root Declarations ||| */
+/* 🐲 Root Declarations */
 @layer root {
   :root {
-    /* colours */
+    /* COLOURS */
     --color-white: rgba(255, 255, 255, 1);
     --color-black: rgba(0, 0, 0, 1);
 
-
-    /* colour's modes */
-    --light-mode: var(--color-white);
-    --dark-mode: var(--color-black);
+    /* COLOUR'S MODES */
+    --color-light: var(--color-white);
+    --color-dark: var(--color-black);
   }
 
   /* Initial styles assuming light theme */
-  body[data-theme="light"] {
+  body[data-theme='light'] {
     /* set the CURRENT colours: */
     --currentBG: var(--color-white);
     --currentTXT: var(--color-black);
     /* apply the CURRENT colours: */
     background-color: var(--currentBG);
     color: var(--currentTXT);
-
   }
 
   /* When data-theme is set to dark */
-  body[data-theme="dark"] {
+  body[data-theme='dark'] {
     /* set the CURRENT colours: */
     --currentBG: var(--color-black);
     --currentTXT: var(--color-white);
@@ -220,28 +218,27 @@
   :root {
     /* auto changing color transparent */
 
+    /* --accordion-open-summary-color: var(--currentTXTtrasparent) */
 
-    --accordion-open-summary-color: var(--currentTXTtrasparent)
-
-    /* spacing & borders */
-    --space: 1rem;
+    /* DYNAMIC spacing & borders */
+    --space: 5vw;
     --spaceLR: 5dvw;
     --spaceTB: 2dvh;
     --border: 2px;
     --border-color: var(--currentTXT);
-    --radius: 8px;
+    --radius: 1vw;
 
     /* transitions */
     --transition: 0.2s ease-in-out;
 
     /* typography */
     --font-size: clamp(1.25rem, 1.1717rem + 0.4174vw, 1.85rem);
-    --font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    --font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
       var(--font-family-emoji);
-    --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
-      Consolas, "Liberation Mono", monospace, var(--font-family-emoji);
-    --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: ui-monospace, SFMono-Regular, 'SF Mono', Menlo,
+      Consolas, 'Liberation Mono', monospace, var(--font-family-emoji);
+    --font-family-emoji: 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji';
 
     /* ICONS */
 
@@ -261,8 +258,11 @@
 
     --icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='rgb(136, 145, 164)' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E");
   }
-  /* end of :root */
+  /* end root */
+}
 
+/* 🐲 Base Layer */
+@layer base {
   html {
     background-color: var(--currentTXT);
   }
@@ -343,30 +343,30 @@
   }
 
   /* Loading ([aria-busy=true]) */
-  [aria-busy="true"]:not(input, select, textarea, html)::before {
+  [aria-busy='true']:not(input, select, textarea, html)::before {
     display: inline-block;
     width: 1em;
     height: 1em;
     background-image: var(--icon-loading);
     background-size: 1rem auto;
     background-repeat: no-repeat;
-    content: "";
+    content: '';
     vertical-align: -0.125em;
   }
-  [aria-busy="true"]:not(input, select, textarea, html):not(:empty)::before {
+  [aria-busy='true']:not(input, select, textarea, html):not(:empty)::before {
     -webkit-margin-end: calc(var(--space) * 0.5);
     margin-inline-end: calc(var(--space) * 0.5);
   }
-  [aria-busy="true"]:not(input, select, textarea, html):empty {
+  [aria-busy='true']:not(input, select, textarea, html):empty {
     text-align: center;
   }
 
-  button[aria-busy="true"],
-  [type="submit"][aria-busy="true"],
-  [type="button"][aria-busy="true"],
-  [type="reset"][aria-busy="true"],
-  [role="button"][aria-busy="true"],
-  a[aria-busy="true"] {
+  button[aria-busy='true'],
+  [type='submit'][aria-busy='true'],
+  [type='button'][aria-busy='true'],
+  [type='reset'][aria-busy='true'],
+  [role='button'][aria-busy='true'],
+  a[aria-busy='true'] {
     pointer-events: none;
   }
 
@@ -375,16 +375,16 @@
     cursor: pointer;
   }
 
-  [aria-disabled="true"],
+  [aria-disabled='true'],
   [disabled] {
     cursor: not-allowed;
   }
 
-  [aria-hidden="false"][hidden] {
+  [aria-hidden='false'][hidden] {
     display: initial;
   }
 
-  [aria-hidden="false"][hidden]:not(:focus) {
+  [aria-hidden='false'][hidden]:not(:focus) {
     clip: rect(0, 0, 0, 0);
     position: absolute;
   }
@@ -401,15 +401,12 @@
     -ms-touch-action: manipulation;
   }
 
-  [dir="rtl"] {
+  [dir='rtl'] {
     direction: rtl;
   }
-
-
-
 }
 
-/* ||| Toggle Layer ||| */
+/* 🐲 Toggle Layer */
 @layer toggle {
   .switcher {
     background-color: var(--currentBG);
@@ -441,7 +438,7 @@
       currentColor 50%,
       transparent 50%
     );
-    content: "";
+    content: '';
     vertical-align: bottom;
     transition: transform var(--transition);
   }
@@ -483,9 +480,8 @@
   .switcher label {
     user-select: none;
     &:hover {
-    cursor: pointer;
-  }
-
+      cursor: pointer;
+    }
   }
 
   #toggle-theme {
@@ -493,7 +489,7 @@
   }
 }
 
-/* ||| Container Elements Layer ||| */
+/* 🐲 Container Elements Layer */
 @layer containers {
   header,
   nav,
@@ -512,13 +508,13 @@
   /* Nav */
   :where(nav li)::before {
     float: left;
-    content: "​";
+    content: '​';
   }
 
   nav,
   nav ul {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
 
   nav {
@@ -545,21 +541,21 @@
     padding: var(--nav-element-spacing-vertical)
       var(--nav-element-spacing-horizontal);
   }
-  nav li :where(a, [role="link"]) {
+  nav li :where(a, [role='link']) {
     display: inline-block;
     margin: calc(var(--nav-link-spacing-vertical) * -1)
       calc(var(--nav-link-spacing-horizontal) * -1);
     padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
     border-radius: var(--border-radius);
   }
-  nav li :where(a, [role="link"]):not(:hover) {
+  nav li :where(a, [role='link']):not(:hover) {
     text-decoration: none;
   }
   nav li button,
-  nav li [role="button"],
+  nav li [role='button'],
   nav
     li
-    input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
+    input:not([type='checkbox'], [type='radio'], [type='range'], [type='file']),
   nav li select {
     height: auto;
     margin-right: inherit;
@@ -568,15 +564,15 @@
     padding: calc(var(--nav-link-spacing-vertical) - var(--border-width) * 2)
       var(--nav-link-spacing-horizontal);
   }
-  nav[aria-label="breadcrumb"] {
+  nav[aria-label='breadcrumb'] {
     align-items: center;
     justify-content: start;
   }
-  nav[aria-label="breadcrumb"] ul li:not(:first-child) {
+  nav[aria-label='breadcrumb'] ul li:not(:first-child) {
     -webkit-margin-start: var(--nav-link-spacing-horizontal);
     margin-inline-start: var(--nav-link-spacing-horizontal);
   }
-  nav[aria-label="breadcrumb"] ul li:not(:last-child)::after {
+  nav[aria-label='breadcrumb'] ul li:not(:last-child)::after {
     position: absolute;
     width: calc(var(--nav-link-spacing-horizontal) * 2);
     -webkit-margin-start: calc(var(--nav-link-spacing-horizontal) / 2);
@@ -586,7 +582,7 @@
     text-align: center;
     text-decoration: none;
   }
-  nav[aria-label="breadcrumb"] a[aria-current] {
+  nav[aria-label='breadcrumb'] a[aria-current] {
     background-color: transparent;
     color: inherit;
     text-decoration: none;
@@ -654,7 +650,7 @@
       display: block;
     }
 
-    li [role="button"] {
+    li [role='button'] {
       margin: inherit;
     }
   }
@@ -663,10 +659,7 @@
     margin-bottom: var(--spaceTB);
   }
 
-  /**
- * Grid
- * Minimal grid system with auto-layout columns
- */
+  /* GRID | Minimal grid system with auto-layout columns */
   .grid {
     grid-column-gap: var(--grid-column-gap);
     grid-row-gap: var(--grid-row-gap);
@@ -699,7 +692,7 @@
   }
 }
 
-/* ||| Contained Elements Layer ||| */
+/* 🐲 Contained Elements Layer */
 @layer components {
   hr {
     height: 0;
@@ -719,18 +712,18 @@
   }
 
   button,
-  [type="submit"],
-  [type="reset"],
-  [type="button"] {
+  [type='submit'],
+  [type='reset'],
+  [type='button'] {
     -webkit-appearance: button;
   }
 
   button,
-  [type="submit"],
-  [type="reset"],
-  [type="button"],
-  [type="file"]::file-selector-button,
-  [role="button"] {
+  [type='submit'],
+  [type='reset'],
+  [type='button'],
+  [type='file']::file-selector-button,
+  [role='button'] {
     --background-color: var(--currentBG);
     --border-color: var(--currentTXT);
     --color: var(--currentTXT);
@@ -757,53 +750,53 @@
       box-shadow var(--transition);
   }
   button:is([aria-current], :hover, :active, :focus),
-  [type="submit"]:is([aria-current], :hover, :active, :focus),
-  [type="reset"]:is([aria-current], :hover, :active, :focus),
-  [type="button"]:is([aria-current], :hover, :active, :focus),
-  [type="file"]::file-selector-button:is(
+  [type='submit']:is([aria-current], :hover, :active, :focus),
+  [type='reset']:is([aria-current], :hover, :active, :focus),
+  [type='button']:is([aria-current], :hover, :active, :focus),
+  [type='file']::file-selector-button:is(
       [aria-current],
       :hover,
       :active,
       :focus
     ),
-  [role="button"]:is([aria-current], :hover, :active, :focus) {
+  [role='button']:is([aria-current], :hover, :active, :focus) {
     --background-color: var(--primary-hover-background);
     --border-color: var(--primary-hover-border);
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     --color: var(--primary-inverse);
   }
   button:focus,
-  [type="submit"]:focus,
-  [type="reset"]:focus,
-  [type="button"]:focus,
-  [type="file"]::file-selector-button:focus,
-  [role="button"]:focus {
+  [type='submit']:focus,
+  [type='reset']:focus,
+  [type='button']:focus,
+  [type='file']::file-selector-button:focus,
+  [role='button']:focus {
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
       0 0 0 var(--outline-width) var(--primary-focus);
   }
 
-  [type="submit"],
-  [type="reset"],
-  [type="button"] {
+  [type='submit'],
+  [type='reset'],
+  [type='button'] {
     margin-bottom: var(--spacing);
   }
 
-  :is(button, [type="submit"], [type="button"], [role="button"]).secondary,
-  [type="reset"],
-  [type="file"]::file-selector-button {
+  :is(button, [type='submit'], [type='button'], [role='button']).secondary,
+  [type='reset'],
+  [type='file']::file-selector-button {
     --background-color: var(--secondary-background);
     --border-color: var(--secondary-border);
     --color: var(--secondary-inverse);
     cursor: pointer;
   }
-  :is(button, [type="submit"], [type="button"], [role="button"]).secondary:is(
+  :is(button, [type='submit'], [type='button'], [role='button']).secondary:is(
       [aria-current],
       :hover,
       :active,
       :focus
     ),
-  [type="reset"]:is([aria-current], :hover, :active, :focus),
-  [type="file"]::file-selector-button:is(
+  [type='reset']:is([aria-current], :hover, :active, :focus),
+  [type='file']::file-selector-button:is(
       [aria-current],
       :hover,
       :active,
@@ -815,22 +808,22 @@
   }
   :is(
       button,
-      [type="submit"],
-      [type="button"],
-      [role="button"]
+      [type='submit'],
+      [type='button'],
+      [role='button']
     ).secondary:focus,
-  [type="reset"]:focus,
-  [type="file"]::file-selector-button:focus {
+  [type='reset']:focus,
+  [type='file']::file-selector-button:focus {
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
       0 0 0 var(--outline-width) var(--secondary-focus);
   }
 
-  :is(button, [type="submit"], [type="button"], [role="button"]).contrast {
+  :is(button, [type='submit'], [type='button'], [role='button']).contrast {
     --background-color: var(--currentTXT);
     --border-color: var(--currentBG);
     --color: var(--currentBG);
   }
-  :is(button, [type="submit"], [type="button"], [role="button"]).contrast:is(
+  :is(button, [type='submit'], [type='button'], [role='button']).contrast:is(
       [aria-current],
       :hover,
       :active,
@@ -842,82 +835,82 @@
   }
   :is(
       button,
-      [type="submit"],
-      [type="button"],
-      [role="button"]
+      [type='submit'],
+      [type='button'],
+      [role='button']
     ).contrast:focus {
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
       0 0 0 var(--outline-width) var(--currentTXT);
   }
 
-  :is(button, [type="submit"], [type="button"], [role="button"]).outline,
-  [type="reset"].outline {
+  :is(button, [type='submit'], [type='button'], [role='button']).outline,
+  [type='reset'].outline {
     --background-color: transparent;
     --color: var(--currentTXT);
     --border-color: currentColor;
   }
-  :is(button, [type="submit"], [type="button"], [role="button"]).outline:is(
+  :is(button, [type='submit'], [type='button'], [role='button']).outline:is(
       [aria-current],
       :hover,
       :active,
       :focus
     ),
-  [type="reset"].outline:is([aria-current], :hover, :active, :focus) {
+  [type='reset'].outline:is([aria-current], :hover, :active, :focus) {
     --background-color: transparent;
     --color: var(--currentTXTtrasparent);
   }
 
   :is(
       button,
-      [type="submit"],
-      [type="button"],
-      [role="button"]
+      [type='submit'],
+      [type='button'],
+      [role='button']
     ).outline.secondary,
-  [type="reset"].outline {
+  [type='reset'].outline {
     --color: var(--currentTXTtrasparent);
     --border-color: currentColor;
   }
   :is(
       button,
-      [type="submit"],
-      [type="button"],
-      [role="button"]
+      [type='submit'],
+      [type='button'],
+      [role='button']
     ).outline.secondary:is([aria-current], :hover, :active, :focus),
-  [type="reset"].outline:is([aria-current], :hover, :active, :focus) {
+  [type='reset'].outline:is([aria-current], :hover, :active, :focus) {
     --color: var(--currentTXTtrasparent);
   }
 
   :is(
       button,
-      [type="submit"],
-      [type="button"],
-      [role="button"]
+      [type='submit'],
+      [type='button'],
+      [role='button']
     ).outline.contrast {
     --color: var(--currentTXTtrasparent);
   }
   :is(
       button,
-      [type="submit"],
-      [type="button"],
-      [role="button"]
+      [type='submit'],
+      [type='button'],
+      [role='button']
     ).outline.contrast:is([aria-current], :hover, :active, :focus) {
     --color: var(--currentTXTtrasparent);
   }
 
   :where(
       button,
-      [type="submit"],
-      [type="reset"],
-      [type="button"],
-      [role="button"]
+      [type='submit'],
+      [type='reset'],
+      [type='button'],
+      [role='button']
     )[disabled],
   :where(fieldset[disabled])
     :is(
       button,
-      [type="submit"],
-      [type="button"],
-      [type="reset"],
-      [role="button"]
+      [type='submit'],
+      [type='button'],
+      [type='reset'],
+      [role='button']
     ) {
     opacity: 0.5;
     pointer-events: none;
@@ -961,7 +954,7 @@
         }
       }
 
-      &[role="button"] {
+      &[role='button'] {
         width: 100%;
         text-align: left;
 
@@ -991,7 +984,7 @@
     background-position: right center;
     background-size: 1rem auto;
     background-repeat: no-repeat;
-    content: "";
+    content: '';
     transition: transform var(--transition);
   }
 
@@ -1107,7 +1100,7 @@
       border-radius: var(--radius);
       background-color: var(--currentTXT);
       color: var(--currentBG);
-      /* before font-size: unset, it went to 13px somehow, gosh  */
+      /* before font-size: unset, it went to 13px somehow, gosh */
       font-size: unset;
     }
   }
@@ -1116,8 +1109,7 @@
 @layer classes {
   article.border {
     border: 1px solid var(--currentTXT);
-
-    border-radius: var(--radius);
+    border-radius: var(--radius); 
   }
 
   .container {

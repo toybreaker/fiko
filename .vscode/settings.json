@@ -2,7 +2,6 @@
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    "astro",
     "typescript",
     "typescriptreact"
   ],
@@ -19,7 +18,6 @@
   "emmet.triggerExpansionOnTab": true,
   "emmet.useInlineCompletions": true,
   "emmet.includeLanguages": {
-    "astro": "html",
     "sh": "bash",
     "html": "true",
     "json": "true",
@@ -33,7 +31,6 @@
   "javascript.format.insertSpaceAfterConstructor": true,
   "json.format.keepLines": false,
   "prettier.documentSelectors": [
-    "**/*.astro",
     "**/*.svg",
     "**/*.mdx",
     "**/*.md",
@@ -41,11 +38,6 @@
     "**/*.json",
     "**/*.yml"
   ],
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "file"
-  },
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "file",
   "editor.formatOnPaste": true,
@@ -61,14 +53,12 @@
     "*.md": "markdown"
   },
   "colorize.include": [
-    "**/*.astro",
     "**/*.css",
     "**/*.scss",
     "**/*.sass",
     "**/*.less"
   ],
   "typescript.inlayHints.parameterNames.enabled": "all",
-  "astro.trace.server": "verbose",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "colorize.languages": [
     "md",

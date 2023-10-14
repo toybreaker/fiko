@@ -18,7 +18,7 @@ Fiko is a contained, (almost) classless, layered, modern (late2023), dynamically
 
 # 🫵 USE IT
 
-## Yo 🫵 W.I.P. Its's only v0.5.11, Don't use it yet. Did tell you!
+## Yo 🫵 W.I.P. Its's only v0.5.12, Don't use it yet. Did tell you!
 
 It can be used in many ways.
 
@@ -161,27 +161,6 @@ Generally if you are unsure just put them into un an unnamed, anonymous layer:
 
 .
 
-## FRONTEND [DEMO PAGE](https://fiko.rokma.rocks)
-
-Fiko comes with a demo page, useful to test when dev.
-Run Browsersync (Install Browsersync for your sys first!)
-
-```shell
-# 🐲 DRY RECURRING START
-echo '|';
-echo 'cd package/';
-cd pakage;
-echo '|';
-echo '🐲 now i am here:';
-CWD=$(pwd -P)
-echo $CWD
-echo '|';
-echo 'browser-sync start -s';
-browser-sync start -s -f index.html
-```
-
-[this will go into package.json eventually!]
-
 ## UPGRADE
 
 ```shell
@@ -210,6 +189,23 @@ pnpm create astro@latest && pnpm add fiko
 npm astro add fiko
 ```
 
+## FRONTEND [DEMO PAGE](https://fiko.rokma.rocks)
+
+Fiko comes with a demo page, useful to test and dev.
+Use Browsersync (install it system wide, it's very useful!)
+
+```shell
+# 🐲 DRY RECURRING START
+browser-sync start --s 'package' --files 'package '--no-inject-changes
+```
+
+Now you have an auto-reload server whatching all files in 'package'. You'd see this in your terminal:
+
+```shell
+Local: http://localhost:3000
+External: http://192.168.100.103:3000
+```
+
 .
 
 ## NPM CAVEAT
@@ -224,13 +220,16 @@ pnpm install --install-strategy=nested
 Formerly `legacy-bundling`,
 instead of hoisting package installs in node_modules,
 installs packages in the same manner that they are depended on.
+
 NOTE: This may cause very deep directory structures and duplicate package installs as there is no de-duplicating.
 
 .
 
 # LIMITATIONS
 
-FIKO can be used without custom CSS for quick or small projects. However, it’s designed to provide a starting point, like a “reset CSS on steroids”. Developing with `fiko.css` require modern CSS knowledge to add any custom look.
+FIKO can be used without custom CSS for quick or small projects. However, it’s designed to provide a starting point, like a “reset CSS on steroids”.
+
+Developing with `fiko.css` require modern CSS knowledge to add any custom look.
 
 ### BROWSER SUPPORT
 

@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.5.12",
+  "version": "0.5.13",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "package/fiko.css",
@@ -31,16 +31,15 @@
     "customisable"
   ],
   "scripts": {
-    "dev": "browser-sync start --s 'package' --files 'package '--no-inject-changes",
+    "dev": "browser-sync start --s 'package' --files 'package'--no-inject-changes",
     "build": "echo 'fiko.css comes ready to swim, no build steps. 🐸 Done!'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
+    "browser-sync": "^2.29.3",
     "modern-normalize": "^2.0.0",
-    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.31",
-    "prettier": "^2.8.8",
-    "vite": "^4.4.11"
+    "prettier": "^2.8.8"
   },
   "browserslist": [
     ">= 0.5%",

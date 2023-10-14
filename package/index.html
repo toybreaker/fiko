@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.5.12</title>
+    <title>FIKO 0.5.13</title>
 
     <link rel="icon" type="image/svg+xml" href="/favico_dark.svg" />
     <!-- <style>
@@ -56,14 +56,14 @@
     </header>
 
     <main>
-      <section class="pad">
+      <section class="container">
         <hgroup>
           <h2>Full-bleed layouts</h2>
-          <p>Without the `.container` class, elements have no horizontal
-            spacing, as the following image:</p>
-          <hr />
+          <p>
+            Without the `.container` class, elements have no horizontal spacing,
+            as the following image:
+          </p>
         </hgroup>
-        <br />
       </section>
 
       <!-- Full-bleed -->
@@ -71,16 +71,13 @@
         src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
         alt="rokma.com" />
 
-      <hr />
-
-      <div class="pad" >
+      <div class="container">
         <!-- Section -->
 
         <section>
           <hgroup>
             <h2>Accordion</h2>
             <p>Opunanclose as woman legs.</p>
-            <hr />
           </hgroup>
           <br />
 
@@ -105,13 +102,9 @@
           </details>
         </section>
 
-        <hr />
-
         <section>
           <hgroup>
             <h2>Paragraph</h2>
-            <p>Has some bottom padding:</p></p>
-            <hr />
           </hgroup>
           <br />
 
@@ -128,9 +121,10 @@
         <section>
           <hgroup>
             <h2>Grid</h2>
-            <p>The class='grid' gives a minimal grid system with auto-layout
-              columns. The class="border" is added here to show grid elements:</p>
-            <hr />
+            <p>
+              The class='grid' gives a minimal grid system with auto-layout
+              columns. The class="border" is added here to show grid elements:
+            </p>
           </hgroup>
           <br />
 
@@ -201,7 +195,6 @@
             <h2>Figure<code></code></h2>
             <p>Use it when in need for Horizontal Scroll.</p>
             <p>It can contain anything, here it wraps a table:</p>
-            <hr />
           </hgroup>
           <br />
 
@@ -285,23 +278,27 @@
         <section>
           <hgroup>
             <h2>Blockquote</h2>
-            <p>Renders as this:</p>
           </hgroup>
-          <blockquote class="container" cite="https://fiko.rokma.rocks">
-            This is a blockquote. Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit.
+
+          <blockquote>
+            "Better classless than bloated and confused."
+            <footer>
+              <cite>— fiko.css</cite>
+            </footer>
           </blockquote>
 
-          <p>One more:</p>
-
-          <blockquote
-            class="container"
-            cite="http://www.worldwildlife.org/who/index.html">
-            For 50 years, WWF has been protecting the future of nature. The
+          <blockquote>
+            "For 50 years, WWF has been protecting the future of nature. The
             world's leading conservation organization, WWF works in 100
             countries and is supported by 1.2 million members in the United
-            States and close to 5 million globally.
+            States and close to 5 million globally."
+            <footer>
+              <cite>— worldwildlife.org</cite>
+            </footer>
           </blockquote>
+
+          <p>This is dialog</p>
+          <dialog>Hey, this is an HTML dialog!</dialog>
         </section>
 
         <hr />
@@ -310,8 +307,10 @@
 
         <hgroup>
           <h2>Article</h2>
-          <p>Renders as a card, dafaults to no border. Use it to center children
-            horizontally here it wraps an image.</p>
+          <p>
+            Renders as a card, dafaults to no border. Use it to center children
+            horizontally here it wraps an image.
+          </p>
         </hgroup>
 
         <article class="border">
@@ -363,40 +362,35 @@
         <section>
           <hgroup>
             <h2>Headings</h2>
-            <p>Looks like this:</p>
-            <hr />
           </hgroup>
-          <br />
 
-          <hgroup class="container">
-            <h1>h1 FIKO CSS</h1>
-            <h2>h2 FIKO CSS</h2>
-            <h3>h3 FIKO CSS</h3>
-            <h4>h4 FIKO CSS</h4>
-            <h5>h4 FIKO CSS Framework</h5>
-            <h6>h6 FIKO CSS Framework</h6>
-          </hgroup>
+          <h1>h1 FIKO CSS</h1>
+          <h2>h2 FIKO Framework</h2>
+          <h3>h3 FIKO Framework</h3>
+          <h4>h4 FIKO Framework</h4>
+          <h5>h4 FIKO Framework</h5>
+          <h6>h6 FIKO Framework</h6>
         </section>
 
         <hr />
 
         <section>
           <hgroup>
-            <h2>Horizontal rule</h2>
-            <p>hr has some small vertical spacing!</p>
-            <hr />
+            <h2>Horizontal line</h2>
           </hgroup>
           <br />
 
+          <p>Paragraph before the horizontal line.</p>
           <hr />
-          <hr />
-          <hr />
+          <p>Paragraph after the horizontal line.</p>
         </section>
+
+        <hr />
 
         <section>
           <article>
             <p>
-              <p><em>Space intentionally left blank</em></p>
+              <em>Space intentionally left blank</em>
             </p>
           </article>
         </section>

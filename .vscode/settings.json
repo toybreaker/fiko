@@ -53,6 +53,7 @@
     "*.md": "markdown"
   },
   "colorize.include": [
+    "**/*.html",
     "**/*.css",
     "**/*.scss",
     "**/*.sass",

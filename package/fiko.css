@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.6.4 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.6.5 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -200,7 +200,7 @@
     /* DERIVED apply the CURRENT colours: */
     /* set */
     --currenBRDCLR: var(--currentTXT50);
-    --border-size: 1px;
+
     /* apply */
     --group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--currenBRDCLR);
     --accordion-open-summary-color: var(--currenBRDCLR);
@@ -211,13 +211,16 @@
     --spaceTB: 1.8svh;
     --radius: 1svw;
     --line-height: 1.15;
+    /* NOTE: Maybe make DERIVED?: */
+    --grid-row-gap: 3.3svw;
+    --grid-column-gap: 1.8svh;
 
     /* TRANSITIONS */
     --transition: 0.2s ease-in-out;
 
     /* TYPOGRAPHY */
-    /* set */
 
+    /* set */
     --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol", "Noto Color Emoji"; /* < this needs to stay first */
 
@@ -232,6 +235,7 @@
 
     --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --border-size: 1px;
 
     /* UNUSED ICONS */
 
@@ -363,7 +367,7 @@
 
   :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul)
     ~ :is(h1, h2, h3, h4, h5, h6) {
-    margin-top: var(--typography-spacing-top);
+    margin-top: var(--spaceTB);
   }
 
   p {
@@ -409,13 +413,14 @@
   }
 
   blockquote {
+    max-width: 60ch;
     display: block;
-    margin: var(--spaceTB) 0;
-    padding: var(--space);
+    margin: calc(var(--spaceTB) * 4) auto;
+    padding: var(--spaceTB) var(--spaceLR);
     border-right: none;
-    border-left: 0.25rem solid var(--currentTXT50);
-    -webkit-border-start: 0.25rem solid var(--currentTXT50);
-    border-inline-start: 0.25rem solid var(--currentTXT50);
+    border-left: var(--border-size) solid var(--currentTXT50);
+    -webkit-border-start: var(--border-size) solid var(--currentTXT50);
+    border-inline-start: var(--border-size) solid var(--currentTXT50);
     -webkit-border-end: none;
     border-inline-end: none;
   }
@@ -449,9 +454,7 @@
     background-color: var(--currentTXT50);
   }
 
-  /**
- * Code
- */
+  /* Code */
   pre,
   code,
   kbd,
@@ -484,8 +487,8 @@
 
   code,
   kbd {
-    display: inline-block;
-    padding: 0.375rem;
+    display: inline ;
+    padding: calc(var(--spaceTB)/2) calc(var(--spaceLR)/2);
   }
 
   pre {
@@ -501,8 +504,9 @@
   }
 
   kbd {
-    background-color: var(--code-kbd-background-color);
-    color: var(--code-kbd-color);
+    background-color:
+    background-color: var(--code-background-color);
+    color: var(--code-background-color);
     vertical-align: baseline;
   }
 
@@ -1633,7 +1637,7 @@
 
 @layer classes {
   .border {
-    border: var(--border-size) solid var(--currenBRDCLR);
+    border: var(--border-size) solid var(--currentTXT50);
     border-radius: var(--radius);
   }
 
@@ -1643,6 +1647,11 @@
   }
   .invert {
     filter: invert(100%);
+
+    [data-theme="light"] & {
+      color: var(--currentBG);
+      background-color: var(--currentTXT);
+    }
   }
   .alfa_BG {
     @layer root {

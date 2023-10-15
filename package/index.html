@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.6.4</title>
+    <title>FIKO 0.6.5</title>
 
     <link rel="icon" type="image/svg+xml" href="/favico_dark.svg" />
     <!-- <style>
@@ -389,8 +389,8 @@
         <hgroup>
           <h2>Article</h2>
           <p>
-            Renders as a card, dafaults to no border. Use it to center children
-            horizontally here it wraps an image.
+            Renders as a card, defaults to no border. Use it to center children
+            horizontally. Here it wraps an image.
           </p>
         </hgroup>
 
@@ -434,7 +434,7 @@
           </a>
         </article>
 
-        <article>
+        <article class="border">
           <h2>Text article</h2>
           <p>
             Article content goes here. Ipsum dolor sit amet. Lorem dolor sit
@@ -494,8 +494,16 @@
           <p>Paragraph after the horizontal line.</p>
         </section>
       </div>
-
-      <article>full width</article>
+      <div class="border">
+        <article>
+          <span>
+            Full width
+            <code>article</code>
+          </span>
+        </article>
+      </div>
+      <br />
+      <br />
     </main>
 
     <!-- Footer -->

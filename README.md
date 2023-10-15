@@ -18,7 +18,7 @@ Fiko is a contained, almost classless, layered, modern (late2023), dynamically s
 
 # 🫵 USE IT
 
-## Yo, WIP v0.5.16, don't use it yet. Did tell you!
+## Yo, WIP v0.6.0, don't use it yet. Did tell you!
 
 It can be used in many ways.
 
@@ -198,6 +198,12 @@ Use Browsersync (install it system wide, it's very useful!)
 ```shell
 # 🐲 DRY RECURRING START
 browser-sync start --s 'package' --files 'package' --no-inject-changes
+```
+
+or:
+
+```shell
+cd package && browser-sync start --s
 ```
 
 Now you have an auto-reload server whatching all files in 'package'. You'd see this in your terminal:

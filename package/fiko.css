@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.5.16 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.6.0 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -163,7 +163,8 @@
     /* COLOURS FOR LIGHT/DARK MODES */
     /* play with this transparency with care, is untested! */
     --alpha: 1;
-    --color-white: hsl(255, 255, 255, 0.5);
+    /* --color-white: hsla(255, 255, 255, 0.5); BROKEN*/
+    --color-white: rgba(255, 255, 255, var(--alpha));
     --color-black: rgba(0, 0, 0, var(--alpha));
 
     /* COLOURS MODE-INDIPENDENT CONSTANT */
@@ -197,20 +198,18 @@
   }
 
   :root {
-    /* auto changing color transparent - TO DO! */
+    /* DERIVED: apply the CURRENT colours: */
+    /* set */
+    --currenBRDCLR: var(--currentTXT50);
+    /* apply */
+    --group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--currenBRDCLR);
     --accordion-open-summary-color: var(--currentTXT50);
 
-    --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-
-    --group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--border-color);
-
     /* DYNAMIC SIZED spacing & borders */
-    --space: 5vw;
+    --space: 5svw;
     --spaceLR: 3.3svw;
     --spaceTB: 1.8svh;
     --border: 1px;
-    --border-color: var(--currentTXT50);
     --radius: 1vw;
     --line-height: 1.15;
 
@@ -218,15 +217,21 @@
     --transition: 0.2s ease-in-out;
 
     /* TYPOGRAPHY */
-
+    /* set */
     --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol", "Noto Color Emoji"; /* this needs to stay first */
+      "Segoe UI Symbol", "Noto Color Emoji"; /* < this needs to stay first */
+
+    /* apply */
     --font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
       var(--font-family-emoji);
+
     --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
       Consolas, "Liberation Mono", monospace, var(--font-family-emoji);
 
     --font-size: clamp(1.25rem, 1.1717rem + 0.4174vw, 1.85rem);
+
+    --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 
     /* UNUSED ICONS */
 
@@ -441,7 +446,7 @@
   kbd,
   samp {
     font-size: 0.875em;
-    font-family: var(--font-family);
+    font-family: var(--font-family-monospace);
   }
 
   pre code {
@@ -1222,7 +1227,7 @@
     --color: var(--currentTXT);
     --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     padding: 2% var(--spaceLR);
-    border: var(--border) solid var(--border-color);
+    border: var(--border) solid var(--currenBRDCLR);
     border-radius: var(--radius);
     outline: none;
     background-color: var(--currentBG);
@@ -1253,7 +1258,7 @@
     ),
   [role="button"]:is([aria-current], :hover, :active, :focus) {
     --background-color: var(--currentTXT);
-    --border-color: var(--currentTXT50);
+    --currenBRDCLR: var(--currentTXT50);
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     --color: var(--currentBG);
   }
@@ -1277,7 +1282,7 @@
   [type="reset"],
   [type="file"]::file-selector-button {
     --background-color: var(--currentBG);
-    --border-color: var(--currentTXT50);
+    --currenBRDCLR: var(--currentTXT50);
     --color: var(--secondary-inverse);
     cursor: pointer;
   }
@@ -1295,7 +1300,7 @@
       :focus
     ) {
     --background-color: var(--currentBG);
-    --border-color: var(--currentTXT50);
+    --currenBRDCLR: var(--currentTXT50);
     --color: var(--secondary-inverse);
   }
   :is(
@@ -1312,7 +1317,7 @@
 
   :is(button, [type="submit"], [type="button"], [role="button"]).contrast {
     --background-color: var(--currentTXT);
-    --border-color: var(--currentBG);
+    --currenBRDCLR: var(--currentBG);
     --color: var(--currentBG);
   }
   :is(button, [type="submit"], [type="button"], [role="button"]).contrast:is(
@@ -1322,7 +1327,7 @@
       :focus
     ) {
     --background-color: var(--currentBG);
-    --border-color: var(--currentTXT50);
+    --currenBRDCLR: var(--currentTXT50);
     --color: var(--currentTXT);
   }
   :is(
@@ -1339,7 +1344,7 @@
   [type="reset"].outline {
     --background-color: transparent;
     --color: var(--currentTXT);
-    --border-color: var(--currentTXT50);
+    --currenBRDCLR: var(--currentTXT50);
   }
   :is(button, [type="submit"], [type="button"], [role="button"]).outline:is(
       [aria-current],
@@ -1360,7 +1365,7 @@
     ).outline.secondary,
   [type="reset"].outline {
     --color: var(--currentTXT50);
-    --border-color: currentColor;
+    --currenBRDCLR: currentColor;
   }
   :is(
       button,
@@ -1457,7 +1462,7 @@
     }
 
     summary:focus-visible:not([role]) {
-      outline: var(-border) solid var(--border-color);
+      outline: var(-border) solid var(--currenBRDCLR);
       outline-offset: calc(var(--space) * 0.5);
       color: var(--currentTXT);
     }
@@ -1609,7 +1614,7 @@
 
 @layer classes {
   .border {
-    border: -13px solid var(--border-color);
+    border: -13px solid var(--currenBRDCLR);
     border-radius: var(--radius);
   }
 
@@ -1618,6 +1623,6 @@
     margin-right: 5%;
   }
   .invert {
-    filter: invert(180);
+    filter: invert(1);
   }
 }

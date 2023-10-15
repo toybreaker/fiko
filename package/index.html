@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.5.16</title>
+    <title>FIKO 0.6.0</title>
 
     <link rel="icon" type="image/svg+xml" href="/favico_dark.svg" />
     <!-- <style>
@@ -15,28 +15,14 @@
         }
       }
     </style> -->
-
-    <!-- brosersync not browserthink! DEV SCRIPT -->
-    <script id="__bs_script__">
-      //<![CDATA[
-      document.write(
-        "<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.7'><\/script>".replace(
-          "HOST",
-          location.hostname
-        )
-      );
-      //]]>
-    </script>
   </head>
   <body>
-    <!-- JS Toggle Button for Dark/Light Mode -->
-
     <!-- Header -->
-    <header class="invert toggle-wrapper">
-      <nav>
+    <header class="invert">
+      <nav class="toggle-wrapper">
         <ul>
           <li>
-            <h1>FIKO&nbsp;</h1>
+            <h1>FIIIIIIKO&nbsp;</h1>
           </li>
         </ul>
         <ul>
@@ -45,6 +31,7 @@
           <li><a class="outline" href="#">Framework</a></li>
         </ul>
       </nav>
+      <!-- JS Toggle Button for Dark/Light Mode -->
       <div class="switcher" aria-label="Toggle light | dark mode">
         <input
           type="checkbox"
@@ -102,11 +89,12 @@
 
           <!-- Accordion -->
           <details open>
-            <summary>Open Accordion Title</summary>
+            <summary>Open Accordion Title are Sticky.</summary>
             <p>
-              This accordion is open by default. Use &lt;details open&gt;. User
-              can close it! note that little chevron icon on the right rotating.
-              Tap on the title, and i shall disappear...
+              This accordion is open by default. Use &lt;details open&gt;. When
+              you tap is closes and and remove the glue! Note that little
+              chevron icon on the right rotating?! Tap on the title, and I shall
+              disappear...
             </p>
           </details>
         </section>
@@ -436,23 +424,74 @@
     <!-- Footer -->
     <footer class="invert">
       <article>
-        <p>
-          <small>
-            FIKO.CSS &copy;2023 TOYBREAKER |
+        <small></small>
+        <nav>
+          <div>FIKO.CSS &copy;2023 TOYBREAKER</div>
+          <div>
+            <button
+              class="theme-switch"
+              type="button"
+              aria-pressed="false"
+              aria-label="Use Dark Mode"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z" />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <path
+                  d="M12 1v2m0 18v2M4 4l2 2m12 12 2 2M1 12h2m18 0h2M4 20l2-2M18 6l2-2"
+                />
+              </svg>
+            </button>
+          </div>
 
-            <a target="_blank" href="https://www.npmjs.com/package/fiko">Npm</a>
-            |
-          </small>
-
-          <small>
-            <a target="_blank" href="https://github.com/toybreaker/fiko">
-              Github
-            </a>
-            |
-          </small>
-
-          <small id="pixelratio"></small>
-        </p>
+          <div>
+            <ul>
+              <li>
+                <small>
+                  <a target="_blank" href="https://github.com/toybreaker/fiko">
+                    Github
+                  </a>
+                </small>
+              </li>
+              <li>
+                <small>
+                  <a target="_blank" href="https://www.npmjs.com/package/fiko">
+                    Npm
+                  </a>
+                </small>
+              </li>
+              <li>
+                <small id="pixelratio"></small>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </article>
     </footer>
 
@@ -503,7 +542,7 @@
           media.removeEventListener("change", updatePixelRatio);
         };
 
-        output.textContent = `devicePixelRatio: ${window.devicePixelRatio}`;
+        output.textContent = `Device Pixel Ratio: ${window.devicePixelRatio}`;
       };
 
       updatePixelRatio();

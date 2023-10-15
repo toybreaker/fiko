@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.5.15 (https://fiko.rokma.rocks)
- * 2024 CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
+ * FIKO 🐸 v0.5.16 (https://fiko.rokma.rocks)
+ * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
  */
@@ -155,17 +155,19 @@
 /* 🐲 Root Declarations */
 @layer root {
   :root {
+    /* ICONS FIRST, cos there're reffered in [data-theme...]  */
     --icon-chevron-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
     --icon-chevron-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
     /* COLOURS FOR LIGHT/DARK MODES */
+    /* play with this transparency with care, is untested! */
     --alpha: 1;
-    --color-white: rgba(255, 255, 255, var(--alpha));
+    --color-white: hsl(255, 255, 255, 0.5);
     --color-black: rgba(0, 0, 0, var(--alpha));
 
-    /* COLOURS CONSTANT FOR BOTH LIGHT AND DARK MODES */
-    /* Some elements need constant colours, whatever the user color mode is. */
+    /* COLOURS MODE-INDIPENDENT CONSTANT */
+    /* Some elements need consistency, not switching colors. */
     --color-light: var(--color-white);
     --color-dark: var(--color-black);
   }
@@ -175,11 +177,11 @@
     /* set the CURRENT colours: */
     --currentBG: var(--color-white);
     --currentTXT: var(--color-black);
-    /* apply the CURRENT colours: */
+    --currentTXT50: rgba(0, 0, 0, 0.5);
+    --currentV: var(--icon-chevron-black);
+    /* DERIVED: apply the CURRENT colours: */
     background-color: var(--currentBG);
     color: var(--currentTXT);
-    --iconV: var(--icon-chevron-black);
-    --muted-color: rgba(0, 0, 0, 0.5);
   }
 
   /* When data-theme is set to dark */
@@ -187,45 +189,46 @@
     /* set the CURRENT colours: */
     --currentBG: var(--color-black);
     --currentTXT: var(--color-white);
-    /* apply the CURRENT colours: */
+    --currentTXT50: rgba(255, 255, 255, 0.5);
+    --currentV: var(--icon-chevron-white);
+    /* DERIVED: apply the CURRENT colours: */
     background-color: var(--currentBG);
     color: var(--currentTXT);
-    --iconV: var(--icon-chevron-white);
-    --muted-color: rgba(255, 255, 255, 0.5);
   }
 
   :root {
     /* auto changing color transparent - TO DO! */
-    /* --accordion-open-summary-color: var(--muted-color) */
+    --accordion-open-summary-color: var(--currentTXT50);
 
     --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 
-    --group-box-shadow-focus-with-input: 0 0 0 0.0625rem
-      var(--form-element-border-color);
+    --group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--border-color);
 
     /* DYNAMIC SIZED spacing & borders */
     --space: 5vw;
-    --spaceLR: 3.3dvw;
-    --spaceTB: 1.8dvh;
+    --spaceLR: 3.3svw;
+    --spaceTB: 1.8svh;
     --border: 1px;
-    --border-color: var(--muted-color);
+    --border-color: var(--currentTXT50);
     --radius: 1vw;
     --line-height: 1.15;
 
-    /* transitions */
+    /* TRANSITIONS */
     --transition: 0.2s ease-in-out;
 
-    /* typography */
-    --font-size: clamp(1.25rem, 1.1717rem + 0.4174vw, 1.85rem);
+    /* TYPOGRAPHY */
+
+    --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji"; /* this needs to stay first */
     --font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
       var(--font-family-emoji);
     --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
       Consolas, "Liberation Mono", monospace, var(--font-family-emoji);
-    --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol", "Noto Color Emoji";
 
-    /* ICONS */
+    --font-size: clamp(1.25rem, 1.1717rem + 0.4174vw, 1.85rem);
+
+    /* UNUSED ICONS */
 
     --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
 
@@ -242,14 +245,15 @@
     --icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='currentColor' stroke-width='2' /%3E%3C/g%3E%3C/svg%3E");
   }
 
-  /* breakpoints */
+  /* breakpoints, boostrap++ */
   --xs: 0;
   --sm: 576px;
   --md: 768px;
   --lg: 992px;
   --xl: 1200px;
-  --xxl: 1440px;
-  --xxxl: 1920px;
+  --x2l: 1440px;
+  --x3l: 1920px;
+  --x4l: 2560px;
   /* end root */
 }
 
@@ -362,7 +366,7 @@
     margin-bottom: 0;
   }
   hgroup > *:not(:first-child):last-child {
-    --pico-color: var(--muted-color);
+    --pico-color: var(--currentTXT50);
     --pico-font-weight: unset;
     font-size: var(--font-size);
     font-family: unset;
@@ -393,9 +397,9 @@
     margin: var(--spaceTB) 0;
     padding: var(--space);
     border-right: none;
-    border-left: 0.25rem solid var(--muted-color);
-    -webkit-border-start: 0.25rem solid var(--muted-color);
-    border-inline-start: 0.25rem solid var(--muted-color);
+    border-left: 0.25rem solid var(--currentTXT50);
+    -webkit-border-start: 0.25rem solid var(--currentTXT50);
+    border-inline-start: 0.25rem solid var(--currentTXT50);
     -webkit-border-end: none;
     border-inline-end: none;
   }
@@ -1068,7 +1072,7 @@
     -webkit-margin-start: calc(var(--spaceLR) / 2);
     margin-inline-start: calc(var(--spaceLR) / 2);
     content: var(--nav-breadcrumb-divider);
-    color: var(--muted-color);
+    color: var(--currentTXT50);
     text-align: center;
     text-decoration: none;
   }
@@ -1178,7 +1182,7 @@
   }
   figure figcaption {
     padding: calc(var(--spaceTB) * 0.5) 0;
-    color: var(--muted-color);
+    color: var(--currentTXT50);
   }
 }
 
@@ -1188,7 +1192,7 @@
     height: 0;
     margin: var(--spaceTB) 0;
     border: 0;
-    border-top: 1px solid var(--muted-color);
+    border-top: 1px solid var(--currentTXT50);
     color: inherit;
   }
 
@@ -1249,7 +1253,7 @@
     ),
   [role="button"]:is([aria-current], :hover, :active, :focus) {
     --background-color: var(--currentTXT);
-    --border-color: var(--muted-color);
+    --border-color: var(--currentTXT50);
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     --color: var(--currentBG);
   }
@@ -1260,7 +1264,7 @@
   [type="file"]::file-selector-button:focus,
   [role="button"]:focus {
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--muted-color);
+      0 0 0 var(--outline-width) var(--currentTXT50);
   }
 
   [type="submit"],
@@ -1273,7 +1277,7 @@
   [type="reset"],
   [type="file"]::file-selector-button {
     --background-color: var(--currentBG);
-    --border-color: var(--muted-color);
+    --border-color: var(--currentTXT50);
     --color: var(--secondary-inverse);
     cursor: pointer;
   }
@@ -1291,7 +1295,7 @@
       :focus
     ) {
     --background-color: var(--currentBG);
-    --border-color: var(--muted-color);
+    --border-color: var(--currentTXT50);
     --color: var(--secondary-inverse);
   }
   :is(
@@ -1303,7 +1307,7 @@
   [type="reset"]:focus,
   [type="file"]::file-selector-button:focus {
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--muted-color);
+      0 0 0 var(--outline-width) var(--currentTXT50);
   }
 
   :is(button, [type="submit"], [type="button"], [role="button"]).contrast {
@@ -1318,7 +1322,7 @@
       :focus
     ) {
     --background-color: var(--currentBG);
-    --border-color: var(--muted-color);
+    --border-color: var(--currentTXT50);
     --color: var(--currentTXT);
   }
   :is(
@@ -1328,14 +1332,14 @@
       [role="button"]
     ).contrast:focus {
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--muted-color);
+      0 0 0 var(--outline-width) var(--currentTXT50);
   }
 
   :is(button, [type="submit"], [type="button"], [role="button"]).outline,
   [type="reset"].outline {
     --background-color: transparent;
     --color: var(--currentTXT);
-    --border-color: var(--muted-color);
+    --border-color: var(--currentTXT50);
   }
   :is(button, [type="submit"], [type="button"], [role="button"]).outline:is(
       [aria-current],
@@ -1345,7 +1349,7 @@
     ),
   [type="reset"].outline:is([aria-current], :hover, :active, :focus) {
     --background-color: transparent;
-    --color: var(--muted-color);
+    --color: var(--currentTXT50);
   }
 
   :is(
@@ -1355,7 +1359,7 @@
       [role="button"]
     ).outline.secondary,
   [type="reset"].outline {
-    --color: var(--muted-color);
+    --color: var(--currentTXT50);
     --border-color: currentColor;
   }
   :is(
@@ -1365,7 +1369,7 @@
       [role="button"]
     ).outline.secondary:is([aria-current], :hover, :active, :focus),
   [type="reset"].outline:is([aria-current], :hover, :active, :focus) {
-    --color: var(--muted-color);
+    --color: var(--currentTXT50);
   }
 
   :is(
@@ -1374,7 +1378,7 @@
       [type="button"],
       [role="button"]
     ).outline.contrast {
-    --color: var(--muted-color);
+    --color: var(--currentTXT50);
   }
   :is(
       button,
@@ -1382,7 +1386,7 @@
       [type="button"],
       [role="button"]
     ).outline.contrast:is([aria-current], :hover, :active, :focus) {
-    --color: var(--muted-color);
+    --color: var(--currentTXT50);
   }
 
   :where(
@@ -1408,7 +1412,7 @@
   details {
     display: block;
     margin-bottom: var(--space);
-    border-bottom: var(--border) solid var(--muted-color);
+    border-bottom: var(--border) solid var(--currentTXT50);
 
     & summary {
       line-height: 2;
@@ -1436,7 +1440,7 @@
         outline: none;
 
         &:not([role]) {
-          outline: 1px solid red;
+          outline: 1px solid var(--currentTXT50);
           outline-offset: calc(var(--space) * 0.5);
           color: var(--currentTXT);
         }
@@ -1475,7 +1479,7 @@
     transition: transform var(--transition);
     position: relative;
     top: 8px;
-    background-image: var(--iconV);
+    background-image: var(--currentV);
   }
 
   &[open] {
@@ -1496,6 +1500,13 @@
 
   details[open] > summary {
     margin-bottom: var(--space);
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    span.status::after {
+      display: inline;
+      content: "Open";
+    }
   }
 
   details[open] > summary:not([role]):not(:focus) {
@@ -1598,7 +1609,7 @@
 
 @layer classes {
   .border {
-    border: 1px solid var(--border-color);
+    border: -13px solid var(--border-color);
     border-radius: var(--radius);
   }
 

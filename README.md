@@ -1,7 +1,7 @@
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
 
 Zero config DX. Import it from NPM. Link it in your framework. Boom. Done!
-Fiko is a contained, (almost) classless, layered, modern (late2023), dynamically sized responsiveness CSS starter framework. VERY 🐸 FIKO!
+Fiko is a contained, almost classless, layered, modern (late2023), dynamically sized responsiveness CSS starter framework. VERY 🐸 FIKO!
 
 🐸 GREAT STYLES WITH JUST ONE CSS FILE.
 🐸 RESPONSIVE EVERYTHING.
@@ -18,7 +18,7 @@ Fiko is a contained, (almost) classless, layered, modern (late2023), dynamically
 
 # 🫵 USE IT
 
-## Yo 🫵 W.I.P. Its's only v0.5.15, Don't use it yet. Did tell you!
+## Yo, WIP v0.5.16, don't use it yet. Did tell you!
 
 It can be used in many ways.
 
@@ -31,7 +31,7 @@ pnpm i fiko
 ## Usage: **Import**
 
 ```css
-@import 'node_modules/fiko/fiko.css';
+@import "node_modules/fiko/fiko.css";
 ```
 
 then:
@@ -74,7 +74,8 @@ Or probably also as show here:
 ```html
 <link
   rel="stylesheet"
-  href="https://raw.githubusercontent.com/toybreaker/fiko/main/package/fiko.css" />
+  href="https://raw.githubusercontent.com/toybreaker/fiko/main/package/fiko.css"
+/>
 ```
 
 Most use case will need some custom, brand related styles...
@@ -85,7 +86,7 @@ Write your `my_custom_style.css` you can leverage the existing `fiko layers`, ju
 
 ```css
 /* ||| Layer Order Declaration ||| */
-@layer base, root, toggle, containers, components;
+@layer reset, root, base, roles, toggle, containers, components, classes;
 ```
 
 ### WHY?

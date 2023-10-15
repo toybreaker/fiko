@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.5.15</title>
+    <title>FIKO 0.5.16</title>
 
     <link rel="icon" type="image/svg+xml" href="/favico_dark.svg" />
     <!-- <style>
@@ -301,7 +301,7 @@
           </hgroup>
 
           <blockquote>
-            "Better classless than bloated and confused."
+            "Better classless than bloddy bloated, mate!"
             <footer>
               <cite>— fiko.css</cite>
             </footer>
@@ -441,19 +441,23 @@
             FIKO.CSS &copy;2023 TOYBREAKER |
 
             <a target="_blank" href="https://www.npmjs.com/package/fiko">Npm</a>
+            |
           </small>
 
           <small>
             <a target="_blank" href="https://github.com/toybreaker/fiko">
               Github
             </a>
+            |
           </small>
+
+          <small id="pixelratio"></small>
         </p>
       </article>
     </footer>
 
-    <!-- Vanilla JS for Toggle & User Preference Detection -->
     <script>
+      // THEME SWITCH Toggle & User Preference Detection
       function toggleTheme() {
         const currentTheme = document.body.getAttribute("data-theme");
         if (currentTheme === "dark") {
@@ -481,6 +485,28 @@
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .addListener(setUserPreference);
+    </script>
+
+    <script>
+      // devicePixelRatio query script
+      let remove = null;
+      const output = document.querySelector("#pixelratio");
+
+      const updatePixelRatio = () => {
+        if (remove != null) {
+          remove();
+        }
+        const mqString = `(resolution: ${window.devicePixelRatio}dppx)`;
+        const media = matchMedia(mqString);
+        media.addEventListener("change", updatePixelRatio);
+        remove = () => {
+          media.removeEventListener("change", updatePixelRatio);
+        };
+
+        output.textContent = `devicePixelRatio: ${window.devicePixelRatio}`;
+      };
+
+      updatePixelRatio();
     </script>
   </body>
 </html>

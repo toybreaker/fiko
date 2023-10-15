@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.6.3 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.6.4 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -200,15 +200,15 @@
     /* DERIVED apply the CURRENT colours: */
     /* set */
     --currenBRDCLR: var(--currentTXT50);
+    --border-size: 1px;
     /* apply */
     --group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--currenBRDCLR);
-    --accordion-open-summary-color: var(--currentTXT50);
+    --accordion-open-summary-color: var(--currenBRDCLR);
 
     /* DYNAMIC SIZED spacing & borders */
     --space: 5svw;
     --spaceLR: 3.3svw;
     --spaceTB: 1.8svh;
-    --border: 1px;
     --radius: 1svw;
     --line-height: 1.15;
 
@@ -217,6 +217,7 @@
 
     /* TYPOGRAPHY */
     /* set */
+
     --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol", "Noto Color Emoji"; /* < this needs to stay first */
 
@@ -369,6 +370,10 @@
     margin-bottom: var(--spaceTB);
   }
 
+  em {
+    font-style: italic;
+  }
+
   hgroup {
     margin-bottom: var(--spaceTB);
   }
@@ -428,20 +433,20 @@
   }
 
   ins {
-    color: var(--ins-color);
+    color: var(--currentTXT50);
     text-decoration: none;
   }
 
   del {
-    color: var(--del-color);
+    color: var(--currentTXT50);
   }
 
   ::-moz-selection {
-    background-color: var(--text-selection-color);
+    background-color: var(--currentTXT50);
   }
 
   ::selection {
-    background-color: var(--text-selection-color);
+    background-color: var(--currentTXT50);
   }
 
   /**
@@ -468,11 +473,13 @@
   pre,
   code,
   kbd {
+    --code-background-color: rgba(133, 133, 133, 0.5);
     border-radius: var(--radius);
-    background: var(--code-background-color);
-    color: var(--code-color);
+    background-color: var(--code-background-color);
+    color: var(--currentTXT);
     font-weight: var(--font-weight);
     line-height: initial;
+    border-radius: 3px;
   }
 
   code,
@@ -1472,7 +1479,7 @@
     }
 
     summary:focus-visible:not([role]) {
-      outline: var(-border) solid var(--currenBRDCLR);
+      outline: var(--border-size) solid var(--currenBRDCLR);
       outline-offset: calc(var(--space) * 0.5);
       color: var(--currentTXT);
     }
@@ -1517,6 +1524,7 @@
     margin-bottom: var(--space);
     position: -webkit-sticky !important; /* Safari */
     position: sticky;
+    border-bottom: 1px solid var(--currentTXT50);
     background-color: var(--currentBG);
     top: 0;
     span.status::after {
@@ -1625,7 +1633,7 @@
 
 @layer classes {
   .border {
-    border: -13px solid var(--currenBRDCLR);
+    border: var(--border-size) solid var(--currenBRDCLR);
     border-radius: var(--radius);
   }
 
@@ -1634,7 +1642,7 @@
     margin-right: 5%;
   }
   .invert {
-    filter: invert(1);
+    filter: invert(100%);
   }
   .alfa_BG {
     @layer root {

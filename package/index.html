@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.6.3</title>
+    <title>FIKO 0.6.4</title>
 
     <link rel="icon" type="image/svg+xml" href="/favico_dark.svg" />
     <!-- <style>
@@ -48,8 +48,9 @@
         <hgroup>
           <h2>Full-bleed layouts</h2>
           <p>
-            Without the `.container` class, elements have no horizontal spacing,
-            as the following image:
+            Without the
+            <code>.container</code>
+            class, elements have no horizontal spacing, as the following image:
           </p>
         </hgroup>
       </section>
@@ -72,32 +73,67 @@
           <!-- Accordion -->
           <details>
             <summary>Accordion Title</summary>
+            <p>Accordion content goes here.</p>
+          </details>
+
+          <details open>
+            <summary>Open Accordion</summary>
+
             <p>
-              This is the accordion content goes here. Opunanclose as women
-              legs.
+              Need the accordion open at page load?
+              <code>details open</code>
+              does just that!
+            </p>
+
+            <p>
+              Note: When the accordion is open
+              <code>summary</code>
+              is
+              <em>Sticky.</em>
+            </p>
+            <p>
+              When you tap it, it closes... and 🐸
+              <em>Slime</em>
+              🐸 is removed!
+            </p>
+            <p>
+              <small>Note that</small>
+              <strong>v</strong>
+              <small>icon on the right, rotating?!</small>
+
+              <small>Tap it and I shall disappear...</small>
             </p>
           </details>
 
           <details>
             <summary>Accordion full of surprises...</summary>
             <p>
-              When accordion is open, its &lt;summary&gt; becomes sticky and
-              gets a background color.
+              Yes, when
+              <code>details</code>
+              is open, its
+              <code>summary</code>
+              becomes sticky and gets a background color.
             </p>
-            <p>Opunanclose as women legs.</p>
-            <p>Opunanclose as women legs.</p>
-            <p>Opunanclose as women legs.</p>
-            <p>Opunanclose as women legs.</p>
-          </details>
-
-          <!-- Accordion -->
-          <details open>
-            <summary>Open Accordion Title are Sticky.</summary>
             <p>
-              This accordion &lt;details open&gt; is open by default. When you
-              tap is closes and and remove the glue! Note that little chevron
-              icon on the right rotating?! Tap on the title, and I shall
-              disappear...
+              It stays
+              <strong>Sticky</strong>
+              till you scroll it out of the viewport.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+              aliquam vestibulum morbi blandit cursus.
+            </p>
+
+            <p>
+              Dui sapien eget mi proin sed. Arcu non odio euismod lacinia.
+              Tincidunt id aliquet risus feugiat in ante metus dictum.
+            </p>
+
+            <p>
+              Odio morbi quis commodo odio aenean sed adipiscing diam donec. Ut
+              tortor pretium viverra suspendisse potenti. Sollicitudin tempor id
+              eu nisl nunc mi.
             </p>
           </details>
         </section>
@@ -121,8 +157,11 @@
           <hgroup>
             <h2>Grid</h2>
             <p>
-              The class='grid' gives a minimal grid system with auto-layout
-              columns. The class="border" is added here to show grid elements:
+              The
+              <code>class='grid'</code>
+              gives a minimal grid system with auto-layout columns. The
+              <code>class='border'</code>
+              is added here to show grid elements:
             </p>
           </hgroup>
           <br />
@@ -135,7 +174,10 @@
                   src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
                   alt="rokma.com"
                 />
-                <footer>Here &lt;article class=&quot;border&quot;&gt;</footer>
+                <footer>
+                  Here we use:
+                  <code>article class='border'</code>
+                </footer>
               </article>
             </div>
             <div class="border">
@@ -146,9 +188,10 @@
                   alt="rokma.com"
                 />
                 <p>
-                  This &lt;article&gt; wrapper &lt;div&gt; has a
-                  <code>.border</code>
-                  class: &lt;div class=&quot;border&quot;&gt;
+                  This
+                  <code>article</code>
+                  parent has
+                  <code>class='border'</code>
                 </p>
                 <a href="#" class="card-button">
                   <button>Don't click this!</button>
@@ -157,26 +200,21 @@
             </div>
             <div class="border">
               <article>
-                <header>Header</header>
+                <header>HEADER</header>
                 <img
                   src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
                   alt="image alt"
                 />
-                <p>Paragraph</p>
+                <p>PARAGRAPH</p>
                 <a href="#" class="card-button">
-                  <button>Button</button>
+                  <button>BUTTON</button>
                 </a>
               </article>
             </div>
             <div class="border">
               <article>
-                <header>Article Card</header>
-
-                <p>
-                  This article wrapper has a
-                  <code>.border</code>
-                  class.
-                </p>
+                <header>Article Card inside a:</header>
+                <code>div class='border'</code>
                 <a href="#" class="card-button">
                   <button>Call to Action</button>
                 </a>
@@ -185,14 +223,23 @@
             <div>
               <article>
                 <header>Header</header>
-                Body
+                <small>Body</small>
                 <footer>Footer</footer>
               </article>
             </div>
             <div>
               <article>
                 <header>Header</header>
-                Body. No footer, no border
+                <small>Body</small>
+              </article>
+            </div>
+            <div>
+              <article>
+                <header>
+                  Header only.
+                  <br />
+                  <small>No body, footer, border</small>
+                </header>
               </article>
             </div>
           </div>
@@ -369,7 +416,7 @@
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
             alt="rokma.com"
           />
-          <p>Article content goes here. Lorem ipsum dolor sit amet.</p>
+          <p>Article content goes here.</p>
           <a href="#" class="card-button">
             <button>Call to Action</button>
           </a>
@@ -405,12 +452,12 @@
             <h2>Headings</h2>
           </hgroup>
 
-          <h1>h1 FIKO CSS</h1>
-          <h2>h2 FIKO Framework</h2>
-          <h3>h3 FIKO Framework</h3>
-          <h4>h4 FIKO Framework</h4>
-          <h5>h4 FIKO Framework</h5>
-          <h6>h6 FIKO Framework</h6>
+          <h1>h1 FIKO 🐸 CSS</h1>
+          <h2>h2 FIKO 🐸 Framework</h2>
+          <h3>h3 FIKO 🐸 Framework</h3>
+          <h4>h4 FIKO 🐸 Framework</h4>
+          <h5>h4 FIKO 🐸 Framework</h5>
+          <h6>h6 FIKO 🐸 Framework</h6>
         </section>
 
         <hr />
@@ -424,7 +471,9 @@
               <em>This is automatically centred.</em>
               <br />
               <small>
-                Just use the &lt;article&gt; HTML element.
+                Just use the
+                <code>article</code>
+                HTML element.
                 <br />
                 Cool huh?!
               </small>
@@ -452,7 +501,11 @@
     <!-- Footer -->
     <footer class="invert">
       <article>
-        <div>FIKO.CSS &copy;2023 TOYBREAKER</div>
+        <div>
+          FIKO
+          <span class="invert">🐸</span>
+          CSS &copy;2023 TOYBREAKER
+        </div>
 
         <button
           class="theme-switch"

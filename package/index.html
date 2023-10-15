@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.5.14</title>
+    <title>FIKO 0.5.15</title>
 
     <link rel="icon" type="image/svg+xml" href="/favico_dark.svg" />
     <!-- <style>
@@ -21,7 +21,7 @@
       //<![CDATA[
       document.write(
         "<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.7'><\/script>".replace(
-          'HOST',
+          "HOST",
           location.hostname
         )
       );
@@ -36,7 +36,7 @@
       <nav>
         <ul>
           <li>
-            <h1>FIKO</h1>
+            <h1>FIKO&nbsp;</h1>
           </li>
         </ul>
         <ul>
@@ -50,7 +50,8 @@
           type="checkbox"
           id="toggle-theme"
           class="toggle-container"
-          onchange="toggleTheme()" />
+          onchange="toggleTheme()"
+        />
         <label for="toggle-theme"><i>Swith color mode</i></label>
       </div>
     </header>
@@ -69,7 +70,8 @@
       <!-- Full-bleed -->
       <img
         src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-        alt="rokma.com" />
+        alt="rokma.com"
+      />
 
       <div class="container">
         <!-- Section -->
@@ -84,7 +86,7 @@
           <details>
             <summary>Closed Accordion Title</summary>
             <p>
-              This is the accordion content goes here. Opunanclose as woman
+              This is the accordion content goes here. Opunanclose as women
               legs.
             </p>
           </details>
@@ -92,18 +94,19 @@
           <details>
             <summary>Other Closed Accordion</summary>
             <p>Accordion content goes here.</p>
-            <p>Opunanclose as woman legs.</p>
-            <p>Opunanclose as woman legs.</p>
-            <p>Opunanclose as woman legs.</p>
-            <p>Opunanclose as woman legs.</p>
+            <p>Opunanclose as women legs.</p>
+            <p>Opunanclose as women legs.</p>
+            <p>Opunanclose as women legs.</p>
+            <p>Opunanclose as women legs.</p>
           </details>
 
           <!-- Accordion -->
           <details open>
             <summary>Open Accordion Title</summary>
             <p>
-              Accordion can be open by default. Use `details open`. It can still
-              be closed! Check it out.
+              This accordion is open by default. Use &lt;details open&gt;. User
+              can close it! note that little chevron icon on the right rotating.
+              Tap on the title, and i shall disappear...
             </p>
           </details>
         </section>
@@ -134,13 +137,14 @@
           <br />
 
           <div class="grid">
-            <div class="border">
-              <article>
+            <div>
+              <article class="border">
                 <header>Article Card Header</header>
                 <img
                   src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-                  alt="rokma.com" />
-                <footer>This article has a <code>.border</code> class.</footer>
+                  alt="rokma.com"
+                />
+                <footer>Here &lt;article class=&quot;border&quot;&gt;</footer>
               </article>
             </div>
             <div class="border">
@@ -148,19 +152,25 @@
                 <header>Header</header>
                 <img
                   src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-                  alt="rokma.com" />
-                <p>This article has a <code>.border</code> class.</p>
+                  alt="rokma.com"
+                />
+                <p>
+                  This &lt;article&gt; wrapper &lt;div&gt; has a
+                  <code>.border</code>
+                  class: &lt;div class=&quot;border&quot;&gt;
+                </p>
                 <a href="#" class="card-button">
-                  <button>Dont click this</button>
+                  <button>Don't click this!</button>
                 </a>
               </article>
             </div>
             <div class="border">
               <article>
-                <header>Heder</header>
+                <header>Header</header>
                 <img
                   src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-                  alt="image alt" />
+                  alt="image alt"
+                />
                 <p>Paragraph</p>
                 <a href="#" class="card-button">
                   <button>Button</button>
@@ -171,23 +181,27 @@
               <article>
                 <header>Article Card</header>
 
-                <p>This article has a <code>.border</code> class.</p>
+                <p>
+                  This article wrapper has a
+                  <code>.border</code>
+                  class.
+                </p>
                 <a href="#" class="card-button">
                   <button>Call to Action</button>
                 </a>
               </article>
             </div>
-            <div class="border">
+            <div>
               <article>
-                <header>header</header>
-                body
-                <footer>footer</footer>
+                <header>Header</header>
+                Body
+                <footer>Footer</footer>
               </article>
             </div>
-            <div class="border">
+            <div>
               <article>
-                <header>header</header>
-                body, no footer
+                <header>Header</header>
+                Body. No footer, no border
               </article>
             </div>
           </div>
@@ -273,7 +287,8 @@
           <figure>
             <img
               src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-              alt="rokma.com" />
+              alt="rokma.com"
+            />
           </figure>
           <figcaption>figure caption</figcaption>
         </section>
@@ -322,8 +337,13 @@
           <h2 class="">Article Card</h2>
           <img
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com" />
-          <p>This article has a <code>.border</code> class.</p>
+            alt="rokma.com"
+          />
+          <p>
+            This article has a
+            <code>.border</code>
+            class.
+          </p>
           <a href="#" class="card-button">
             <button>Call to Action</button>
           </a>
@@ -333,7 +353,8 @@
           <h2>Article</h2>
           <img
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com" />
+            alt="rokma.com"
+          />
           <p>Article content goes here. Lorem ipsum dolor sit amet.</p>
           <a href="#" class="card-button">
             <button>Call to Action</button>
@@ -344,7 +365,8 @@
           <h2>No border article</h2>
           <img
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com" />
+            alt="rokma.com"
+          />
           <p>Article content goes here. Lorem ipsum dolor sit amet.</p>
           <a href="#" class="card-button">
             <button>Call to Action</button>
@@ -380,6 +402,25 @@
         <hr />
 
         <section>
+          <article>
+            <hgroup>
+              <h2>Auto centering</h2>
+            </hgroup>
+            <p>
+              <em>This is automatically centred.</em>
+              <br />
+              <small>
+                Just use the &lt;article&gt; HTML element.
+                <br />
+                Cool huh?!
+              </small>
+            </p>
+          </article>
+        </section>
+
+        <hr />
+
+        <section>
           <hgroup>
             <h2>Horizontal line</h2>
           </hgroup>
@@ -389,40 +430,36 @@
           <hr />
           <p>Paragraph after the horizontal line.</p>
         </section>
-
-        <hr />
-
-        <section>
-          <article>
-            <p>
-              <em>Space intentionally left blank</em>
-            </p>
-          </article>
-        </section>
-
-        <hr />
-        <article>
-          <p>FULL WIDTH, CENTERED</p>
-          <h5>PRETTY COOL HUH?!</h5>
-          <span>Get it by using the 'article' container</span>
-        </article>
-        <hr />
       </div>
     </main>
 
     <!-- Footer -->
     <footer class="invert">
-      <article><p>&copy;2023 FIKO.CSS</p></article>
+      <article>
+        <p>
+          <small>
+            FIKO.CSS &copy;2023 TOYBREAKER |
+
+            <a target="_blank" href="https://www.npmjs.com/package/fiko">Npm</a>
+          </small>
+
+          <small>
+            <a target="_blank" href="https://github.com/toybreaker/fiko">
+              Github
+            </a>
+          </small>
+        </p>
+      </article>
     </footer>
 
     <!-- Vanilla JS for Toggle & User Preference Detection -->
     <script>
       function toggleTheme() {
-        const currentTheme = document.body.getAttribute('data-theme');
-        if (currentTheme === 'dark') {
-          document.body.setAttribute('data-theme', 'light');
+        const currentTheme = document.body.getAttribute("data-theme");
+        if (currentTheme === "dark") {
+          document.body.setAttribute("data-theme", "light");
         } else {
-          document.body.setAttribute('data-theme', 'dark');
+          document.body.setAttribute("data-theme", "dark");
         }
       }
 
@@ -430,11 +467,11 @@
       function setUserPreference() {
         const userPrefersDark =
           window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches;
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
         if (userPrefersDark) {
-          document.body.setAttribute('data-theme', 'dark');
+          document.body.setAttribute("data-theme", "dark");
         } else {
-          document.body.setAttribute('data-theme', 'light');
+          document.body.setAttribute("data-theme", "light");
         }
       }
 
@@ -442,7 +479,7 @@
 
       // Update on preference change (like when using DevTools to change it)
       window
-        .matchMedia('(prefers-color-scheme: dark)')
+        .matchMedia("(prefers-color-scheme: dark)")
         .addListener(setUserPreference);
     </script>
   </body>

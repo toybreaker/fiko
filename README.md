@@ -1,4 +1,4 @@
-# [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/)
+# [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/) [![Netlify Status](https://api.netlify.com/api/v1/badges/68612997-fe61-4776-80d5-9edd46c5a331/deploy-status)](https://app.netlify.com/sites/fikocss/deploys)
 
 Zero config DX. Import it from NPM. Link it in your framework. Boom. Done!
 Fiko is a contained, almost classless, layered, modern (late2023), dynamically sized responsiveness CSS starter framework. VERY 🐸 FIKO!
@@ -14,11 +14,13 @@ Fiko is a contained, almost classless, layered, modern (late2023), dynamically s
 
 > **_You write your own classes_**
 
-## [![Netlify Status](https://api.netlify.com/api/v1/badges/68612997-fe61-4776-80d5-9edd46c5a331/deploy-status)](https://app.netlify.com/sites/fikocss/deploys) [Demo Test here](https://fiko.rokma.rocks/)
+.
 
 # 🫵 USE IT
 
-## Yo, WIP v0.6.2, don't use it yet. Did tell you!
+.
+
+## Yo, WIP v0.6.3, don't use it yet. Did tell you!
 
 It can be used in many ways.
 
@@ -252,23 +254,65 @@ This slim starter was develop to scratch my own needs and it's inspired by today
 
 # CHANGELOG
 
-### v0.5.3
+## fiko@0.6.0 | Use the platform
 
-Nothing significant yet, just cleaner. Responsive padding setup.
+### Some new layers:
 
-### v0.5.0
+```css
+@layer reset, root, base, roles, toggle, containers, components, classes;
+```
+
+### Invert color-scheme utility class:
+
+```css
+.invert {
+  filter: invert(1);
+```
+
+### Color constants:
+
+```css
+/* COLOURS FOR LIGHT/DARK MODES */
+/* '--alpha' CAN BE REDECLARED AS NEEDED */
+--alpha: 1;
+--color-white: rgba(255, 255, 255, var(--alpha));
+--color-black: rgba(0, 0, 0, var(--alpha));
+
+/* MODE-INDIPENDENT CONSTANT COLOURS */
+/* When elements need consistency, not switching colors. */
+--color-light: var(--color-white);
+--color-dark: var(--color-black);
+```
+
+### Color mode variables, Set the current varialiable and auto-get the derived ones.
+
+```css
+/* Initial styles assuming light theme */
+body[data-theme="light"] {
+  /* set the CURRENT colours: */
+  --currentBG: var(--color-white);
+  --currentTXT: var(--color-black);
+  --currentTXT50: rgba(0, 0, 0, 0.5);
+  --currentV: var(--icon-chevron-black);
+  /* DERIVED: apply the CURRENT colours: */
+  background-color: var(--currentBG);
+  color: var(--currentTXT);
+}
+```
+
+## fiko@0.5.0 | Restart with moder tech
 
 Restart from ZERO.
 Css Only. With variables, nesting, layers, dvh, dvw, oklch, etc..
 2023 Platform. Let's Use it, Zod-damm-it!
 New slim structure:
 
-```
+```shell
 package/
-  |- fiko.css
-  |- index.html
+|- fiko.css
+|- index.html
 ```
 
-### v0.4.1 DEAD END
+## fiko@0.4.1 | DEAD END
 
 Dont fix a broken house, It's faster to make a new one. Crucible moment. SCSS I love you but we gotta move on baby, there are new ways out there. New vehicle, fresh start.

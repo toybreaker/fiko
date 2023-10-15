@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.6.2 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.6.3 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -161,19 +161,18 @@
     --icon-chevron-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
     /* COLOURS FOR LIGHT/DARK MODES */
-    /* play with this transparency with care, is untested! */
+    /* '--alpha' CAN BE REDECLARED AS NEEDED */
     --alpha: 1;
-    /* --color-white: hsla(255, 255, 255, 0.5); BROKEN*/
     --color-white: rgba(255, 255, 255, var(--alpha));
     --color-black: rgba(0, 0, 0, var(--alpha));
 
-    /* COLOURS MODE-INDIPENDENT CONSTANT */
-    /* Some elements need consistency, not switching colors. */
+    /* MODE-INDIPENDENT CONSTANT COLOURS */
+    /* When elements need consistency, not switching colors. */
     --color-light: var(--color-white);
     --color-dark: var(--color-black);
   }
 
-  /* Initial styles assuming light theme */
+  /* INITIAL STYLES ASSUMING LIGHT THEME */
   body[data-theme="light"] {
     /* set the CURRENT colours: */
     --currentBG: var(--color-white);
@@ -185,7 +184,7 @@
     color: var(--currentTXT);
   }
 
-  /* When data-theme is set to dark */
+  /* WHEN DATA-THEME IS SET TO DARK */
   body[data-theme="dark"] {
     /* set the CURRENT colours: */
     --currentBG: var(--color-black);
@@ -198,7 +197,7 @@
   }
 
   :root {
-    /* DERIVED: apply the CURRENT colours: */
+    /* DERIVED apply the CURRENT colours: */
     /* set */
     --currenBRDCLR: var(--currentTXT50);
     /* apply */
@@ -1268,14 +1267,10 @@
       :focus
     ),
   [role="button"]:is([aria-current], :hover, :active, :focus) {
-    --background-color: var(
-    --currentTXT);
-    --currenBRDCLR: var(
-    --currentTXT50);
-    --box-shadow: var(
-    --button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-    --color: var(
-    --currentBG);
+    --background-color: var(--currentTXT);
+    --currenBRDCLR: var(--currentTXT50);
+    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    --color: var(--currentBG);
   }
   button:focus,
   [type="submit"]:focus,
@@ -1520,8 +1515,9 @@
 
   details[open] > summary {
     margin-bottom: var(--space);
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky !important; /* Safari */
     position: sticky;
+    background-color: var(--currentBG);
     top: 0;
     span.status::after {
       display: inline;
@@ -1594,28 +1590,26 @@
     padding: var(--spaceTB) var(--spaceLR);
 
     @container (max-width: 555px) {
-    width: 50%;
+      width: 50%;
     }
 
     @container (max-width: 888px) {
-    width: 33%;
+      width: 33%;
     }
 
     @container (max-width: 1111px) {
-    width: 25%;
+      width: 25%;
     }
 
     > * {
-    text-decoration: none;
+      text-decoration: none;
     }
 
-    &
-    img {
+    & img {
       max-width: 100%;
     }
 
-    &
-    button {
+    & button {
       display: block;
       padding: var(--spaceTB) var(--spaceLR);
       margin: var(--spaceTB) var(--spaceLR);

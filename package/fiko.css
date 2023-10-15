@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.6.0 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.6.1 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -210,7 +210,7 @@
     --spaceLR: 3.3svw;
     --spaceTB: 1.8svh;
     --border: 1px;
-    --radius: 1vw;
+    --radius: 1svw;
     --line-height: 1.15;
 
     /* TRANSITIONS */
@@ -228,7 +228,7 @@
     --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
       Consolas, "Liberation Mono", monospace, var(--font-family-emoji);
 
-    --font-size: clamp(1.25rem, 1.1717rem + 0.4174vw, 1.85rem);
+    --font-size: clamp(1.25rem, 1.1717rem + 0.4174svw, 1.85rem);
 
     --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -260,6 +260,8 @@
   --x3l: 1920px;
   --x4l: 2560px;
   /* end root */
+
+  --modal-overlay-backdrop-filter: var(--currentTXT50);
 }
 
 /* 🐲 Base Layer */
@@ -310,7 +312,7 @@
   ul {
     margin-top: 0;
     margin-bottom: var(--spaceTB);
-    color: var(--color);
+    color: var(--colorTXT);
     font-style: normal;
     font-weight: var(--font-weight);
   }
@@ -323,7 +325,7 @@
   h6 {
     margin-top: 0;
     margin-bottom: var(--spaceTB);
-    color: var(--color);
+    color: var(--colorTXT);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
     line-height: var(--line-height);
@@ -654,7 +656,7 @@
   [role="group"] [role="button"]:not(:first-child),
   [role="group"] input:not([type="checkbox"], [type="radio"]):not(:first-child),
   [role="group"] select:not(:first-child) {
-    margin-left: calc(var(--border) * -1);
+    margin-left: calc(var(--currenBRDCLR) * -1);
   }
   [role="search"] button,
   [role="search"] [type="submit"],
@@ -733,8 +735,8 @@
         select:focus
       )
       [role="button"] {
-      --button-box-shadow: 0 0 0 var(--border) var(--primary-border);
-      --button-hover-box-shadow: 0 0 0 var(--border) var(--primary-hover-border);
+      --button-box-shadow: 0 0 0 var(--currenBRDCLR) var(--currenBRDCLR);
+      --button-hover-box-shadow: 0 0 0 var(--currenBRDCLR) var(--currenBRDCLR);
     }
     [role="search"] button:focus,
     [role="search"] [type="submit"]:focus,
@@ -787,27 +789,31 @@
     display: flex;
     z-index: 999;
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: 25svh;
+    right: 25svw;
+    bottom: 25svh;
+    left: 25svh;
     align-items: center;
     justify-content: center;
     width: inherit;
-    min-width: 100%;
+    min-width: 50svw;
     height: inherit;
-    min-height: 100%;
+    min-height: 50svh;
     border: 0;
-    -webkit-backdrop-filter: var(--modal-overlay-backdrop-filter);
+    -webkit-backdrop-filter: var(--currentTXT50);
     backdrop-filter: var(--modal-overlay-backdrop-filter);
-    background-color: var(--modal-overlay-background-color);
-    color: var(--color);
+    background-color: var(--currentTXT50);
+    color: var(--currentBG);
+    filter: invert(1);
   }
   dialog article {
+    --alpha: 0.5;
     width: 100%;
-    max-height: calc(100vh - var(--spaceTB) * 2);
+    max-height: calc(100svh - var(--spaceTB) * 2);
     margin: var(--spaceTB) var(--spaceLR);
     overflow: auto;
+    background-color: var(--currentTXT);
+    color: var(--currentBG);
   }
   @media (min-width: 576px) {
     dialog article {
@@ -1061,7 +1067,7 @@
     margin-right: inherit;
     margin-bottom: 0;
     margin-left: inherit;
-    padding: calc(var(--spaceTB) - var(--border) * 2) var(--spaceLR);
+    padding: calc(var(--spaceTB) - var(--currenBRDCLR) * 2) var(--spaceLR);
   }
   nav[aria-label="breadcrumb"] {
     align-items: center;
@@ -1100,9 +1106,9 @@
   td {
     padding: calc(var(--space) / 2) var(--space);
     width: fit-content;
-    border-bottom: var(--border) solid var(--table-border-color);
+    border-bottom: var(--currenBRDCLR) solid var(--table-border-color);
     background-color: var(--background-color);
-    color: var(--color);
+    color: var(--colorTXT);
     font-weight: var(--font-weight);
     text-align: left;
     text-align: start;
@@ -1110,7 +1116,7 @@
 
   tfoot th,
   tfoot td {
-    border-top: var(--border) solid var(--table-border-color);
+    border-top: var(--currenBRDCLR) solid var(--table-border-color);
     border-bottom: 0;
   }
 
@@ -1227,14 +1233,14 @@
     --color: var(--currentTXT);
     --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     padding: 2% var(--spaceLR);
-    border: var(--border) solid var(--currenBRDCLR);
+    border: var(--currenBRDCLR) solid var(--currenBRDCLR);
     border-radius: var(--radius);
     outline: none;
     background-color: var(--currentBG);
+    color: var(--currentTXT);
     box-shadow: var(--box-shadow);
-    color: var(--color);
     font-weight: var(--font-weight);
-    font-size: 1rem;
+    font-size: var(--font-size);
     line-height: var(--line-height);
     text-align: center;
     text-decoration: none;
@@ -1417,7 +1423,7 @@
   details {
     display: block;
     margin-bottom: var(--space);
-    border-bottom: var(--border) solid var(--currentTXT50);
+    border-bottom: var(--currenBRDCLR) solid var(--currentTXT50);
 
     & summary {
       line-height: 2;
@@ -1602,7 +1608,7 @@
       display: block;
       padding: var(--spaceTB) var(--spaceLR);
       margin: var(--spaceTB) var(--spaceLR);
-      border: var(--border) 1px solid;
+      border: var(--currenBRDCLR) 1px solid;
       border-radius: var(--radius);
       background-color: var(--currentTXT);
       color: var(--currentBG);
@@ -1624,5 +1630,10 @@
   }
   .invert {
     filter: invert(1);
+  }
+  .alfa_BG {
+    @layer root {
+      --alpha: 0.5;
+    }
   }
 }

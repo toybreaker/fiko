@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.6.5 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.6.6 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -487,8 +487,8 @@
 
   code,
   kbd {
-    display: inline ;
-    padding: calc(var(--spaceTB)/2) calc(var(--spaceLR)/2);
+    display: inline;
+    padding: calc(var(--spaceTB) / 2) calc(var(--spaceLR) / 2);
   }
 
   pre {
@@ -504,7 +504,6 @@
   }
 
   kbd {
-    background-color:
     background-color: var(--code-background-color);
     color: var(--code-background-color);
     vertical-align: baseline;

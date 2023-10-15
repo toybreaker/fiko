@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.6.1 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.6.2 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -119,7 +119,7 @@
 
   html {
     font-size: 100%;
-    line-height: 1.15;
+    line-height: var(--line-height);
     -webkit-text-size-adjust: 100%;
 
     > * {
@@ -276,6 +276,11 @@
   }
   small {
     font-size: 77%;
+    line-height: var(--line-height);
+    &:has(a) {
+      min-height: 42px;
+      line-height: 42px;
+    }
   }
 
   /**
@@ -786,6 +791,10 @@
   }
 
   dialog {
+    width: inherit;
+    min-width: 50svw;
+    height: inherit;
+    min-height: 50svh;
     display: flex;
     z-index: 999;
     position: fixed;
@@ -795,10 +804,6 @@
     left: 25svh;
     align-items: center;
     justify-content: center;
-    width: inherit;
-    min-width: 50svw;
-    height: inherit;
-    min-height: 50svh;
     border: 0;
     -webkit-backdrop-filter: var(--currentTXT50);
     backdrop-filter: var(--modal-overlay-backdrop-filter);
@@ -1263,10 +1268,14 @@
       :focus
     ),
   [role="button"]:is([aria-current], :hover, :active, :focus) {
-    --background-color: var(--currentTXT);
-    --currenBRDCLR: var(--currentTXT50);
-    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-    --color: var(--currentBG);
+    --background-color: var(
+    --currentTXT);
+    --currenBRDCLR: var(
+    --currentTXT50);
+    --box-shadow: var(
+    --button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    --color: var(
+    --currentBG);
   }
   button:focus,
   [type="submit"]:focus,
@@ -1577,34 +1586,36 @@
 
   /* Card */
   article {
-    margin: var(--spaceTB);
+    margin: var(--spaceTB) var(--spaceLR);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: var(--spaceTB);
+    padding: var(--spaceTB) var(--spaceLR);
 
     @container (max-width: 555px) {
-      width: 50%;
+    width: 50%;
     }
 
     @container (max-width: 888px) {
-      width: 33%;
+    width: 33%;
     }
 
     @container (max-width: 1111px) {
-      width: 25%;
+    width: 25%;
     }
 
     > * {
-      text-decoration: none;
+    text-decoration: none;
     }
 
-    & img {
+    &
+    img {
       max-width: 100%;
     }
 
-    & button {
+    &
+    button {
       display: block;
       padding: var(--spaceTB) var(--spaceLR);
       margin: var(--spaceTB) var(--spaceLR);

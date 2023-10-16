@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.6.8 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.6.9 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -1190,7 +1190,7 @@
   .grid {
     gap: var(--gap);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     margin: 0;
 
     @media (min-width: 576px) {

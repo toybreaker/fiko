@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.6.6 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.6.7 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -212,8 +212,7 @@
     --radius: 1svw;
     --line-height: 1.15;
     /* NOTE: Maybe make DERIVED?: */
-    --grid-row-gap: 3.3svw;
-    --grid-column-gap: 1.8svh;
+    --gap: calc((3.3svw + 1.8svh) / 2);
 
     /* TRANSITIONS */
     --transition: 0.2s ease-in-out;
@@ -321,7 +320,7 @@
   ul {
     margin-top: 0;
     margin-bottom: var(--spaceTB);
-    color: var(--colorTXT);
+    color: var(--currentTXT);
     font-style: normal;
     font-weight: var(--font-weight);
   }
@@ -334,7 +333,7 @@
   h6 {
     margin-top: 0;
     margin-bottom: var(--spaceTB);
-    color: var(--colorTXT);
+    color: var(--currentTXT);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
     line-height: var(--line-height);
@@ -1122,7 +1121,7 @@
     width: fit-content;
     border-bottom: var(--currenBRDCLR) solid var(--table-border-color);
     background-color: var(--background-color);
-    color: var(--colorTXT);
+    color: var(--currentTXT);
     font-weight: var(--font-weight);
     text-align: left;
     text-align: start;
@@ -1179,18 +1178,34 @@
   }
 
   /* GRID | Minimal grid system with auto-layout columns */
+  /* --xs: 0;
+    --sm: 576px;
+    --md: 768px;
+    --lg: 992px;
+    --xl: 1200px;
+    --x2l: 1440px;
+    --x3l: 1920px;
+    --x4l: 2560px; */
+
   .grid {
-    grid-column-gap: var(--grid-column-gap);
-    grid-row-gap: var(--grid-row-gap);
+    gap: var(--gap);
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
     margin: 0;
-  }
-  @media (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
+
   .grid > * {
     min-width: 0;
   }
@@ -1301,9 +1316,9 @@
   :is(button, [type="submit"], [type="button"], [role="button"]).secondary,
   [type="reset"],
   [type="file"]::file-selector-button {
-    --background-color: var(--currentBG);
     --currenBRDCLR: var(--currentTXT50);
-    --color: var(--secondary-inverse);
+    --background-color: var(--currentBG);
+    --color: var(--currentTXT);
     cursor: pointer;
   }
   :is(button, [type="submit"], [type="button"], [role="button"]).secondary:is(
@@ -1319,9 +1334,9 @@
       :active,
       :focus
     ) {
-    --background-color: var(--currentBG);
     --currenBRDCLR: var(--currentTXT50);
-    --color: var(--secondary-inverse);
+    --background-color: var(--currentBG);
+    --color: var(--currentTXT);
   }
   :is(
       button,
@@ -1346,8 +1361,8 @@
       :active,
       :focus
     ) {
-    --background-color: var(--currentBG);
     --currenBRDCLR: var(--currentTXT50);
+    --background-color: var(--currentBG);
     --color: var(--currentTXT);
   }
   :is(
@@ -1593,12 +1608,12 @@
 
   /* Card */
   article {
-    margin: var(--spaceTB) var(--spaceLR);
+    gap: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: var(--spaceTB) var(--spaceLR);
+    justify-content: space-evenly;
+    padding: var(--spaceTB) calc(var(--spaceLR) / 2);
 
     @container (max-width: 555px) {
       width: 50%;

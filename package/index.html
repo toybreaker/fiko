@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.7.0</title>
+    <title>FIKO 0.7.1</title>
 
     <link
       rel="icon"
@@ -608,7 +608,32 @@
     </footer>
 
     <script>
-      // THEME SWITCH Toggle & User Preference Detection
+      // ONE <details open> OPEN AT A TIME.
+      document.addEventListener(
+        'DOMContentLoaded',
+        function () {
+          let detailsElements =
+            document.querySelectorAll('details');
+
+          detailsElements.forEach(function (details) {
+            details.addEventListener('toggle', function () {
+              if (details.open) {
+                detailsElements.forEach(function (
+                  innerDetails,
+                ) {
+                  if (innerDetails !== details) {
+                    innerDetails.removeAttribute('open');
+                  }
+                });
+              }
+            });
+          });
+        },
+      );
+    </script>
+
+    <script>
+      // THEME SWITCH WITH TOGGLE & USER PREFERENCE DETECTION
       function toggleTheme() {
         const currentTheme =
           document.body.getAttribute('data-theme');
@@ -619,7 +644,7 @@
         }
       }
 
-      // Detect user's preference and set the data-theme attribute
+      // DETECT USER'S PREFERENCE AND SET the data-theme attribute
       function setUserPreference() {
         const userPrefersDark =
           window.matchMedia &&
@@ -634,14 +659,15 @@
 
       setUserPreference(); // Initially set the user preference
 
-      // Update on preference change (like when using DevTools to change it)
+      // UPDATE ON PREFERENCE CHANGE (ex: using DevTools to change it)
       window
         .matchMedia('(prefers-color-scheme: dark)')
         .addListener(setUserPreference);
     </script>
 
     <script>
-      // devicePixelRatio query script
+      // DEVICEPIXELRATIO QUERY SCRIPT
+      // USED IN FOOTER TO DISPLAY YOUR DEVICE DENSITY
       let remove = null;
       const output = document.querySelector('#pixelratio');
 

@@ -20,7 +20,7 @@ Fiko is a contained, almost classless, layered, modern (late2023), dynamically s
 
 .
 
-## Yo, WIP v0.6.10, don't use it yet. Did tell you!
+## Yo, WIP v0.7.0, don't use it yet. Did tell you!
 
 It can be used in many ways.
 
@@ -33,13 +33,16 @@ pnpm i fiko
 ## Usage: **Import**
 
 ```css
-@import "node_modules/fiko/fiko.css";
+@import 'node_modules/fiko/fiko.css';
 ```
 
 then:
 
 ```html
-<link rel="stylesheet" href="node_modules/fiko/package/fiko.css" />
+<link
+  rel="stylesheet"
+  href="node_modules/fiko/package/fiko.css"
+/>
 ```
 
 Or
@@ -288,7 +291,7 @@ This slim starter was develop to scratch my own needs and it's inspired by today
 
 ```css
 /* Initial styles assuming light theme */
-body[data-theme="light"] {
+body[data-theme='light'] {
   /* set the CURRENT colours: */
   --currentBG: var(--color-white);
   --currentTXT: var(--color-black);

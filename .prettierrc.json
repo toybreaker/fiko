@@ -1,3 +1,11 @@
 {
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "printWidth": 60,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "semi": true,
+  "trailingComma": "all",
+  "css": {
+    "indent": "  "
+  }
 }

@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "package/fiko.css",

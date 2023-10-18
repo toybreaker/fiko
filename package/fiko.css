@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FIKO 🐸 v0.7.1 (https://fiko.rokma.rocks)
+ * FIKO 🐸 v0.7.2 (https://fiko.rokma.rocks)
  * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
  * MIT License | https: //github.com/toybreaker/fiko
  * Copyright 2023 Toybreaker - Licensed under MIT
@@ -1031,7 +1031,7 @@
     width: auto;
     padding: 0.75rem;
     margin-bottom: 0;
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
     line-height: 1;
     text-align: right;
   }
@@ -1115,27 +1115,49 @@
     color: var(--currentTXT);
   }
 
-  nav,
-  header,
-  footer {
+  .pad {
     padding: var(--spaceTB) var(--spaceLR);
   }
 
   /* Nav */
   :where(nav li)::before {
-    float: left;
+    /* float: left; */
     content: '​';
   }
 
   nav,
   nav ul {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    padding-left: calc(var(--spaceLR) * 2);
+    padding-right: calc(var(--spaceLR) * 2);
+
+    gap: var(--gap);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(100%, 1fr)
+    );
+
+    align-items: start;
+    justify-items: start;
+    margin: 0;
+
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(auto, 1fr);
+    }
+
+    > * {
+      /* justify-self: center; */
+      align-self: start;
+    }
+
+    > * {
+      /* min-width: 0; */
+    }
   }
 
-  nav {
+  /* nav {
     justify-content: space-between;
-  }
+  } */
   nav ol,
   nav ul {
     align-items: center;
@@ -1805,6 +1827,12 @@
   ul,
   ol {
     list-style-type: none;
+    > ul {
+      float: left;
+      display: block;
+      display: block;
+    }
+    display: b;
   }
 
   li {

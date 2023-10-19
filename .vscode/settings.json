@@ -76,5 +76,6 @@
   "editor.inlineSuggest.showToolbar": "always",
   "editor.suggest.localityBonus": true,
   "editor.suggest.preview": true,
-  "editor.suggest.shareSuggestSelections": true
+  "editor.suggest.shareSuggestSelections": true,
+  "scssFormatter.printWidth": 100
 }

@@ -58,7 +58,7 @@
           <h2>Full-bleed layouts</h2>
           <p>
             Without the
-            <code>.container</code>
+            <code>&lt;.container&gt;</code>
             class, elements have no horizontal spacing, as
             the following image:
           </p>
@@ -92,9 +92,9 @@
             </summary>
             <p>
               Yes, when
-              <code>details</code>
+              <code>&lt;details&gt;</code>
               is open, its
-              <code>summary</code>
+              <code>&lt;summary&gt;</code>
               becomes sticky and gets a background color.
             </p>
             <p>
@@ -131,13 +131,13 @@
 
             <p>
               Need the accordion open at page load?
-              <code>details open</code>
+              <code>&lt;details open&gt;</code>
               does just that!
             </p>
 
             <p>
               Note: When the accordion is open
-              <code>summary</code>
+              <code>&lt;summary&gt;</code>
               is
               <em>Sticky.</em>
             </p>
@@ -153,6 +153,23 @@
               <strong>v</strong>
               <small>icon on the right, rotating?!</small>
               <small>Tap it and I shall disappear...</small>
+            </p>
+            <p>
+              Fiko offer a css class
+              <code>&lt;.status&gt;</code>
+              which displays the current status of the
+              accordion and provide the 'Open', 'Closed'
+              changes in this
+              <code>&lt;summary&gt;</code>
+              .
+            </p>
+            <p>
+              Just add this inside it:
+              <code>
+                &lt;span
+                class=&quot;status&quot;&gt;&lt;/span&gt;
+              </code>
+              .
             </p>
           </details>
         </section>
@@ -183,10 +200,10 @@
             <h2>Grid</h2>
             <p>
               The
-              <code>class='grid'</code>
+              <code>&lt;class='grid'&gt;</code>
               gives a minimal grid system with auto-layout
               columns. The
-              <code>class='border'</code>
+              <code>&lt;class='border'&gt;</code>
               is added here to show grid elements:
             </p>
           </hgroup>
@@ -201,7 +218,7 @@
               />
               <footer>
                 Here we use:
-                <code>article class='border'</code>
+                <code>&lt;article class='border'&gt;</code>
               </footer>
             </article>
 
@@ -213,9 +230,9 @@
               />
               <p>
                 This
-                <code>article</code>
+                <code>&lt;article&gt;</code>
                 parent has
-                <code>class='border'</code>
+                <code>&lt;class='border'&gt;</code>
               </p>
               <a href="#" class="card-button">
                 <button>Don't click this!</button>
@@ -236,7 +253,7 @@
 
             <article>
               <header>Article Card inside a:</header>
-              <code>div class='border'</code>
+              <code>&lt;div class='border'&gt;</code>
               <a href="#" class="card-button">
                 <button>Call to Action</button>
               </a>
@@ -428,7 +445,7 @@
           />
           <p>
             This article has a
-            <code>.border</code>
+            <code>&lt;.border&gt;</code>
             class.
           </p>
           <a href="#" class="card-button">
@@ -502,7 +519,7 @@
               <br />
               <small>
                 Just use the
-                <code>article</code>
+                <code>&lt;article&gt;</code>
                 HTML element.
                 <br />
                 Cool huh?!
@@ -528,7 +545,7 @@
         <article>
           <span>
             Full width
-            <code>article</code>
+            <code>&lt;article&gt;</code>
           </span>
         </article>
       </div>

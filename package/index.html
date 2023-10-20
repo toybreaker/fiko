@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.7.4</title>
+    <title>FIKO 0.7.5</title>
 
     <link
       rel="icon"
@@ -72,7 +72,7 @@
       />
 
       <div class="container">
-        <!-- Section -->
+        <!-- NOT Full-bleed -->
 
         <section>
           <hgroup>
@@ -142,21 +142,20 @@
               <em>Sticky.</em>
             </p>
             <p>
-              When you tap it, it closes..
-              <br />
-              and 🐸
-              <em>Slime</em>
-              🐸 is removed!
+              When you tap it, it closes, and
+              <code>&lt;details open&gt;</code>
+              becomes
+              <code>&lt;details&gt;</code>
             </p>
             <p>
-              <small>Note that</small>
-              <strong>v</strong>
-              <small>icon on the right, rotating?!</small>
-              <small>Tap it and I shall disappear...</small>
+              Note that
+              <code>^</code>
+              icon on the right?! Tap it and I shall
+              disappear...
             </p>
             <p>
-              Fiko offer a css class
-              <code>&lt;.status&gt;</code>
+              Fiko offers a
+              <code>&lt;class="status"&gt;</code>
               which displays the current status of the
               accordion and provide the 'Open', 'Closed'
               changes in this
@@ -164,7 +163,7 @@
               .
             </p>
             <p>
-              Just add this inside it:
+              USE: add this inside it:
               <code>
                 &lt;span
                 class=&quot;status&quot;&gt;&lt;/span&gt;
@@ -202,81 +201,38 @@
               The
               <code>&lt;class='grid'&gt;</code>
               gives a minimal grid system with auto-layout
-              columns. The
-              <code>&lt;class='border'&gt;</code>
-              is added here to show grid elements:
+              columns.
             </p>
           </hgroup>
           <br />
 
-          <div class="grid">
-            <article class="border">
-              <header>Article Header</header>
+          <div class="grid_box">
+            <div class="grid">
               <img
-                src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-                alt="rokma.com"
+                src="https://placehold.co/400x200"
+                alt=""
               />
-              <footer>
-                Here we use:
-                <code>&lt;article class='border'&gt;</code>
-              </footer>
-            </article>
-
-            <article class="border">
-              <header>Header</header>
               <img
-                src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-                alt="rokma.com"
+                src="https://placehold.co/400x200"
+                alt=""
               />
-              <p>
-                This
-                <code>&lt;article&gt;</code>
-                parent has
-                <code>&lt;class='border'&gt;</code>
-              </p>
-              <a href="#" class="card-button">
-                <button>Don't click!</button>
-              </a>
-            </article>
-
-            <article>
-              <header>HEADER</header>
               <img
-                src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-                alt="image alt"
+                src="https://placehold.co/400x200"
+                alt=""
               />
-              <p>PARAGRAPH</p>
-              <a href="#" class="card-button">
-                <button>BUTTON</button>
-              </a>
-            </article>
-
-            <article>
-              <header>Article Card inside a:</header>
-              <code>&lt;div class='border'&gt;</code>
-              <a href="#" class="card-button">
-                <button>Call to Action</button>
-              </a>
-            </article>
-
-            <article>
-              <header>Header</header>
-              <small>Body</small>
-              <footer>Footer</footer>
-            </article>
-
-            <article>
-              <header>Header</header>
-              <small>Body</small>
-            </article>
-
-            <article>
-              <header>
-                Header only.
-                <br />
-                <small>No body, footer, border</small>
-              </header>
-            </article>
+              <img
+                src="https://placehold.co/400x200"
+                alt=""
+              />
+              <img
+                src="https://placehold.co/400x200"
+                alt=""
+              />
+              <img
+                src="https://placehold.co/400x200"
+                alt=""
+              />
+            </div>
           </div>
         </section>
 
@@ -431,41 +387,34 @@
         <hgroup>
           <h2>Article</h2>
           <p>
-            Renders as a card, defaults to no border. Use it
-            to center children horizontally. Here it wraps
-            an image.
+            <code>&lt;article&gt;</code>
+            renders as a card.
           </p>
+          <p>
+            When need border use:
+            <code>&lt;class="border"&gt;</code>
+            .
+          </p>
+          <p>Use it to centre children horizontally.</p>
+          <p>Here it wraps an image.</p>
         </hgroup>
 
-        <article class="border">
+        <article class="border card">
           <h2 class="">Article Card</h2>
           <img
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
             alt="rokma.com"
           />
           <p>
-            This article has a
-            <code>&lt;.border&gt;</code>
-            class.
+            Get the border like this:
+            <code>&lt;article class="border"&gt;</code>
           </p>
           <a href="#" class="card-button">
             <button>Call to Action</button>
           </a>
         </article>
 
-        <article class="border">
-          <h2>Article</h2>
-          <img
-            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com"
-          />
-          <p>Article content goes here.</p>
-          <a href="#" class="card-button">
-            <button>Call to Action</button>
-          </a>
-        </article>
-
-        <article>
+        <article class="card">
           <h2>No border article</h2>
           <img
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
@@ -480,16 +429,16 @@
           </a>
         </article>
 
-        <article class="border">
-          <h2>Text article</h2>
+        <article class="border card">
+          <header>article header</header>
+          <p>article first paragraph</p>
           <p>
-            Article content goes here. Ipsum dolor sit amet.
-            Lorem dolor sit amet. Lorem ipsum sit amet.
-            Lorem ipsum dolor amet.
+            second paragraph blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah .
           </p>
-          <a href="#" class="card-button">
-            <button>Call to Action</button>
-          </a>
+          <p>article third paragraph</p>
+          <footer>article footer</footer>
         </article>
 
         <hr />
@@ -524,7 +473,9 @@
               <code>&lt;article&gt;</code>
               HTML element to get auto-centering.
 
-              <small class="ob">Pretty Cool huh?!</small>
+              <small class="centred_block">
+                Pretty Cool huh?!
+              </small>
             </p>
           </article>
         </section>
@@ -542,21 +493,34 @@
           <p>Paragraph after the horizontal line.</p>
         </section>
       </div>
-      <div class="border">
-        <article>
-          <span>
-            Full width
-            <code>&lt;article&gt;</code>
-            <small>
-              inside a
-              <code>.border</code>
-              div
-            </small>
-          </span>
-        </article>
-      </div>
-      <br />
-      <br />
+
+      <!-- FULL WIDTH -->
+
+      <article>
+        <hgroup>
+          <h2>Full-width</h2>
+        </hgroup>
+      </article>
+
+      <article class="invert">
+        <header>
+          <code>&lt;article class="invert"&gt;</code>
+        </header>
+        <p>Flips light/dark mode.</p>
+        <footer>Conveninet!</footer>
+      </article>
+
+      <article class="border">
+        <header>
+          <code>&lt;article class="border"&gt;</code>
+        </header>
+        <p>Shows the border</p>
+
+        <footer>
+          &lt;article&gt;, &lt;header&gt;, &lt;footer&gt;
+          Are all centered!
+        </footer>
+      </article>
     </main>
 
     <!-- Footer -->

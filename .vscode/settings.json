@@ -77,5 +77,11 @@
   "editor.suggest.localityBonus": true,
   "editor.suggest.preview": true,
   "editor.suggest.shareSuggestSelections": true,
-  "scssFormatter.printWidth": 100
+  "scssFormatter.printWidth": 100,
+
+  "editor.showFoldingControls": "always",
+  "editor.folding": true,
+  "editor.foldingMaximumRegions": 500,
+  "editor.foldingHighlight": true,
+  "editor.foldingStrategy": "auto"
 }

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.7.5 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.7.6 (https://fiko.rokma.rocks)
 * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -1372,7 +1372,6 @@
   }
 
   /* Button v2*/
-
   button {
     margin: 0;
     overflow: visible;
@@ -1393,8 +1392,6 @@
   [type='button'],
   [type='file']::file-selector-button,
   [role='button'] {
-    --background-color: var(--curBG);
-    --color: var(--curTXT);
     --box-shadow: var(--box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     padding: 2% var(--spaceLR);
     border: var(--curTXT50) solid var(--curTXT50);
@@ -1450,7 +1447,7 @@
     --background-color: var(--curTXT);
     --curTXT50: var(--curTXT50);
     --box-shadow: var(--box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-    --color: var(--curBG);
+    /* --color: var(--curBG); */
   }
   button:focus,
   [type='submit']:focus,
@@ -1478,7 +1475,7 @@
   [type='file']::file-selector-button {
     --curTXT50: var(--curTXT50);
     --background-color: var(--curBG);
-    --color: var(--curTXT);
+    /* --color: var(--curTXT); */
     cursor: pointer;
   }
   :is(
@@ -1501,7 +1498,7 @@
     ) {
     --curTXT50: var(--curTXT50);
     --background-color: var(--curBG);
-    --color: var(--curTXT);
+    /* --color: var(--curTXT); */
   }
   :is(
       button,
@@ -1521,9 +1518,9 @@
       [type='button'],
       [role='button']
     ).contrast {
-    --background-color: var(--curTXT);
-    --curTXT50: var(--curBG);
-    --color: var(--curBG);
+    /* --background-color: var(--curTXT);
+    --curTXT50: var(--curBG); */
+    /* --color: var(--curBG); */
   }
   :is(
       button,
@@ -1531,9 +1528,9 @@
       [type='button'],
       [role='button']
     ).contrast:is([aria-current], :hover, :active, :focus) {
-    --curTXT50: var(--curTXT50);
+    /* --curTXT50: var(--curTXT50);
     --background-color: var(--curBG);
-    --color: var(--curTXT);
+    --color: var(--curTXT); */
   }
   :is(
       button,
@@ -1552,9 +1549,9 @@
       [role='button']
     ).outline,
   [type='reset'].outline {
-    --background-color: transparent;
+    /* --background-color: transparent;
     --color: var(--curTXT);
-    --curTXT50: var(--curTXT50);
+    --curTXT50: var(--curTXT50); */
   }
   :is(
       button,
@@ -1569,7 +1566,7 @@
       :focus
     ) {
     --background-color: transparent;
-    --color: var(--curTXT50);
+    /* --color: var(--curTXT50); */
   }
 
   :is(
@@ -1579,8 +1576,8 @@
       [role='button']
     ).outline.secondary,
   [type='reset'].outline {
-    --color: var(--curTXT50);
-    --curTXT50: currentColor;
+    /* --color: var(--curTXT50);
+    --curTXT50: currentColor; */
   }
   :is(
       button,
@@ -1599,7 +1596,7 @@
       :active,
       :focus
     ) {
-    --color: var(--curTXT50);
+    /* --color: var(--curTXT50); */
   }
 
   :is(
@@ -1608,7 +1605,7 @@
       [type='button'],
       [role='button']
     ).outline.contrast {
-    --color: var(--curTXT50);
+    /* --color: var(--curTXT50); */
   }
   :is(
       button,
@@ -1621,7 +1618,7 @@
       :active,
       :focus
     ) {
-    --color: var(--curTXT50);
+    /* --color: var(--curTXT50); */
   }
 
   :where(

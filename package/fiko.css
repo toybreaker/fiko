@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.7.9 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.7.10 (https://fiko.rokma.rocks)
 * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -192,7 +192,12 @@
     /* set the CURRENT colours: */
     --curBG: var(--color-white);
     --curTXT: var(--color-black);
+    --curTXT05: rgba(0, 0, 0, 0.05);
+    --curTXT10: rgba(0, 0, 0, 0.1);
+    --curTXT15: rgba(0, 0, 0, 0.15);
+    --curTXT25: rgba(0, 0, 0, 0.25);
     --curTXT50: rgba(0, 0, 0, 0.5);
+    --curTXT75: rgba(0, 0, 0, 0.75);
     --curV: var(--icon-chevron-black);
     /* DERIVED: apply the CURRENT colours: */
     background-color: var(--curBG);
@@ -204,7 +209,12 @@
     /* set the CURRENT colours: */
     --curBG: var(--color-black);
     --curTXT: var(--color-white);
+    --curTXT05: rgba(255, 255, 255, 0.05);
+    --curTXT10: rgba(255, 255, 255, 0.1);
+    --curTXT15: rgba(255, 255, 255, 0.15);
+    --curTXT25: rgba(255, 255, 255, 0.25);
     --curTXT50: rgba(255, 255, 255, 0.5);
+    --curTXT75: rgba(255, 255, 255, 0.75);
     --curV: var(--icon-chevron-white);
     /* DERIVED: apply the CURRENT colours: */
     background-color: var(--curBG);
@@ -326,6 +336,10 @@
 
   sup {
     top: -0.5em;
+  }
+
+  cite {
+    font-style: italic;
   }
 
   address,
@@ -1833,7 +1847,7 @@
     header,
     footer {
       width: 100%;
-      background-color: var(--curTXT50);
+      background-color: var(--curTXT05);
     }
 
     button {
@@ -1849,31 +1863,47 @@
     }
   }
 }
+
+/*!
+* WHEN <article> IS USED TO CENTER CONTENT
+* SAY INSIDE A <section>,
+* IT WILL HAVE NO VERTICAL PADDING.
+*/
 article:only-child {
+  padding-top: 0;
+  margin-top: 0;
   padding-bottom: 0;
   margin-bottom: 0;
 }
-/*
-@container (max-width: 621px) {
-  article {
-    flex-direction: row;
-    align-self: start;
-    justify-items: start;
-  }
-  article img {
-    max-width: 100px;
-    order: 1;
-  }
-  article header {
-    order: 2;
-  }
-  article footer {
-    order: 3;
-  }
-} */
 
 /* 🐲 CLASSES */
 @layer classes {
+  /*!
+* YOU CAN STYLE THE <article>
+* to have diffentr shapes at different width.
+* give it a class (.rows) here then
+* do something like this:
+*/
+
+  @container (min-width: 600px) {
+    /* only for bigger screens */
+    article.rows {
+      flex-direction: row;
+      align-self: start;
+      justify-items: start;
+    }
+    article.rows img {
+      max-width: 100px;
+      order: 1;
+    }
+    article.rows header {
+      order: 2;
+    }
+    article.rows footer {
+      order: 3;
+    }
+  }
+
   .o,
   .centered,
   .center,
@@ -1882,8 +1912,18 @@ article:only-child {
   }
 
   .border {
-    border: var(--border-size) solid var(--curTXT50);
+    border: var(--border-size) solid var(--curTXT25);
     border-radius: var(--radius);
+
+    header {
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+    }
+
+    footer {
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+    }
   }
 
   .container {

@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.7.9",
+  "version": "0.7.10",
   "author": "Rokma",
   "contributors": "Toybreaker",
   "main": "package/fiko.css",
@@ -32,7 +32,7 @@
   ],
   "scripts": {
     "dev": "browser-sync start --s 'package' --files 'package'",
-    "build": "echo 'fiko.css comes ready to swim, no build steps. 🐸 Done!'"
+    "build": "echo 'fiko.css comes ready to swim, no build, boom! 🐸 Done.'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

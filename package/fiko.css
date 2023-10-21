@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.7.7 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.7.8 (https://fiko.rokma.rocks)
 * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -293,7 +293,8 @@
     font-family: var(--font-family);
 
     @media (max-width: 576px) {
-      word-break: break-all;
+      word-break: keep-all;
+      text-wrap: wrap;
     }
   }
   small {
@@ -358,8 +359,10 @@
     line-height: var(--line-height);
     font-family: var(--font-family);
     max-width: 50ch;
-
+    //TEXT-WRAP IS NEW! https://www.youtube.com/watch?v=L9ihWHngk9E
     text-wrap: balance;
+    word-break: keep-all;
+    word-break: auto-phrase;
   }
 
   h1 {

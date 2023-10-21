@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.7.6 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.7.7 (https://fiko.rokma.rocks)
 * 2024 ALMOST CLASSLESS BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -126,6 +126,7 @@
   }
 
   html {
+    scroll-behavior: smooth;
     font-size: 100%;
     line-height: var(--line-height);
     -webkit-text-size-adjust: 100%;
@@ -214,11 +215,12 @@
     /* DERIVED apply the CURRENT colours: */
     --box-shadow: 0 0 0 0.0625rem var(--curTXT50);
 
-    /* DYNAMIC SIZED spacing & borders */
+    /* DYNAMIC / RELATIVE SIZED spacing & borders */
     --spaceLR: 3.3svw;
     --spaceTB: 1.8svh;
     --radius: 1svw;
     --line-height: 1.33;
+    --border-size: 0.1svw;
     /* NOTE: Maybe make DERIVED?: */
     --gap: calc((3.3svw + 1.8svh) / 2);
 
@@ -240,6 +242,7 @@
       'SF Mono', Menlo, Consolas, 'Liberation Mono',
       monospace, var(--font-family-emoji);
 
+    /* VARIABLE BASE FONT SIZE   */
     --font-size: clamp(
       1.25rem,
       1.1717rem + 0.4174svw,
@@ -288,6 +291,10 @@
   body {
     font-size: var(--font-size);
     font-family: var(--font-family);
+
+    @media (max-width: 576px) {
+      word-break: break-all;
+    }
   }
   small {
     font-size: 77%;
@@ -341,6 +348,8 @@
   h4,
   h5,
   h6 {
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 0;
     margin-bottom: var(--spaceTB);
     color: var(--curTXT);
@@ -348,35 +357,27 @@
     font-size: var(--font-size);
     line-height: var(--line-height);
     font-family: var(--font-family);
-    max-width: 40ch;
+    max-width: 50ch;
 
     text-wrap: balance;
-    @container {
-    }
   }
 
   h1 {
-    --pico-color: var(--h1-color);
   }
 
   h2 {
-    --pico-color: var(--h2-color);
   }
 
   h3 {
-    --pico-color: var(--h3-color);
   }
 
   h4 {
-    --pico-color: var(--h4-color);
   }
 
   h5 {
-    --pico-color: var(--h5-color);
   }
 
   h6 {
-    --pico-color: var(--h6-color);
   }
 
   :where(
@@ -412,8 +413,6 @@
     margin-bottom: 0;
   }
   hgroup > *:not(:first-child):last-child {
-    --pico-color: var(--curTXT50);
-    --pico-font-weight: unset;
     font-size: var(--font-size);
     font-family: unset;
   }
@@ -433,8 +432,8 @@
 
   mark {
     padding: 0.125rem 0.25rem;
-    background-color: var(--mark-background-color);
-    color: var(--mark-color);
+    background-color: red;
+    color: var(--currentTXT);
     vertical-align: baseline;
   }
 
@@ -1876,6 +1875,8 @@
 
   .invert {
     filter: invert(100%);
+    webkitfilter: invert(100%);
+    mozfilter: invert(100%);
     backdrop-filter: hue-rotate(-180deg);
   }
 

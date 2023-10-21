@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.7.8</title>
+    <title>FIKO 0.7.9</title>
 
     <link
       rel="icon"
@@ -331,32 +331,6 @@
 
         <section>
           <hgroup>
-            <h2>Dialog / Modal</h2>
-          </hgroup>
-          <p>This is dialog</p>
-          <dialog>
-            <article>
-              <div>This is an HTML dialog!</div>
-              <button class="close">close</button>
-            </article>
-          </dialog>
-        </section>
-
-        <hr />
-
-        <section>
-          <hgroup>
-            <h2>Modal</h2>
-          </hgroup>
-          <p>The following element is modal:</p>
-          <modal>Yo, I'm an HTML modal!</modal>
-          <button class="close">x</button>
-        </section>
-
-        <hr />
-
-        <section>
-          <hgroup>
             <h2>Blockquote</h2>
           </hgroup>
 
@@ -441,8 +415,6 @@
           <footer>article footer</footer>
         </article>
 
-        <hr />
-
         <section>
           <hgroup>
             <h2>Headings</h2>
@@ -498,7 +470,15 @@
 
       <article>
         <hgroup>
-          <h2>Full-width</h2>
+          <h2>Full-width 'text-wrap: balance'</h2>
+          <h3>
+            Does your browser support it? This long
+            paragraph is here to let you see if it makes any
+            difference. Does it? This long paragraph is here
+            to let you see if it makes any difference. Does
+            it? This long paragraph is here to let you see
+            if it makes any difference. Does it?
+          </h3>
         </hgroup>
       </article>
 
@@ -521,6 +501,30 @@
           Are all centered!
         </footer>
       </article>
+
+      <div class="to_do container">
+        <section data-type="modal">
+          <hgroup>
+            <h2>Dialog</h2>
+          </hgroup>
+          <dialog>
+            <div>Hello i an HTML dialog!</div>
+            <button class="close">close</button>
+          </dialog>
+        </section>
+
+        <hr />
+
+        <section>
+          <hgroup>
+            <h2>Modal</h2>
+          </hgroup>
+
+          <modal>Yo, I'm an HTML modal!</modal>
+          <button class="close">x</button>
+        </section>
+      </div>
+      <hr />
     </main>
 
     <!-- Footer -->

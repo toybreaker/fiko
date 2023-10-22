@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.7.11</title>
+    <title>FIKO 0.7.12</title>
 
     <link
       rel="icon"
@@ -26,7 +26,7 @@
   <body>
     <!-- Header -->
     <header class="invert">
-      <nav class="toggle-wrapper">
+      <nav class="toggle-wrapper container">
         <h1>FIIIIIIKO&nbsp;</h1>
 
         <ul>
@@ -173,8 +173,6 @@
           </details>
         </section>
 
-        <hr />
-
         <section>
           <hgroup>
             <h2>Paragraph</h2>
@@ -263,7 +261,6 @@
                   <th scope="col">Mars</th>
                   <th scope="col">Saturn</th>
                   <th scope="col">Earth</th>
-                  <th scope="col">Average</th>
                 </tr>
               </thead>
               <tbody>
@@ -275,7 +272,6 @@
                   <td>6,779</td>
                   <td>6,779</td>
                   <td>12,742</td>
-                  <td>9,126</td>
                 </tr>
                 <tr>
                   <th scope="row">Distance to Sun (AU)</th>
@@ -285,7 +281,6 @@
                   <td>1.52</td>
                   <td>1.52</td>
                   <td>1.00</td>
-                  <td>0.91</td>
                 </tr>
                 <tr>
                   <th scope="row">Orbit (days)</th>
@@ -295,7 +290,6 @@
                   <td>687</td>
                   <td>687</td>
                   <td>365</td>
-                  <td>341</td>
                 </tr>
                 <tr>
                   <th scope="row">Chinese Element</th>
@@ -304,7 +298,6 @@
                   <td>Wood</td>
                   <td>Fire</td>
                   <td>Earth</td>
-                  <td>n.a.</td>
                   <td>n.a.</td>
                 </tr>
 
@@ -315,7 +308,6 @@
                   <td>Azure Dragon</td>
                   <td>Vermilion Bird</td>
                   <td>Yellow Dragon</td>
-                  <td>n.a.</td>
                   <td>n.a.</td>
                 </tr>
               </tbody>
@@ -420,17 +412,20 @@
           <footer>article footer</footer>
         </article>
 
+        <hr />
+
         <section>
           <hgroup>
             <h2>Headings</h2>
+            <small>Note the fat spacing. Readablity!</small>
           </hgroup>
 
-          <h1>h1 FIKO 🐸 CSS</h1>
-          <h2>h2 FIKO 🐸 Framework</h2>
+          <h1>h1 FIKO 🐸</h1>
+          <h2>h2 FIKO 🐸 CSS</h2>
           <h3>h3 FIKO 🐸 Framework</h3>
-          <h4>h4 FIKO 🐸 Framework</h4>
-          <h5>h4 FIKO 🐸 Framework</h5>
-          <h6>h6 FIKO 🐸 Framework</h6>
+          <h4>h4 FIKO 🐸 CSS Framework</h4>
+          <h5>h4 FIKO 🐸 CSS Framework</h5>
+          <h6>h6 FIKO 🐸 CSS Framework</h6>
         </section>
 
         <hr />
@@ -475,19 +470,32 @@
 
       <article>
         <hgroup>
-          <h2>Full-width 'text-wrap: balance'</h2>
-          <h3>
+          <header>
+            <h2>text-wrap: balance</h2>
+          </header>
+          <p>
+            Fiko uses:
+            <code>&lt;text-wrap: balance&gt;</code>
+            <br />
             Does your browser support it? This long
             paragraph is here to let you see if it makes any
             difference. Does it? This long paragraph is here
-            to let you see if it makes any difference. Does
-            it? This long paragraph is here to let you see
-            if it makes any difference. Does it?
-          </h3>
+            to let you see if it makes any difference. It
+            should improve readability. Does it? This long
+            paragraph is here to let you see if it makes any
+            difference. Does it?
+          </p>
         </hgroup>
       </article>
+      <hr />
 
       <section class="container">
+        <article>
+          <hgroup>
+            <h2>Invert css class</h2>
+          </hgroup>
+        </article>
+        <hr />
         <article class="invert">
           <header>
             <code>&lt;article class="invert"&gt;</code>
@@ -495,7 +503,7 @@
           <p>Flips light/dark mode.</p>
           <footer>Convenient!</footer>
         </article>
-
+        <hr />
         <article class="border">
           <header>
             <code>&lt;article class="border"&gt;</code>
@@ -510,25 +518,54 @@
       </section>
 
       <hr />
-      <section class="rows">
-        <article class="rows">
+
+      <section class="container">
+        <hgroup>
+          <h2>container queries</h2>
+        </hgroup>
+
+        <article class="rows border">
           <header>header</header>
+          <img
+            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+            alt="rokma.com"
+          />
+          <p>body</p>
           <footer>footer</footer>
         </article>
-        <article class="rows">
+        <article class="rows border">
           <header>header</header>
+          <img
+            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+            alt="rokma.com"
+          />
+          <p>body</p>
           <footer>footer</footer>
         </article>
-        <article class="rows">
+        <article class="rows border">
           <header>header</header>
+          <img
+            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+            alt="rokma.com"
+          />
+          <p>body</p>
           <footer>footer</footer>
         </article>
-        <article class="rows">
+        <article class="rows border">
           <header>header</header>
+          <img
+            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+            alt="rokma.com"
+          />
+          <p>body</p>
           <footer>footer</footer>
         </article>
-        <article class="rows">
+        <article class="rows border">
           <header>header</header>
+          <img
+            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+            alt="rokma.com"
+          />
           <footer>footer</footer>
         </article>
       </section>
@@ -563,13 +600,11 @@
     <!-- Footer -->
     <footer class="invert">
       <article class="container">
-        <header>
-          <p>
-            FIKO
-            <span class="invert">🐸</span>
-            CSS &copy;2023 TOYBREAKER
-          </p>
-        </header>
+        <p>
+          FIKO
+          <span class="invert">🐸</span>
+          CSS &copy;2023 TOYBREAKER
+        </p>
 
         <button
           class="theme-switch"
@@ -632,12 +667,9 @@
           </a>
         </small>
 
-        <footer>
-          <small><a id="pixelratio"></a></small>
-        </footer>
+        <small><a id="pixelratio"></a></small>
       </article>
     </footer>
-
     <script>
       // ONE <details open> OPEN AT A TIME.
       document.addEventListener(

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.7.11 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.7.12 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -218,12 +218,12 @@
   :root {
     /* DERIVED apply the CURRENT colours: */
 
-    --box-shadow: 0 0 0 0.0625rem var(--curTXTalpha);
     --curTXTalpha: color-mix(
       in srgb,
-      var(--curTXT) transparent,
-      var(--alpha)
+      currentColor,
+      transparent 50%
     );
+    --box-shadow: 0 0 0 0.0625rem var(--curTXTalpha);
 
     /* DYNAMIC / RELATIVE SIZED spacing & borders */
     --spaceLR: 3.3svw;
@@ -350,8 +350,8 @@
   pre,
   table,
   ul {
-    margin-top: 0;
-    margin-bottom: var(--spaceTB);
+    margin-block-start: 0;
+    margin-block-end: var(--spaceTB);
     color: var(--curTXT);
     font-style: normal;
     font-weight: var(--font-weight);
@@ -363,10 +363,9 @@
   h4,
   h5,
   h6 {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: var(--spaceTB);
+    margin-inline: auto;
+    margin-block-start: 0;
+    margin-block-end: var(--spaceTB);
     color: var(--curTXT);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
@@ -440,11 +439,17 @@
       ul
     )
     ~ :is(h1, h2, h3, h4, h5, h6) {
-    margin-top: var(--spaceTB);
+    margin-block-start: var(--spaceTB);
   }
 
   p {
-    margin-bottom: var(--spaceTB);
+    margin-block-end: var(--spaceTB);
+  }
+
+  @supports (text-wrap: balance) {
+    p {
+      text-wrap: balance;
+    }
   }
 
   em {
@@ -452,11 +457,11 @@
   }
 
   hgroup {
-    margin-bottom: var(--spaceTB);
+    margin-block-end: var(--spaceTB);
   }
   hgroup > * {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
   hgroup > *:not(:first-child):last-child {
     font-size: var(--font-size);
@@ -464,12 +469,13 @@
   }
 
   :where(ol, ul) li {
-    margin-bottom: calc(var(--spaceTB) * 0.25);
+    margin-block-end: calc(var(--spaceTB) * 0.25);
   }
 
   :where(dl, ol, ul) :where(dl, ol, ul) {
-    margin: 0;
-    margin-top: calc(var(--spaceTB) * 0.25);
+    margin-inline: 0;
+    margin-block-start: calc(var(--spaceTB) * 0.25);
+    margin-block-end: 0;
   }
 
   ul li {
@@ -477,8 +483,9 @@
   }
 
   mark {
-    padding: 0.125rem 0.25rem;
-    background-color: red;
+    padding-block: 0.125rem;
+    padding-inline: 0.25rem;
+    background-color: orange;
     color: var(--curTXT);
     vertical-align: baseline;
   }
@@ -486,20 +493,17 @@
   blockquote {
     max-width: 60ch;
     display: block;
-    margin: calc(var(--spaceTB) * 4) auto;
-    padding: var(--spaceTB) var(--spaceLR);
+    margin-block: calc(var(--spaceTB) * 4);
+    margin-inline: auto;
+    padding-block: var(--spaceTB);
+    padding-inline: var(--spaceLR);
     border-right: none;
-    border-left: var(--border-size) solid
-      color-mix(in srgb, currentColor, transparent 50%);
-    -webkit-border-start: var(--border-size) solid
-      color-mix(in srgb, currentColor, transparent 50%);
     border-inline-start: var(--border-size) solid
       color-mix(in srgb, currentColor, transparent 50%);
-    -webkit-border-end: none;
     border-inline-end: none;
   }
   blockquote footer {
-    margin-top: calc(var(--spaceTB) * 0.5);
+    margin-block-start: calc(var(--spaceTB) * 0.5);
     color: var(--curTXT);
     overflow-x: hidden;
     max-width: 100%;
@@ -568,7 +572,7 @@
 
   pre {
     display: block;
-    margin-bottom: var(--spaceTB);
+    margin-block-end: var(--spaceTB);
     overflow-x: auto;
   }
   pre > code {
@@ -677,8 +681,7 @@
 
   p {
     max-width: 60ch;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
   }
 }
 
@@ -703,7 +706,7 @@
   [role='group'] {
     display: inline-flex;
     position: relative;
-    margin-bottom: var(--spaceTB);
+    margin-block-end: var(--spaceTB);
     border-radius: var(--radius);
     box-shadow: var(
       --group-box-shadow,
@@ -722,7 +725,7 @@
   [role='group'] select {
     position: relative;
     flex: 1 1 auto;
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
   [role='search'] > *:not(:first-child),
   [role='search']
@@ -736,7 +739,7 @@
       :first-child
     ),
   [role='group'] select:not(:first-child) {
-    margin-left: 0;
+    margin-inline-start: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -785,7 +788,7 @@
       :first-child
     ),
   [role='group'] select:not(:first-child) {
-    margin-left: var(--spaceLR);
+    margin-inline-start: var(--spaceLR);
   }
   [role='search'] button,
   [role='search'] [type='submit'],
@@ -954,7 +957,8 @@
   dialog article {
     width: 100%;
     max-height: calc(100svh - var(--spaceTB) * 2);
-    margin: var(--spaceTB) var(--spaceLR);
+    margin-block: var(--spaceTB);
+    margin-inline: var(--spaceLR);
     overflow: auto;
     background-color: var(--curTXT);
     color: var(--curBG);
@@ -975,7 +979,7 @@
   }
   dialog article > header .close {
     margin: 0;
-    margin-left: var(--spaceLR);
+    margin-inline-start: var(--spaceLR);
     float: right;
   }
   dialog article > footer {
@@ -983,22 +987,22 @@
   }
   dialog article > footer button,
   dialog article > footer [role='button'] {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
   dialog article > footer button:not(:first-of-type),
   dialog
     article
     > footer
     [role='button']:not(:first-of-type) {
-    margin-left: calc(var(--spaceLR) * 0.5);
+    margin-inline-start: calc(var(--spaceLR) * 0.5);
   }
   dialog article .close {
     display: block;
     width: 1rem;
     height: 1rem;
-    margin-top: calc(var(--spaceTB) * -1);
-    margin-bottom: var(--spaceTB);
-    margin-left: auto;
+    margin-block-start: calc(var(--spaceTB) * -1);
+    margin-block-end: var(--spaceTB);
+    margin-inline-start: auto;
     background-image: var(--icon-close);
     background-position: center;
     background-size: auto 1rem;
@@ -1017,7 +1021,7 @@
   }
 
   .modal-is-open {
-    padding-right: var(--scrollbar-width, 0px);
+    padding-inline-end: var(--scrollbar-width, 0px);
     overflow: hidden;
     pointer-events: none;
     touch-action: none;
@@ -1077,7 +1081,7 @@
     bottom: var(--spaceTB);
     width: auto;
     padding: 0.75rem;
-    margin-bottom: 0;
+    margin-block-end: 0;
     /* border-radius: 2rem; */
     line-height: 1;
     text-align: right;
@@ -1174,8 +1178,7 @@
   */ nav,
   nav ul {
     display: grid;
-    padding-left: calc(var(--spaceLR) * 2);
-    padding-right: calc(var(--spaceLR) * 2);
+    padding-inline: calc(var(--spaceLR) * 2);
     gap: var(--gap);
     grid-template-columns: repeat(
       auto-fit,
@@ -1206,19 +1209,19 @@
   nav ol,
   nav ul {
     align-items: center;
-    margin-bottom: 0;
+    margin-block-end: 0;
     padding: 0;
     list-style: none;
   }
 
   nav ol:first-of-type,
   nav ul:first-of-type {
-    margin-left: var(--spaceLR);
+    margin-inline-start: var(--spaceLR);
   }
 
   nav ol:last-of-type,
   nav ul:last-of-type {
-    margin-right: var(--spaceLR);
+    margin-inline-end: var(--spaceLR);
   }
 
   nav li {
@@ -1246,9 +1249,9 @@
     ),
   nav li select {
     height: auto;
-    margin-right: inherit;
-    margin-bottom: 0;
-    margin-left: inherit;
+    margin-inline-end: inherit;
+    margin-block-end: 0;
+    margin-inline-start: inherit;
     padding: var(--spaceTB) var(--spaceLR);
   }
 
@@ -1310,9 +1313,12 @@
     font-weight: 500;
   }
 
+  th[scope='row'] {
+    white-space: nowrap;
+  }
+
   table.striped tbody tr:nth-child(odd) th,
   table.striped tbody tr:nth-child(odd) td {
-    --alpha: 40%;
     background-color: color-mix(
       in srgb,
       currentColor,
@@ -1361,7 +1367,7 @@
   }
 
   section {
-    margin-bottom: var(--spaceTB);
+    margin-block-end: var(--spaceTB);
   }
 
   /* GRID | Minimal grid system with auto-layout columns */
@@ -1381,30 +1387,18 @@
   .grid {
     display: grid;
     gap: var(--gap);
-    grid-template-rows: 1fr;
-    align-items: start;
-    justify-items: start;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    );
+    align-items: center;
+    justify-items: center;
     margin: 0;
 
     > * {
       /* justify-self: center; */
       align-self: stretch;
     }
-  }
-}
-
-@container (max-width: 575px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@container (min-width: 576px) {
-  .grid {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(300px, 1fr)
-    );
   }
 }
 
@@ -1432,10 +1426,10 @@ figure figcaption {
 @layer components {
   hr {
     height: 0;
-    margin: var(--spaceTB) 0;
+    margin-block: var(--spaceTB);
+    margin-inline: 0;
     border: 0;
-    border-top: 1px solid var(--curTXTalpha);
-    color: inherit;
+    border-top: 1px solid currentColor;
   }
 
   /* Button v2*/
@@ -1529,7 +1523,7 @@ figure figcaption {
   [type='submit'],
   [type='reset'],
   [type='button'] {
-    margin-bottom: var(--spacing);
+    margin-block-end: var(--spacing);
   }
 
   :is(
@@ -1720,7 +1714,7 @@ figure figcaption {
 
   details {
     display: block;
-    margin-bottom: var(--spaceTB);
+    margin-block-end: var(--spaceTB);
     border-bottom: var(--border-size) solid currentColor;
 
     & summary {
@@ -1804,7 +1798,7 @@ figure figcaption {
   }
 
   details[open] > summary {
-    margin-bottom: var(--spaceTB);
+    margin-block-end: var(--spaceTB);
     position: -webkit-sticky !important; /* Safari */
     position: sticky;
     border-bottom: var(--border-size) solid currentColor;
@@ -1888,24 +1882,33 @@ figure figcaption {
     align-items: center;
     justify-content: start;
 
-    margin-inline: 1rem;
+    margin-block: var(--spaceTB);
+    margin-inline: var(--spaceLR);
     gap: 10px;
 
     > * {
       text-align: center;
-      padding: var(--spaceTB) calc(var(--spaceLR) / 2);
+      padding-block: var(--spaceTB);
+      padding-inline: calc(var(--spaceLR) / 2);
+      alignment-baseline: text-before-edge;
     }
 
-    header,
-    footer {
+    > header,
+    > footer {
       width: 100%;
-      background-color: var(--curTXTalpha);
+      background-color: color-mix(
+        in srgb,
+        currentColor,
+        transparent 90%
+      );
     }
 
     button {
       display: block;
-      padding: var(--spaceTB) var(--spaceLR);
-      margin: var(--spaceTB) var(--spaceLR);
+      padding-block: var(--spaceTB);
+      padding-inline: var(--spaceLR);
+      margin-block: var(--spaceTB);
+      margin-inline: var(--spaceLR);
       border: var(--curTXTalpha) 1px solid;
       border-radius: var(--radius);
       background-color: var(--curTXT);
@@ -1922,12 +1925,12 @@ figure figcaption {
 * IT WILL HAVE NO VERTICAL PADDING.
 */
 
-/* article:only-child {
+article:only-child {
   padding-top: 0;
-  margin-top: 0;
+  margin-block-start: 0;
   padding-bottom: 0;
-  margin-bottom: 0;
-} */
+  margin-block-end: 0;
+}
 
 /* 🐲 CLASSES */
 @layer classes {
@@ -1937,23 +1940,37 @@ figure figcaption {
 * give it a class (.rows) here then
 * do something like this:
 */
-
+  @layer containers {
+  }
   @container (min-width: 600px) {
-    /* only for bigger screens */
     article.rows {
-      flex-direction: row;
-      align-self: start;
-      justify-items: start;
+      display: grid;
+      grid-template-columns: 300px 1.4fr;
+      grid-template-rows: 1fr 3fr 1fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        'img header'
+        'img body'
+        'img footer';
     }
-    article.rows img {
-      max-width: 100px;
-      order: 1;
+
+    img {
+      /* grid-area: img; */
+      /* width: 20em; */
     }
-    article.rows header {
-      order: 2;
+
+    header {
+      grid-area: header;
     }
-    article.rows footer {
-      order: 3;
+
+    footer {
+      grid-area: footer;
+    }
+
+    :not(header),
+    :not(footer) {
+      /* grid-area: body; */
     }
   }
 
@@ -1965,7 +1982,8 @@ figure figcaption {
   }
 
   .border {
-    border: var(--border-size) solid var(--curTXTalpha);
+    border: var(--border-size) solid
+      color-mix(in srgb, currentColor, transparent 50%);
     border-radius: var(--radius);
 
     header {
@@ -1980,8 +1998,8 @@ figure figcaption {
   }
 
   .container {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-inline-start: 5%;
+    margin-inline-end: 5%;
   }
 
   .invert {
@@ -1989,5 +2007,12 @@ figure figcaption {
     webkitfilter: invert(100%);
     mozfilter: invert(100%);
     backdrop-filter: hue-rotate(-180deg);
+  }
+
+  @supports (text-wrap: balance) {
+    .balance,
+    .balance > * {
+      text-wrap: balance;
+    }
   }
 }

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.7.12 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.7.13 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -61,10 +61,10 @@
     list-style: none;
   }
 
-  /* For images to not be able to exceed their container */
+  /* For images to not be able to exceed their container vertically*/
   img {
     max-inline-size: 100%;
-    max-block-size: 100%;
+    max-block-size: 100svh;
   }
 
   /* removes spacing between cells in tables */
@@ -217,19 +217,20 @@
 
   :root {
     /* DERIVED apply the CURRENT colours: */
+    --transparent: 50%;
 
-    --curTXTalpha: color-mix(
+    --curCOLa: color-mix(
       in srgb,
       currentColor,
-      transparent 50%
+      transparent var(--transparent)
     );
-    --box-shadow: 0 0 0 0.0625rem var(--curTXTalpha);
+    --box-shadow: 0 0 0 0.0625rem var(--curCOLa);
 
     /* DYNAMIC / RELATIVE SIZED spacing & borders */
     --spaceLR: 3.3svw;
     --spaceTB: 1.8svh;
     --radius: 1svw;
-    --line-height: 1.33;
+    --line-height: 1.55;
     --border-size: 0.1svw;
     /* NOTE: Maybe make DERIVED?: */
     --gap: calc((3.3svw + 1.8svh) / 2);
@@ -289,7 +290,7 @@
   --x4l: 2560px;
   /* end root */
 
-  --modal-overlay-backdrop-filter: var(--curTXTalpha);
+  --modal-overlay-backdrop-filter: var(--curCOLa);
 }
 
 /* 🐲 BASE */
@@ -310,10 +311,6 @@
   small {
     font-size: 77%;
     line-height: var(--line-height);
-    &:has(a) {
-      min-height: 42px;
-      line-height: 42px;
-    }
   }
 
   /* TYPOGRAPHY */
@@ -363,7 +360,7 @@
   h4,
   h5,
   h6 {
-    margin-inline: auto;
+    margin-inline: 0;
     margin-block-start: 0;
     margin-block-end: var(--spaceTB);
     color: var(--curTXT);
@@ -391,7 +388,9 @@
 
   h1,
   .h1 {
-    --font-size: 2rem;
+    /* --font-size: 2rem; */
+    --line-height: 1.2;
+    --font-size: clamp(2rem, 1.7993rem + 0.8451vw, 2.75rem);
     text-transform: uppercase;
     border-bottom: 0 none !important;
     color: var(--curTXT);
@@ -402,26 +401,49 @@
 
   h2,
   .h2 {
-    --font-size: 1.75rem;
+    --line-height: 1.2;
+    --font-size: clamp(
+      1.8rem,
+      1.6261rem + 0.7324vw,
+      2.45rem
+    );
     text-transform: uppercase;
     color: var(--curTXT);
   }
 
   h3,
   .h3 {
-    --font-size: 1.5rem;
+    --line-height: 1.2;
+    --font-size: clamp(
+      1.6rem,
+      1.4662rem + 0.5634vw,
+      2.1rem
+    );
     color: var(--curTXT);
   }
 
   h4,
   .h4 {
-    --font-size: 1.25rem;
+    --line-height: 1.2;
+    --font-size: clamp(1.4rem, 1.293rem + 0.4507vw, 1.8rem);
     color: var(--curTXT);
   }
 
   h5,
   .h5 {
-    --font-size: 1.125rem;
+    --line-height: 1.2;
+    --font-size: clamp(
+      1.2rem,
+      1.1331rem + 0.2817vw,
+      1.45rem
+    );
+    color: var(--curTXT);
+  }
+
+  h6,
+  .h6 {
+    --line-height: 1.2;
+    --font-size: clamp(0.9rem, 0.8732rem + 0.1127vw, 1rem);
     color: var(--curTXT);
   }
 
@@ -516,20 +538,20 @@
   }
 
   ins {
-    color: var(--curTXTalpha);
+    color: var(--curCOLa);
     text-decoration: none;
   }
 
   del {
-    color: var(--curTXTalpha);
+    color: var(--curCOLa);
   }
 
   ::-moz-selection {
-    background-color: var(--curTXTalpha);
+    background-color: var(--curCOLa);
   }
 
   ::selection {
-    background-color: var(--curTXTalpha);
+    background-color: var(--curCOLa);
   }
 
   /* CODE */
@@ -869,10 +891,8 @@
         select:focus
       )
       [role='button'] {
-      --box-shadow: 0 0 0 var(--curTXTalpha)
-        var(--curTXTalpha);
-      --box-shadow: 0 0 0 var(--curTXTalpha)
-        var(--curTXTalpha);
+      --box-shadow: 0 0 0 var(--curCOLa) var(--curCOLa);
+      --box-shadow: 0 0 0 var(--curCOLa) var(--curCOLa);
     }
     [role='search'] button:focus,
     [role='search'] [type='submit']:focus,
@@ -948,9 +968,9 @@
     align-items: center;
     justify-content: center;
     border: 0;
-    -webkit-backdrop-filter: var(--curTXTalpha);
+    -webkit-backdrop-filter: var(--curCOLa);
     backdrop-filter: var(--modal-overlay-backdrop-filter);
-    background-color: var(--curTXTalpha);
+    background-color: var(--curCOLa);
     color: var(--curBG);
     filter: invert(1);
   }
@@ -1146,7 +1166,7 @@
 
   .switcher label {
     user-select: none;
-    &:hover {
+    & :hover {
       cursor: pointer;
     }
   }
@@ -1273,7 +1293,7 @@
     -webkit-margin-start: calc(var(--spaceLR) / 2);
     margin-inline-start: calc(var(--spaceLR) / 2);
     content: var(--nav-breadcrumb-divider);
-    color: var(--curTXTalpha);
+    color: var(--curCOLa);
     text-align: center;
     text-decoration: none;
   }
@@ -1297,8 +1317,7 @@
   td {
     padding: calc(var(--spaceTB) / 2) var(--spaceLR);
     width: fit-content;
-    border-bottom: var(--curTXTalpha) solid
-      var(--border-size);
+    border-bottom: var(--curCOLa) solid var(--border-size);
     background-color: var(--curBG);
     color: var(--curTXT);
     font-weight: var(--font-weight);
@@ -1308,7 +1327,7 @@
 
   tfoot th,
   tfoot td {
-    border-top: var(--curTXTalpha) solid var(--border-size);
+    border-top: var(--curCOLa) solid var(--border-size);
     border-bottom: 0;
     font-weight: 500;
   }
@@ -1327,7 +1346,7 @@
   }
 
   img {
-    width: auto;
+    /* width: auto; */
     height: auto;
     border-style: none;
   }
@@ -1408,16 +1427,18 @@ figure {
   margin: 0;
   padding: 0;
   overflow-x: auto;
+  /* for big images lets limit the size/scroll: */
   img {
     max-inline-size: 200%;
   }
-}
-figure figcaption {
-  padding: var(--spaceTB) 0;
-  color: var(--curTXTalpha);
-  text-transform: italic;
-  &::first-letter {
-    text-transform: uppercase;
+
+  & figcaption {
+    padding-block: var(--spaceTB);
+    padding-inline: var(--spaceLR);
+    color: var(--curCOLa);
+    & ::first-letter {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -1455,7 +1476,7 @@ figure figcaption {
   [role='button'] {
     --box-shadow: var(--box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     padding: 2% var(--spaceLR);
-    border: var(--curTXTalpha) solid var(--curTXTalpha);
+    border: var(--curCOLa) solid var(--curCOLa);
     border-radius: var(--radius);
     outline: none;
     background-color: var(--curBG);
@@ -1506,7 +1527,7 @@ figure figcaption {
       :focus
     ) {
     --background-color: var(--curTXT);
-    --curTXTalpha: var(--curTXTalpha);
+    --curCOLa: var(--curCOLa);
     --box-shadow: var(--box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     color: var(--curBG);
   }
@@ -1517,7 +1538,7 @@ figure figcaption {
   [type='file']::file-selector-button:focus,
   [role='button']:focus {
     --box-shadow: var(--box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--curTXTalpha);
+      0 0 0 var(--outline-width) var(--curCOLa);
   }
 
   [type='submit'],
@@ -1534,7 +1555,7 @@ figure figcaption {
     ).secondary,
   [type='reset'],
   [type='file']::file-selector-button {
-    --curTXTalpha: var(--curTXTalpha);
+    --curCOLa: var(--curCOLa);
     --background-color: var(--curBG);
     color: var(--curTXT);
     cursor: pointer;
@@ -1557,7 +1578,7 @@ figure figcaption {
       :active,
       :focus
     ) {
-    --curTXTalpha: var(--curTXTalpha);
+    --curCOLa: var(--curCOLa);
     --background-color: var(--curBG);
     color: var(--curTXT);
   }
@@ -1570,7 +1591,7 @@ figure figcaption {
   [type='reset']:focus,
   [type='file']::file-selector-button:focus {
     --box-shadow: var(--box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--curTXTalpha);
+      0 0 0 var(--outline-width) var(--curCOLa);
   }
 
   :is(
@@ -1580,7 +1601,7 @@ figure figcaption {
       [role='button']
     ).contrast {
     /* --background-color: var(--curTXT);
-    --curTXTalpha: var(--curBG); */
+    --curCOLa: var(--curBG); */
     /* --color: var(--curBG); */
   }
   :is(
@@ -1589,7 +1610,7 @@ figure figcaption {
       [type='button'],
       [role='button']
     ).contrast:is([aria-current], :hover, :active, :focus) {
-    /* --curTXTalpha: var(--curTXTalpha);
+    /* --curCOLa: var(--curCOLa);
     --background-color: var(--curBG);
     --color: var(--curTXT); */
   }
@@ -1600,7 +1621,7 @@ figure figcaption {
       [role='button']
     ).contrast:focus {
     --box-shadow: var(--box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--curTXTalpha);
+      0 0 0 var(--outline-width) var(--curCOLa);
   }
 
   :is(
@@ -1724,7 +1745,7 @@ figure figcaption {
       transition: color var(--transition);
       border-bottom: 1px solid currentColor;
 
-      &:not([role]) {
+      & :not([role]) {
         color: var(--curTXT);
       }
 
@@ -1734,45 +1755,41 @@ figure figcaption {
         content: 'Closed';
       }
 
-      &::
-      -webkit-details-marker {
+      & ::-webkit-details-marker {
         display: none;
       }
 
-      &::
-      marker {
+      & ::marker {
         display: none;
       }
 
-      &::
-      -moz-list-bullet {
+      & ::-moz-list-bullet {
         list-style-type: none;
       }
 
-      &: focus {
+      & :focus {
         outline: none;
 
         /* NO SAFARI OUTLINE DECORATION */
-        /* &:not([role]) {
-          outline: 4px solid var(--curTXTalpha);
+        /* & :not([role]) {
+          outline: 4px solid var(--curCOLa);
           outline-offset: 1ch;
           color: var(--curTXT);
         } */
       }
 
-      &[role='button'] {
+      & [role='button'] {
         width: 100%;
         text-align: left;
 
-        &::
-      after {
+        & ::after {
           height: calc(1rem * var(--line-height));
         }
       }
     }
 
     /* summary:focus-visible:not([role]) {
-      outline: var(--border-size) solid var(--curTXTalpha);
+      outline: var(--border-size) solid var(--curCOLa);
       outline-offset: 1ch;
       color: var(--curTXT);
     } */
@@ -1909,13 +1926,19 @@ figure figcaption {
       padding-inline: var(--spaceLR);
       margin-block: var(--spaceTB);
       margin-inline: var(--spaceLR);
-      border: var(--curTXTalpha) 1px solid;
+      border: var(--curCOLa) 1px solid;
       border-radius: var(--radius);
       background-color: var(--curTXT);
       color: var(--curBG);
       /* before font-size: unset, it went to 13px somehow, gosh */
       font-size: unset;
     }
+  }
+  & :only-child {
+    padding-top: 0;
+    margin-block-start: 0;
+    padding-bottom: 0;
+    margin-block-end: 0;
   }
 }
 
@@ -1925,12 +1948,12 @@ figure figcaption {
 * IT WILL HAVE NO VERTICAL PADDING.
 */
 
-article:only-child {
+/* article:only-child {
   padding-top: 0;
   margin-block-start: 0;
   padding-bottom: 0;
   margin-block-end: 0;
-}
+} */
 
 /* 🐲 CLASSES */
 @layer classes {

@@ -73,6 +73,9 @@
     "xml",
     "svg"
   ],
+  "html.format.preserveNewLines": true,
+  "html.format.maxPreserveNewLines": null,
+  "markdown.preview.breaks": true,
   "editor.inlineSuggest.showToolbar": "always",
   "editor.suggest.localityBonus": true,
   "editor.suggest.preview": true,
@@ -83,5 +86,11 @@
   "editor.folding": true,
   "editor.foldingMaximumRegions": 500,
   "editor.foldingHighlight": true,
-  "editor.foldingStrategy": "auto"
+  "editor.foldingStrategy": "auto",
+  "html.format.preserveNewLines": true,
+  "editor.wordBreak": "keepAll",
+  "css.lint.float": "warning",
+  "scss.lint.float": "warning",
+  "debug.javascript.breakOnConditionalError": true,
+  "markdown.preview.breaks": true
 }

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.7.13 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.7.14 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -13,10 +13,11 @@
 */
 
 /* 🐲 LAYER ORDER */
-@layer reset, root, base, roles, toggle, containers, components, classes;
+@layer reset, root, base, roles, toggle, containers, components, classes, support_test;
 
 /* 🐲 RESET */
 @layer reset {
+  /* THIS LAYER SHOULD STAY FREE OF CSS VARIABLES */
   /* The New CSS Reset */
   *:where(
       :not(
@@ -33,7 +34,6 @@
     display: revert;
   }
 
-  /* Preferred box-sizing value */
   *,
   *::before,
   *::after {
@@ -48,69 +48,69 @@
     vertical-align: inherit;
   }
 
-  /* Reapply the pointer cursor for anchor tags */
+  /* Reapply the pointer cursor for anchor tags: */
   a,
   button {
     cursor: revert;
   }
 
-  /* Remove list styles (bullets/numbers) */
+  /* Remove list styles (bullets/numbers): */
   ol,
   ul,
   menu {
     list-style: none;
   }
 
-  /* For images to not be able to exceed their container vertically*/
+  /* Manage how images exceed their container: */
   img {
     max-inline-size: 100%;
-    max-block-size: 100svh;
+    max-block-size: 100%;
   }
 
-  /* removes spacing between cells in tables */
+  /* Removes spacing between cells in tables: */
   table {
     border-collapse: collapse;
   }
 
-  /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+  /* Safari: Fix user-select:none on the <body> text input bug */
   input,
   textarea {
     -webkit-user-select: auto;
   }
 
-  /* revert the 'white-space' property for textarea elements on Safari */
+  /*  Safari: Revert 'white-space' property for textarea elements */
   textarea {
     white-space: revert;
   }
 
-  /* minimum style to allow to style meter element */
+  /* Minimum style to allow to style meter element */
   meter {
     -webkit-appearance: revert;
     appearance: revert;
   }
 
-  /* preformatted text - use only for this feature */
+  /* Preformatted text - use only for this feature */
   :where(pre) {
     all: revert;
   }
 
-  /* reset default text opacity of input placeholder */
+  /*Reset default text opacity of input placeholder */
   ::placeholder {
     color: unset;
   }
 
-  /* remove default dot (•) sign */
+  /* Remove default dot (•) sign */
   ::marker {
     content: initial;
   }
 
-  /* fix the feature of 'hidden' attribute.
+  /* Fix the feature of 'hidden' attribute.
   display:revert; revert to element instead of attribute */
   :where([hidden]) {
     display: none;
   }
 
-  /* revert for bug in Chromium browsers
+  /*Revert for bug in Chromium browsers
   - fix for the content editable attribute will work properly.
   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
   :where([contenteditable]:not([contenteditable='false'])) {
@@ -121,7 +121,7 @@
     -webkit-user-select: auto;
   }
 
-  /* apply back the draggable feature - exist only in Chromium and Safari */
+  /* Apply back the draggable feature - exist only in Chromium and Safari */
   :where([draggable='true']) {
     -webkit-user-drag: element;
   }
@@ -132,11 +132,9 @@
   }
 
   html {
-    scroll-behavior: smooth;
     font-size: 100%;
-    line-height: var(--line-height);
     -webkit-text-size-adjust: 100%;
-    /* maybe */
+    /* maybe needed ?! */
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -229,9 +227,9 @@
     /* DYNAMIC / RELATIVE SIZED spacing & borders */
     --spaceLR: 3.3svw;
     --spaceTB: 1.8svh;
-    --radius: 1svw;
-    --line-height: 1.55;
-    --border-size: 0.1svw;
+    --rad: 1svw;
+    --lineH: 1.55;
+    --borderS: 0.1svw;
     /* NOTE: Maybe make DERIVED?: */
     --gap: calc((3.3svw + 1.8svh) / 2);
 
@@ -260,7 +258,7 @@
       1.85rem
     );
 
-    --border-size: 1px;
+    --borderS: 1px;
 
     /* UNUSED ICONS */
 
@@ -296,6 +294,8 @@
 /* 🐲 BASE */
 @layer base {
   html {
+    scroll-behavior: smooth;
+    line-height: var(--lineH);
     background-color: var(--curBG);
   }
 
@@ -310,7 +310,7 @@
   }
   small {
     font-size: 77%;
-    line-height: var(--line-height);
+    line-height: var(--lineH);
   }
 
   /* TYPOGRAPHY */
@@ -366,7 +366,7 @@
     color: var(--curTXT);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
-    line-height: var(--line-height);
+    line-height: var(--lineH);
     font-family: var(--font-family);
     max-width: 50ch;
 
@@ -389,7 +389,7 @@
   h1,
   .h1 {
     /* --font-size: 2rem; */
-    --line-height: 1.2;
+    --lineH: 1.2;
     --font-size: clamp(2rem, 1.7993rem + 0.8451vw, 2.75rem);
     text-transform: uppercase;
     border-bottom: 0 none !important;
@@ -401,7 +401,7 @@
 
   h2,
   .h2 {
-    --line-height: 1.2;
+    --lineH: 1.2;
     --font-size: clamp(
       1.8rem,
       1.6261rem + 0.7324vw,
@@ -413,7 +413,7 @@
 
   h3,
   .h3 {
-    --line-height: 1.2;
+    --lineH: 1.2;
     --font-size: clamp(
       1.6rem,
       1.4662rem + 0.5634vw,
@@ -424,14 +424,14 @@
 
   h4,
   .h4 {
-    --line-height: 1.2;
+    --lineH: 1.2;
     --font-size: clamp(1.4rem, 1.293rem + 0.4507vw, 1.8rem);
     color: var(--curTXT);
   }
 
   h5,
   .h5 {
-    --line-height: 1.2;
+    --lineH: 1.2;
     --font-size: clamp(
       1.2rem,
       1.1331rem + 0.2817vw,
@@ -442,7 +442,7 @@
 
   h6,
   .h6 {
-    --line-height: 1.2;
+    --lineH: 1.2;
     --font-size: clamp(0.9rem, 0.8732rem + 0.1127vw, 1rem);
     color: var(--curTXT);
   }
@@ -520,7 +520,7 @@
     padding-block: var(--spaceTB);
     padding-inline: var(--spaceLR);
     border-right: none;
-    border-inline-start: var(--border-size) solid
+    border-inline-start: var(--borderS) solid
       color-mix(in srgb, currentColor, transparent 50%);
     border-inline-end: none;
   }
@@ -577,7 +577,7 @@
   code,
   kbd {
     --code-background-color: rgba(133, 133, 133, 0.5);
-    border-radius: var(--radius);
+    border-radius: var(--rad);
     background-color: var(--code-background-color);
     color: var(--curTXT);
     font-weight: var(--font-weight);
@@ -601,7 +601,7 @@
     display: block;
     padding: var(--spaceTB) var(--spaceLR);
     background: none;
-    line-height: var(--line-height);
+    line-height: var(--lineH);
   }
 
   kbd {
@@ -729,7 +729,7 @@
     display: inline-flex;
     position: relative;
     margin-block-end: var(--spaceTB);
-    border-radius: var(--radius);
+    border-radius: var(--rad);
     box-shadow: var(
       --group-box-shadow,
       0 0 0 rgba(0, 0, 0, 0)
@@ -1093,86 +1093,24 @@
 
 /* 🐲 TOGGLE */
 @layer toggle {
-  .switcher {
-    background-color: var(--curBG);
-    /* position: fixed; */
+  .theme_switch {
+    position: relative;
+    top: 4px;
     z-index: 1000;
-    right: var(--spaceLR);
-    bottom: var(--spaceTB);
-    width: auto;
-    padding: 0.75rem;
-    margin-block-end: 0;
-    /* border-radius: 2rem; */
     line-height: 1;
-    text-align: right;
-  }
-
-  .switcher:hover::after {
-    transform: rotate(180deg);
-  }
-
-  .switcher::after {
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 0.15rem solid currentColor;
-    border-radius: 50%;
-    background: linear-gradient(
-      to right,
-      currentColor 0,
-      currentColor 50%,
-      transparent 50%
-    );
-    content: '';
-    vertical-align: bottom;
-    transition: transform var(--transition);
-  }
-
-  .switcher:focus,
-  .switcher:hover {
-    max-width: 100%;
-    transition: background-color var(--transition),
-      border-color var(--transition),
-      color var(--transition), box-shadow var(--transition);
-  }
-
-  .switcher:focus,
-  .switcher:hover {
-    max-width: 100%;
-    transition: background-color var(--transition),
-      border-color var(--transition),
-      color var(--transition), box-shadow var(--transition);
-  }
-
-  .switcher i {
-    display: inline-block;
-    max-width: 0;
-    padding: 0;
-    overflow: hidden;
-    font-style: normal;
-    font-size: revert;
-    white-space: nowrap;
-    pointer-events: none;
-  }
-
-  .switcher:hover i {
-    cursor: pointer;
-    max-width: 100%;
-    padding: 0 calc(var(--spaceLR) / 2) 0
-      calc(var(--spaceLR) / 4);
-    transition: max-width var(--transition),
-      padding var(--transition);
-  }
-
-  .switcher label {
-    user-select: none;
-    & :hover {
-      cursor: pointer;
+    :hover svg {
+      color: var(--curTXT);
     }
-  }
-
-  #toggle-theme {
-    display: none;
+    [data-theme='dark'] & {
+      .moon {
+        display: none;
+      }
+    }
+    [data-theme='light'] & {
+      .sun {
+        display: none;
+      }
+    }
   }
 }
 
@@ -1186,44 +1124,21 @@
     color: var(--curTXT);
   }
 
-  .pad {
-    padding: var(--spaceTB) var(--spaceLR);
-  }
-
-  /* Nav */
+  /* NAV */
   /* :where(nav li)::before {
-    /* float: left; */
-  /* content: '​'; */
+    float: left;
+    content: '​';
+  } */
 
-  */ nav,
+  nav,
   nav ul {
-    display: grid;
     padding-inline: calc(var(--spaceLR) * 2);
     gap: var(--gap);
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(100%, 1fr)
-    );
-    align-items: start;
-    justify-items: start;
     margin: 0;
-
-    @media (min-width: 576px) {
-      grid-template-columns: repeat(auto, 1fr);
-    }
-
-    > * {
-      /* justify-self: center; */
-      align-self: start;
-    }
-
-    > * {
-      min-width: 0;
-    }
   }
 
   nav {
-    justify-content: space-between;
+    width: 100%;
   }
 
   nav ol,
@@ -1251,7 +1166,7 @@
 
   nav li :where(a, [role='link']) {
     display: inline-block;
-    border-radius: var(--radius);
+    border-radius: var(--rad);
   }
   nav li :where(a, [role='link']):not(:hover) {
     text-decoration: none;
@@ -1305,7 +1220,7 @@
     pointer-events: none;
   }
 
-  /* Table */
+  /* TABLE */
   :where(table) {
     width: 100%;
     border-collapse: collapse;
@@ -1317,7 +1232,7 @@
   td {
     padding: calc(var(--spaceTB) / 2) var(--spaceLR);
     width: fit-content;
-    border-bottom: var(--curCOLa) solid var(--border-size);
+    border-bottom: var(--curCOLa) solid var(--borderS);
     background-color: var(--curBG);
     color: var(--curTXT);
     font-weight: var(--font-weight);
@@ -1327,7 +1242,7 @@
 
   tfoot th,
   tfoot td {
-    border-top: var(--curCOLa) solid var(--border-size);
+    border-top: var(--curCOLa) solid var(--borderS);
     border-bottom: 0;
     font-weight: 500;
   }
@@ -1346,7 +1261,6 @@
   }
 
   img {
-    /* width: auto; */
     height: auto;
     border-style: none;
   }
@@ -1390,14 +1304,6 @@
   }
 
   /* GRID | Minimal grid system with auto-layout columns */
-  /* --xs: 0;
-    --sm: 576px;
-    --md: 768px;
-    --lg: 992px;
-    --xl: 1200px;
-    --x2l: 1440px;
-    --x3l: 1920px;
-    --x4l: 2560px; */
 
   .grid_box {
     container: card / inline-size;
@@ -1415,30 +1321,29 @@
     margin: 0;
 
     > * {
-      /* justify-self: center; */
       align-self: stretch;
     }
   }
 }
 
-/* Horizontal scroller (<figure>) */
+/* HORIZONTAL scroller (<figure>) */
 figure {
   display: block;
   margin: 0;
   padding: 0;
   overflow-x: auto;
-  /* for big images lets limit the size/scroll: */
+  /* For big images lets limit the size/scroll: */
   img {
     max-inline-size: 200%;
   }
 
-  & figcaption {
+  figcaption {
     padding-block: var(--spaceTB);
     padding-inline: var(--spaceLR);
     color: var(--curCOLa);
-    & ::first-letter {
-      text-transform: uppercase;
-    }
+  }
+  figcaption::first-letter {
+    text-transform: uppercase;
   }
 }
 
@@ -1477,14 +1382,13 @@ figure {
     --box-shadow: var(--box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     padding: 2% var(--spaceLR);
     border: var(--curCOLa) solid var(--curCOLa);
-    border-radius: var(--radius);
+    border-radius: var(--rad);
     outline: none;
-    background-color: var(--curBG);
     color: var(--curTXT);
     box-shadow: var(--box-shadow);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
-    line-height: var(--line-height);
+    line-height: var(--lineH);
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -1544,7 +1448,7 @@ figure {
   [type='submit'],
   [type='reset'],
   [type='button'] {
-    margin-block-end: var(--spacing);
+    margin-block-end: var(--spaceTB);
   }
 
   :is(
@@ -1600,9 +1504,9 @@ figure {
       [type='button'],
       [role='button']
     ).contrast {
-    /* --background-color: var(--curTXT);
-    --curCOLa: var(--curBG); */
-    /* --color: var(--curBG); */
+    --background-color: var(--curTXT);
+    --curCOLa: var(--curBG);
+    --color: var(--curBG);
   }
   :is(
       button,
@@ -1610,9 +1514,9 @@ figure {
       [type='button'],
       [role='button']
     ).contrast:is([aria-current], :hover, :active, :focus) {
-    /* --curCOLa: var(--curCOLa);
+    --curCOLa: var(--curCOLa);
     --background-color: var(--curBG);
-    --color: var(--curTXT); */
+    --color: var(--curTXT);
   }
   :is(
       button,
@@ -1631,7 +1535,7 @@ figure {
       [role='button']
     ).outline,
   [type='reset'].outline {
-    border: var(--border-size) solid currentColor;
+    border: var(--borderS) solid currentColor;
     background-color: transparent;
     color: var(--curTXT);
   }
@@ -1647,7 +1551,7 @@ figure {
       :active,
       :focus
     ) {
-    border: var(--border-size) solid currentColor;
+    border: var(--borderS) solid currentColor;
     background-color: transparent;
     color: var(--curTXT);
   }
@@ -1659,7 +1563,7 @@ figure {
       [role='button']
     ).outline.secondary,
   [type='reset'].outline {
-    border: var(--border-size) solid currentColor;
+    border: var(--borderS) solid currentColor;
     background-color: transparent;
     color: var(--curTXT);
   }
@@ -1680,7 +1584,7 @@ figure {
       :active,
       :focus
     ) {
-    border: var(--border-size) solid currentColor;
+    border: var(--borderS) solid currentColor;
     background-color: transparent;
     color: var(--curTXT);
   }
@@ -1691,7 +1595,7 @@ figure {
       [type='button'],
       [role='button']
     ).outline.contrast {
-    border: var(--border-size) solid currentColor;
+    border: var(--borderS) solid currentColor;
     background-color: transparent;
     color: var(--curTXT);
   }
@@ -1706,7 +1610,7 @@ figure {
       :active,
       :focus
     ) {
-    border: var(--border-size) solid currentColor;
+    border: var(--borderS) solid currentColor;
     background-color: transparent;
     color: var(--curTXT);
   }
@@ -1736,7 +1640,7 @@ figure {
   details {
     display: block;
     margin-block-end: var(--spaceTB);
-    border-bottom: var(--border-size) solid currentColor;
+    border-bottom: var(--borderS) solid currentColor;
 
     & summary {
       line-height: 2;
@@ -1771,11 +1675,11 @@ figure {
         outline: none;
 
         /* NO SAFARI OUTLINE DECORATION */
-        /* & :not([role]) {
+        & :not([role]) {
           outline: 4px solid var(--curCOLa);
           outline-offset: 1ch;
           color: var(--curTXT);
-        } */
+        }
       }
 
       & [role='button'] {
@@ -1783,13 +1687,13 @@ figure {
         text-align: left;
 
         & ::after {
-          height: calc(1rem * var(--line-height));
+          height: calc(1rem * var(--lineH));
         }
       }
     }
 
     /* summary:focus-visible:not([role]) {
-      outline: var(--border-size) solid var(--curCOLa);
+      outline: var(--borderS) solid var(--curCOLa);
       outline-offset: 1ch;
       color: var(--curTXT);
     } */
@@ -1800,7 +1704,7 @@ figure {
     content: '';
     display: block;
     width: 1.25ch;
-    /* height: calc(1rem * var(--line-height)); */
+    /* height: calc(1rem * var(--lineH)); */
     height: 2ch;
     -webkit-margin-start: calc(var(--spaceTB) * 0.5);
     margin-inline-start: calc(var(--spaceTB) * 0.5);
@@ -1818,7 +1722,7 @@ figure {
     margin-block-end: var(--spaceTB);
     position: -webkit-sticky !important; /* Safari */
     position: sticky;
-    border-bottom: var(--border-size) solid currentColor;
+    border-bottom: var(--borderS) solid currentColor;
     background-color: var(--curBG);
     top: 0;
 
@@ -1879,16 +1783,10 @@ figure {
   ul,
   ol {
     list-style-type: none;
-    /* > ul {
-      float: left;
-      display: block;
-    }
-    display: block; */
-  }
-
-  /* li {
+    /* li {
     padding: calc(var(--spaceTB) / 2) 0;
   } */
+  }
 
   /* CARD */
   /* USE: <article> */
@@ -1905,7 +1803,7 @@ figure {
 
     > * {
       text-align: center;
-      padding-block: var(--spaceTB);
+      padding-block: var(--spaceTB) / 2;
       padding-inline: calc(var(--spaceLR) / 2);
       alignment-baseline: text-before-edge;
     }
@@ -1927,14 +1825,14 @@ figure {
       margin-block: var(--spaceTB);
       margin-inline: var(--spaceLR);
       border: var(--curCOLa) 1px solid;
-      border-radius: var(--radius);
+      border-radius: var(--rad);
       background-color: var(--curTXT);
       color: var(--curBG);
       /* before font-size: unset, it went to 13px somehow, gosh */
       font-size: unset;
     }
   }
-  & :only-child {
+  &:only-child {
     padding-top: 0;
     margin-block-start: 0;
     padding-bottom: 0;
@@ -1948,23 +1846,25 @@ figure {
 * IT WILL HAVE NO VERTICAL PADDING.
 */
 
-/* article:only-child {
+article:only-child {
   padding-top: 0;
   margin-block-start: 0;
   padding-bottom: 0;
   margin-block-end: 0;
-} */
+}
 
 /* 🐲 CLASSES */
 @layer classes {
   /*!
-* YOU CAN STYLE THE <article>
-* to have diffentr shapes at different width.
-* give it a class (.rows) here then
-* do something like this:
-*/
+  * YOU CAN STYLE THE <article>
+  * to have diffentr shapes at different width.
+  * give it a class (.rows) here then
+  * do something like this:
+  */
   @layer containers {
+    /* what's the use case for nesting @layers ? */
   }
+
   @container (min-width: 600px) {
     article.rows {
       display: grid;
@@ -1997,6 +1897,11 @@ figure {
     }
   }
 
+  .pad {
+    padding-inline: var(--spaceLR);
+    padding-block: var(--spaceTB);
+  }
+
   .o,
   .centered,
   .center,
@@ -2005,37 +1910,55 @@ figure {
   }
 
   .border {
-    border: var(--border-size) solid
+    border: var(--borderS) solid
       color-mix(in srgb, currentColor, transparent 50%);
-    border-radius: var(--radius);
+    border-radius: var(--rad);
 
     header {
-      border-top-left-radius: var(--radius);
-      border-top-right-radius: var(--radius);
+      border-top-left-radius: var(--rad);
+      border-top-right-radius: var(--rad);
     }
 
+    /* THIS FOR ARTICLE CARDS */
     footer {
-      border-bottom-left-radius: var(--radius);
-      border-bottom-right-radius: var(--radius);
+      border-bottom-left-radius: var(--rad);
+      border-bottom-right-radius: var(--rad);
     }
   }
 
   .container {
-    margin-inline-start: 5%;
-    margin-inline-end: 5%;
+    margin-inline: 5%;
   }
 
   .invert {
     filter: invert(100%);
     webkitfilter: invert(100%);
     mozfilter: invert(100%);
-    backdrop-filter: hue-rotate(-180deg);
+    backdrop-filter: hue-rotate(180deg);
   }
 
   @supports (text-wrap: balance) {
     .balance,
     .balance > * {
       text-wrap: balance;
+    }
+  }
+}
+
+@layer support_test {
+  /* Style warning block */
+  .no-support {
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #ccc;
+    background-color: #ff00002b;
+    display: block;
+  }
+
+  /* Hide warning block in case :has() support is detected */
+  @supports selector(:has(*)) {
+    .no-support {
+      display: none;
     }
   }
 }

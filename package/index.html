@@ -7,49 +7,134 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.7.13</title>
+    <title>FIKO 0.7.14</title>
 
     <link
       rel="icon"
       type="image/svg+xml"
       href="/favico_dark.svg"
     />
-    <!-- <style>
-      @layer root {
+    <style>
+      .logo {
+        text-align: center;
+        position: relative;
+        top: 2rem;
+        opacity: 0.75;
+        filter: grayscale(90%)
+          drop-shadow(-15px 15px 0 hsl(77, 82%, 49%))
+          drop-shadow(15px -15px 0 hsl(182, 35%, 41%))
+          drop-shadow(-15px 15px 0 hsl(77, 88%, 18%))
+          drop-shadow(15px -15px 0 hsl(207, 87%, 18%));
+      }
+      /* @layer root {
         :root {
-          --color-darkblue: darkblue;
-          --dark-mode: var(--color-darkblue);
+          --color-light: lightblue;
+          --curTXT: var(--color-light);
+        }
+      } */
+    </style>
+
+    <!-- <script defer>
+      // THEME SWITCH WITH TOGGLE & USER PREFERENCE DETECTION
+      function toggleTheme() {
+        const currentTheme =
+          document.body.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+          document.body.setAttribute('data-theme', 'light');
+        } else {
+          document.body.setAttribute('data-theme', 'dark');
         }
       }
-    </style> -->
+
+      // DETECT USER'S PREFERENCE AND SET the data-theme attribute
+      function setUserPreference() {
+        const userPrefersDark =
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)')
+            .matches;
+        if (userPrefersDark) {
+          document.body.setAttribute('data-theme', 'dark');
+        } else {
+          document.body.setAttribute('data-theme', 'light');
+        }
+      }
+
+      setUserPreference(); // Initially set the user preference
+
+      // UPDATE ON PREFERENCE CHANGE (ex: using DevTools to change it)
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addListener(setUserPreference);
+    </script> -->
   </head>
   <body>
     <!-- Header -->
     <header class="invert">
-      <nav class="toggle-wrapper container">
-        <h1>FIIIIIIKO&nbsp;</h1>
+      <nav class="toggle-wrapper">
+        <h1 class="logo">FIKO&nbsp;</h1>
 
-        <ul>
+        <ul class="centre">
           <li><a class="contrast" href="#">Modern</a></li>
           <li><a class="outline" href="#">Css</a></li>
           <li><a class="outline" href="#">Framework</a></li>
+          <li>
+            <!-- JS Toggle Button for Dark/Light Mode -->
+            <span
+              id="toggle-theme"
+              class="theme_switch"
+              onclick="toggleTheme()"
+              aria-label="Toggle light | dark mode"
+            >
+              <span
+                class=""
+                type="button"
+                aria-pressed="false"
+                aria-label="Use Dark Mode"
+              >
+                <svg
+                  class="moon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"
+                  />
+                </svg>
+
+                <svg
+                  class="sun"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle cx="12" cy="12" r="5" />
+                  <path
+                    d="M12 1v2m0 18v2M4 4l2 2m12 12 2 2M1 12h2m18 0h2M4 20l2-2M18 6l2-2"
+                  />
+                </svg>
+              </span>
+            </span>
+          </li>
         </ul>
+        <br />
       </nav>
-      <!-- JS Toggle Button for Dark/Light Mode -->
-      <div
-        class="switcher"
-        aria-label="Toggle light | dark mode"
-      >
-        <input
-          type="checkbox"
-          id="toggle-theme"
-          class="toggle-container"
-          onchange="toggleTheme()"
-        />
-        <label for="toggle-theme">
-          <i>Swith color mode</i>
-        </label>
-      </div>
     </header>
 
     <main>
@@ -495,7 +580,7 @@
             <h2>Invert css class</h2>
           </hgroup>
         </article>
-        <hr />
+
         <article class="invert">
           <header>
             <code>&lt;article class="invert"&gt;</code>
@@ -503,7 +588,7 @@
           <p>Flips light/dark mode.</p>
           <footer>Convenient!</footer>
         </article>
-        <hr />
+
         <article class="border">
           <header>
             <code>&lt;article class="border"&gt;</code>
@@ -604,69 +689,29 @@
           <span class="invert">🐸</span>
           CSS &copy;2023 TOYBREAKER
         </p>
-
-        <button
-          class="theme-switch"
-          type="button"
-          aria-pressed="false"
-          aria-label="Use Dark Mode"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <circle cx="12" cy="12" r="5" />
-            <path
-              d="M12 1v2m0 18v2M4 4l2 2m12 12 2 2M1 12h2m18 0h2M4 20l2-2M18 6l2-2"
-            />
-          </svg>
-        </button>
-
-        <small>
-          <a
-            target="_blank"
-            href="https://github.com/toybreaker/fiko"
-          >
-            Github
-          </a>
-        </small>
-
-        <small>
-          <a
-            target="_blank"
-            href="https://www.npmjs.com/package/fiko"
-          >
-            Npm
-          </a>
-        </small>
+        <nav class="centre">
+          <ul>
+            <li>
+              <a
+                target="_blank"
+                href="https://github.com/toybreaker/fiko"
+              >
+                <small>Github</small>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.npmjs.com/package/fiko"
+              >
+                <small>Npm</small>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
         <small><a id="pixelratio"></a></small>
+        <br />
       </article>
     </footer>
     <script>

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.8.0 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.8.1 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -1702,6 +1702,7 @@ figure {
       cursor: pointer;
       transition: color var(--transition);
       border-bottom: 1px solid currentColor;
+      display: block;
 
       & :not([role]) {
         color: var(--curTXT);
@@ -1773,7 +1774,7 @@ figure {
   }
 
   details[open] > summary {
-    margin-block-end: var(--spaceTB);
+    //margin-block-end: var(--spaceTB);
     position: -webkit-sticky !important;
     /* Safari */
     position: sticky;
@@ -1930,36 +1931,14 @@ article:only-child {
     /* what's the use case for nesting @layers ? */
   }
 
-  @container (min-width: 600px) {
-    article.rows {
-      display: grid;
-      grid-template-columns: 300px 1.4fr;
-      grid-template-rows: 1fr 3fr 1fr;
-      gap: 0px 0px;
-      grid-auto-flow: row;
-      grid-template-areas:
-        'img header'
-        'img body'
-        'img footer';
-    }
-
-    img {
-      /* grid-area: img; */
-      /* width: 20em; */
-    }
-
-    header {
-      grid-area: header;
-    }
-
-    footer {
-      grid-area: footer;
-    }
-
-    :not(header),
-    :not(footer) {
-      /* grid-area: body; */
-    }
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    z-index: 9999;
+    background-color: var(--curCOLa) !important;
+    backdrop-filter: blur(10px);
+    height: fit-content;
   }
 
   .pad {
@@ -2000,6 +1979,38 @@ article:only-child {
     webkitfilter: invert(100%);
     mozfilter: invert(100%);
     backdrop-filter: hue-rotate(180deg);
+  }
+
+  @container (min-width: 600px) {
+    article.rows {
+      display: grid;
+      grid-template-columns: 300px 1.4fr;
+      grid-template-rows: 1fr 3fr 1fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        'img header'
+        'img body'
+        'img footer';
+    }
+
+    img {
+      /* grid-area: img; */
+      /* width: 20em; */
+    }
+
+    header {
+      grid-area: header;
+    }
+
+    footer {
+      grid-area: footer;
+    }
+
+    :not(header),
+    :not(footer) {
+      /* grid-area: body; */
+    }
   }
 
   @supports (text-wrap: balance) {

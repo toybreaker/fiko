@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.8.1 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.8.2 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -171,8 +171,14 @@
 
 /* 🐲 ROOT */
 @layer root {
-  /* root is devided in 2 sections: un the first one all variables which change with light/dark theme, the second one for thos variables which wont change. */
+  /* ROOT IS DEVIDED IN 2 SECTIONS:
+  MODE-INDIPENDENT
+   * 1. all NIGHT-ABLE 'var(--cur...)' needing light/dark versions,
+   * 2. variables which won't [MODE-INDIPENDENT].
+   * 3. variables which won't [MODE-INDIPENDENT].
+   */
 
+  /* SECTION 1 */
   :root {
     /* ICONS FIRST, cos there're reffered in [data-theme...]  */
     --icon-chevron-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -180,20 +186,21 @@
     --icon-chevron-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
     /* COLOURS FOR LIGHT/DARK MODES */
-    /* '--alpha' CAN BE REDECLARED AS NEEDED */
+    /* '--alpha' CAN BE REDECLARED AS NEEDED: */
     --alpha: 1;
+    /* ^NOTE: '--alpha' operate on the base B&W colors.
+     * It will cascade down to all colours declarations.
+     * Re-declare it carefully and maybe only deep up the tree,
+     * like inside the specific element in need of changes */
     --color-white: rgba(255, 255, 255, var(--alpha));
     --color-black: rgba(0, 0, 0, var(--alpha));
-
-    /* MODE-INDIPENDENT CONSTANT COLOURS */
-    /* When elements need consistency, not switching colors. */
-    --color-light: var(--color-white);
-    --color-dark: var(--color-black);
   }
 
-  /* INITIAL STYLES ASSUMING LIGHT THEME */
+  /* SECTION 2 */
+
+  /* INITIALS ASSUMING LIGHT THEME */
   body[data-theme='light'] {
-    /* set the CURRENT colours: */
+    /* Set the CURRENT colours: */
     --curBG: var(--color-white);
     --curTXT: var(--color-black);
     --curV: var(--icon-chevron-black);
@@ -202,9 +209,9 @@
     color: var(--curTXT);
   }
 
-  /* WHEN DATA-THEME IS SET TO DARK */
+  /* DATA-THEME IS SET TO DARK */
   body[data-theme='dark'] {
-    /* set the CURRENT colours: */
+    /* Set the CURRENT colours: */
     --curBG: var(--color-black);
     --curTXT: var(--color-white);
     --curV: var(--icon-chevron-white);
@@ -213,8 +220,14 @@
     color: var(--curTXT);
   }
 
+  /* SECTION 3 */
   :root {
-    /* DERIVED apply the CURRENT colours: */
+    /* MODE-INDIPENDENT CONSTANT COLOURS */
+    /* When elements need consistency, not switching colors. */
+    --color-light: var(--color-white);
+    --color-dark: var(--color-black);
+
+    /* DERIVED VARIABLES, apply the CURRENT colours: */
     --transparent: 50%;
 
     --curCOLa: color-mix(
@@ -225,11 +238,13 @@
     --box-shadow: 0 0 0 0.0625rem var(--curCOLa);
 
     /* DYNAMIC / RELATIVE SIZED spacing & borders */
-    --spaceLR: 3.3svw;
-    --spaceTB: 1.8svh;
-    --rad: 1svw;
-    --lineH: 1.55;
-    --borderS: 0.1svw;
+    --spaceLR: 3.3svw; /* LEFT RIGHT */
+    --spaceTB: 1.8svh; /* TOP BOTTOM */
+    --rad: 1svw; /* RADIUS */
+    --lineH: 1.55; /* LINE HEIGHT */
+    --borderS: 0.1svw; /* BORDER SIZE */
+    /* --borderS: 1px; */
+
     /* NOTE: Maybe make DERIVED?: */
     --gap: calc((3.3svw + 1.8svh) / 2);
 
@@ -238,13 +253,13 @@
 
     /* TYPOGRAPHY */
 
-    /* set */
+    /* SET */
     --font-family-emoji: 'Apple Color Emoji',
       'Segoe UI Emoji', 'Segoe UI Symbol',
       'Noto Color Emoji';
-    /* < this needs to stay first */
+    /* ^NOTE: THIS NEEDS BE SET FIRST */
 
-    /* apply */
+    /* THEN APPLY IT */
     --font-family: system-ui, 'Segoe UI', Roboto, Helvetica,
       Arial, sans-serif, var(--font-family-emoji);
 
@@ -252,14 +267,15 @@
       'SF Mono', Menlo, Consolas, 'Liberation Mono',
       monospace, var(--font-family-emoji);
 
-    /* VARIABLE BASE FONT SIZE   */
+    /* VARIABLE BASE FONT SIZE */
     --font-size: clamp(
       1.25rem,
       1.1717rem + 0.4174svw,
       1.85rem
     );
 
-    --borderS: 1px;
+    /* LONG TEXT LINE ARE AHRD TO READ */
+    --reading: var(--reading);
 
     /* UNUSED ICONS */
 
@@ -370,7 +386,7 @@
     font-size: var(--font-size);
     line-height: var(--lineH);
     font-family: var(--font-family);
-    max-width: 50ch;
+    max-width: var(--reading);
 
     word-break: keep-all;
     /* fallback */
@@ -520,7 +536,7 @@
   }
 
   blockquote {
-    max-width: 60ch;
+    max-width: var(--reading);
     display: block;
     margin-block: calc(var(--spaceTB) * 4);
     margin-inline: auto;
@@ -713,7 +729,7 @@
   }
 
   p {
-    max-width: 60ch;
+    max-width: var(--reading);
     margin-inline: auto;
   }
 }
@@ -1306,6 +1322,8 @@
   img {
     height: auto;
     border-style: none;
+    vertical-align: middle;
+    object-fit: cover;
   }
 
   :where(svg:not([fill])) {

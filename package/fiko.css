@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.8.3 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.8.4 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -13,7 +13,7 @@
 */
 
 /* 🐲 LAYER ORDER */
-@layer reset, root, base, roles, toggle, containers, components, classes, support_test;
+@layer reset, root, base, roles, toggle, containers, components, classes, tests;
 
 /* 🐲 RESET */
 @layer reset {
@@ -246,7 +246,7 @@
     /* --borderS: 1px; */
 
     /* NOTE: Maybe make DERIVED?: */
-    --gap: calc((3.3svw + 1.8svh) / 2);
+    --gap: calc((3.3svw + 1.8svh) / 3);
 
     /* TRANSITIONS */
     --transition: 0.2s ease-in-out;
@@ -1206,25 +1206,53 @@
     /* GRID | Minimal grid system with auto-layout columns */
 
     /* TO DO: MAKE THE GRID BEHAVE USING CQ */
-    .grid_box {
-      container-type: inline-size;
-    }
 
     .grid {
-      --cellwidth: 300px;
+      --cellwidth: 250px;
 
-      display: grid;
       gap: var(--gap);
+      container-type: inline-size;
+      display: grid;
+      grid-auto-flow: dense;
       grid-template-columns: repeat(
         auto-fit,
-        minmax(var(--cellwidth), 1fr)
+        minmax(min(100%, var(--cellwidth)), 1fr)
       );
-      align-items: center;
-      justify-items: center;
-      margin: 0;
 
-      > * {
-        align-self: stretch;
+      > header {
+        grid-area: head;
+        text-align: left;
+        grid-column: 1 / -1;
+      }
+
+      > footer {
+        grid-area: foot;
+        text-align: left;
+      }
+
+      > .hero {
+        grid-area: img;
+        grid-row: 1 / -1;
+        object-fit: cover;
+        height: fit-content;
+      }
+
+      > .body {
+        grid-area: middle;
+      }
+    }
+    @container (min-width: 600px) {
+      .grid {
+        color: red;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 3fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          'img head'
+          'img middle'
+          'img foot';
       }
     }
   }
@@ -1251,12 +1279,8 @@
       text-transform: uppercase;
     }
   }
-  /* Modal (<dialog>) */
 
-  /* :root {
-      --scrollbar-width: 0px;
-    }
-    */
+  /* MODAL (<dialog>) */
 
   dialog {
     width: inherit;
@@ -1809,7 +1833,6 @@
     }
   }
 
-  /* NOT WORKING */
   details[open] > summary::after {
     transform: rotate(180deg);
   }
@@ -1868,18 +1891,23 @@
   /* USE: <article> */
 
   article {
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    /* gap: 10px; */
+    gap: 10px;
+
     margin-block: var(--spaceTB);
     margin-inline: var(--spaceLR);
-    /*
-    &:not(:has(header)) {
-       padding-top: var(--spaceTB);
+
+    .grid & {
+      margin-block: 0;
+      margin-inline: 0;
     }
-    */
+    &:not(:has(header)) {
+      padding-top: var(--spaceTB);
+    }
+
     &:not(:has(footer)) {
       padding-bottom: var(--spaceTB);
     }
@@ -1908,25 +1936,17 @@
     }
   }
 
+  /*!
+  * WHEN <article> IS USED TO CENTER CONTENT
+  * SAY INSIDE A <section>,
+  * IT WILL HAVE NO VERTICAL PADDING.
+  */
   &:only-child {
     padding-top: 0;
     margin-block-start: 0;
     padding-bottom: 0;
     margin-block-end: 0;
   }
-}
-
-/*!
-* WHEN <article> IS USED TO CENTER CONTENT
-* SAY INSIDE A <section>,
-* IT WILL HAVE NO VERTICAL PADDING.
-*/
-
-article:only-child {
-  padding-top: 0;
-  margin-block-start: 0;
-  padding-bottom: 0;
-  margin-block-end: 0;
 }
 
 /* 🐲 CLASSES */
@@ -1939,60 +1959,6 @@ article:only-child {
   */
   @layer components {
     /* Is this the smart way to code classes which will aplly to components...what's the use case for nesting @layers ? */
-
-    .rows_box {
-      /* container: card / inline-size; */
-      container-type: inline-size;
-    }
-
-    article.rows {
-      display: grid;
-      grid-auto-flow: dense;
-      grid.template-columns: repeat(
-        auto-fit,
-        minmax(min(100%, 300px), 1fr)
-      );
-    }
-
-    article.rows > header {
-      grid-area: head;
-      display: unset;
-      text-align: left;
-    }
-
-    article.rows > footer {
-      grid-area: foot;
-      //display: unset;
-      text-align: left;
-    }
-    article.rows > img {
-      grid-area: img;
-      grid-row: 1 / -1;
-      object-fit: cover;
-    }
-    article.rows > *:not(header, footer, img),
-    ariticle.rows > .body {
-      grid-area: middle;
-    }
-
-    article.rows {
-      container-type: inline-size;
-    }
-
-    @container (min-width: 600px) {
-      article.rows {
-        color: red;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 1fr 3fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          'img head'
-          'img middle'
-          'img foot';
-      }
-    }
 
     .sticky {
       position: -webkit-sticky;
@@ -2085,7 +2051,7 @@ article:only-child {
   }
 }
 
-@layer support_test {
+@layer tests {
   /* Style warning block */
   .no-support {
     margin: 1em 0;

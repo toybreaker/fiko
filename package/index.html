@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.8.3</title>
+    <title>FIKO 0.8.4</title>
 
     <link
       rel="icon"
@@ -298,33 +298,31 @@
           </hgroup>
           <br />
 
-          <div class="grid_box">
-            <div class="grid">
-              <img
-                src="https://placehold.co/400x200"
-                alt=""
-              />
-              <img
-                src="https://placehold.co/400x200"
-                alt=""
-              />
-              <img
-                src="https://placehold.co/400x200"
-                alt=""
-              />
-              <img
-                src="https://placehold.co/400x200"
-                alt=""
-              />
-              <img
-                src="https://placehold.co/400x200"
-                alt=""
-              />
-              <img
-                src="https://placehold.co/400x200"
-                alt=""
-              />
-            </div>
+          <div class="grid">
+            <img
+              src="https://placehold.co/400x200"
+              alt="placehold"
+            />
+            <img
+              src="https://placehold.co/400x200"
+              alt="placehold"
+            />
+            <img
+              src="https://placehold.co/400x200"
+              alt="placehold"
+            />
+            <img
+              src="https://placehold.co/400x200"
+              alt="placehold"
+            />
+            <img
+              src="https://placehold.co/400x200"
+              alt="placehold"
+            />
+            <img
+              src="https://placehold.co/400x200"
+              alt="placehold"
+            />
           </div>
         </section>
 
@@ -334,11 +332,10 @@
           <hgroup>
             <h2>Figure</h2>
             <p>
-              Use it when in need for Horizontal Scroll.
-            </p>
-            <p>
-              It can contain anything, here it wraps a
-              table:
+              Use
+              <code>&lt;figure&gt;</code>
+              when in need for Horizontal Scroll. Here it
+              wraps a table:
             </p>
           </hgroup>
           <br />
@@ -408,7 +405,11 @@
             </table>
           </figure>
 
-          <p>Here it wraps a image:</p>
+          <p>
+            Here
+            <code>&lt;figure&gt;</code>
+            wraps a image:
+          </p>
           <figure>
             <img
               src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
@@ -669,67 +670,79 @@
 
       <hr />
 
-      <section class="container rows_box">
+      <section class="container">
         <hgroup>
           <h2>Container Queries</h2>
         </hgroup>
 
-        <article class="rows border pretty">
-          <header>header</header>
-          <img
-            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com"
-          />
-          <div class="body">
+        <div class="grid">
+          <article class="border pretty">
+            <header>header</header>
+            <img
+              class="hero"
+              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+              alt="rokma.com"
+            />
+            <div class="body">
+              <p>
+                Diam ridiculus fermentum vestibulum quam
+                fames ad quis euismod rutrum lectus duis
+                adipiscing sem ut porttitor a a torquent
+                orci vulputate sit proin nostra.
+              </p>
+            </div>
+            <footer>footer</footer>
+          </article>
+
+          <article class="border">
+            <header>header</header>
+            <img
+              class="hero"
+              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+              alt="rokma.com"
+            />
             <p>
-              Diam ridiculus fermentum vestibulum quam fames
-              ad quis euismod rutrum lectus duis adipiscing
-              sem ut porttitor a a torquent orci vulputate
-              sit proin nostra.
+              A pretium consequat suspendisse posuere
+              blandit platea turpis elit amet suspendisse
+              consectetur faucibus lorem condimentum semper
+              felis non a mi donec penatibus risus tortor in
+              ullamcorper.
             </p>
-          </div>
-          <footer>footer</footer>
-        </article>
-        <article class="rows border">
-          <header>header</header>
-          <img
-            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com"
-          />
-          <p>
-            A pretium consequat suspendisse posuere blandit
-            platea turpis elit amet suspendisse consectetur
-            faucibus lorem condimentum semper felis non a mi
-            donec penatibus risus tortor in ullamcorper.
-          </p>
-          <footer>footer</footer>
-        </article>
-        <article class="rows border">
-          <header>header</header>
-          <img
-            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com"
-          />
-          <p>body</p>
-          <footer>footer</footer>
-        </article>
-        <article class="rows border">
-          <header>header</header>
-          <img
-            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com"
-          />
-          <p>body</p>
-          <footer>footer</footer>
-        </article>
-        <article class="rows border">
-          <header>header</header>
-          <img
-            src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-            alt="rokma.com"
-          />
-          <footer>footer</footer>
-        </article>
+            <footer>footer</footer>
+          </article>
+
+          <article class="border">
+            <header>header</header>
+            <img
+              class="hero"
+              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+              alt="rokma.com"
+            />
+            <p>body</p>
+            <footer>footer</footer>
+          </article>
+
+          <article class="border">
+            <header>header</header>
+            <img
+              class="hero"
+              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+              alt="rokma.com"
+            />
+            <p>body</p>
+            <footer>footer</footer>
+          </article>
+
+          <article class="border">
+            <header>header</header>
+            <img
+              class="hero"
+              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+              alt="rokma.com"
+            />
+            <footer>footer</footer>
+          </article>
+        </div>
       </section>
 
       <hr />

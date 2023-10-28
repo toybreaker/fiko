@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.8.4 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.8.5 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -13,7 +13,7 @@
 */
 
 /* 🐲 LAYER ORDER */
-@layer reset, root, base, roles, toggle, containers, components, classes, tests;
+@layer reset, root, base, roles, toggle, containers, components, classes, animations, tests;
 
 /* 🐲 RESET */
 @layer reset {
@@ -539,7 +539,7 @@
     max-width: var(--reading);
     display: block;
     margin-block: calc(var(--spaceTB) * 4);
-    margin-inline: auto;
+    margin-inline: var(--spaceLR);
     padding-block: var(--spaceTB);
     padding-inline: var(--spaceLR);
     border-right: none;
@@ -985,275 +985,275 @@
   a[aria-busy='true'] {
     pointer-events: none;
   }
+}
 
-  /* 🐲 TOGGLE */
-  @layer toggle {
-    .theme_switch {
-      position: relative;
-      top: 4px;
-      z-index: 1000;
-      line-height: 1;
+/* 🐲 TOGGLE */
+@layer toggle {
+  .theme_switch {
+    position: relative;
+    top: 4px;
+    z-index: 1000;
+    line-height: 1;
 
-      :hover svg {
-        color: var(--curTXT);
-      }
-
-      [data-theme='dark'] & {
-        .moon {
-          display: none;
-        }
-      }
-
-      [data-theme='light'] & {
-        .sun {
-          display: none;
-        }
-      }
-    }
-  }
-
-  /* 🐲 CONTAINERS */
-  @layer containers {
-    header,
-    nav,
-    section,
-    footer {
-      /* background-color: var(--curBG); */
+    :hover svg {
       color: var(--curTXT);
     }
 
-    /* NAV */
-    /* :where(nav li)::before {
+    [data-theme='dark'] & {
+      .moon {
+        display: none;
+      }
+    }
+
+    [data-theme='light'] & {
+      .sun {
+        display: none;
+      }
+    }
+  }
+}
+
+/* 🐲 CONTAINERS */
+@layer containers {
+  header,
+  nav,
+  section,
+  footer {
+    /* background-color: var(--curBG); */
+    color: var(--curTXT);
+  }
+
+  /* NAV */
+  /* :where(nav li)::before {
         float: left;
         content: '​';
       } */
 
+  nav,
+  nav ul {
+    padding-inline: calc(var(--spaceLR) * 2);
+    gap: var(--gap);
+    margin: 0;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ol,
+  nav ul {
+    align-items: center;
+    margin-block-end: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  nav ol:first-of-type,
+  nav ul:first-of-type {
+    margin-inline-start: var(--spaceLR);
+  }
+
+  nav ol:last-of-type,
+  nav ul:last-of-type {
+    margin-inline-end: var(--spaceLR);
+  }
+
+  nav li {
+    display: inline-block;
+    margin: 0;
+  }
+
+  nav li :where(a, [role='link']) {
+    display: inline-block;
+    border-radius: var(--rad);
+  }
+
+  nav li :where(a, [role='link']):not(:hover) {
+    text-decoration: none;
+  }
+
+  nav li button,
+  nav li [role='button'],
+  nav
+    li
+    input:not(
+      [type='checkbox'],
+      [type='radio'],
+      [type='range'],
+      [type='file']
+    ),
+  nav li select {
+    height: auto;
+    margin-inline: inherit;
+    margin-block-end: 0;
+    padding: var(--spaceTB) var(--spaceLR);
+  }
+
+  nav[aria-label='breadcrumb'] {
+    align-items: center;
+    justify-content: start;
+  }
+
+  nav[aria-label='breadcrumb'] ul li:not(:first-child) {
+    -webkit-margin-start: var(--spaceLR);
+    margin-inline-start: var(--spaceLR);
+  }
+
+  nav[aria-label='breadcrumb']
+    ul
+    li:not(:last-child)::after {
+    position: absolute;
+    width: calc(var(--spaceLR) * 2);
+    -webkit-margin-start: calc(var(--spaceLR) / 2);
+    margin-inline-start: calc(var(--spaceLR) / 2);
+    content: var(--nav-breadcrumb-divider);
+    color: var(--curCOLa);
+    text-align: center;
+    text-decoration: none;
+  }
+
+  nav[aria-label='breadcrumb'] a[aria-current] {
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+    pointer-events: none;
+  }
+
+  /* TABLE */
+  :where(table) {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-indent: 0;
+  }
+
+  th,
+  td {
+    padding: calc(var(--spaceTB) / 2) var(--spaceLR);
+    width: fit-content;
+    border-bottom: var(--curCOLa) solid var(--borderS);
+    background-color: var(--curBG);
+    color: var(--curTXT);
+    font-weight: var(--font-weight);
+    text-align: left;
+    text-align: start;
+  }
+
+  tfoot th,
+  tfoot td {
+    border-top: var(--curCOLa) solid var(--borderS);
+    border-bottom: 0;
+    font-weight: 500;
+  }
+
+  th[scope='row'] {
+    white-space: nowrap;
+  }
+
+  table.striped tbody tr:nth-child(odd) th,
+  table.striped tbody tr:nth-child(odd) td {
+    background-color: color-mix(
+      in srgb,
+      currentColor,
+      transparent 90%
+    );
+  }
+
+  img {
+    height: auto;
+    border-style: none;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+
+  :where(svg:not([fill])) {
+    fill: currentColor;
+  }
+
+  /* maybe also stroke */
+  :where(svg:not([stroke])) {
+    stroke: currentColor;
+  }
+
+  svg:not(:root) {
+    overflow: hidden;
+  }
+
+  aside {
     nav,
-    nav ul {
-      padding-inline: calc(var(--spaceLR) * 2);
-      gap: var(--gap);
-      margin: 0;
+    ol,
+    ul,
+    li {
+      display: block;
     }
 
-    nav {
-      width: 100%;
+    li {
+      padding: calc(var(--spaceTB) * 0.5) var(--spaceLR);
     }
 
-    nav ol,
-    nav ul {
-      align-items: center;
-      margin-block-end: 0;
-      padding: 0;
-      list-style: none;
+    li a {
+      display: block;
     }
 
-    nav ol:first-of-type,
-    nav ul:first-of-type {
-      margin-inline-start: var(--spaceLR);
+    li [role='button'] {
+      margin: inherit;
     }
+  }
 
-    nav ol:last-of-type,
-    nav ul:last-of-type {
-      margin-inline-end: var(--spaceLR);
-    }
+  section {
+    margin-block-end: var(--spaceTB);
+  }
 
-    nav li {
-      display: inline-block;
-      margin: 0;
-    }
+  /* GRID | Minimal grid system with auto-layout columns */
 
-    nav li :where(a, [role='link']) {
-      display: inline-block;
-      border-radius: var(--rad);
-    }
+  /* TO DO: MAKE THE GRID BEHAVE USING CQ */
 
-    nav li :where(a, [role='link']):not(:hover) {
-      text-decoration: none;
-    }
+  .grid {
+    --cellwidth: 250px;
 
-    nav li button,
-    nav li [role='button'],
-    nav
-      li
-      input:not(
-        [type='checkbox'],
-        [type='radio'],
-        [type='range'],
-        [type='file']
-      ),
-    nav li select {
-      height: auto;
-      margin-inline: inherit;
-      margin-block-end: 0;
-      padding: var(--spaceTB) var(--spaceLR);
-    }
+    gap: var(--gap);
+    container-type: inline-size;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(100%, var(--cellwidth)), 1fr)
+    );
 
-    nav[aria-label='breadcrumb'] {
-      align-items: center;
-      justify-content: start;
-    }
-
-    nav[aria-label='breadcrumb'] ul li:not(:first-child) {
-      -webkit-margin-start: var(--spaceLR);
-      margin-inline-start: var(--spaceLR);
-    }
-
-    nav[aria-label='breadcrumb']
-      ul
-      li:not(:last-child)::after {
-      position: absolute;
-      width: calc(var(--spaceLR) * 2);
-      -webkit-margin-start: calc(var(--spaceLR) / 2);
-      margin-inline-start: calc(var(--spaceLR) / 2);
-      content: var(--nav-breadcrumb-divider);
-      color: var(--curCOLa);
-      text-align: center;
-      text-decoration: none;
-    }
-
-    nav[aria-label='breadcrumb'] a[aria-current] {
-      background-color: transparent;
-      color: inherit;
-      text-decoration: none;
-      pointer-events: none;
-    }
-
-    /* TABLE */
-    :where(table) {
-      width: 100%;
-      border-collapse: collapse;
-      border-spacing: 0;
-      text-indent: 0;
-    }
-
-    th,
-    td {
-      padding: calc(var(--spaceTB) / 2) var(--spaceLR);
-      width: fit-content;
-      border-bottom: var(--curCOLa) solid var(--borderS);
-      background-color: var(--curBG);
-      color: var(--curTXT);
-      font-weight: var(--font-weight);
+    > header {
+      grid-area: head;
       text-align: left;
-      text-align: start;
+      grid-column: 1 / -1;
     }
 
-    tfoot th,
-    tfoot td {
-      border-top: var(--curCOLa) solid var(--borderS);
-      border-bottom: 0;
-      font-weight: 500;
+    > footer {
+      grid-area: foot;
+      text-align: left;
     }
 
-    th[scope='row'] {
-      white-space: nowrap;
-    }
-
-    table.striped tbody tr:nth-child(odd) th,
-    table.striped tbody tr:nth-child(odd) td {
-      background-color: color-mix(
-        in srgb,
-        currentColor,
-        transparent 90%
-      );
-    }
-
-    img {
-      height: auto;
-      border-style: none;
-      vertical-align: middle;
+    > .hero {
+      grid-area: img;
+      grid-row: 1 / -1;
       object-fit: cover;
+      height: fit-content;
     }
 
-    :where(svg:not([fill])) {
-      fill: currentColor;
+    > .body {
+      grid-area: middle;
     }
-
-    /* maybe also stroke */
-    :where(svg:not([stroke])) {
-      stroke: currentColor;
-    }
-
-    svg:not(:root) {
-      overflow: hidden;
-    }
-
-    aside {
-      nav,
-      ol,
-      ul,
-      li {
-        display: block;
-      }
-
-      li {
-        padding: calc(var(--spaceTB) * 0.5) var(--spaceLR);
-      }
-
-      li a {
-        display: block;
-      }
-
-      li [role='button'] {
-        margin: inherit;
-      }
-    }
-
-    section {
-      margin-block-end: var(--spaceTB);
-    }
-
-    /* GRID | Minimal grid system with auto-layout columns */
-
-    /* TO DO: MAKE THE GRID BEHAVE USING CQ */
-
+  }
+  @container (min-width: 500px) {
     .grid {
-      --cellwidth: 250px;
-
-      gap: var(--gap);
-      container-type: inline-size;
+      color: red;
       display: grid;
-      grid-auto-flow: dense;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(min(100%, var(--cellwidth)), 1fr)
-      );
-
-      > header {
-        grid-area: head;
-        text-align: left;
-        grid-column: 1 / -1;
-      }
-
-      > footer {
-        grid-area: foot;
-        text-align: left;
-      }
-
-      > .hero {
-        grid-area: img;
-        grid-row: 1 / -1;
-        object-fit: cover;
-        height: fit-content;
-      }
-
-      > .body {
-        grid-area: middle;
-      }
-    }
-    @container (min-width: 600px) {
-      .grid {
-        color: red;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 1fr 3fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          'img head'
-          'img middle'
-          'img foot';
-      }
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr 3fr 1fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        'img head'
+        'img middle'
+        'img foot';
     }
   }
 
@@ -1439,7 +1439,7 @@
 @layer components {
   hr {
     height: 0;
-    margin-block: calc(var(--spaceTB) * 4);
+    margin-block: calc(var(--spaceTB) * 3);
     margin-inline: 0;
     border: 0;
     border-top: 1px solid currentColor;
@@ -1594,18 +1594,19 @@
       0 0 0 var(--outline-width) var(--curCOLa);
   }
 
-  /* .contrast */
+  /* .pop */
   :is(
       button,
       [type='submit'],
       [type='button'],
       [role='button']
-    ).contrast {
+    ).pop {
     --background-color: var(--curTXT);
     --curCOLa: var(--curBG);
     --borderS: clamp(2px, 0.25svw, 4px);
     --color: var(--curBG);
     text-transform: uppercase;
+    font-weight: 500;
   }
 
   :is(
@@ -1613,7 +1614,7 @@
       [type='submit'],
       [type='button'],
       [role='button']
-    ).contrast:is([aria-current], :hover, :active, :focus) {
+    ).pop:is([aria-current], :hover, :active, :focus) {
     opacity: 0.9;
   }
 
@@ -1622,7 +1623,7 @@
       [type='submit'],
       [type='button'],
       [role='button']
-    ).contrast:focus {
+    ).pop:focus {
     --box-shadow: var(--box-shadow, 0 0 0 var(--curCOLa)),
       0 0 0 var(--outline-width) var(--curCOLa);
   }
@@ -1687,16 +1688,16 @@
     opacity: 0.9;
   }
 
-  /* .full.contrast */
+  /* .full.pop */
   :is(
       button,
       [type='submit'],
       [type='button'],
       [role='button']
-    ).full.contrast {
+    ).full.pop {
     border: var(--borderS) solid currentColor;
-    background-color: transparent;
-    color: var(--curTXT);
+    background-color: var(--curTXT);
+    color: var(--curBG);
   }
 
   :is(
@@ -1704,12 +1705,7 @@
       [type='submit'],
       [type='button'],
       [role='button']
-    ).full.contrast:is(
-      [aria-current],
-      :hover,
-      :active,
-      :focus
-    ) {
+    ).full.pop:is([aria-current], :hover, :active, :focus) {
     opacity: 0.9;
   }
 
@@ -1891,11 +1887,9 @@
   /* USE: <article> */
 
   article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    gap: 10px;
+    display: grid;
+    gap: var(--gap);
+    grid-row: span 3;
 
     margin-block: var(--spaceTB);
     margin-inline: var(--spaceLR);
@@ -1904,6 +1898,7 @@
       margin-block: 0;
       margin-inline: 0;
     }
+
     &:not(:has(header)) {
       padding-top: var(--spaceTB);
     }
@@ -1917,6 +1912,10 @@
       margin-block: 0;
       alignment-baseline: text-before-edge;
     }
+
+    > img {
+      justify-self: start;
+    }
     header,
     footer {
       width: 100%;
@@ -1928,24 +1927,26 @@
         transparent 90%
       );
     }
+
     header {
       padding-block-start: calc(var(--spaceTB) * 2);
     }
+
     footer {
       padding-block-end: calc(var(--spaceTB) * 2);
+      align-self: end;
     }
-  }
 
-  /*!
-  * WHEN <article> IS USED TO CENTER CONTENT
-  * SAY INSIDE A <section>,
-  * IT WILL HAVE NO VERTICAL PADDING.
-  */
-  &:only-child {
-    padding-top: 0;
-    margin-block-start: 0;
-    padding-bottom: 0;
-    margin-block-end: 0;
+    /*!
+    * WHEN <article> IS USED TO CENTER CONTENT
+    * SAY INSIDE A <section>, IT WILL HAVE NO VERTICAL PADDING.
+    */
+    &:only-child {
+      padding-top: 0;
+      margin-block-start: 0;
+      padding-bottom: 0;
+      margin-block-end: 0;
+    }
   }
 }
 
@@ -2023,7 +2024,7 @@
 
     .space {
       /* USE .space TO STYLE EMPTY VERTICAL SPACE */
-      margin-block: calc(var(--spaceTB) * 4);
+      padding-block: calc(var(--spaceTB) * 4);
     }
 
     /* img {
@@ -2051,6 +2052,7 @@
   }
 }
 
+/* 🐲 TESTS */
 @layer tests {
   /* Style warning block */
   .no-support {
@@ -2066,5 +2068,17 @@
     .no-support {
       display: none;
     }
+  }
+}
+
+/* 🐲 TESTS */
+@layer animations {
+  [data-theme='dark'] {
+    -webkit-animation-name: shake-vertical;
+    animation-name: shake-vertical;
+
+    animation-duration: 1s;
+    /* animation-fill-mode: both; */
+    animation-fill-mode: unset;
   }
 }

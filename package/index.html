@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.8.4</title>
+    <title>FIKO 0.8.5</title>
 
     <link
       rel="icon"
@@ -84,7 +84,7 @@
         <h1 class="logo shake-vertical">FIKO&nbsp;</h1>
 
         <ul class="centre">
-          <li><a class="contrast" href="#">Modern</a></li>
+          <li><a class="pop" href="#">Modern</a></li>
           <li><a class="outline" href="#">Css</a></li>
           <li><a class="outline" href="#">Framework</a></li>
           <li>
@@ -470,14 +470,11 @@
           <h2>Article</h2>
           <p>
             <code>&lt;article&gt;</code>
-            renders as a card.
-          </p>
-          <p>
-            When need border use:
+            renders as a card. Use it to centre children
+            horizontally. No border unless:
             <code>&lt;class="border"&gt;</code>
             .
           </p>
-          <p>Use it to centre children horizontally.</p>
           <p>Here it wraps an image.</p>
         </hgroup>
 
@@ -564,17 +561,20 @@
           <p>Paragraph after the horizontal line.</p>
         </section>
 
-        <section class="container">
+        <div class="space"></div>
+
+        <section>
           <hgroup>
             <h2>Buttons</h2>
           </hgroup>
-          <br />
-          <a href="#">
-            <button>no classes button</button>
-          </a>
-          <a href="#">
-            <button class="full">full</button>
-          </a>
+          <div class="container">
+            <a href="#">
+              <button>no classes button</button>
+            </a>
+            <a href="#">
+              <button class="full">full</button>
+            </a>
+          </div>
         </section>
 
         <section class="container">
@@ -591,11 +591,15 @@
 
         <section class="container">
           <a href="#">
-            <button class="contrast">contrast</button>
+            <button class="pop">pop</button>
           </a>
 
           <a href="#">
             <button disabled>disabled</button>
+          </a>
+
+          <a href="#">
+            <button class="full pop">full pop</button>
           </a>
         </section>
       </div>
@@ -679,7 +683,6 @@
           <article class="border pretty">
             <header>header</header>
             <img
-              class="hero"
               src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
               alt="rokma.com"
             />
@@ -697,7 +700,6 @@
           <article class="border">
             <header>header</header>
             <img
-              class="hero"
               src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
               alt="rokma.com"
             />
@@ -714,7 +716,6 @@
           <article class="border">
             <header>header</header>
             <img
-              class="hero"
               src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
               alt="rokma.com"
             />
@@ -725,7 +726,6 @@
           <article class="border">
             <header>header</header>
             <img
-              class="hero"
               src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
               alt="rokma.com"
             />
@@ -736,7 +736,6 @@
           <article class="border">
             <header>header</header>
             <img
-              class="hero"
               src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
               alt="rokma.com"
             />

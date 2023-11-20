@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "author": "Rokma",
   "contributors": [
     "toybreaker",
@@ -16,6 +16,7 @@
     "url": "git+https://github.com/toybreaker/fiko.git"
   },
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "tag": "latest"
   },
   "keywords": [

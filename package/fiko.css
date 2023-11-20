@@ -314,6 +314,7 @@
     scroll-behavior: smooth;
     line-height: var(--lineH);
     background-color: var(--curBG);
+    color: var(--curTXT);
   }
 
   body {
@@ -996,7 +997,8 @@
     line-height: 1;
 
     :hover svg {
-      color: var(--curTXT);
+      color: var(--curCOLa);
+      cursor: pointer;
     }
 
     [data-theme='dark'] & {
@@ -1015,7 +1017,7 @@
 
 /* 🐲 CONTAINERS */
 @layer containers {
-  header,
+  header:not(.invert),
   nav,
   section,
   footer {
@@ -1206,13 +1208,10 @@
 
   /* GRID | Minimal grid system with auto-layout columns */
 
-  /* TO DO: MAKE THE GRID BEHAVE USING CQ */
-
   .grid {
     --cellwidth: 250px;
 
     gap: var(--gap);
-    container-type: inline-size;
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: repeat(
@@ -1242,13 +1241,17 @@
       grid-area: middle;
     }
   }
+
+  /* TO DO: MAKE THE GRID BEHAVE USING CQ */
+  .grid_container {
+    container-type: inline-size;
+  }
+
   @container (min-width: 500px) {
     .grid {
-      color: red;
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: 1fr 3fr 1fr;
-      gap: 0px 0px;
+      /* grid-template-columns: 1fr 1fr 1fr; */
+      /* grid-template-rows: 1fr 1fr 1fr; */
       grid-auto-flow: row;
       grid-template-areas:
         'img head'
@@ -1899,7 +1902,7 @@
       margin-inline: 0;
     }
 
-    &:not(:has(header)) {
+    & :not(:has(header)) {
       padding-top: var(--spaceTB);
     }
 
@@ -1958,6 +1961,7 @@
   * give it a class (.rows) here then
   * do something like this:
   */
+
   @layer components {
     /* Is this the smart way to code classes which will aplly to components...what's the use case for nesting @layers ? */
 
@@ -2011,10 +2015,27 @@
     }
 
     .invert {
-      filter: invert(100%);
-      webkitfilter: invert(100%);
-      mozfilter: invert(100%);
+      /* THE FOLLOWING IS HAVING ISSUES ON SAFARI: */
+      /* filter: invert(100%);
+      -webkit-backdrop-filter: hue-rotate(180deg);
       backdrop-filter: hue-rotate(180deg);
+      color: var(curBG);
+      color: red;
+      background-color: var(curTXT); */
+    }
+
+    .invert,
+    .invert ul,
+    .invert p,
+    .invert h2,
+    .invert h3,
+    .invert h4 {
+      /* THE FOLLOWING IS HAVING ISSUES ON SAFARI: */
+      /* filter: invert(100%);
+      -webkit-backdrop-filter: hue-rotate(180deg);
+      backdrop-filter: hue-rotate(180deg); */
+      color: var(--curBG);
+      background-color: var(--curTXT);
     }
 
     .full_window {

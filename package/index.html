@@ -176,31 +176,14 @@
 
           <!-- Accordion -->
           <details>
-            <summary>Accordion Title</summary>
-            <p>Accordion content goes here.</p>
-          </details>
-
-          <details>
             <summary>
-              Accordion full of surprises...
+              This is an Accordion Title aka Summary
             </summary>
-            <p>
-              Yes, when
-              <code>&lt;details&gt;</code>
-              is open, its
-              <code>&lt;summary&gt;</code>
-              becomes sticky and gets a background color.
-            </p>
-            <p>
-              It stays
-              <strong>Sticky</strong>
-              till you scroll it out of the viewport.
-            </p>
+            <p>Accordion content goes here:</p>
             <p>
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
-              Neque aliquam vestibulum morbi blandit cursus.
             </p>
 
             <p>
@@ -212,8 +195,30 @@
             <p>
               Odio morbi quis commodo odio aenean sed
               adipiscing diam donec. Ut tortor pretium
-              viverra suspendisse potenti. Sollicitudin
-              tempor id eu nisl nunc mi.
+              viverra suspendisse potenti.
+            </p>
+          </details>
+
+          <details>
+            <summary>This is a Summary</summary>
+            <p>
+              When
+              <code>&lt;details&gt;</code>
+              is open, its
+              <code>&lt;summary&gt;</code>
+              becomes sticky and gets a background color.
+            </p>
+            <p>
+              Have you noticed this? Try scroll up right
+              now...
+            </p>
+            <p>
+              <code>&lt;summary&gt;</code>
+              is
+              <strong>Sticky</strong>
+              by default, till you scroll it out of the
+              viewport. This happens both scolling down and
+              also scroolling backup
             </p>
           </details>
 
@@ -647,7 +652,7 @@
               &lt;article class="invert border"&gt;
             </code>
           </hgroup>
-          <p>Flips light/dark mode.</p>
+          <p>Flips light/dark colours.</p>
         </article>
 
         <article class="border">
@@ -667,7 +672,7 @@
             <h2>Invert no border</h2>
             <code>&lt;article class="invert"&gt;</code>
           </header>
-          <p>Flips light/dark mode.</p>
+          <p>Flips light/dark colours.</p>
           <footer>Convenient!</footer>
         </article>
       </section>
@@ -679,73 +684,75 @@
           <h2>Container Queries</h2>
         </hgroup>
 
-        <div class="grid">
-          <article class="border pretty">
-            <header>header</header>
-            <img
-              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-              alt="rokma.com"
-            />
-            <div class="body">
+        <div class="grid_container">
+          <div class="grid">
+            <article class="border pretty">
+              <header>header</header>
+              <img
+                src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+                alt="rokma.com"
+              />
+              <div class="body">
+                <p>
+                  Diam ridiculus fermentum vestibulum quam
+                  fames ad quis euismod rutrum lectus duis
+                  adipiscing sem ut porttitor a a torquent
+                  orci vulputate sit proin nostra.
+                </p>
+              </div>
+              <footer>footer</footer>
+            </article>
+
+            <article class="border">
+              <header>header</header>
+              <img
+                src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+                alt="rokma.com"
+              />
               <p>
-                Diam ridiculus fermentum vestibulum quam
-                fames ad quis euismod rutrum lectus duis
-                adipiscing sem ut porttitor a a torquent
-                orci vulputate sit proin nostra.
+                A pretium consequat suspendisse posuere
+                blandit platea turpis elit amet suspendisse
+                consectetur faucibus lorem condimentum
+                semper felis non a mi donec penatibus risus
+                tortor in ullamcorper.
               </p>
-            </div>
-            <footer>footer</footer>
-          </article>
+              <footer>footer</footer>
+            </article>
 
-          <article class="border">
-            <header>header</header>
-            <img
-              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-              alt="rokma.com"
-            />
-            <p>
-              A pretium consequat suspendisse posuere
-              blandit platea turpis elit amet suspendisse
-              consectetur faucibus lorem condimentum semper
-              felis non a mi donec penatibus risus tortor in
-              ullamcorper.
-            </p>
-            <footer>footer</footer>
-          </article>
+            <article class="border">
+              <header>header</header>
+              <img
+                src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+                alt="rokma.com"
+              />
+              <p>body</p>
+              <footer>footer</footer>
+            </article>
 
-          <article class="border">
-            <header>header</header>
-            <img
-              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-              alt="rokma.com"
-            />
-            <p>body</p>
-            <footer>footer</footer>
-          </article>
+            <article class="border">
+              <header>header</header>
+              <img
+                src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+                alt="rokma.com"
+              />
+              <p>body</p>
+              <footer>footer</footer>
+            </article>
 
-          <article class="border">
-            <header>header</header>
-            <img
-              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-              alt="rokma.com"
-            />
-            <p>body</p>
-            <footer>footer</footer>
-          </article>
-
-          <article class="border">
-            <header>header</header>
-            <img
-              src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-              alt="rokma.com"
-            />
-            <footer>footer</footer>
-          </article>
+            <article class="border">
+              <header>header</header>
+              <img
+                src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+                alt="rokma.com"
+              />
+              <footer>footer</footer>
+            </article>
+          </div>
         </div>
       </section>
 
       <hr />
-
+      <!--
       <div class="to_do container">
         <section data-type="modal">
           <hgroup>
@@ -767,7 +774,7 @@
           <modal>Yo, I'm an HTML modal!</modal>
           <button class="close">x</button>
         </section>
-      </div>
+      </div> -->
     </main>
 
     <!-- Footer -->
@@ -778,6 +785,7 @@
           <span class="invert">🐸</span>
           CSS &copy;2023 Toybreaker
         </p>
+
         <nav class="centre">
           <ul>
             <li>
@@ -802,7 +810,6 @@
         <p>
           <small><a id="pixelratio"></a></small>
         </p>
-        <br />
       </article>
     </footer>
     <script>

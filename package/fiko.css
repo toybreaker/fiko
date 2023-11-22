@@ -1893,16 +1893,14 @@
     display: grid;
     gap: var(--gap);
     grid-row: span 3;
-
-    margin-block: var(--spaceTB);
-    margin-inline: var(--spaceLR);
+    height: fit-content;
 
     .grid & {
       margin-block: 0;
       margin-inline: 0;
     }
 
-    & :not(:has(header)) {
+    &:not(:has(header)) {
       padding-top: var(--spaceTB);
     }
 
@@ -1919,7 +1917,19 @@
     > img {
       justify-self: start;
     }
-    header,
+
+    header {
+      width: 100%;
+      padding-block: var(--spaceTB);
+      padding-inline: 0;
+      background-color: color-mix(
+        in srgb,
+        currentColor,
+        transparent 90%
+      );
+      padding-block-start: calc(var(--spaceTB) * 2);
+    }
+
     footer {
       width: 100%;
       padding-block: var(--spaceTB);
@@ -1929,30 +1939,29 @@
         currentColor,
         transparent 90%
       );
-    }
-
-    header {
-      padding-block-start: calc(var(--spaceTB) * 2);
-    }
-
-    footer {
       padding-block-end: calc(var(--spaceTB) * 2);
       align-self: end;
     }
+  }
 
-    /*!
+  article:not(:only-child) {
+    margin-block: var(--spaceTB);
+    margin-inline: var(--spaceLR);
+  }
+
+  /*!
     * WHEN <article> IS USED TO CENTER CONTENT
     * SAY INSIDE A <section>, IT WILL HAVE NO VERTICAL PADDING.
     */
-    &:only-child {
-      padding-top: 0;
-      margin-block-start: 0;
-      padding-bottom: 0;
-      margin-block-end: 0;
-    }
+  article:only-child {
+    margin-block: 0;
+    margin-inline: 0;
+  }
+
+  article:has(> img:first-child) {
+    padding-block-start: 0;
   }
 }
-
 /* 🐲 CLASSES */
 @layer classes {
   /*!

@@ -76,7 +76,7 @@
   "html.format.preserveNewLines": true,
   "html.format.maxPreserveNewLines": null,
   "markdown.preview.breaks": true,
-  "editor.inlineSuggest.showToolbar": "always",
+  "editor.inlineSuggest.showToolbar": "onHover",
   "editor.suggest.localityBonus": true,
   "editor.suggest.preview": true,
   "editor.suggest.shareSuggestSelections": true,

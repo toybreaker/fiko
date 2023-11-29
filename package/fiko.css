@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.8.9 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.8.10 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -1737,18 +1737,11 @@
   /* USE: <details> and <summary> */
 
   details {
+    position: relative;
     display: block;
     margin-block-end: var(--spaceTB);
-    border-bottom: var(--borderS) solid currentColor;
     list-style: none;
   }
-  /*
-    summary:focus-visible:not([role]) {
-      outline: var(--borderS) solid var(--curCOLa);
-      outline-offset: 1ch;
-      color: var(--curTXT);
-    }
-    */
   summary {
     line-height: 2;
     list-style-type: none;
@@ -1805,31 +1798,12 @@
     display: none;
   }
 
-  summary::after {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 2ch;
-    height: 2ch;
-    /* -webkit-margin-start: calc(var(--spaceTB) * 0.5);
-    margin-inline-start: calc(var(--spaceTB) * 0.5);
-    float: right; */
-    background-position: center;
-    background-size: 2rem auto;
-    background-repeat: no-repeat;
-    top: 0;
-    right: 8px;
-    background-image: var(--curV);
-    /* transition: transform var(--transition);
-    transform: rotate(0); */
-  }
-
   details[open] > summary {
     /* margin-block-end: var(--spaceTB); */
     position: -webkit-sticky !important;
     /* Safari */
     position: sticky;
-    border-bottom: var(--borderS) solid currentColor;
+    /* border-bottom: var(--borderS) solid currentColor; */
     background-color: var(--curBG);
     top: 0;
 
@@ -1838,6 +1812,29 @@
       display: inline;
       content: 'Open';
     }
+  }
+
+  details > summary::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 2ch;
+    height: 2ch;
+    -webkit-margin-start: calc(var(--spaceTB) * 0.5);
+    margin-inline-start: calc(var(--spaceTB) * 0.5);
+    float: right;
+    background-position: center;
+    background-size: 2rem auto;
+    background-repeat: no-repeat;
+    top: 0;
+    right: 8px;
+    background-image: var(--curV);
+    transition: transform var(--transition);
+    transform: rotate(0);
+  }
+
+  details > summary::after {
+    transform: rotate(0deg);
   }
 
   details[open] > summary::after {

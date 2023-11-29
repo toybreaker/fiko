@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.8.8 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.8.9 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -132,6 +132,7 @@
   }
 
   html {
+    height: 100svh;
     font-size: 100%;
     -webkit-text-size-adjust: 100%;
     /* maybe needed ?! */
@@ -240,9 +241,9 @@
     /* DYNAMIC / RELATIVE SIZED spacing & borders */
     --spaceLR: 3.3svw; /* LEFT RIGHT */
     --spaceTB: 1.8svh; /* TOP BOTTOM */
-    --rad: clamp(4px, 0.75svw, 8px); /* RADIUS */
+    --rad: clamp(6.66px, 1svw, 8px); /* RADIUS */
     --lineH: 1.55; /* LINE HEIGHT */
-    --borderS: clamp(1px, 0.1svw, 3px); /* BORDER SIZE */
+    --borderS: clamp(1.5px, 1svw, 2px); /* BORDER SIZE */
     /* --borderS: 1px; */
 
     /* NOTE: Maybe make DERIVED?: */
@@ -318,6 +319,7 @@
   }
 
   body {
+    min-height: 100svh;
     font-size: var(--font-size);
     font-family: var(--font-family);
 
@@ -1738,86 +1740,92 @@
     display: block;
     margin-block-end: var(--spaceTB);
     border-bottom: var(--borderS) solid currentColor;
-
-    & summary {
-      line-height: 2;
-      list-style-type: none;
-      cursor: pointer;
-      transition: color var(--transition);
-      border-bottom: 1px solid currentColor;
-      display: block;
-
-      & :not([role]) {
-        color: var(--curTXT);
-      }
-
-      /* EXPOSE STATUS TO DOM: Closed */
-      .status::after {
-        display: inline;
-        content: 'Closed';
-      }
-
-      & ::-webkit-details-marker {
-        display: none;
-      }
-
-      & ::marker {
-        display: none;
-      }
-
-      & ::-moz-list-bullet {
-        list-style-type: none;
-      }
-
-      & :focus {
-        outline: none;
-
-        /* NO SAFARI OUTLINE DECORATION */
-        & :not([role]) {
-          outline: 4px solid var(--curCOLa);
-          outline-offset: 1ch;
-          color: var(--curTXT);
-        }
-      }
-
-      & [role='button'] {
-        width: 100%;
-        text-align: left;
-
-        & ::after {
-          height: calc(1rem * var(--lineH));
-        }
-      }
-    }
-
-    /* summary:focus-visible:not([role]) {
+    list-style: none;
+  }
+  /*
+    summary:focus-visible:not([role]) {
       outline: var(--borderS) solid var(--curCOLa);
       outline-offset: 1ch;
       color: var(--curTXT);
-    } */
+    }
+    */
+  summary {
+    line-height: 2;
+    list-style-type: none;
+    cursor: pointer;
+    transition: color var(--transition);
+    border-bottom: var(--borderS) solid currentColor;
+    display: block;
+
+    &:not([role]) {
+      color: var(--curTXT);
+    }
+
+    /* EXPOSE STATUS TO DOM: Closed */
+    .status::after {
+      display: inline;
+      content: 'Closed';
+    }
+    /* this maybe not needed since it's display:block; */
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::marker {
+      display: none;
+    }
+
+    &::-moz-list-bullet {
+      list-style-type: none;
+    }
+
+    &:focus {
+      outline: none;
+
+      /* NO SAFARI OUTLINE DECORATION */
+      &:not([role]) {
+        outline: 4px solid var(--curCOLa);
+        outline-offset: 1ch;
+        color: var(--curTXT);
+      }
+    }
+
+    & [role='button'] {
+      width: 100%;
+      text-align: left;
+
+      &::after {
+        height: calc(1rem * var(--lineH));
+      }
+    }
   }
 
   /* INDICATOR ARROW */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
   summary::after {
+    position: absolute;
     content: '';
     display: block;
-    width: 1.25ch;
-    /* height: calc(1rem * var(--lineH)); */
+    width: 2ch;
     height: 2ch;
-    -webkit-margin-start: calc(var(--spaceTB) * 0.5);
+    /* -webkit-margin-start: calc(var(--spaceTB) * 0.5);
     margin-inline-start: calc(var(--spaceTB) * 0.5);
-    float: right;
+    float: right; */
     background-position: center;
     background-size: 2rem auto;
     background-repeat: no-repeat;
-    top: 8px;
+    top: 0;
+    right: 8px;
     background-image: var(--curV);
-    transition: transform var(--transition);
-    transform: rotate(0);
+    /* transition: transform var(--transition);
+    transform: rotate(0); */
   }
 
   details[open] > summary {
-    //margin-block-end: var(--spaceTB);
+    /* margin-block-end: var(--spaceTB); */
     position: -webkit-sticky !important;
     /* Safari */
     position: sticky;

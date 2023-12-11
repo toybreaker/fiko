@@ -16,7 +16,7 @@ Fiko is a contained, almost classless, layered, modern (late2023), dynamically s
 
 .
 
-# 🫵 USE IT (actually, don't use it yet, WIP v0.8.10)
+# 🫵 USE IT (actually, don't use it yet, WIP v0.8.11)
 
 .
 

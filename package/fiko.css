@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.8.10 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.8.11 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -186,6 +186,14 @@
 
     --icon-chevron-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
+    --icon-plus-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E %3Cpath fill='black' d='M14 7.31H8.69V2H7.31v5.31H2v1.38h5.31V14h1.38V8.69H14V7.31z'/%3E %3C/svg%3E");
+
+    --icon-plus-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E %3Cpath fill='white' d='M14 7.31H8.69V2H7.31v5.31H2v1.38h5.31V14h1.38V8.69H14V7.31z'/%3E %3C/svg%3E");
+
+    --icon-minus-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E %3Cpath fill='black' d='M2 7.3h12v1.4H2z'/%3E %3C/svg%3E");
+
+    --icon-minus-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E %3Cpath fill='white' d='M2 7.3h12v1.4H2z'/%3E %3C/svg%3E");
+
     /* COLOURS FOR LIGHT/DARK MODES */
     /* '--alpha' CAN BE REDECLARED AS NEEDED: */
     --alpha: 1;
@@ -205,6 +213,8 @@
     --curBG: var(--color-white);
     --curTXT: var(--color-black);
     --curV: var(--icon-chevron-black);
+    --curPlus: var(--icon-plus-black);
+    --curMinus: var(--icon-minus-black);
     /* DERIVED: apply the CURRENT colours: */
     background-color: var(--curBG);
     color: var(--curTXT);
@@ -216,6 +226,8 @@
     --curBG: var(--color-black);
     --curTXT: var(--color-white);
     --curV: var(--icon-chevron-white);
+    --curPlus: var(--icon-plus-white);
+    --curMinus: var(--icon-minus-white);
     /* DERIVED: apply the CURRENT colours: */
     background-color: var(--curBG);
     color: var(--curTXT);
@@ -1737,18 +1749,24 @@
   /* USE: <details> and <summary> */
 
   details {
-    position: relative;
     display: block;
-    margin-block-end: var(--spaceTB);
+    padding-block: var(--spaceTB);
     list-style: none;
+    border-top: var(--borderS) solid currentColor;
   }
+  details:last-child {
+    border-bottom: var(--borderS) solid currentColor;
+  }
+
   summary {
     line-height: 2;
     list-style-type: none;
     cursor: pointer;
     transition: color var(--transition);
-    border-bottom: var(--borderS) solid currentColor;
-    display: block;
+    /* display: block; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &:not([role]) {
       color: var(--curTXT);
@@ -1774,13 +1792,6 @@
 
     &:focus {
       outline: none;
-
-      /* NO SAFARI OUTLINE DECORATION */
-      &:not([role]) {
-        outline: 4px solid var(--curCOLa);
-        outline-offset: 1ch;
-        color: var(--curTXT);
-      }
     }
 
     & [role='button'] {
@@ -1815,22 +1826,21 @@
   }
 
   details > summary::after {
-    position: absolute;
+    --iconSize: 2ch;
     content: '';
     display: block;
-    width: 2ch;
-    height: 2ch;
+    width: var(--iconSize);
+    height: var(--iconSize);
     -webkit-margin-start: calc(var(--spaceTB) * 0.5);
     margin-inline-start: calc(var(--spaceTB) * 0.5);
-    float: right;
+    /* float: right; */
     background-position: center;
-    background-size: 2rem auto;
+    background-size: var(--iconSize) auto;
     background-repeat: no-repeat;
-    top: 0;
-    right: 8px;
-    background-image: var(--curV);
-    transition: transform var(--transition);
-    transform: rotate(0);
+    background-image: var(--curPlus);
+    justify-self: flex-end;
+    /* transition: transform var(--transition);
+    transform: rotate(0); */
   }
 
   details > summary::after {
@@ -1838,7 +1848,8 @@
   }
 
   details[open] > summary::after {
-    transform: rotate(180deg);
+    background-image: var(--curMinus);
+    /* transform: rotate(180deg); */
   }
 
   details[open] > summary:not([role]):not(:focus) {

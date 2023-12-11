@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.8.10",
+  "version": "0.8.11",
   "author": "Rokma",
   "contributors": [
     "toybreaker",
@@ -47,7 +47,7 @@
     "autoprefixer": "^10.4.16",
     "browser-sync": "^2.29.3",
     "modern-normalize": "^2.0.0",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.32",
     "prettier": "^2.8.8"
   },
   "browserslist": [

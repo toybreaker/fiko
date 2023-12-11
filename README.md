@@ -16,7 +16,7 @@ Fiko is a contained, almost classless, layered, modern (late2023), dynamically s
 
 .
 
-# 🫵 USE IT (actually, don't use it yet, WIP v0.8.11)
+# 🫵 USE IT (actually, don't use it yet, WIP v0.9.0)
 
 .
 
@@ -249,11 +249,20 @@ FIKO is designed and tested for the latest stable Chrome, Firefox, Edge, and Saf
 
 Licensed under the [MIT License](https://github.com/toybreaker/fiko/blob/master/LICENSE.md).
 
-This slim starter was develop to scratch my own needs and it's inspired by today classless css framework such as [PICOCSS](https://github.com/picocss/pico),[WATER](https://github.com/kognise/water.css), [CSSBED](https://www.cssbed.com/), by [TOYBREAKER](https://github.com/toybreaker/)
+This slim starter was develop to scratch my own needs and it's inspired by classless css framework such as [PICOCSS](https://github.com/picocss/pico), [WATER](https://github.com/kognise/water.css), [CSSBED](https://www.cssbed.com/), by [TOYBREAKER](https://github.com/toybreaker/)
 
 .
 
 # CHANGELOG
+
+## fiko@0.9.0 | Coming together
+
+2do:
+
+- finish container queries grid
+- dialog
+- more tests
+- footer links
 
 ## fiko@0.6.0 | Use the platform
 

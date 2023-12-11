@@ -7,22 +7,33 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO 0.8.11</title>
+    <title>FIKO 0.9.0</title>
 
     <link
       rel="icon"
       type="image/svg+xml"
       href="/favico_dark.svg"
     />
+
+    <link
+      rel="preload"
+      href="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+      as="image"
+      crossorigin
+    />
     <style>
       .logo {
         text-align: center;
         opacity: 0.75;
-        filter: grayscale(90%)
-          drop-shadow(-15px 15px 0 hsl(77, 82%, 49%))
-          drop-shadow(15px -15px 0 hsl(182, 35%, 41%))
-          drop-shadow(-15px 15px 0 hsl(77, 88%, 18%))
-          drop-shadow(15px -15px 0 hsl(207, 87%, 18%));
+        filter: grayscale(0%)
+          drop-shadow(-15px 15px 0px hsl(0, 0%, 66%))
+          drop-shadow(-15px 15px 0px hsl(0, 0%, 17.5%))
+          drop-shadow(15px -15px 0px hsl(0, 0%, 33%));
+      }
+
+      img,
+      .greyscale {
+        filter: grayscale(100%);
       }
 
       @-webkit-keyframes shake-vertical {
@@ -85,6 +96,7 @@
 
         <ul class="centre">
           <li><a class="pop" href="#">Modern</a></li>
+          <li><a class="outline" href="#">B&W</a></li>
           <li><a class="outline" href="#">Css</a></li>
           <li><a class="outline" href="#">Framework</a></li>
           <li>
@@ -160,7 +172,9 @@
       </section>
 
       <!-- Full-bleed -->
+
       <img
+        loading="eager"
         src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
         alt="rokma.com"
       />
@@ -415,6 +429,7 @@
           </p>
           <figure>
             <img
+              loading="lazy"
               src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
               alt="rokma.com"
             />
@@ -457,12 +472,30 @@
               Fat vertical spacing for
               <em>Readablity!</em>
             </small>
-            <h1>h1 FIKO 🐸</h1>
-            <h2>h2 FIKO 🐸</h2>
-            <h3>h3 FIKO 🐸</h3>
-            <h4>h4 FIKO 🐸</h4>
-            <h5>h4 FIKO 🐸</h5>
-            <h6>h6 FIKO 🐸</h6>
+            <h1>
+              h1 FIKO
+              <span class="greyscale">🐸</span>
+            </h1>
+            <h2>
+              h2 FIKO
+              <span class="greyscale">🐸</span>
+            </h2>
+            <h3>
+              h3 FIKO
+              <span class="greyscale">🐸</span>
+            </h3>
+            <h4>
+              h4 FIKO
+              <span class="greyscale">🐸</span>
+            </h4>
+            <h5>
+              h4 FIKO
+              <span class="greyscale">🐸</span>
+            </h5>
+            <h6>
+              h6 FIKO
+              <span class="greyscale">🐸</span>
+            </h6>
           </hgroup>
         </section>
         <hr />
@@ -484,6 +517,7 @@
         <article class="border">
           <h2 class="">Article Card</h2>
           <img
+            loading="lazy"
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
             alt="rokma.com"
           />
@@ -499,8 +533,9 @@
         </article>
 
         <article>
-          <h2>No border article</h2>
+          <h2>No border Article Card</h2>
           <img
+            loading="lazy"
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
             alt="rokma.com"
           />
@@ -517,13 +552,13 @@
 
         <article class="border">
           <img
+            loading="lazy"
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
             alt="rokma.com"
           />
-          <h2>Classic Card</h2>
+          <h2>Classic Article Card</h2>
           <p>
-            Article content goes here. Lorem ipsum dolor sit
-            amet.
+            Content goes here. Lorem ipsum dolor sit amet.
           </p>
           <p>
             <a href="#" class="card-button">
@@ -533,15 +568,15 @@
         </article>
 
         <article class="border">
-          <header>article header</header>
-          <p>article first paragraph</p>
+          <header>Article Card Header</header>
+          <p>First paragraph</p>
           <p>
-            second paragraph blah blah blah blah blah blah
+            Second paragraph blah blah blah blah blah blah
             blah blah blah blah blah blah blah blah blah
-            blah blah blah blah blah blah blah blah .
+            blah blah blah blah blah blah blah blah.
           </p>
-          <p>article third paragraph</p>
-          <footer>article footer</footer>
+          <p>Third paragraph</p>
+          <footer>Footer</footer>
         </article>
 
         <hr />
@@ -704,6 +739,7 @@
             <article class="border pretty">
               <header>header</header>
               <img
+                loading="lazy"
                 src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
                 alt="rokma.com"
               />
@@ -719,6 +755,7 @@
             <article class="border">
               <header>header</header>
               <img
+                loading="lazy"
                 src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
                 alt="rokma.com"
               />
@@ -735,6 +772,7 @@
             <article class="border">
               <header>header</header>
               <img
+                loading="lazy"
                 src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
                 alt="rokma.com"
               />
@@ -745,6 +783,7 @@
             <article class="border">
               <header>header</header>
               <img
+                loading="lazy"
                 src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
                 alt="rokma.com"
               />
@@ -755,6 +794,7 @@
             <article class="border">
               <header>header</header>
               <img
+                loading="lazy"
                 src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
                 alt="rokma.com"
               />

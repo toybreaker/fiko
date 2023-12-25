@@ -1,0 +1,119 @@
+/* 🐲 CLASSES */
+@layer classes {
+  /*!
+  * YOU CAN STYLE THE <article>
+  * to have diffentr shapes at different width.
+  * give it a class (.rows) here then
+  * do something like this:
+  */
+
+  @layer components {
+    /* Is this the smart way to code classes which will aplly to components...what's the use case for nesting @layers ? */
+
+    .sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 10px;
+      z-index: 9999;
+      background-color: var(--curCOLa) !important;
+      backdrop-filter: blur(10px);
+      height: fit-content;
+    }
+
+    .pad {
+      padding-inline: var(--spaceLR);
+      padding-block: var(--spaceTB);
+    }
+
+    .o,
+    .centered,
+    .center,
+    .centre {
+      text-align: center !important;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .border {
+      border: var(--borderS) solid
+        color-mix(in srgb, currentColor, transparent 50%);
+      border-radius: var(--rad);
+
+      header {
+        border-top-left-radius: var(--rad);
+        border-top-right-radius: var(--rad);
+      }
+
+      /* THIS FOR ARTICLE CARDS */
+      footer {
+        border-bottom-left-radius: var(--rad);
+        border-bottom-right-radius: var(--rad);
+      }
+    }
+
+    .container {
+      margin-inline: 5%;
+    }
+
+    .invert {
+      /* THE FOLLOWING IS HAVING ISSUES ON SAFARI: */
+      /* filter: invert(100%);
+      -webkit-backdrop-filter: hue-rotate(180deg);
+      backdrop-filter: hue-rotate(180deg);
+      color: var(curBG);
+      color: red;
+      background-color: var(curTXT); */
+    }
+
+    .invert,
+    .invert ul,
+    .invert p,
+    .invert h2,
+    .invert h3,
+    .invert h4 {
+      /* THE FOLLOWING IS HAVING ISSUES ON SAFARI: */
+      /* filter: invert(100%);
+      -webkit-backdrop-filter: hue-rotate(180deg);
+      backdrop-filter: hue-rotate(180deg); */
+      color: var(--curBG);
+      background-color: var(--curTXT);
+    }
+
+    .full_window {
+      height: 100svh;
+      width: 100svw;
+    }
+
+    .space {
+      /* USE .space TO STYLE EMPTY VERTICAL SPACE */
+      padding-block: calc(var(--spaceTB) * 4);
+    }
+
+    /* img {
+      grid-area: img;
+      width: 20em;
+    } */
+
+    /* :not(header),
+    :not(footer) {
+      grid-area: body;
+    } */
+  }
+
+  @supports (text-wrap: balance) {
+    .balance,
+    .balance > * {
+      text-wrap: balance;
+    }
+  }
+  @supports (text-wrap: pretty) {
+    .pretty,
+    .pretty > * {
+      text-wrap: pretty;
+    }
+  }
+}

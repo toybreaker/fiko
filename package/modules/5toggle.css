@@ -1,0 +1,26 @@
+/* 🐲 TOGGLE */
+@layer toggle {
+  .theme_switch {
+    position: relative;
+    top: 4px;
+    z-index: 1000;
+    line-height: 1;
+
+    :hover svg {
+      color: var(--curCOLa);
+      cursor: pointer;
+    }
+
+    [data-theme='dark'] & {
+      .moon {
+        display: none;
+      }
+    }
+
+    [data-theme='light'] & {
+      .sun {
+        display: none;
+      }
+    }
+  }
+}

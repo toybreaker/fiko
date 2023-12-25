@@ -1,0 +1,11 @@
+/* 🐲 TESTS */
+@layer animations {
+  [data-theme='dark'] {
+    -webkit-animation-name: shake-vertical;
+    animation-name: shake-vertical;
+
+    animation-duration: 1s;
+    /* animation-fill-mode: both; */
+    animation-fill-mode: unset;
+  }
+}

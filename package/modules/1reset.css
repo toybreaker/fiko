@@ -1,0 +1,154 @@
+/* 🐲 RESET */
+@layer reset {
+  /* THIS LAYER SHOULD STAY FREE OF CSS VARIABLES */
+  /* The New CSS Reset */
+  *:where(
+      :not(
+          html,
+          iframe,
+          canvas,
+          img,
+          svg,
+          video,
+          audio
+        ):not(svg *, symbol *)
+    ) {
+    all: unset;
+    display: revert;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  ::before,
+  ::after {
+    /* Add text decoration inheritance in all browsers: */
+    text-decoration: inherit;
+    /* Add vertical alignment inheritance in all browsers: */
+    vertical-align: inherit;
+  }
+
+  /* Reapply the pointer cursor for anchor tags: */
+  a,
+  button {
+    cursor: revert;
+  }
+
+  /* Remove list styles (bullets/numbers): */
+  ol,
+  ul,
+  menu {
+    list-style: none;
+  }
+
+  /* Manage how images exceed their container: */
+  img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+  }
+
+  /* Removes spacing between cells in tables: */
+  table {
+    border-collapse: collapse;
+  }
+
+  /* Safari: Fix user-select:none on the <body> text input bug */
+  input,
+  textarea {
+    -webkit-user-select: auto;
+  }
+
+  /*  Safari: Revert 'white-space' property for textarea elements */
+  textarea {
+    white-space: revert;
+  }
+
+  /* Minimum style to allow to style meter element */
+  meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+  }
+
+  /* Preformatted text - use only for this feature */
+  :where(pre) {
+    all: revert;
+  }
+
+  /*Reset default text opacity of input placeholder */
+  ::placeholder {
+    color: unset;
+  }
+
+  /* Remove default dot (•) sign */
+  ::marker {
+    content: initial;
+  }
+
+  /* Fix the feature of 'hidden' attribute.
+  display:revert; revert to element instead of attribute */
+  :where([hidden]) {
+    display: none;
+  }
+
+  /*Revert for bug in Chromium browsers
+  - fix for the content editable attribute will work properly.
+  - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+  :where([contenteditable]:not([contenteditable='false'])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+  }
+
+  /* Apply back the draggable feature - exist only in Chromium and Safari */
+  :where([draggable='true']) {
+    -webkit-user-drag: element;
+  }
+
+  /* Revert Modal native behavior */
+  :where(dialog:modal) {
+    all: revert;
+  }
+
+  html {
+    height: 100svh;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    /* maybe needed ?! */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+
+    > * {
+      font-size: unset;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  ::-webkit-file-upload-button {
+    /* Correct the inability to style clickable types in iOS and Safari. */
+    -webkit-appearance: button;
+    /* Change font properties to `inherit` in Safari. */
+    font: inherit;
+  }
+
+  /* remove the gray background on active links in IE 10. */
+  pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+}

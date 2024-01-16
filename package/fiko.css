@@ -259,7 +259,7 @@
     /* --borderS: 1px; */
 
     /* NOTE: Maybe make DERIVED?: */
-    --gap: calc((3.3svw + 1.8svh) / 3);
+    --gap: calc((var(--spaceLR) + var(--spaceTB)) / 3);
 
     /* TRANSITIONS */
     --transition: 0.2s ease-in-out;

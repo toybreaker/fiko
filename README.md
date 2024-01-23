@@ -1,26 +1,22 @@
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/) [![Netlify Status](https://api.netlify.com/api/v1/badges/68612997-fe61-4776-80d5-9edd46c5a331/deploy-status)](https://app.netlify.com/sites/fikocss/deploys)
 
 Zero config DX. Import it from NPM. Link it in your framework. Boom. Done!
-Fiko is a contained, almost classless, layered, modern (late2023), dynamically sized responsiveness CSS starter framework. VERY 🐸 FIKO!
+Fiko delivers a contained, almost classless, layered, modern (2024), dynamically sized responsivity, CSS starter framework. VERY 🐸 FIKO!
 
-🐸 GREAT STYLES WITH JUST ONE CSS FILE.
+🐸 GREAT STYLES WITH JUST ONE CSS FILE (46 kb uncompressed!).
 🐸 RESPONSIVE EVERYTHING.
 🐸 VARIABLE EVERYTHING.
-🐸 LIGHT OR DARK MODE.
-🐸 USES NATIVE HTML.
-🐸 LAYERS.
-🐸 MODERN NORMALISE.
-🐸 STAY SANE! Low Code Verbosity.
-
-> **_You write your own classes_**
+🐸 LIGHT OR DARK AUTOMATIC MODE.
+🐸 USES NATIVE HTML, LAYERS, GRID, CONTAINER QUERIES.
+🐸 USES A CONTEMPORARY UP TO DATE NORMALISE.
+🐸 LET US DEVs STAY SANE w/ Low Code Verbosity!.
+🐸 LET YOU WRITE YOUR OWN CLASSES
 
 .
 
-# 🫵 USE IT (actually, don't use it yet, WIP v0.9.2)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.9.3)
 
 .
-
-It can be used in many ways.
 
 ## Usage: **Install**
 

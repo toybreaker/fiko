@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO v0.9.3</title>
+    <title>FIKO v0.9.4</title>
 
     <link
       rel="icon"
@@ -22,6 +22,20 @@
       crossorigin
     />
     <style>
+      .supports_text_wrap_balance {
+        display: none;
+        @supports (text-wrap: balance) {
+          display: inline;
+          color: greenyellow;
+        }
+      }
+      .no_supports_text_wrap_balance {
+        display: inline;
+        color: red;
+        @supports (text-wrap: balance) {
+          display: none;
+        }
+      }
       .logo {
         text-align: center;
         opacity: 0.75;
@@ -588,7 +602,7 @@
           <article>
             <blockquote>
               <em>
-                "This block is automatically centred."
+                "This block is centred automatically."
               </em>
             </blockquote>
             <p>
@@ -672,17 +686,24 @@
           <header>
             <h2>text-wrap: balance</h2>
           </header>
-          <p>
+          <p class="container">
             Fiko uses:
             <code>&lt;text-wrap: balance&gt;</code>
             <br />
-            Does your browser support it? This long
+            Does this browser support it?
+            <span class="supports_text_wrap_balance">
+              Yes!
+            </span>
+            <span class="no_supports_text_wrap_balance">
+              Nope.
+            </span>
+            <br />
+            This long paragraph is here to let you see if it
+            makes any difference. Does it? This long
             paragraph is here to let you see if it makes any
-            difference. Does it? This long paragraph is here
-            to let you see if it makes any difference. It
-            should improve readability. Does it? This long
-            paragraph is here to let you see if it makes any
-            difference. Does it?
+            difference. It should improve readability. Does
+            it? This long paragraph is here to let you see
+            if it makes any difference. Does it?
           </p>
         </hgroup>
       </article>

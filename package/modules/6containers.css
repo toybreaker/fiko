@@ -76,7 +76,7 @@
 
   nav[aria-label='breadcrumb'] {
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
   }
 
   nav[aria-label='breadcrumb'] ul li:not(:first-child) {

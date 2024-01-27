@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="fiko.css" />
-    <title>FIKO v0.9.9</title>
+    <title>FIKO v0.10.0</title>
 
     <link
       rel="icon"
@@ -112,7 +112,6 @@
 
         <ul class="centre">
           <li><a class="pop" href="#">Modern</a></li>
-          <li><a class="outline" href="#">B&W</a></li>
           <li><a class="outline" href="#">Css</a></li>
           <li><a class="outline" href="#">Framework</a></li>
           <li>
@@ -205,46 +204,35 @@
           <br />
 
           <!-- Accordion -->
-          <details>
-            <summary>Accordion Title / Summary</summary>
-            <p>Accordion content goes here:</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </p>
-
-            <p>
-              Dui sapien eget mi proin sed. Arcu non odio
-              euismod lacinia. Tincidunt id aliquet risus
-              feugiat in ante metus dictum.
-            </p>
-
-            <p>
-              Odio morbi quis commodo odio aenean sed
-              adipiscing diam donec. Ut tortor pretium
-              viverra suspendisse potenti.
-            </p>
-          </details>
 
           <details>
-            <summary>This is a Summary</summary>
+            <summary>Accordion Summary</summary>
+            <p>
+              You get an accordion using:
+              <code>&lt;details&gt;</code>
+              . Then, inside it put a
+              <code>&lt;summary&gt;</code>
+            </p>
             <p>
               When
               <code>&lt;details&gt;</code>
               is open, its
               <code>&lt;summary&gt;</code>
-              becomes sticky and gets a background color.
-              Have you noticed it? Try scroll up right
-              now...
-            </p>
-            <p>
-              <code>&lt;summary&gt;</code>
-              is
+              becomes
               <strong>Sticky</strong>
-              by default, till you scroll it out of the
-              viewport. This happens both scolling down and
-              also scroolling backup
+              till you scroll it out of the viewport, and
+              also gets a background color. Have you noticed
+              it? Try scroll up right now...
+            </p>
+          </details>
+
+          <details>
+            <summary>Accordion Summary</summary>
+            <p>
+              Accordion content Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna
+              aliqua.
             </p>
           </details>
 
@@ -273,12 +261,6 @@
               <code>&lt;details open&gt;</code>
               becomes
               <code>&lt;details&gt;</code>
-            </p>
-            <p>
-              Note that
-              <code>^</code>
-              icon on the right?! Tap it and I shall
-              disappear...
             </p>
             <p>
               Fiko offers a

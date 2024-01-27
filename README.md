@@ -13,7 +13,7 @@ FIKO delivers a contained, layered, up-to-date (2024), dynamic units responsivit
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.9.5)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.9.6)
 
 .
 

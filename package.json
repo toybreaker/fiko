@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "author": "Rokma",
   "contributors": [
     "toybreaker",
@@ -23,7 +23,6 @@
     "classless",
     "container-queries",
     "css",
-    "css4",
     "css-framework",
     "css-layers",
     "css-nesting",
@@ -31,17 +30,14 @@
     "customisable",
     "dark-mode",
     "fluid",
-    "p3",
     "lightweight",
     "minimal",
     "native-html",
-    "oklch",
-    "semantic",
-    "wide-gamut-colors"
+    "semantic"
   ],
   "scripts": {
     "dev": "browser-sync start --s 'package' --files 'package'",
-    "build": "echo 'fiko.css comes ready to swim, no build, boom! 🐸 Done.'"
+    "build": "echo 'fiko.css comes, as frogs, ready to swim, no build, boom! 🐸 Done.'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",

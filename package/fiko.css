@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.9.5 (https://fiko.rokma.rocks)
+* FIKO 🐸 v0.9.6 (https://fiko.rokma.rocks)
 * 2024 BLACK & WHITE CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -146,11 +146,17 @@
   }
 
   h1,
+  .h1,
   h2,
+  .h2,
   h3,
+  .h3,
   h4,
+  .h4,
   h5,
-  h6 {
+  .h5,
+  h6,
+  .h6 {
     margin: 0;
     font-size: inherit;
     font-weight: inherit;
@@ -383,11 +389,17 @@
   }
 
   h1,
+  .h1,
   h2,
+  .h2,
   h3,
+  .h3,
   h4,
+  .h4,
   h5,
-  h6 {
+  .h5,
+  h6,
+  .h6 {
     margin-inline: 0;
     margin-block-start: 0;
     margin-block-end: var(--spaceTB);
@@ -405,11 +417,17 @@
 
   @supports (text-wrap: balance) {
     h1,
+    .h1,
     h2,
+    .h2,
     h3,
+    .h3,
     h4,
+    .h4,
     h5,
-    h6 {
+    .h5,
+    h6,
+    .h6 {
       /* IMPROVE READABILITY | performance heavy */
       text-wrap: balance;
       /* https://www.youtube.com/watch?v=L9ihWHngk9E */
@@ -491,7 +509,20 @@
       table,
       ul
     )
-    ~ :is(h1, h2, h3, h4, h5, h6) {
+    ~ :is(
+      h1,
+      .h1,
+      h2,
+      .h2,
+      h3,
+      .h3,
+      h4,
+      .h4,
+      h5,
+      .h5,
+      h6,
+      .h6
+    ) {
     margin-block-start: var(--spaceTB);
   }
 
@@ -1853,38 +1884,50 @@
 
   /* HEADINGS, P, SPAN */
   h1,
+  .h1,
   h2,
+  .h2,
   h3,
+  .h3,
   h4,
+  .h4,
   h5,
+  .h5,
   h6,
+  .h6,
   p,
   span {
     --spaceTB: 0.5ch;
     padding: var(--spaceTB) 0;
   }
 
-  h1 {
+  h1,
+  .h1 {
     font-size: calc(var(--font-size) * 2.25);
   }
 
-  h2 {
+  h2,
+  .h2 {
     font-size: calc(var(--font-size) * 1.65);
   }
 
-  h3 {
+  h3,
+  .h3 {
     font-size: calc(var(--font-size) * 1.5);
   }
 
-  h4 {
+  h4,
+  .h4 {
     font-size: calc(var(--font-size) * 1.25);
   }
 
-  h5 {
+  h5,
+  .h5 {
     font-size: calc(var(--font-size) * 1.15);
   }
 
-  h6 {
+  h6,
+  .h6 {
     /* font-size: calc(var(--font-size) * 1.1); */
   }
 

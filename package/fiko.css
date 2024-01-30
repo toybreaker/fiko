@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.10.0
+* FIKO 🐸 v0.10.1
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -187,7 +187,7 @@
 
   /* SECTION 1 */
   :root {
-    /* ICONS FIRST, cos there're reffered in [data-theme...]  */
+    /* ICONS FIRST, cos there're referred in [data-theme...]  */
     --icon-chevron-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
     --icon-chevron-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -212,6 +212,9 @@
   }
 
   /* SECTION 2 */
+
+  /* TELL BROWSER THAT YOUR PAGE CAN HANDLE BOTH DARK AND LIGHT MODES */
+  color-scheme: dark light;
 
   /* INITIALS ASSUMING LIGHT THEME */
   body[data-theme='light'] {

@@ -2,7 +2,9 @@
 
 ## IMPORT IT FROM NPM. LINK IT IN YOUR APP. BOOM. DONE!
 
-FIKO delivers a contained, layered, up-to-date (2024), dynamic units responsivity, using semantic html and it's almost classless. VERY 🐸 FIKO!
+### FIKO DELIVERS A SLIM CSS STARTER, BATTERIES INCLUDED.
+
+Contained, layered, up-to-date (2024), dynamic units responsivity, using semantic html and it's almost classless. VERY 🐸 FIKO!
 
 🐸 GREAT STYLES WITH JUST ONE CSS FILE (46 kb uncompressed!).
 🐸 ZERO CONFIG DX, RESPONSIVE, VARIABLE EVERYTHING.
@@ -13,7 +15,7 @@ FIKO delivers a contained, layered, up-to-date (2024), dynamic units responsivit
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.10.1)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.10.2)
 
 .
 
@@ -29,9 +31,11 @@ pnpm i fiko
 @import 'node_modules/fiko/fiko.css';
 ```
 
-then:
+then in the page `<head>`:
 
 ```html
+/* tell browser that page supports light & dark modes */
+<meta name="color-scheme" content="light dark" />
 <link
   rel="stylesheet"
   href="node_modules/fiko/package/fiko.css"
@@ -45,6 +49,8 @@ Or
 [Download FIKO](https://github.com/TOYBREAKER/fiko/fiko.zip) and link `/fiko.css` it in the `<head>` of your website.
 
 ```html
+/* tell browser that page supports light & dark modes */
+<meta name="color-scheme" content="light dark" />
 <link rel="stylesheet" href="fiko.css" />
 ```
 
@@ -248,16 +254,29 @@ This slim starter was develop to scratch my own needs and it's inspired by class
 
 .
 
-# CHANGELOG
-
-## fiko@0.9.0 | Coming together
-
 2do:
 
 - finish container queries grid
 - dialog
 - more tests
 - footer links
+- .
+
+# CHANGELOG
+
+## fiko@0.10.0 | Small fixes
+
+Added meta def in page head to tell browser that page supports dark and light modes:
+
+```
+<meta name="color-scheme" content="light dark" />
+```
+
+Dropped modules (temporarily). Need to check if they are actually needed and eventually will be resumed later on.
+
+## fiko@0.9.0 | Fine tuning
+
+Improved container queries
 
 ## fiko@0.6.0 | Use the platform
 
@@ -272,6 +291,7 @@ This slim starter was develop to scratch my own needs and it's inspired by class
 ```css
 .invert {
   filter: invert(1);
+}
 ```
 
 ### Color constants:

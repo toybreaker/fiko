@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.10.1
+* FIKO 🐸 v0.10.2
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -180,7 +180,7 @@
 @layer root {
   /* ROOT IS DEVIDED IN 2 SECTIONS:
   MODE-INDIPENDENT
-   * 1. all NIGHT-ABLE 'var(--cur...)' needing light/dark versions,
+   * 1. all VARIABLE 'var(--cur...)' needing light/dark versions,
    * 2. variables which won't [MODE-INDIPENDENT].
    * 3. variables which won't [MODE-INDIPENDENT].
    */
@@ -212,9 +212,6 @@
   }
 
   /* SECTION 2 */
-
-  /* TELL BROWSER THAT YOUR PAGE CAN HANDLE BOTH DARK AND LIGHT MODES */
-  color-scheme: dark light;
 
   /* INITIALS ASSUMING LIGHT THEME */
   body[data-theme='light'] {
@@ -531,12 +528,6 @@
 
   p {
     margin-block-end: var(--spaceTB);
-  }
-
-  @supports (text-wrap: balance) {
-    p {
-      text-wrap: balance;
-    }
   }
 
   em {

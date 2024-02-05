@@ -15,7 +15,7 @@ Contained, layered, up-to-date (2024), dynamic units responsivity, using semanti
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.10.2)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.10.3)
 
 .
 

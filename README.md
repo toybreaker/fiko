@@ -4,18 +4,18 @@
 
 ### FIKO DELIVERS A SLIM CSS STARTER, BATTERIES INCLUDED.
 
-Contained, layered, up-to-date (2024), dynamic units responsivity, using semantic html and it's almost classless. VERY 🐸 FIKO!
+It's contained, layered, up-to-date (2024). Uses dynamic units responsivity, semantic html and it's almost classless. VERY 🐸 FIKO!
 
 🐸 GREAT STYLES WITH JUST ONE CSS FILE (46 kb uncompressed!).
 🐸 ZERO CONFIG DX, RESPONSIVE, VARIABLE EVERYTHING.
 🐸 LIGHT OR DARK AUTOMATIC MODE.
-🐸 USES NATIVE HTML, MIN NORMALISE, LAYERS, GRID, CONTAINER QUERIES.
-🐸 LET YOU WRITE YOUR OWN CLASSES.
-🐸 LOW VERBOSITY LET US DEVs STAY SANE.
+🐸 FIKO USES NATIVE HTML, MIN NORMALISE, LAYERS, GRID, CONTAINER QUERIES.
+🐸 FIKO LET YOU WRITE YOUR OWN CLASSES.
+🐸 FIKO LOW VERBOSITY LET US DEVs STAY SANE.
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.10.3)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.10.4)
 
 .
 

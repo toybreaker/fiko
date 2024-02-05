@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.10.3
+* FIKO 🐸 v0.10.4
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -288,10 +288,12 @@
       1.85rem
     );
 
-    /* LONG TEXT LINE ARE AHRD TO READ */
-    --reading: var(--reading);
+    --font-weight: 300;
 
-    /* UNUSED ICONS */
+    /* LONG TEXT LINE ARE HARD TO READ */
+    --reading: 60ch;
+
+    /* MORE ICONS */
 
     --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
 
@@ -335,6 +337,7 @@
     min-height: 100svh;
     font-size: var(--font-size);
     font-family: var(--font-family);
+    font-weight: var(--font-weight);
 
     @media (max-width: 576px) {
       word-break: keep-all;
@@ -400,7 +403,7 @@
   .h5,
   h6,
   .h6 {
-    margin-inline: 0;
+    margin-inline: auto;
     margin-block-start: 0;
     margin-block-end: var(--spaceTB);
     color: var(--curTXT);
@@ -436,7 +439,6 @@
 
   h1,
   .h1 {
-    /* --font-size: 2rem; */
     --lineH: 1.2;
     --font-size: clamp(2rem, 1.7993rem + 0.8451vw, 2.75rem);
     text-transform: uppercase;
@@ -542,12 +544,7 @@
     margin-block-start: 0;
     margin-block-end: 0;
   }
-  /*
-    hgroup > *:not(:first-child):last-child {
-    font-size: var(--font-size);
-    font-family: unset;
-    }
-  */
+
   :where(ol, ul) li {
     margin-block-end: calc(var(--spaceTB) * 0.25);
   }
@@ -1552,9 +1549,6 @@
       :active,
       :focus
     ) {
-    /* --background-color: var(--curBG);
-    --box-shadow: var(--box-shadow, 0 0 0 var(--curTXT));
-    color: var(--curCOLa); */
     opacity: 0.9;
   }
 
@@ -1634,7 +1628,8 @@
       [type='submit'],
       [type='button'],
       [role='button']
-    ).pop {
+    )
+    .pop {
     --background-color: var(--curTXT);
     --curCOLa: var(--curBG);
     --borderS: clamp(2px, 0.25svw, 4px);
@@ -1780,7 +1775,6 @@
     list-style-type: none;
     cursor: pointer;
     transition: color var(--transition);
-    /* display: block; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1827,11 +1821,9 @@
   }
 
   details[open] > summary {
-    /* margin-block-end: var(--spaceTB); */
     position: -webkit-sticky !important;
     /* Safari */
     position: sticky;
-    /* border-bottom: var(--borderS) solid currentColor; */
     background-color: var(--curBG);
     top: 0;
 
@@ -1919,16 +1911,13 @@
 
   h6,
   .h6 {
-    /* font-size: calc(var(--font-size) * 1.1); */
+    font-size: calc(var(--font-size) * 1.1);
   }
 
   /* LIST */
   ul,
   ol {
     list-style-type: none;
-    /* li {
-    padding: calc(var(--spaceTB) / 2) 0;
-  } */
   }
 
   /* CARD */
@@ -1991,13 +1980,12 @@
 
   article:not(:only-child) {
     margin-block: var(--spaceTB);
-    /* margin-inline: var(--spaceLR); */
   }
 
   /*!
-    * WHEN <article> IS USED TO CENTER CONTENT
-    * SAY INSIDE A <section>, IT WILL HAVE NO VERTICAL PADDING.
-    */
+  * WHEN <article> IS USED TO CENTER CONTENT
+  * SAY INSIDE A <section>, IT WILL HAVE NO VERTICAL PADDING.
+  */
   article:only-child {
     margin-block: 0;
     margin-inline: 0;
@@ -2011,14 +1999,15 @@
 /* 🐲 CLASSES */
 @layer classes {
   /*!
-  * YOU CAN STYLE THE <article>
-  * to have diffentr shapes at different width.
-  * give it a class (.rows) here then
-  * do something like this:
+  * When you need make your own classe,
+  * be sure to put it in the correct layer.
   */
 
   @layer components {
-    /* Is this the smart way to code classes which will aplly to components...what's the use case for nesting @layers ? */
+    /*!
+    * Is this the new smart way to code classes
+    * which will apply to components...
+    */
 
     .sticky {
       position: -webkit-sticky;
@@ -2069,16 +2058,6 @@
       margin-inline: 5%;
     }
 
-    .invert {
-      /* THE FOLLOWING IS HAVING ISSUES ON SAFARI: */
-      /* filter: invert(100%);
-      -webkit-backdrop-filter: hue-rotate(180deg);
-      backdrop-filter: hue-rotate(180deg);
-      color: var(curBG);
-      color: red;
-      background-color: var(curTXT); */
-    }
-
     .invert,
     .invert ul,
     .invert p,
@@ -2102,16 +2081,6 @@
       /* USE .space TO STYLE EMPTY VERTICAL SPACE */
       padding-block: calc(var(--spaceTB) * 4);
     }
-
-    /* img {
-      grid-area: img;
-      width: 20em;
-    } */
-
-    /* :not(header),
-    :not(footer) {
-      grid-area: body;
-    } */
   }
 
   @supports (text-wrap: balance) {

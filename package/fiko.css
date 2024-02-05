@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.10.4
+* FIKO 🐸 v0.10.5
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -1281,10 +1281,10 @@
   @container (min-width: 500px) {
     .grid {
       grid-auto-flow: row;
-      grid-template-areas:
+      /* grid-template-areas:
         'img head'
         'img middle'
-        'img foot';
+        'img foot'; */
     }
   }
 

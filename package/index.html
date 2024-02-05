@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FIKO v0.10.4</title>
+    <title>FIKO v0.10.5</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -35,6 +35,21 @@
         display: inline;
         color: red;
         @supports (text-wrap: balance) {
+          display: none;
+        }
+      }
+
+      .supports_text_wrap_pretty {
+        display: none;
+        @supports (text-wrap: pretty) {
+          display: inline;
+          color: greenyellow;
+        }
+      }
+      .no_supports_text_wrap_pretty {
+        display: inline;
+        color: red;
+        @supports (text-wrap: pretty) {
           display: none;
         }
       }
@@ -687,6 +702,33 @@
             Does it? This long h5 heading is here to let you
             see if it makes any difference. Does it?
           </h5>
+        </hgroup>
+      </article>
+      <hr />
+
+      <article>
+        <hgroup>
+          <header>
+            <h2>text-wrap: pretty</h2>
+          </header>
+          <p class="pretty">
+            Use
+            <code>&lt;class="pretty"&gt;</code>
+            to get the newly available readability
+            improvements of the new css functionality:
+            <code>&lt;text-wrap: pretty&gt;</code>
+            It prevents orphans, a single word on its own
+            line, at the end of a text block.
+            <br />
+            <br />
+            Does this browser support it?
+            <span class="supports_text_wrap_pretty">
+              Yes!
+            </span>
+            <span class="no_supports_text_wrap_pretty">
+              Nope.
+            </span>
+          </p>
         </hgroup>
       </article>
       <hr />

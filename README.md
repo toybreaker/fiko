@@ -15,7 +15,7 @@ It's contained, layered, up-to-date (2024). Uses dynamic units responsivity, sem
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.10.6)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.10.7)
 
 .
 

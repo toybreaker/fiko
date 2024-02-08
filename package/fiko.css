@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.10.8
+* FIKO 🐸 v0.11.0
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -413,7 +413,7 @@
     line-height: var(--lineH);
     font-family: var(--font-family);
     max-width: var(--reading);
-
+    min-width: 100%;
     word-break: keep-all;
     /* fallback */
     word-break: auto-phrase;
@@ -442,7 +442,6 @@
   .h1 {
     --lineH: 1.2;
     --font-size: clamp(2rem, 1.7993rem + 0.8451vw, 2.75rem);
-    text-transform: uppercase;
     border-bottom: 0 none !important;
     color: var(--curTXT);
 
@@ -459,7 +458,6 @@
       1.6261rem + 0.7324vw,
       2.45rem
     );
-    text-transform: uppercase;
     color: var(--curTXT);
   }
 
@@ -2044,19 +2042,47 @@
       border-radius: var(--rad);
 
       header {
-        border-top-left-radius: var(--rad);
-        border-top-right-radius: var(--rad);
+        border-top-radius: var(--rad);
       }
 
       /* THIS FOR ARTICLE CARDS */
       footer {
-        border-bottom-left-radius: var(--rad);
-        border-bottom-right-radius: var(--rad);
+        border-bottom-radius: var(--rad);
       }
     }
 
     .container {
-      margin-inline: 5%;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      /* writing-mode: horizontal-tb;
+      margin-block: auto; */
+      padding-inline: var(--spaceLR);
+    }
+
+    @media (min-width: 576px) {
+      .container {
+        max-width: 510px;
+        padding-inline: 0;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 700px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: 920px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1130px;
+      }
     }
 
     .invert,

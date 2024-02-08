@@ -2000,7 +2000,7 @@
 /* 🐲 CLASSES */
 @layer classes {
   /*!
-  * When you need make your own classe,
+  * When you need make your own classes,
   * be sure to put it in the correct layer.
   */
 
@@ -2076,6 +2076,24 @@
     .full_window {
       min-height: 100svh;
       width: 100svw;
+    }
+
+    .full_height {
+      min-height: 100svh;
+    }
+
+    .hide_on_phones {
+      display: none;
+      @media (min-width: 450px) {
+        display: block;
+      }
+    }
+
+    .show_on_phones {
+      display: block;
+      @media (min-width: 450px) {
+        display: none;
+      }
     }
 
     .space {

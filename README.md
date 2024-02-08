@@ -15,7 +15,7 @@ It's contained, layered, up-to-date (2024). Uses dynamic units responsivity, sem
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.11.0)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.11.1)
 
 .
 
@@ -263,6 +263,15 @@ This slim starter was develop to scratch my own needs and it's inspired by class
 - .
 
 # CHANGELOG
+
+## fiko@0.11.0 | Small improvements
+
+Fixed:
+
+- .container, now w/ media queries and side space.
+- root text size
+- headings now width: 100%
+- no heading uppercase, moved to .uppercase class
 
 ## fiko@0.10.0 | Small fixes
 

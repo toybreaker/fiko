@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.14.0
+* FIKO 🐸 v0.14.1
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -1718,8 +1718,9 @@
   .h6,
   p,
   span {
-    --spaceTB: 0.5ch;
-    padding: var(--spaceTB) 0;
+    --spaceTB: 0.75ch;
+    padding-block: var(--spaceTB);
+    padding-inline: 0;
   }
 
   /* LIST */

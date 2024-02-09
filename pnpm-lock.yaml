@@ -829,7 +829,7 @@ packages:
       {
         integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==,
       }
-    engines: { node: '>=0.13.0' }
+    engines: { node: '>=0.13.1' }
     dev: true
 
   /is-wsl@1.1.0:

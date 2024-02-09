@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FIKO v0.13.0</title>
+    <title>FIKO v0.13.1</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -297,6 +297,8 @@
             </p>
           </details>
         </section>
+
+        <div class="space"></div>
 
         <section>
           <hgroup>
@@ -631,6 +633,37 @@
 
         <section>
           <hgroup>
+            <h2>Horizontal ruler and spacer</h2>
+          </hgroup>
+          <code>&lt;hr class="space"&gt;</code>
+          will provide an horizontal ruler with vertical
+          padding, useful to separate sections, like the one
+          here:
+        </section>
+
+        <hr class="space" />
+
+        <section>
+          <hgroup>
+            <h2>Spacer</h2>
+          </hgroup>
+          <p>Before the Spacer</p>
+          <div class="space"></div>
+          <p>After the Spacer</p>
+
+          <p>
+            <code>&lt;... class="space"&gt;</code>
+            will provide a spacer with vertical padding,
+            useful to separate sections.
+          </p>
+        </section>
+
+        <hr />
+
+        <div class="space"></div>
+
+        <section>
+          <hgroup>
             <h2>Buttons</h2>
           </hgroup>
           <div class="container">
@@ -643,7 +676,7 @@
           </div>
         </section>
 
-        <section class="container">
+        <section>
           <a href="#">
             <button class="secondary">secondary</button>
           </a>
@@ -671,7 +704,6 @@
       </div>
 
       <hr class="space" />
-
       <!-- FULL WIDTH -->
 
       <h2 class="centre">FULL WIDTH</h2>
@@ -886,7 +918,7 @@
         <p>
           FIKO
           <span class="invert">🐸</span>
-          v0.13.0
+          v0.13.1
         </p>
 
         <nav>

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.11.1
+* FIKO 🐸 v0.12.0
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -9,7 +9,7 @@
 * DYNAMIC SIZING: via  svh, svw, rem, ch...
 * FIXED SIZING: px
 * FOLLOWS SEMANTIC HTML
-* ALMOST CLASSLESS!
+* ALMOST CLASSLESS, NON-VERBOSE & CLEAN!
 */
 
 /* 🐲 LAYER ORDER */
@@ -187,7 +187,7 @@
 
   /* ROOT SECTION 1 */
   :root {
-    /* ICONS FIRST, cos there're referred in [data-theme...]  */
+    /* ICONS FIRST, cos there're referred in ROOT SECTION 2 [data-theme...]  */
     --icon-chevron-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
     --icon-chevron-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -214,27 +214,27 @@
   /* ROOT SECTION 2 */
 
   /* INITIALS ASSUMING LIGHT THEME */
-  body[data-theme='light'] {
+  [data-theme='light'] {
     /* Set the CURRENT colours: */
     --curBG: var(--color-white);
     --curTXT: var(--color-black);
     --curV: var(--icon-chevron-black);
     --curPlus: var(--icon-plus-black);
     --curMinus: var(--icon-minus-black);
-    /* DERIVED: apply the CURRENT colours: */
+    /* Seems that the following is needed to make it work?!? */
     background-color: var(--curBG);
     color: var(--curTXT);
   }
 
   /* DATA-THEME IS SET TO DARK */
-  body[data-theme='dark'] {
+  [data-theme='dark'] {
     /* Set the CURRENT colours: */
     --curBG: var(--color-black);
     --curTXT: var(--color-white);
     --curV: var(--icon-chevron-white);
     --curPlus: var(--icon-plus-white);
     --curMinus: var(--icon-minus-white);
-    /* DERIVED: apply the CURRENT colours: */
+    /* Seems that the following is needed to make it work?!? */
     background-color: var(--curBG);
     color: var(--curTXT);
   }
@@ -245,10 +245,7 @@
     /* When elements need consistency, not switching colors. */
     --color-light: var(--color-white);
     --color-dark: var(--color-black);
-
-    /* DERIVED VARIABLES, apply the CURRENT colours: */
     --transparent: 50%;
-
     --curCOLa: color-mix(
       in srgb,
       currentColor,
@@ -259,7 +256,7 @@
     /* DYNAMIC / RELATIVE SIZED spacing & borders */
     --spaceLR: 3.3svw; /* LEFT RIGHT */
     --spaceTB: 1.8svh; /* TOP BOTTOM */
-    --rad: clamp(6.66px, 1svw, 8px); /* RADIUS */
+    --radius: clamp(6.66px, 1svw, 8px); /* RADIUS */
     --lineH: 1.55; /* LINE HEIGHT */
     --borderS: clamp(1.5px, 1svw, 2px); /* BORDER SIZE */
     --gap: calc((var(--spaceLR) + var(--spaceTB)) / 3);
@@ -282,11 +279,7 @@
       monospace, var(--font-family-emoji);
 
     /* VARIABLE BASE FONT SIZE */
-    --font-size: clamp(
-      1.25rem,
-      1.1717rem + 0.4174svw,
-      1.85rem
-    );
+    --font-size: clamp(1rem, 1.1rem + 0.418svw, 1.8rem);
 
     --font-weight: 300;
     --font-weight-bold: 500;
@@ -327,10 +320,9 @@
 /* 🐲 BASE */
 @layer base {
   html {
+    font-size: 16px;
     scroll-behavior: smooth;
     line-height: var(--lineH);
-    background-color: var(--curBG);
-    color: var(--curTXT);
   }
 
   body {
@@ -346,7 +338,7 @@
   }
 
   small {
-    font-size: 77%;
+    font-size: 81%;
     line-height: var(--lineH);
   }
 
@@ -440,7 +432,11 @@
   h1,
   .h1 {
     --lineH: 1.2;
-    --font-size: clamp(2rem, 1.7993rem + 0.8451vw, 2.75rem);
+    --font-size: clamp(
+      1.8rem,
+      1.6261rem + 0.7324vw,
+      2.45rem
+    );
     border-bottom: 0 none !important;
     color: var(--curTXT);
 
@@ -453,17 +449,6 @@
   .h2 {
     --lineH: 1.2;
     --font-size: clamp(
-      1.8rem,
-      1.6261rem + 0.7324vw,
-      2.45rem
-    );
-    color: var(--curTXT);
-  }
-
-  h3,
-  .h3 {
-    --lineH: 1.2;
-    --font-size: clamp(
       1.6rem,
       1.4662rem + 0.5634vw,
       2.1rem
@@ -471,15 +456,15 @@
     color: var(--curTXT);
   }
 
-  h4,
-  .h4 {
+  h3,
+  .h3 {
     --lineH: 1.2;
     --font-size: clamp(1.4rem, 1.293rem + 0.4507vw, 1.8rem);
     color: var(--curTXT);
   }
 
-  h5,
-  .h5 {
+  h4,
+  .h4 {
     --lineH: 1.2;
     --font-size: clamp(
       1.2rem,
@@ -489,10 +474,25 @@
     color: var(--curTXT);
   }
 
+  h5,
+  .h5 {
+    --lineH: 1.2;
+    --font-size: clamp(
+      1.1rem,
+      1.1331rem + 0.2817vw,
+      1.35rem
+    );
+    color: var(--curTXT);
+  }
+
   h6,
   .h6 {
     --lineH: 1.2;
-    --font-size: clamp(0.9rem, 0.8732rem + 0.1127vw, 1rem);
+    --font-size: clamp(
+      0.95rem,
+      0.8732rem + 0.1127vw,
+      1.15rem
+    );
     color: var(--curTXT);
   }
 
@@ -631,7 +631,7 @@
   code,
   kbd {
     --code-background-color: rgba(133, 133, 133, 0.5);
-    border-radius: var(--rad);
+    border-radius: var(--radius);
     background-color: var(--code-background-color);
     color: var(--curTXT);
     font-weight: var(--font-weight);
@@ -787,7 +787,7 @@
     display: inline-flex;
     position: relative;
     margin-block-end: var(--spaceTB);
-    border-radius: var(--rad);
+    border-radius: var(--radius);
     box-shadow: var(
       --group-box-shadow,
       0 0 0 var(--curCOLa)
@@ -1096,7 +1096,7 @@
 
   nav li :where(a, [role='link']) {
     display: inline-block;
-    border-radius: var(--rad);
+    border-radius: var(--radius);
   }
 
   nav li :where(a, [role='link']):not(:hover) {
@@ -1498,7 +1498,7 @@
     --box-shadow: var(--box-shadow), 0 0 0 var(--curCOLa);
     padding: calc(var(--spaceTB) / 2) var(--spaceLR);
     border: var(--borderS) solid var(--curTXT);
-    border-radius: var(--rad);
+    border-radius: var(--radius);
     outline: none;
     color: var(--curTXT);
     box-shadow: var(--box-shadow);
@@ -1511,9 +1511,11 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    transition: background-color var(--transition),
+    transition:
+      background-color var(--transition),
       border-color var(--transition),
-      color var(--transition), box-shadow var(--transition);
+      color var(--transition),
+      box-shadow var(--transition);
   }
 
   button:is([aria-current], :hover, :active, :focus),
@@ -1940,10 +1942,11 @@
       padding-bottom: var(--spaceTB);
     }
 
-    > * {
+    > :not(img) {
       text-align: center;
       margin-block: 0;
       alignment-baseline: text-before-edge;
+      padding-inline: calc(var(--spaceLR) / 2);
     }
 
     > img {
@@ -2038,15 +2041,15 @@
     .border {
       border: var(--borderS) solid
         color-mix(in srgb, currentColor, transparent 50%);
-      border-radius: var(--rad);
+      border-radius: var(--radius);
 
       header {
-        border-top-radius: var(--rad);
+        border-top-radius: var(--radius);
       }
 
       /* THIS FOR ARTICLE CARDS */
       footer {
-        border-bottom-radius: var(--rad);
+        border-bottom-radius: var(--radius);
       }
     }
 

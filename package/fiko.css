@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.13.1
+* FIKO 🐸 v0.14.0
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -251,14 +251,13 @@
       currentColor,
       transparent var(--transparent)
     );
-    --box-shadow: 0 0 0 0.0625rem var(--curCOLa);
 
     /* DYNAMIC / RELATIVE SIZED spacing & borders */
     --spaceLR: 3.3svw; /* LEFT RIGHT */
     --spaceTB: 1.8svh; /* TOP BOTTOM */
     --radius: clamp(6.66px, 1svw, 8px); /* RADIUS */
     --lineHeight: 1.55; /* LINE HEIGHT */
-    --lineHeightHeadings: 1.25; /* COMPACTED LINE HEIGHT FOR HEADINGS*/
+    --lineHeightHeadings: 1.1; /* COMPACTED LINE HEIGHT FOR HEADINGS*/
     --borderS: clamp(1.5px, 1svw, 2px); /* BORDER SIZE */
     --gap: calc((var(--spaceLR) + var(--spaceTB)) / 3);
     --transition: 0.2s ease-in-out;
@@ -339,7 +338,7 @@
   }
 
   small {
-    font-size: 81%;
+    font-size: 75%;
     line-height: var(--lineHeight);
   }
 
@@ -751,12 +750,7 @@
     position: relative;
     margin-block-end: var(--spaceTB);
     border-radius: var(--radius);
-    box-shadow: var(
-      --group-box-shadow,
-      0 0 0 var(--curCOLa)
-    );
     vertical-align: middle;
-    transition: box-shadow var(--transition);
   }
 
   [role='search'] > *,
@@ -850,91 +844,6 @@
   [role='group'] [type='button'],
   [role='group'] [role='button'] {
     width: auto;
-  }
-
-  @supports selector(:has(*)) {
-    [role='search']:has(
-        button:focus,
-        [type='submit']:focus,
-        [type='button']:focus,
-        [role='button']:focus
-      ),
-    [role='group']:has(
-        button:focus,
-        [type='submit']:focus,
-        [type='button']:focus,
-        [role='button']:focus
-      ) {
-      --group-box-shadow: var(
-        --group-box-shadow-focus-with-button
-      );
-    }
-
-    [role='search']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      ),
-    [role='group']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      ) {
-      --group-box-shadow: var(--box-shadow);
-    }
-
-    [role='search']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      )
-      button,
-    [role='search']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      )
-      [type='submit'],
-    [role='search']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      )
-      [type='button'],
-    [role='search']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      )
-      [role='button'],
-    [role='group']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      )
-      button,
-    [role='group']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      )
-      [type='submit'],
-    [role='group']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      )
-      [type='button'],
-    [role='group']:has(
-        input:not([type='submit'], [type='button']):focus,
-        select:focus
-      )
-      [role='button'] {
-      --box-shadow: 0 0 0 var(--curCOLa) var(--curCOLa);
-      --box-shadow: 0 0 0 var(--curCOLa) var(--curCOLa);
-    }
-
-    [role='search'] button:focus,
-    [role='search'] [type='submit']:focus,
-    [role='search'] [type='button']:focus,
-    [role='search'] [role='button']:focus,
-    [role='group'] button:focus,
-    [role='group'] [type='submit']:focus,
-    [role='group'] [type='button']:focus,
-    [role='group'] [role='button']:focus {
-      box-shadow: none;
-    }
   }
 
   /* LOADING ([aria-busy=true]) */
@@ -1458,13 +1367,12 @@
   [type='button'],
   [type='file']::file-selector-button,
   [role='button'] {
-    --box-shadow: var(--box-shadow), 0 0 0 var(--curCOLa);
-    padding: calc(var(--spaceTB) / 2) var(--spaceLR);
+    padding: calc(var(--spaceTB) / 3)
+      calc(var(--spaceLR) / 2);
     border: var(--borderS) solid var(--curTXT);
     border-radius: var(--radius);
     outline: none;
     color: var(--curTXT);
-    box-shadow: var(--box-shadow);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
     line-height: var(--lineHeight);
@@ -1477,8 +1385,7 @@
     transition:
       background-color var(--transition),
       border-color var(--transition),
-      color var(--transition),
-      box-shadow var(--transition);
+      color var(--transition);
   }
 
   button:is([aria-current], :hover, :active, :focus),
@@ -1513,16 +1420,6 @@
       :focus
     ) {
     opacity: 0.9;
-  }
-
-  button:focus,
-  [type='submit']:focus,
-  [type='reset']:focus,
-  [type='button']:focus,
-  [type='file']::file-selector-button:focus,
-  [role='button']:focus {
-    --box-shadow: var(--box-shadow, 0 0 0 var(--curCOLa)),
-      0 0 0 var(--outline-width) var(--curCOLa);
   }
 
   [type='submit'],
@@ -1573,18 +1470,6 @@
     color: var(--curTXT);
   }
 
-  :is(
-      button,
-      [type='submit'],
-      [type='button'],
-      [role='button']
-    ).secondary:focus,
-  [type='reset']:focus,
-  [type='file']::file-selector-button:focus {
-    --box-shadow: var(--box-shadow, 0 0 0 var(--curCOLa)),
-      0 0 0 var(--outline-width) var(--curCOLa);
-  }
-
   /* .pop */
   :is(
       button,
@@ -1608,16 +1493,6 @@
       [role='button']
     ).pop:is([aria-current], :hover, :active, :focus) {
     opacity: 0.9;
-  }
-
-  :is(
-      button,
-      [type='submit'],
-      [type='button'],
-      [role='button']
-    ).pop:focus {
-    --box-shadow: var(--box-shadow, 0 0 0 var(--curCOLa)),
-      0 0 0 var(--outline-width) var(--curCOLa);
   }
 
   /* .full */

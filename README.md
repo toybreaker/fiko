@@ -15,7 +15,7 @@ It's contained, layered, up-to-date (2024). Uses dynamic units responsivity, sem
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.13.1)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.14.0)
 
 .
 
@@ -263,6 +263,10 @@ This slim starter was develop to scratch my own needs and it's inspired by class
 - .
 
 # CHANGELOG
+
+## fiko@0.14.0 | Cleaner
+
+No more box-shadow. Smaller buttons.
 
 ## fiko@0.13.0 | A little better
 

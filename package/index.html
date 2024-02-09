@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FIKO v0.12.0</title>
+    <title>FIKO v0.13.0</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -511,6 +511,10 @@
             h6 FIKO
             <span class="greyscale">🐸</span>
           </h6>
+          <h1>
+            This long h1 heading is here just to show how it
+            looks to all you Ladies and Germs!
+          </h1>
         </section>
         <hr />
 
@@ -882,7 +886,7 @@
         <p>
           FIKO
           <span class="invert">🐸</span>
-          v0.12.0
+          v0.13.0
         </p>
 
         <nav>
@@ -924,13 +928,13 @@
           detailsElements.forEach(function (details) {
             details.addEventListener('toggle', function () {
               if (details.open) {
-                detailsElements.forEach(function (
-                  innerDetails,
-                ) {
-                  if (innerDetails !== details) {
-                    innerDetails.removeAttribute('open');
-                  }
-                });
+                detailsElements.forEach(
+                  function (innerDetails) {
+                    if (innerDetails !== details) {
+                      innerDetails.removeAttribute('open');
+                    }
+                  },
+                );
               }
             });
           });

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.12.0
+* FIKO 🐸 v0.13.0
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -257,7 +257,8 @@
     --spaceLR: 3.3svw; /* LEFT RIGHT */
     --spaceTB: 1.8svh; /* TOP BOTTOM */
     --radius: clamp(6.66px, 1svw, 8px); /* RADIUS */
-    --lineH: 1.55; /* LINE HEIGHT */
+    --lineHeight: 1.55; /* LINE HEIGHT */
+    --lineHeightHeadings: 1.25; /* COMPACTED LINE HEIGHT FOR HEADINGS*/
     --borderS: clamp(1.5px, 1svw, 2px); /* BORDER SIZE */
     --gap: calc((var(--spaceLR) + var(--spaceTB)) / 3);
     --transition: 0.2s ease-in-out;
@@ -322,7 +323,7 @@
   html {
     font-size: 16px;
     scroll-behavior: smooth;
-    line-height: var(--lineH);
+    line-height: var(--lineHeight);
   }
 
   body {
@@ -339,7 +340,7 @@
 
   small {
     font-size: 81%;
-    line-height: var(--lineH);
+    line-height: var(--lineHeight);
   }
 
   /* TYPOGRAPHY */
@@ -395,16 +396,15 @@
   .h5,
   h6,
   .h6 {
-    margin-inline: auto;
-    margin-block-start: 0;
-    margin-block-end: var(--spaceTB);
     color: var(--curTXT);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
-    line-height: var(--lineH);
+    line-height: var(--lineHeightHeadings);
     font-family: var(--font-family);
-    max-width: var(--reading);
+    margin-inline: auto;
+    margin-block: 0 var(--spaceTB);
     min-width: 100%;
+    max-width: var(--reading);
     word-break: keep-all;
     /* fallback */
     word-break: auto-phrase;
@@ -431,69 +431,32 @@
 
   h1,
   .h1 {
-    --lineH: 1.2;
-    --font-size: clamp(
-      1.8rem,
-      1.6261rem + 0.7324vw,
-      2.45rem
-    );
-    border-bottom: 0 none !important;
-    color: var(--curTXT);
-
-    span {
-      opacity: 0.75;
-    }
+    font-size: calc(var(--font-size) * 1.75);
   }
 
   h2,
   .h2 {
-    --lineH: 1.2;
-    --font-size: clamp(
-      1.6rem,
-      1.4662rem + 0.5634vw,
-      2.1rem
-    );
-    color: var(--curTXT);
+    font-size: calc(var(--font-size) * 1.55);
   }
 
   h3,
   .h3 {
-    --lineH: 1.2;
-    --font-size: clamp(1.4rem, 1.293rem + 0.4507vw, 1.8rem);
-    color: var(--curTXT);
+    font-size: calc(var(--font-size) * 1.45);
   }
 
   h4,
   .h4 {
-    --lineH: 1.2;
-    --font-size: clamp(
-      1.2rem,
-      1.1331rem + 0.2817vw,
-      1.45rem
-    );
-    color: var(--curTXT);
+    font-size: calc(var(--font-size) * 1.25);
   }
 
   h5,
   .h5 {
-    --lineH: 1.2;
-    --font-size: clamp(
-      1.1rem,
-      1.1331rem + 0.2817vw,
-      1.35rem
-    );
-    color: var(--curTXT);
+    font-size: calc(var(--font-size) * 1.15);
   }
 
   h6,
   .h6 {
-    --lineH: 1.2;
-    --font-size: clamp(
-      0.95rem,
-      0.8732rem + 0.1127vw,
-      1.15rem
-    );
-    color: var(--curTXT);
+    font-size: calc(var(--font-size) * 1.1);
   }
 
   :where(
@@ -656,7 +619,7 @@
     display: block;
     padding: var(--spaceTB) var(--spaceLR);
     background: none;
-    line-height: var(--lineH);
+    line-height: var(--lineHeight);
   }
 
   kbd {
@@ -1504,7 +1467,7 @@
     box-shadow: var(--box-shadow);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
-    line-height: var(--lineH);
+    line-height: var(--lineHeight);
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -1810,7 +1773,7 @@
       text-align: left;
 
       &::after {
-        height: calc(1rem * var(--lineH));
+        height: calc(1rem * var(--lineHeight));
       }
     }
   }
@@ -1882,36 +1845,6 @@
   span {
     --spaceTB: 0.5ch;
     padding: var(--spaceTB) 0;
-  }
-
-  h1,
-  .h1 {
-    font-size: calc(var(--font-size) * 2.25);
-  }
-
-  h2,
-  .h2 {
-    font-size: calc(var(--font-size) * 1.65);
-  }
-
-  h3,
-  .h3 {
-    font-size: calc(var(--font-size) * 1.5);
-  }
-
-  h4,
-  .h4 {
-    font-size: calc(var(--font-size) * 1.25);
-  }
-
-  h5,
-  .h5 {
-    font-size: calc(var(--font-size) * 1.15);
-  }
-
-  h6,
-  .h6 {
-    font-size: calc(var(--font-size) * 1.1);
   }
 
   /* LIST */
@@ -2103,7 +2036,7 @@
 
     .full_window {
       min-height: 100svh;
-      width: 100svw;
+      width: 100%;
     }
 
     .full_height {

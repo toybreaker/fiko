@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.14.1
+* FIKO 🐸 v0.14.2
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -531,7 +531,7 @@
     max-width: var(--reading);
     display: block;
     margin-block: calc(var(--spaceTB) * 4);
-    margin-inline: var(--spaceLR);
+    margin-inline: auto;
     padding-block: var(--spaceTB);
     padding-inline: var(--spaceLR);
     border-right: none;

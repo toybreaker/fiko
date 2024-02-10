@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FIKO v0.14.2</title>
+    <title>FIKO v0.14.3</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -125,66 +125,61 @@
       <nav class="toggle-wrapper">
         <h1 class="logo shake-vertical">FIKO&nbsp;</h1>
 
-        <ul class="centre">
-          <li><a class="pop" href="#">Modern</a></li>
-          <li><a class="outline" href="#">Css</a></li>
-          <li><a class="outline" href="#">Framework</a></li>
-          <li>
-            <!-- JS Toggle Button for Dark/Light Mode -->
+        <p class="centre">
+          Modern Css Design System
+          <!-- JS Toggle for Dark/Light Mode -->
+          <span
+            id="toggle-theme"
+            class="theme_switch"
+            onclick="toggleTheme()"
+            aria-label="Toggle light | dark mode"
+          >
             <span
-              id="toggle-theme"
-              class="theme_switch"
-              onclick="toggleTheme()"
-              aria-label="Toggle light | dark mode"
+              class=""
+              aria-pressed="false"
+              aria-label="Use Dark Mode"
             >
-              <span
-                class=""
-                aria-pressed="false"
-                aria-label="Use Dark Mode"
+              <svg
+                class="moon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
               >
-                <svg
-                  class="moon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"
-                  />
-                </svg>
+                <path
+                  d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"
+                />
+              </svg>
 
-                <svg
-                  class="sun"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <circle cx="12" cy="12" r="5" />
-                  <path
-                    d="M12 1v2m0 18v2M4 4l2 2m12 12 2 2M1 12h2m18 0h2M4 20l2-2M18 6l2-2"
-                  />
-                </svg>
-              </span>
+              <svg
+                class="sun"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <path
+                  d="M12 1v2m0 18v2M4 4l2 2m12 12 2 2M1 12h2m18 0h2M4 20l2-2M18 6l2-2"
+                />
+              </svg>
             </span>
-          </li>
-        </ul>
-        <br />
+          </span>
+        </p>
       </nav>
     </header>
 
@@ -526,7 +521,7 @@
         <!-- Article | Card -->
 
         <hgroup>
-          <h2>Article</h2>
+          <h2>Card</h2>
           <p>
             <code>&lt;article&gt;</code>
             renders as a card. Use it to centre children
@@ -538,7 +533,7 @@
         </hgroup>
 
         <article class="border">
-          <h2 class="">Article Card</h2>
+          <h2 class="">Card</h2>
           <img
             loading="lazy"
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
@@ -549,24 +544,20 @@
             <code>&lt;article class="border"&gt;</code>
           </p>
           <p>
-            <a href="#">
-              <button>Call to Action</button>
-            </a>
+            <a href="#" role="button">Call to Action</a>
           </p>
         </article>
 
         <article>
-          <h2>No border Article Card</h2>
+          <h2>No border Card</h2>
           <img
             loading="lazy"
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
             alt="rokma.com"
           />
-          <p>Article content goes here.</p>
+          <p>Card content goes here.</p>
           <p>
-            <a href="#">
-              <button>Call to Action</button>
-            </a>
+            <a href="#" role="button">Call to Action</a>
           </p>
         </article>
 
@@ -576,24 +567,18 @@
             src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
             alt="rokma.com"
           />
-          <h2>Classic Article Card</h2>
-          <p>Content goes here.</p>
+          <h2>Card Title</h2>
+          <p>Card Content goes here.</p>
           <p>
-            <a href="#">
-              <button>Call to Action</button>
-            </a>
+            <a href="#" role="button">Call to Action</a>
           </p>
         </article>
 
         <article class="border">
-          <header>Article Card Header</header>
-          <p>First paragraph</p>
-          <p>
-            Second paragraph blah blah blah blah blah blah
-            blah blah blah blah blah blah blah blah blah
-            blah blah blah blah blah blah blah blah.
-          </p>
-          <p>Third paragraph</p>
+          <header>Header</header>
+          <p>First paragraph.</p>
+          <p>Second paragraph.</p>
+          <p>Third paragraph.</p>
           <footer>Footer</footer>
         </article>
 
@@ -610,11 +595,8 @@
             <p>
               Use the
               <code>&lt;article&gt;</code>
-              HTML element to get auto-centering.
-
-              <small class="centred_block">
-                Pretty Cool huh?!
-              </small>
+              HTML element to get auto-centering. Pretty
+              Cool huh?!
             </p>
           </article>
         </section>
@@ -669,39 +651,30 @@
           <hgroup>
             <h2>Buttons</h2>
           </hgroup>
-          <div class="container">
-            <a href="#">
-              <button>no classes button</button>
-            </a>
-            <a href="#">
-              <button class="full">full</button>
-            </a>
-          </div>
+
+          <a href="#" role="button">Button</a>
+          <a href="#" role="button" disabled>Disabled</a>
         </section>
 
         <section>
-          <a href="#">
-            <button class="secondary">secondary</button>
-          </a>
-
-          <a href="#">
-            <button class="full secondary">
-              secondary full
-            </button>
+          <a href="#" role="button" class="full">Full</a>
+          <a href="#" role="button" class="full" disabled>
+            Full Disabled
           </a>
         </section>
 
-        <section class="container">
-          <a href="#">
-            <button class="pop">pop</button>
+        <section>
+          <a href="#" role="button" class="secondary">
+            Secondary
           </a>
 
-          <a href="#">
-            <button disabled>disabled</button>
-          </a>
-
-          <a href="#">
-            <button class="full pop">full pop</button>
+          <a
+            href="#"
+            role="button"
+            class="secondary"
+            disabled
+          >
+            Secondary Disabled
           </a>
         </section>
       </div>
@@ -816,18 +789,20 @@
 
       <section class="container">
         <hgroup>
-          <h2>Container Queries</h2>
+          <h2>Container Queries Grid (w.i.p.)</h2>
         </hgroup>
 
         <div class="grid_container">
           <div class="grid">
             <article class="border pretty">
-              <header>header</header>
-              <img
-                loading="lazy"
-                src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
-                alt="rokma.com"
-              />
+              <header>
+                header with image
+                <img
+                  loading="lazy"
+                  src="https://d33wubrfki0l68.cloudfront.net/d3772863f4bb03cd953a43a1df164465f9e39622/add3d/assets/images/about/01.jpg"
+                  alt="rokma.com"
+                />
+              </header>
               <div class="body">
                 <p>
                   Damn ridiculus fermentum fuckibulum quam
@@ -921,7 +896,7 @@
         <p>
           FIKO
           <span class="invert">🐸</span>
-          v0.14.2
+          v0.14.3
         </p>
 
         <nav>

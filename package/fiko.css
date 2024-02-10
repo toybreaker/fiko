@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.14.3
+* FIKO 🐸 v0.14.4
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -1373,7 +1373,8 @@
   [type='file']::file-selector-button,
   [role='button'] {
     display: inline-block;
-    padding: calc(var(--spaceTB) / 1.6) calc(var(--spaceLR));
+    padding: calc(var(--spaceTB) / 1.6)
+      calc(var(--spaceLR) / 1.6);
     border: var(--borderS) solid var(--curTXT);
     border-radius: var(--radius);
     outline: none;

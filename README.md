@@ -1,10 +1,10 @@
 # [FIKO 🐸 CSS <small>FRAMEWORK</small>.](https://fiko.rokma.rocks/) [![Netlify Status](https://api.netlify.com/api/v1/badges/68612997-fe61-4776-80d5-9edd46c5a331/deploy-status)](https://app.netlify.com/sites/fikocss/deploys)
 
-## IMPORT IT FROM NPM. LINK IT IN YOUR APP. BOOM. DONE!
+## IMPORT IT FROM NPM. LINK IT. BOOM. DONE!
 
 ### FIKO DELIVERS A SLIM CSS STARTER, BATTERIES INCLUDED.
 
-It's contained, layered, up-to-date (2024). Uses dynamic units responsivity, semantic html and it's almost classless. VERY 🐸 FIKO!
+It's contained, layered, up-to-date (2024). It uses dynamic units for responsivity, semantic html and it's almost classless. VERY 🐸 FIKO!
 
 🐸 GREAT STYLES WITH JUST ONE CSS FILE (46 kb uncompressed!).
 🐸 ZERO CONFIG DX, RESPONSIVE, VARIABLE EVERYTHING.
@@ -15,7 +15,7 @@ It's contained, layered, up-to-date (2024). Uses dynamic units responsivity, sem
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.14.4)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.15.0)
 
 .
 
@@ -260,9 +260,13 @@ This slim starter was develop to scratch my own needs and it's inspired by class
 - dialog
 - more tests
 - footer links
-- .
+- css only toggle using :checked
 
 # CHANGELOG
+
+## fiko@0.15.0 | Leaner
+
+Moved toggle to components layer
 
 ## fiko@0.14.0 | Cleaner
 

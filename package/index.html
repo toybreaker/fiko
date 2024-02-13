@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FIKO v0.15.2</title>
+    <title>FIKO v0.16.0</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -122,9 +122,8 @@
   <body>
     <!-- Header -->
     <header class="invert full_window hero">
-      <nav class="toggle-wrapper">
-        <h1 class="logo shake-vertical">FIKO&nbsp;</h1>
-
+      <h1 class="logo shake-vertical">FIKO&nbsp;</h1>
+      <div class="toggle-wrapper">
         <p class="centre">
           Modern Css Design System
           <!-- JS Toggle for Dark/Light Mode -->
@@ -180,7 +179,7 @@
             </span>
           </span>
         </p>
-      </nav>
+      </div>
     </header>
 
     <main>
@@ -292,6 +291,45 @@
             </p>
           </details>
         </section>
+
+        <div class="space"></div>
+
+        <section>
+          <hgroup>
+            <h2>Navigation</h2>
+          </hgroup>
+
+          <nav>
+            <ul>
+              <li><strong>Fiko Inc.</strong></li>
+            </ul>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+          </nav>
+        </section>
+
+        <hr />
+
+        <div class="space"></div>
+
+        <section>
+          <hgroup>
+            <h2>Breadcrumbs</h2>
+          </hgroup>
+
+          <nav aria-label="breadcrumb">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li>Design</li>
+            </ul>
+          </nav>
+        </section>
+
+        <hr />
 
         <div class="space"></div>
         <section>
@@ -938,35 +976,27 @@
         <p>
           FIKO
           <span class="invert">🐸</span>
-          v0.15.2
+          v0.16.0
         </p>
 
-        <nav>
-          <ul>
-            <li><small>&copy; 2024 Toybreaker |</small></li>
-            <li>
-              <a
-                target="_blank"
-                href="https://github.com/toybreaker/fiko"
-              >
-                <small>Github |</small>
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://www.npmjs.com/package/fiko"
-              >
-                <small>Npm |</small>
-              </a>
-            </li>
-            <li>
-              <small>
-                <a id="pixelratio"></a>
-              </small>
-            </li>
-          </ul>
-        </nav>
+        <a
+          target="_blank"
+          href="https://github.com/toybreaker/fiko"
+        >
+          <small>Github</small>
+        </a>
+
+        <a
+          target="_blank"
+          href="https://www.npmjs.com/package/fiko"
+        >
+          <small>Npm</small>
+        </a>
+
+        <small>
+          <a id="pixelratio"></a>
+        </small>
+        <small>&copy; 2024 Toybreaker</small>
       </article>
     </footer>
     <script>

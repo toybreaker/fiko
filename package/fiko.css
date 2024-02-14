@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.16.0
+* FIKO 🐸 v0.16.1
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -519,18 +519,29 @@
     margin-block-end: 0;
   }
 
-  :where(ol, ul) li {
-    margin-block-end: calc(var(--spaceTB) * 0.25);
-  }
-
-  :where(dl, ol, ul) :where(dl, ol, ul) {
-    margin-inline: var(--spaceLR) 0;
-    margin-block-start: calc(var(--spaceTB) * 0.25);
-    margin-block-end: 0;
-  }
+  /* LINKS */
 
   :where(a:not([role='button'])),
   [role='link'] {
+    text-decoration: underline;
+    text-underline-offset: 0.125em;
+    text-decoration-color: currentColor;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  /* .secondary LINKS */
+
+  :where(a.secondary:not([role='button'])),
+  .secondary:has([role='link']) {
+    --transparent: 25%;
+    color: color-mix(
+      in srgb,
+      currentColor,
+      transparent var(--transparent)
+    );
+
     text-decoration: underline;
     text-underline-offset: 0.125em;
     text-decoration-color: currentColor;
@@ -547,6 +558,16 @@
   ol {
     list-style: inside;
     list-style-type: revert;
+  }
+
+  :where(ol, ul) li {
+    margin-block-end: calc(var(--spaceTB) * 0.25);
+  }
+
+  :where(dl, ol, ul) :where(dl, ol, ul) {
+    margin-inline: var(--spaceLR) 0;
+    margin-block-start: calc(var(--spaceTB) * 0.25);
+    margin-block-end: 0;
   }
 
   mark {
@@ -1467,7 +1488,7 @@
     margin-block-end: var(--spaceTB);
   }
 
-  /* .secondary */
+  /* .secondary button */
   :is(
       button,
       [type='submit'],
@@ -1482,7 +1503,6 @@
       currentColor,
       transparent var(--transparent)
     );
-    color: var(--spaceTB);
     cursor: pointer;
   }
 

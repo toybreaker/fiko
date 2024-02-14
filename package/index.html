@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FIKO v0.16.0</title>
+    <title>FIKO v0.16.1</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -54,12 +54,12 @@
         }
       }
       .logo {
+        font-size: 400%;
         text-align: center;
         opacity: 0.75;
         filter: grayscale(0%)
-          drop-shadow(-15px 15px 0px hsl(0, 0%, 66%))
-          drop-shadow(-15px 15px 0px hsl(0, 0%, 17.5%))
-          drop-shadow(15px -15px 0px hsl(0, 0%, 33%));
+          drop-shadow(15px -15px 0px hsl(0, 0%, 10%))
+          drop-shadow(-10px 5px 0px hsl(0, 0%, 90%));
       }
 
       img,
@@ -707,6 +707,21 @@
           </p>
         </section>
 
+        <hr class="space" />
+
+        <section>
+          <hgroup>
+            <h2>Links</h2>
+          </hgroup>
+          <p><a href="#">I am a link</a></p>
+
+          <p>
+            <a href="#" class="secondary">
+              I am a secondary link
+            </a>
+          </p>
+        </section>
+
         <hr />
 
         <div class="space"></div>
@@ -973,30 +988,29 @@
     <!-- Footer -->
     <footer class="invert">
       <article class="container">
-        <p>
+        <small>
           FIKO
           <span class="invert">🐸</span>
-          v0.16.0
-        </p>
+          v0.16.1
 
-        <a
-          target="_blank"
-          href="https://github.com/toybreaker/fiko"
-        >
-          <small>Github</small>
-        </a>
-
-        <a
-          target="_blank"
-          href="https://www.npmjs.com/package/fiko"
-        >
-          <small>Npm</small>
-        </a>
-
-        <small>
-          <a id="pixelratio"></a>
+          <div>
+            <a
+              target="_blank"
+              href="https://github.com/toybreaker/fiko"
+            >
+              Github
+            </a>
+            &nbsp;|
+            <a
+              target="_blank"
+              href="https://www.npmjs.com/package/fiko"
+            >
+              Npm
+            </a>
+          </div>
+          <div id="pixelratio"></div>
+          <span>&copy; 2024 Toybreaker</span>
         </small>
-        <small>&copy; 2024 Toybreaker</small>
       </article>
     </footer>
     <script>

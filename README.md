@@ -15,7 +15,7 @@ It's contained, layered, up-to-date (2024). It uses dynamic units for responsivi
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.16.0)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.16.1)
 
 .
 
@@ -264,7 +264,7 @@ This slim starter was develop to scratch my own needs and it's inspired by class
 
 # CHANGELOG
 
-## fiko@0.16.0 | Leaner
+## fiko@0.16.1 | Leaner
 
 Moved toggle to components layer
 

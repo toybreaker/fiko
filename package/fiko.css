@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.16.1
+* FIKO 🐸 v0.17.0
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -554,6 +554,7 @@
   ul,
   ol {
     list-style: inside;
+    margin-inline-start: var(--spaceLR);
   }
   ol {
     list-style: inside;
@@ -1036,12 +1037,12 @@
   }
 
   nav[aria-label='breadcrumb'] ul li:not(:first-child) {
-    margin-inline-start: var(--spaceLR);
+    margin-inline-start: calc(var(--spaceLR) / 2);
   }
 
-  nav[aria-label='breadcrumb'] ul li:last-child {
+  /* nav[aria-label='breadcrumb'] ul li:last-child {
     padding: 0;
-  }
+  } */
 
   nav[aria-label='breadcrumb'] ul {
     padding-left: var(--spaceLR);
@@ -1059,7 +1060,7 @@
     display: inline-block;
     position: absolute;
     width: calc(var(--spaceLR) * 4);
-    margin: 0 calc(var(--spaceLR) * -1);
+    margin: 0 calc(var(--spaceLR) * -1.25);
     content: var(--breadcrumb-divider);
     color: var(--currentCOLtransparent);
     text-align: center;

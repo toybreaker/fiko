@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FIKO v0.17.0</title>
+    <title>FIKO v0.17.1</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -124,8 +124,8 @@
     <header class="invert full_window hero">
       <h1 class="logo shake-vertical">FIKO&nbsp;</h1>
       <div class="toggle-wrapper">
+        <p class="centre">Modern Css Design System</p>
         <p class="centre">
-          Modern Css Design System
           <!-- JS Toggle for Dark/Light Mode -->
           <span
             id="toggle-theme"
@@ -677,8 +677,9 @@
           <h2>Card</h2>
           <p>
             <code>&lt;article&gt;</code>
-            renders as a card. Use it to centre children
-            horizontally. No border unless:
+            renders as a card. Card's childs are centered
+            horizontally by default. It has no border
+            unless:
             <code>&lt;article class="border"&gt;</code>
             .
           </p>
@@ -726,6 +727,10 @@
             <a href="#" role="button">Call to Action</a>
           </p>
         </article>
+        <p>
+          The article card offers convenient sub-sections
+          header and footer.
+        </p>
 
         <article class="border">
           <header>Header</header>
@@ -945,11 +950,15 @@
 
       <section class="centre">
         <hgroup>
-          <h2>JS Light | Dark theme toggle</h2>
+          <h2>Light | Dark theme toggle</h2>
         </hgroup>
         <p>
-          It's currently using JS, look at this page source
-          code to grab it!
+          Fiko's theme toggle currently uses JS, look at
+          this page source code to grab it!
+        </p>
+        <p>
+          Let me know, in Github issues, if you will
+          prefer/need a pure css toggle instead.
         </p>
         <p>
           <small>
@@ -991,7 +1000,7 @@
         <small>
           FIKO
           <span class="invert">🐸</span>
-          v0.17.0
+          v0.17.1
 
           <div>
             <a

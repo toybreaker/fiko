@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* FIKO 🐸 v0.17.0
+* FIKO 🐸 v0.17.1
 * 2024 CSS FRAMEWORK LIBRARY
 * Copyright 2023-2024 Toybreaker
 * MIT License | https: //github.com/toybreaker/fiko
@@ -1026,7 +1026,6 @@
     margin-block-end: 0;
     padding: calc(var(--spaceTB) - var(--borderSize) * 2)
       var(--spaceLR);
-    /* border: var(--borderSize) solid var(--currentTXTcolor); */
   }
 
   /* BREADCRUMBS */
@@ -1840,11 +1839,11 @@
       padding-block: var(--spaceTB);
     }
 
-    .o,
+    /* use this for text */
     .centered,
     .center,
     .centre {
-      text-align: center !important;
+      text-align: center;
     }
 
     .hero {

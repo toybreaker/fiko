@@ -15,7 +15,7 @@ It's contained, layered, up-to-date (2024). It uses dynamic units for responsivi
 
 .
 
-# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.17.0)
+# 🫵 WAY TO USE IT (actually, don't use it yet, WIP v0.17.1)
 
 .
 
@@ -254,17 +254,21 @@ This slim starter was develop to scratch my own needs and it's inspired by class
 
 .
 
-2do:
+# 2DO:
 
 - finish container queries grid
-- dialog
+- dialog styles
+- aria-pressed="false" or aria-label="Use Dark Mode" throwing error on lighthouse
 - more tests
 - footer links
+- fix toogle JS code which is currently erroring: `warning ts(6385): '(callback: ((this: MediaQueryList, ev: MediaQueryListEvent) => any) | null): void' is deprecated.`
 - css only toggle using :checked
+
+.
 
 # CHANGELOG
 
-## fiko@0.17.0 | Leaner
+## fiko@0.17.1 | Leaner
 
 Moved toggle to components layer
 
@@ -290,6 +294,7 @@ Fixed:
 Added meta def in page head to tell browser that page supports dark and light modes:
 
 ```
+
 <meta name="color-scheme" content="light dark" />
 ```
 
@@ -336,13 +341,12 @@ Improved container queries
 /* Initial styles assuming light theme */
 body[data-theme='light'] {
   /* set the CURRENT colours: */
-  --currentBG: var(--color-white);
-  --currentTXT: var(--color-black);
-  --currentTXT50: rgba(0, 0, 0, 0.5);
+  --currentBGcolor: var(--color-white);
+  --currentTXTcolor: var(--color-black);
   --currentV: var(--icon-chevron-black);
   /* DERIVED: apply the CURRENT colours: */
-  background-color: var(--currentBG);
-  color: var(--currentTXT);
+  background-color: var(--currentBGcolor);
+  color: var(--currentTXTcolor);
 }
 ```
 

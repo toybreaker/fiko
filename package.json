@@ -2,7 +2,7 @@
   "name": "fiko",
   "type": "module",
   "version_name": "🐸",
-  "version": "0.17.0",
+  "version": "0.17.1",
   "author": "Rokma",
   "contributors": [
     "toybreaker",
@@ -40,10 +40,10 @@
     "build": "echo 'fiko.css comes, as frogs, ready to swim, no build, boom! 🐸 Done.'"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.19",
     "browser-sync": "^3.0.2",
     "modern-normalize": "^2.0.0",
-    "postcss": "^8.4.35",
+    "postcss": "^8.4.38",
     "prettier": "^3.2.5"
   },
   "browserslist": [

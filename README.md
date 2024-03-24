@@ -93,10 +93,87 @@ Write your `my_custom_style.css` you can leverage the existing `fiko layers`, ju
 @layer reset, root, base, roles, toggle, containers, components, classes;
 ```
 
+### FIKO CSS Advanced color management system.
+
+Leveraging CSS variables for dynamic theming and opacity control. This system ensures applications can adapt to different branding and user preferences seamlessly.
+
+Central to FIKO's color management are CSS variables, enabling developers to define a color palette that applies across the entire application, offering consistency and the ease of updating themes or implementing dark mode.
+
+For instance, defining a primary color in the root:
+
+```css
+:root {
+  --color-primary: rgba(
+    52,
+    152,
+    219,
+    1
+  ); /* Opacity adjustable */
+}
+.button {
+  background-color: var(--color-primary);
+}
+```
+
+This snippet demonstrates setting a primary color,
+which can be used across the application for consistent theming.
+
+FIKO also addresses the need for dynamic theming,
+including dark and light modes,
+through media queries and conditional CSS variables,
+allowing applications to adapt to user preferences automatically:
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #333;
+    --text-color: #fff;
+  }
+}
+```
+
+Furthermore,
+FIKO simplifies the application-wide color scheme adjustments by using CSS variables like
+`--currentBGcolor`
+and
+`--currentTXTcolor`
+set to
+`--color-white`
+and
+`--color-black`
+respectively.
+
+This abstraction layer allows for easily changing themes
+or color schemes by updating a few root-level variables,
+without the need for individual component style modifications.
+
+For overriding default color variables in FIKO,
+simply redefine the variable in the appropriate scope.
+
+For example, to
+
+### Change the background color for a specific element:
+
+```css
+.special-section {
+  --currentBGcolor: var(--color-special);
+}
+```
+
+This practice ensures a flexible, reusable, and maintainable approach to color management across your application, embodying modern web design's best practices.
+
+In summary,
+FIKO CSS's color management system offers a robust foundation for creating dynamic, adaptable, and visually cohesive web applications.
+
+By utilizing CSS variables for centralized color definitions and supporting automatic theme switching, developers can craft applications that are both aesthetically pleasing and user-friendly, aligning with diverse design requirements and preferences.
+
 ### WHY?
 
 The goal here is to reduce specificity born problems, by isolating rules.
-Refer to the code comments right inside `fiko.css` to decide where to put your rules. I'd say you probably go something like this:
+
+Refer to the code comments right inside `fiko.css` to decide where to put your rules.
+
+I'd say you probably go something like this:
 
 ```css
 @layer components {
@@ -366,3 +443,7 @@ package/
 ## fiko@0.4.1 | DEAD END
 
 Dont fix a broken house, It's faster to make a new one. Crucible moment. SCSS I love you but we gotta move on baby, there are new ways out there. New vehicle, fresh start.
+
+---
+
+fiko.gpt
